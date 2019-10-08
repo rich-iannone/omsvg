@@ -21,6 +21,8 @@ drawing area.}
 most part, the list's names are the presentation attribute names and the
 corresponding values are the matching attribute values.}
 
+\item{anims}{An animation directive list. Currently not implemented.}
+
 \item{id}{An optional ID value to give to the built tag. This is useful for
 modifying this element in a later function call or for interacting with
 CSS.}
