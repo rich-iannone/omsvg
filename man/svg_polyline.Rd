@@ -2,20 +2,20 @@
 % Please edit documentation in R/elements.R
 \name{svg_polyline}
 \alias{svg_polyline}
-\title{Addition of an `polyline` element}
+\title{Addition of an \code{polyline} element}
 \usage{
 svg_polyline(svg, points, attrs = list(), anims = list(), id = NULL)
 }
 \arguments{
-\item{svg}{The `svg` object that is created using the [SVG()] function.}
+\item{svg}{The \code{svg} object that is created using the \code{\link[=SVG]{SVG()}} function.}
 
-\item{points}{A numeric vector of points (with alternating values for `x` and
-`y` positions) that define the polyline. This can also be a single-length
+\item{points}{A numeric vector of points (with alternating values for \code{x} and
+\code{y} positions) that define the polyline. This can also be a single-length
 character vector that holds the formatted points string (space-separated
-`x` and `y` values, and comma-separated points).}
+\code{x} and \code{y} values, and comma-separated points).}
 
 \item{attrs}{A presentation attribute list. The helper function
-[attrs_pres()] can help us easily generate this named list object. For the
+\code{\link[=attrs_pres]{attrs_pres()}} can help us easily generate this named list object. For the
 most part, the list's names are the presentation attribute names and the
 corresponding values are the matching attribute values.}
 
@@ -26,11 +26,11 @@ modifying this element in a later function call or for interacting with
 CSS.}
 }
 \description{
-The `svg_polyline()` function adds a polyline to an `svg` object. The
+The \code{svg_polyline()} function adds a polyline to an \code{svg} object. The
 polyline is drawn by connecting a series of points with straight lines. The
 points can be provided as a vector that's exactly divisible by two, or, as a
-formatted string that adheres to the specification of the `points` attribute
-of the SVG `<polyline>` tag. All point positions are in units of `px`.
+formatted string that adheres to the specification of the \code{points} attribute
+of the SVG \code{<polyline>} tag. All point positions are in units of \code{px}.
 }
 \examples{
 # Create an SVG with a single

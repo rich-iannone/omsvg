@@ -7,14 +7,14 @@
 filter_gaussian_blur(what = "source", stdev = 1)
 }
 \arguments{
-\item{what}{What exactly should be blurred? By default, it is the `"source"`
+\item{what}{What exactly should be blurred? By default, it is the \code{"source"}
 image.}
 
 \item{stdev}{The number of standard deviations for the blur effect.}
 }
 \description{
 A gaussian blur effectively blurs an input image or shape by the amount
-specified in `stdev`. The standard deviation of `stdev` is in direct
+specified in \code{stdev}. The standard deviation of \code{stdev} is in direct
 reference to the gaussian distribution that governs the extent of blurring.
 }
 \examples{

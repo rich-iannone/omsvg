@@ -2,25 +2,25 @@
 % Please edit documentation in R/elements.R
 \name{svg_ellipse}
 \alias{svg_ellipse}
-\title{Addition of an `ellipse` element}
+\title{Addition of an \code{ellipse} element}
 \usage{
 svg_ellipse(svg, x, y, width, height, attrs = list(), anims = list(),
   id = NULL)
 }
 \arguments{
-\item{svg}{The `svg` object that is created using the [SVG()] function.}
+\item{svg}{The \code{svg} object that is created using the \code{\link[=SVG]{SVG()}} function.}
 
-\item{x, y}{The `x` and `y` positions of the center of the ellipse to be
-drawn. The `x` and `y` values are relative to upper left of the SVG drawing
+\item{x, y}{The \code{x} and \code{y} positions of the center of the ellipse to be
+drawn. The \code{x} and \code{y} values are relative to upper left of the SVG drawing
 area.}
 
-\item{width, height}{The `width` and `height` of the ellipse that is to be
-drawn. The `width` is the overall width of the ellipse in the 'x' direction,
-centered on point `x`. The `height` is the distance in the 'y' direction,
-centered on point `y`.}
+\item{width, height}{The \code{width} and \code{height} of the ellipse that is to be
+drawn. The \code{width} is the overall width of the ellipse in the 'x' direction,
+centered on point \code{x}. The \code{height} is the distance in the 'y' direction,
+centered on point \code{y}.}
 
 \item{attrs}{A presentation attribute list. The helper function
-[attrs_pres()] can help us easily generate this named list object. For the
+\code{\link[=attrs_pres]{attrs_pres()}} can help us easily generate this named list object. For the
 most part, the list's names are the presentation attribute names and the
 corresponding values are the matching attribute values.}
 
@@ -31,10 +31,10 @@ modifying this element in a later function call or for interacting with
 CSS.}
 }
 \description{
-The `svg_ellipse()` function adds an ellipse to an `svg` object. The position
-of the ellipse is given by `x` and `y`, and they refer to the center point of
-the point of the ellipse. The `width` and the `height`, both in units of
-`px`, provide the horizontal and vertical extents of the ellipse.
+The \code{svg_ellipse()} function adds an ellipse to an \code{svg} object. The position
+of the ellipse is given by \code{x} and \code{y}, and they refer to the center point of
+the point of the ellipse. The \code{width} and the \code{height}, both in units of
+\code{px}, provide the horizontal and vertical extents of the ellipse.
 }
 \examples{
 # Create an SVG with a single

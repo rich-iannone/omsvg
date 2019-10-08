@@ -2,16 +2,16 @@
 % Please edit documentation in R/elements.R
 \name{svg_text}
 \alias{svg_text}
-\title{Addition of an `text` element}
+\title{Addition of an \code{text} element}
 \usage{
 svg_text(svg, x, y, text, path = NULL, attrs = list(),
   anims = list(), id = NULL)
 }
 \arguments{
-\item{svg}{The `svg` object that is created using the [SVG()] function.}
+\item{svg}{The \code{svg} object that is created using the \code{\link[=SVG]{SVG()}} function.}
 
-\item{x, y}{The `x` and `y` positions of the upper left of the text to be
-drawn. The `x` and `y` values are relative to upper left of the SVG drawing
+\item{x, y}{The \code{x} and \code{y} positions of the upper left of the text to be
+drawn. The \code{x} and \code{y} values are relative to upper left of the SVG drawing
 area itself.}
 
 \item{text}{A character vector that contains the text to be rendered.}
@@ -20,7 +20,7 @@ area itself.}
 string.}
 
 \item{attrs}{A presentation attribute list. The helper function
-[attrs_pres()] can help us easily generate this named list object. For the
+\code{\link[=attrs_pres]{attrs_pres()}} can help us easily generate this named list object. For the
 most part, the list's names are the presentation attribute names and the
 corresponding values are the matching attribute values.}
 
@@ -31,10 +31,10 @@ modifying this element in a later function call or for interacting with
 CSS.}
 }
 \description{
-The `svg_text()` function adds text to an `svg` object. As with many of the
-functions that create shape elements (such as [svg_rect()]), the starting
-position is defined by `x` and `y` values. All point positions are in units
-of `px`.
+The \code{svg_text()} function adds text to an \code{svg} object. As with many of the
+functions that create shape elements (such as \code{\link[=svg_rect]{svg_rect()}}), the starting
+position is defined by \code{x} and \code{y} values. All point positions are in units
+of \code{px}.
 }
 \examples{
 # Create an SVG with a single

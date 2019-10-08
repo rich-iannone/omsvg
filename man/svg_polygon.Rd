@@ -2,20 +2,20 @@
 % Please edit documentation in R/elements.R
 \name{svg_polygon}
 \alias{svg_polygon}
-\title{Addition of an `polygon` element}
+\title{Addition of an \code{polygon} element}
 \usage{
 svg_polygon(svg, points, attrs = list(), anims = list(), id = NULL)
 }
 \arguments{
-\item{svg}{The `svg` object that is created using the [SVG()] function.}
+\item{svg}{The \code{svg} object that is created using the \code{\link[=SVG]{SVG()}} function.}
 
-\item{points}{A numeric vector of points (with alternating values for `x` and
-`y` positions) that define the polygon. This can also be a single-length
+\item{points}{A numeric vector of points (with alternating values for \code{x} and
+\code{y} positions) that define the polygon. This can also be a single-length
 character vector that holds the formatted points string (space-separated
-`x` and `y` values, and comma-separated points).}
+\code{x} and \code{y} values, and comma-separated points).}
 
 \item{attrs}{A presentation attribute list. The helper function
-[attrs_pres()] can help us easily generate this named list object. For the
+\code{\link[=attrs_pres]{attrs_pres()}} can help us easily generate this named list object. For the
 most part, the list's names are the presentation attribute names and the
 corresponding values are the matching attribute values.}
 
@@ -26,14 +26,14 @@ modifying this element in a later function call or for interacting with
 CSS.}
 }
 \description{
-The `svg_polygon()` function adds a polygon to an `svg` object. In the
+The \code{svg_polygon()} function adds a polygon to an \code{svg} object. In the
 context of an SVG shape a polygon is similar to a polyline (defined by a
 series of points) except that the path will be automatically closed (i.e.,
 last point connects to the first point). Like a polyline, a polygon is drawn
 by connecting a series of points with straight lines. The points can be
 provided as a vector that's exactly divisible by two, or, as a formatted
-string that adheres to the specification of the `points` attribute of the SVG
-`<polygon>` tag. All point positions are in units of `px`.
+string that adheres to the specification of the \code{points} attribute of the SVG
+\code{<polygon>} tag. All point positions are in units of \code{px}.
 }
 \examples{
 # Create an SVG with a single

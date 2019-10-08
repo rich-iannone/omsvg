@@ -16,12 +16,12 @@ input image or shape.}
 \item{color}{The color of the drop shadow.}
 
 \item{opacity}{The opacity of the drop shadow. We can use a real number from
-`0` to `1` or a value in percentage units.}
+\code{0} to \code{1} or a value in percentage units.}
 }
 \description{
 A drop shadow appears beneath the input image or shape and its offset is
-controlled by `dx` and `dy`. The blurring of the drop shadow is set by the
-`stdev` value.
+controlled by \code{dx} and \code{dy}. The blurring of the drop shadow is set by the
+\code{stdev} value.
 }
 \examples{
 # Apply a drop shadow filter on a

@@ -2,18 +2,18 @@
 % Please edit documentation in R/elements.R
 \name{svg_path}
 \alias{svg_path}
-\title{Addition of an `path` element}
+\title{Addition of an \code{path} element}
 \usage{
 svg_path(svg, path, attrs = list(), anims = list(), id = NULL)
 }
 \arguments{
-\item{svg}{The `svg` object that is created using the [SVG()] function.}
+\item{svg}{The \code{svg} object that is created using the \code{\link[=SVG]{SVG()}} function.}
 
 \item{path}{A single-length character vector that holds the formatted path
 string.}
 
 \item{attrs}{A presentation attribute list. The helper function
-[attrs_pres()] can help us easily generate this named list object. For the
+\code{\link[=attrs_pres]{attrs_pres()}} can help us easily generate this named list object. For the
 most part, the list's names are the presentation attribute names and the
 corresponding values are the matching attribute values.}
 
@@ -24,12 +24,12 @@ modifying this element in a later function call or for interacting with
 CSS.}
 }
 \description{
-The `svg_path()` function adds a path to an `svg` object. A path can
+The \code{svg_path()} function adds a path to an \code{svg} object. A path can
 potentially be quite complex (with an interplay of line and curve commands),
-so, a hand-encoded `path` string is not often done by hand. For this reason,
-the `path` argument accepts only a formatted string that complies with the
-input requirements for the `d` attribute of the SVG `<path>` tag. All point
-positions are in units of `px`.
+so, a hand-encoded \code{path} string is not often done by hand. For this reason,
+the \code{path} argument accepts only a formatted string that complies with the
+input requirements for the \code{d} attribute of the SVG \code{<path>} tag. All point
+positions are in units of \code{px}.
 }
 \examples{
 # Create an SVG with a single

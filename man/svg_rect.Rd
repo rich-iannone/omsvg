@@ -2,31 +2,31 @@
 % Please edit documentation in R/elements.R
 \name{svg_rect}
 \alias{svg_rect}
-\title{Addition of a `rect` element}
+\title{Addition of a \code{rect} element}
 \usage{
 svg_rect(svg, x, y, width, height, rx = NULL, ry = NULL,
   attrs = list(), anims = list(), id = NULL)
 }
 \arguments{
-\item{svg}{The `svg` object that is created using the [SVG()] function.}
+\item{svg}{The \code{svg} object that is created using the \code{\link[=SVG]{SVG()}} function.}
 
-\item{x, y}{The `x` and `y` positions of the upper left of the rectangle to be
-drawn. The `x` and `y` values are relative to upper left of the SVG drawing
+\item{x, y}{The \code{x} and \code{y} positions of the upper left of the rectangle to be
+drawn. The \code{x} and \code{y} values are relative to upper left of the SVG drawing
 area. Both of these attributes can be animated.}
 
-\item{width, height}{The `width` and `height` of the rectangle that is to be
-drawn. The `width` is the distance in the 'x' direction from point `x`
-(proceeding right) and the `height` is the distance in the 'y' direction
-from point `y` (proceeding downward). Both of these attributes can be
+\item{width, height}{The \code{width} and \code{height} of the rectangle that is to be
+drawn. The \code{width} is the distance in the 'x' direction from point \code{x}
+(proceeding right) and the \code{height} is the distance in the 'y' direction
+from point \code{y} (proceeding downward). Both of these attributes can be
 animated.}
 
 \item{rx, ry}{Optional corner radius values in the 'x' and 'y' directions.
 Applies to all corners of the rectangle. If only one value is provided
-(say, just for `rx`) then the unset value will take that set value as well.
+(say, just for \code{rx}) then the unset value will take that set value as well.
 These attributes can both be animated.}
 
 \item{attrs}{A presentation attribute list. The helper function
-[attrs_pres()] can help us easily generate this named list object. For the
+\code{\link[=attrs_pres]{attrs_pres()}} can help us easily generate this named list object. For the
 most part, the list's names are the presentation attribute names and the
 corresponding values are the matching attribute values.}
 
@@ -37,11 +37,11 @@ modifying this element in a later function call or for interacting with
 CSS.}
 }
 \description{
-The `svg_rect()` function adds a rectangle to an `svg` object. The position
-of the rectangle is given by `x` and `y`, and this refers to the upper left
-point of the rectangle. The `width` and the `height` are the dimensions of
-the rectangle. All of these dimensions are in units of `px`. The optional
-`rx` and `ry` parameter are corner radius values (again, in `px` units) that
+The \code{svg_rect()} function adds a rectangle to an \code{svg} object. The position
+of the rectangle is given by \code{x} and \code{y}, and this refers to the upper left
+point of the rectangle. The \code{width} and the \code{height} are the dimensions of
+the rectangle. All of these dimensions are in units of \code{px}. The optional
+\code{rx} and \code{ry} parameter are corner radius values (again, in \code{px} units) that
 define x and y radius of the corners of the rectangle.
 }
 \examples{

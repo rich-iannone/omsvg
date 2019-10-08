@@ -2,21 +2,39 @@
 % Please edit documentation in R/SVG.R
 \name{SVG}
 \alias{SVG}
-\title{Create an `svg` object}
+\title{Create an \code{svg} object}
 \usage{
 SVG(width, height, title = NULL, desc = NULL)
 }
 \arguments{
-\item{width, height}{The dimensions of the SVG in `px` units.}
+\item{width, height}{The dimensions of the SVG in \code{px} units.}
 
-\item{title}{The `<title>` tag for the finalized SVG.}
+\item{title}{The \code{<title>} tag for the finalized SVG.}
 
-\item{desc}{The `<desc>` tag for the finalized SVG.}
+\item{desc}{The \code{<desc>} tag for the finalized SVG.}
 }
 \description{
-The `SVG()` function is the entry point for building an SVG from the ground
-up. We can provided predefined `height` and `width` attributes that define
+The \code{SVG()} function is the entry point for building an SVG from the ground
+up. We can provide predefined \code{height} and \code{width} attributes that define
 the canvas size for the SVG. From here, we would want to use functions that
-add elements to the SVG object (e.g., [svg_rect()], [svg_circle()], etc.) and
+add elements to the SVG object (e.g., \code{\link[=svg_rect]{svg_rect()}}, \code{\link[=svg_circle]{svg_circle()}}, etc.) and
 thus progressively build the graphic.
+}
+\examples{
+# Create an SVG with nothing drawn
+# within it
+svg <- SVG(width = 200, height = 100)
+
+# Add a rectangle and then a circle
+svg <-
+  svg \%>\%
+  svg_rect(
+    x = 20, y = 20,
+    width = 40, height = 40
+  ) \%>\%
+  svg_circle(
+    x = 100, y = 40,
+    diameter = 40
+  )
+
 }

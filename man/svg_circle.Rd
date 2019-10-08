@@ -2,22 +2,22 @@
 % Please edit documentation in R/elements.R
 \name{svg_circle}
 \alias{svg_circle}
-\title{Addition of a `circle` element}
+\title{Addition of a \code{circle} element}
 \usage{
 svg_circle(svg, x, y, diameter, attrs = list(), anims = list(),
   id = NULL)
 }
 \arguments{
-\item{svg}{The `svg` object that is created using the [SVG()] function.}
+\item{svg}{The \code{svg} object that is created using the \code{\link[=SVG]{SVG()}} function.}
 
-\item{x, y}{The `x` and `y` positions of the center of the circle to be
-drawn. The `x` and `y` values are relative to upper left of the SVG
+\item{x, y}{The \code{x} and \code{y} positions of the center of the circle to be
+drawn. The \code{x} and \code{y} values are relative to upper left of the SVG
 drawing area.}
 
-\item{diameter}{The diameter of the circle shape in units of `px`.}
+\item{diameter}{The diameter of the circle shape in units of \code{px}.}
 
 \item{attrs}{A presentation attribute list. The helper function
-[attrs_pres()] can help us easily generate this named list object. For the
+\code{\link[=attrs_pres]{attrs_pres()}} can help us easily generate this named list object. For the
 most part, the list's names are the presentation attribute names and the
 corresponding values are the matching attribute values.}
 
@@ -28,10 +28,10 @@ modifying this element in a later function call or for interacting with
 CSS.}
 }
 \description{
-The `svg_circle()` function adds a circle to an `svg` object. The position of
-the circle is given by `x` and `y`, and this refers to the center point of
-the point of the circle. The `diameter` of the circle is given in units of
-`px`.
+The \code{svg_circle()} function adds a circle to an \code{svg} object. The position of
+the circle is given by \code{x} and \code{y}, and this refers to the center point of
+the point of the circle. The \code{diameter} of the circle is given in units of
+\code{px}.
 }
 \examples{
 # Create an SVG with a single

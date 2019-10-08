@@ -7,7 +7,7 @@
 filter_offset(what = "source", dx = 0.2, dy = 0.2)
 }
 \arguments{
-\item{what}{What exactly should be offset? By default, it is the `"source"`
+\item{what}{What exactly should be offset? By default, it is the \code{"source"}
 image.}
 
 \item{dx, dy}{The offset of the element position compared to its initial
@@ -15,7 +15,7 @@ position.}
 }
 \description{
 The offset filter applies an offset in the x and y directions to an existing
-element. The offset is handled by setting values for `dx` and `dy`.
+element. The offset is handled by setting values for \code{dx} and \code{dy}.
 }
 \examples{
 # Add a circle element to an

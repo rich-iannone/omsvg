@@ -2,20 +2,20 @@
 % Please edit documentation in R/elements.R
 \name{svg_line}
 \alias{svg_line}
-\title{Addition of an `line` element}
+\title{Addition of an \code{line} element}
 \usage{
 svg_line(svg, x1, y1, x2, y2, attrs = list(), anims = list(),
   id = NULL)
 }
 \arguments{
-\item{svg}{The `svg` object that is created using the [SVG()] function.}
+\item{svg}{The \code{svg} object that is created using the \code{\link[=SVG]{SVG()}} function.}
 
-\item{x1, y1}{The `x` and `y` positions of the line's start point.}
+\item{x1, y1}{The \code{x} and \code{y} positions of the line's start point.}
 
-\item{x2, y2}{The `x` and `y` positions of the line's end point.}
+\item{x2, y2}{The \code{x} and \code{y} positions of the line's end point.}
 
 \item{attrs}{A presentation attribute list. The helper function
-[attrs_pres()] can help us easily generate this named list object. For the
+\code{\link[=attrs_pres]{attrs_pres()}} can help us easily generate this named list object. For the
 most part, the list's names are the presentation attribute names and the
 corresponding values are the matching attribute values.}
 
@@ -26,9 +26,9 @@ modifying this element in a later function call or for interacting with
 CSS.}
 }
 \description{
-The `svg_line()` function adds a line to an `svg` object. The line is drawn
-using a start point (`x1` and `y1`) and an end point (`x2` and `y2`) points.
-These positions are in units of `px`.
+The \code{svg_line()} function adds a line to an \code{svg} object. The line is drawn
+using a start point (\code{x1} and \code{y1}) and an end point (\code{x2} and \code{y2}) points.
+These positions are in units of \code{px}.
 }
 \examples{
 # Create an SVG with a single

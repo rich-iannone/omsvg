@@ -29,15 +29,15 @@ attrs_pres(stroke = NULL, stroke_width = NULL, stroke_opacity = NULL,
 \item{stroke}{The color used to paint the outline of the shape.}
 
 \item{stroke_width}{The width of the stroke to be applied to the shape. Can
-be expressed in `px` or percentage units.}
+be expressed in \code{px} or percentage units.}
 
 \item{stroke_opacity}{The opacity of the stroke of a shape. We can use a real
-number from `0` to `1` or a value in percentage units.}
+number from \code{0} to \code{1} or a value in percentage units.}
 
 \item{fill}{The color used to fill the inside of the element.}
 
 \item{fill_opacity}{The opacity of the color or the content the current
-object is filled with. We can use a real number from `0` to `1` or a value
+object is filled with. We can use a real number from \code{0} to \code{1} or a value
 in percentage units.}
 
 \item{font_family}{Which font family will be used to render the text of the
@@ -46,32 +46,32 @@ element?}
 \item{font_size}{The size of the font.}
 
 \item{font_weight}{The weight or boldness of the font. Possible values are
-`"normal"`, `"bold"`, `"lighter"`, `"bolder"`, and the values `100`, `200`,
-and so on, up to `900`.}
+\code{"normal"}, \code{"bold"}, \code{"lighter"}, \code{"bolder"}, and the values \code{100}, \code{200},
+and so on, up to \code{900}.}
 
-\item{font_style}{Whether a font should be styled with a `"normal"`,
-`"italic"`, or `"oblique"` face from its `font_family`.}
+\item{font_style}{Whether a font should be styled with a \code{"normal"},
+\code{"italic"}, or \code{"oblique"} face from its \code{font_family}.}
 
 \item{text_decoration}{Add decorative lines on text. Options are
-`"underline"`, `"overline"`, `"line-through"`, and `"blink"`.}
+\code{"underline"}, \code{"overline"}, \code{"line-through"}, and \code{"blink"}.}
 
 \item{transform}{A list of transform definitions that are applied to an
 element and the element's children.}
 
-\item{filter}{The filter effects defined by a `<filter>` element that shall
-be applied to its element. Requires a reference to a `<filter>` `id`
+\item{filter}{The filter effects defined by a \code{<filter>} element that shall
+be applied to its element. Requires a reference to a \code{<filter>} \code{id}
 attribute.}
 
-\item{mask}{The mask defined by a `<mask>` element that shall be applied to
-its element. Requires a reference to a `<mask>` `id` attribute.}
+\item{mask}{The mask defined by a \code{<mask>} element that shall be applied to
+its element. Requires a reference to a \code{<mask>} \code{id} attribute.}
 
-\item{clip_path}{The clipping path defined by a `<clipPath>` element that
-shall be applied to its element. Requires a reference to a `<clipPath>`
-`id` attribute.}
+\item{clip_path}{The clipping path defined by a \code{<clipPath>} element that
+shall be applied to its element. Requires a reference to a \code{<clipPath>}
+\code{id} attribute.}
 
 \item{clip_rule}{A rule for determining what side of a path is inside of a
-shape in order to know how `clip_path` should clip its target.
-Options are `"nonzero"`, `"evenodd"`, and `"inherit"`.}
+shape in order to know how \code{clip_path} should clip its target.
+Options are \code{"nonzero"}, \code{"evenodd"}, and \code{"inherit"}.}
 
 \item{stroke_dasharray}{The pattern of dashes and gaps used to paint the
 outline of the shape.}
@@ -80,41 +80,41 @@ outline of the shape.}
 dash array.}
 
 \item{stroke_linecap}{The shape to be used at the end of open subpaths when
-they are stroked. We can use the options `"butt"`, `"round"`, or
-`"square"`.}
+they are stroked. We can use the options \code{"butt"}, \code{"round"}, or
+\code{"square"}.}
 
 \item{stroke_linejoin}{The shape to be used at the corners of paths when they
-are stroked (`"arcs"`, `"bevel"`, `"miter"`, `"miter-clip"`, and
-`"round"`).}
+are stroked (\code{"arcs"}, \code{"bevel"}, \code{"miter"}, \code{"miter-clip"}, and
+\code{"round"}).}
 
 \item{stroke_miterlimit}{The limit on the ratio of the miter length to the
-`stroke_width` Used to draw a miter join. A numeric value should be used
+\code{stroke_width} Used to draw a miter join. A numeric value should be used
 to define the limit.}
 
 \item{fill_rule}{A rule for determining what side of a path is inside of a
-shape. Options are `"nonzero"`, `"evenodd"`, and `"inherit"`.}
+shape. Options are \code{"nonzero"}, \code{"evenodd"}, and \code{"inherit"}.}
 
-\item{color}{Potentially provides an indirect value (as the `currentColor`)
-for `fill`, `stroke`, `stop_color`, `flood_color` and `lighting_color`
+\item{color}{Potentially provides an indirect value (as the \code{currentColor})
+for \code{fill}, \code{stroke}, \code{stop_color}, \code{flood_color} and \code{lighting_color}
 options.}
 
 \item{opacity}{Specifies the transparency of an object or a group of objects.
-We can use a real number from `0` to `1` or a value in percentage units.}
+We can use a real number from \code{0} to \code{1} or a value in percentage units.}
 
 \item{color_interpolation}{The color space for gradient interpolations, color
-animations, and alpha compositing. Allowed values are: `"auto"`, `"sRGB"`,
-`"linearRGB"`, and `"inherit"`.}
+animations, and alpha compositing. Allowed values are: \code{"auto"}, \code{"sRGB"},
+\code{"linearRGB"}, and \code{"inherit"}.}
 
 \item{color_interpolation_filters}{The color space for imaging operations
-performed via filter effects. Allowed values are: `"auto"`, `"sRGB"`,
-`"linearRGB"`, and `"inherit"`.}
+performed via filter effects. Allowed values are: \code{"auto"}, \code{"sRGB"},
+\code{"linearRGB"}, and \code{"inherit"}.}
 
 \item{lighting_color}{The color of the light source for filter primitives
-elements `<feSpecularLighting>` and `<feDiffuseLighting>`.}
+elements \code{<feSpecularLighting>} and \code{<feDiffuseLighting>}.}
 
 \item{flood_color, flood_opacity}{The color and opacity level to use to flood
-the current filter primitive subregion defined through the `<feFlood>` or
-`<feDropShadow>` element.}
+the current filter primitive subregion defined through the \code{<feFlood>} or
+\code{<feDropShadow>} element.}
 
 \item{stop_color, stop_opacity}{Sets the color and opacity at a gradient stop.}
 
@@ -129,81 +129,81 @@ on the height of lowercase letters rather than the height of capital
 letters.}
 
 \item{text_anchor}{The vertical alignment a string of text. We can use the
-values `"start"`, `"middle"`, `"end"`, or `"inherit"`.}
+values \code{"start"}, \code{"middle"}, \code{"end"}, or \code{"inherit"}.}
 
 \item{letter_spacing, word_spacing}{The spacing between text characters and
 between words.}
 
 \item{dominant_baseline}{The baseline used to align the box’s text and
-inline-level contents. The options for this are: `"auto"`, `"text-bottom"`,
-`"alphabetic"`, `"ideographic"`, `"middle"`, `"central"`, `"mathematical"`,
-`"hanging"`, and `"text-top"`.}
+inline-level contents. The options for this are: \code{"auto"}, \code{"text-bottom"},
+\code{"alphabetic"}, \code{"ideographic"}, \code{"middle"}, \code{"central"}, \code{"mathematical"},
+\code{"hanging"}, and \code{"text-top"}.}
 
 \item{alignment_baseline}{Determines how an object is to be aligned along the
-font baseline with respect to its parent. Allowed values are: `"auto"`,
-`"baseline"`, `"before-edge"`, `"text-before-edge"`, `"middle"`,
-`"central"`, `"after-edge"`, `"text-after-edge"`, `"ideographic"`,
-`"alphabetic"`, `"hanging"`, `"mathematical"`, and `"inherit"`.}
+font baseline with respect to its parent. Allowed values are: \code{"auto"},
+\code{"baseline"}, \code{"before-edge"}, \code{"text-before-edge"}, \code{"middle"},
+\code{"central"}, \code{"after-edge"}, \code{"text-after-edge"}, \code{"ideographic"},
+\code{"alphabetic"}, \code{"hanging"}, \code{"mathematical"}, and \code{"inherit"}.}
 
 \item{baseline_shift}{An option for repositioning of the dominant-baseline
 relative to the dominant-baseline of the parent text content element. Valid
-options are: `"auto"`, `"baseline"`, `"super"`, `"sub"`, `"inherit"`, a
+options are: \code{"auto"}, \code{"baseline"}, \code{"super"}, \code{"sub"}, \code{"inherit"}, a
 length value, or a percentage value.}
 
-\item{direction}{The base writing direction of text. Can be either `"ltr"`,
-`"rtl"`, or `"inherit"`.}
+\item{direction}{The base writing direction of text. Can be either \code{"ltr"},
+\code{"rtl"}, or \code{"inherit"}.}
 
-\item{writing_mode}{The initial inline-progression-direction for a `<text>`
+\item{writing_mode}{The initial inline-progression-direction for a \code{<text>}
 element (can be left-to-right, right-to-left, or top-to-bottom). Valid
-values are `"lr-tb"`, `"rl-tb"`, `"tb-rl"`, `"lr"`, `"rl"`, `"tb"`, or
-`"inherit"`.}
+values are \code{"lr-tb"}, \code{"rl-tb"}, \code{"tb-rl"}, \code{"lr"}, \code{"rl"}, \code{"tb"}, or
+\code{"inherit"}.}
 
 \item{overflow}{The overflow behavior for the content of a block-level
-element when it overflows the element's box. Options are: `"visible"`,
-`"hidden"`, `"scroll"`, `"auto"`, and `"inherit"`.}
+element when it overflows the element's box. Options are: \code{"visible"},
+\code{"hidden"}, \code{"scroll"}, \code{"auto"}, and \code{"inherit"}.}
 
 \item{marker_start, marker_mid, marker_end}{The arrowhead or polymarker that
 will be drawn at the first node, the final node, or, the in-between nodes.
-This applies to a `<path>` element or a basic shape. These attributes can
+This applies to a \code{<path>} element or a basic shape. These attributes can
 be applied to any element but only have an effect on the following seven
-elements: `<rect>`, `<circle>`, `<ellipse>`, `<line>`, `<path>`,
-`<polygon>`, and `<polyline>`. Requires a reference to a `<marker>` `id`
-attribute (defined within the SVG's `<defs>` area).}
+elements: \code{<rect>}, \code{<circle>}, \code{<ellipse>}, \code{<line>}, \code{<path>},
+\code{<polygon>}, and \code{<polyline>}. Requires a reference to a \code{<marker>} \code{id}
+attribute (defined within the SVG's \code{<defs>} area).}
 
 \item{pointer_events}{Defines whether or when an element may be the target of
-a mouse event. Options are: `"bounding-box"`, `"visiblePainted"`,
-`"visibleFil"`, `"visibleStroke"`, `"visible"`| `"painted"`, `"fill"`,
-`"stroke"`, `"all"`, and `"none"`.}
+a mouse event. Options are: \code{"bounding-box"}, \code{"visiblePainted"},
+\code{"visibleFil"}, \code{"visibleStroke"}, \code{"visible"}| \code{"painted"}, \code{"fill"},
+\code{"stroke"}, \code{"all"}, and \code{"none"}.}
 
 \item{cursor}{The mouse cursor displayed when the mouse pointer is over an
 element.}
 
 \item{vector_effect}{The vector effect to use when drawing an object. Options
-are: `"default"`, `"non-scaling"`, `"stroke"`, and `"inherit"`.}
+are: \code{"default"}, \code{"non-scaling"}, \code{"stroke"}, and \code{"inherit"}.}
 
 \item{shape_rendering, color_rendering, text_rendering, image_rendering}{A
 quality setting parameter for shapes, color interpolation and compositing,
 text, and image processing. All of the rendering attributes can use the
-`"auto"` and `"optimizeSpeed"` directives. For shape rendering, we can
-elect for `"crispEdges"`, `"geometricPrecision"`, or just `"inherit"`. When
-rendering color, additional choices are `"optimizeQuality"` and
-`"inherit"`. Text rendering allows us the additional
-`"optimizeLegibility"`, `"geometricPrecision"`, and `"inherit'` options.
-With image rendering, we can furthermore choose to `"optimizeSpeed"`.}
+\code{"auto"} and \code{"optimizeSpeed"} directives. For shape rendering, we can
+elect for \code{"crispEdges"}, \code{"geometricPrecision"}, or just \code{"inherit"}. When
+rendering color, additional choices are \code{"optimizeQuality"} and
+\code{"inherit"}. Text rendering allows us the additional
+\code{"optimizeLegibility"}, \code{"geometricPrecision"}, and \code{"inherit"} options.
+With image rendering, we can furthermore choose to \code{"optimizeSpeed"}.}
 
 \item{display}{Allows for control of the rendering of graphical or container
-elements. A value of `"none"` indicates that the given element and its
-children will not be rendered. Any value other than `"none"` or `"inherit"`
+elements. A value of \code{"none"} indicates that the given element and its
+children will not be rendered. Any value other than \code{"none"} or \code{"inherit"}
 indicates that the given element will be rendered by the browser.}
 
 \item{visibility}{The visibility attribute lets us control the visibility of
-graphical elements. With a value of `"hidden"` or `"collapse"`, the element
+graphical elements. With a value of \code{"hidden"} or \code{"collapse"}, the element
 is invisible.}
 }
 \description{
-The `attrs_pres()` helper function can be used to more easily generate a
-valid presentation attribute list for the `attrs` argument that is present
-in every SVG element function (e.g., [svg_rect()], [svg_text()], etc.). All
+The \code{attrs_pres()} helper function can be used to more easily generate a
+valid presentation attribute list for the \code{attrs} argument that is present
+in every SVG element function (e.g., \code{\link[=svg_rect]{svg_rect()}}, \code{\link[=svg_text]{svg_text()}}, etc.). All
 of the presentation attributes formally included here as options can be
 animated.
 }

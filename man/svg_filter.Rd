@@ -2,24 +2,24 @@
 % Please edit documentation in R/filters.R
 \name{svg_filter}
 \alias{svg_filter}
-\title{Build an SVG `<filter>`}
+\title{Build an SVG \code{<filter>}}
 \usage{
 svg_filter(svg, id, width = NULL, height = NULL, filters = list())
 }
 \arguments{
-\item{svg}{The `svg` object that is created using the [SVG()] function.}
+\item{svg}{The \code{svg} object that is created using the \code{\link[=SVG]{SVG()}} function.}
 
 \item{id}{The ID value to assign to the filter. This must be provided and it
-should be unique among all `<filter>` elements.}
+should be unique among all \code{<filter>} elements.}
 
-\item{width, height}{The lengths of `width` and `height` define the extent of
+\item{width, height}{The lengths of \code{width} and \code{height} define the extent of
 the filter.}
 
-\item{filters}{A list of `filter_*()` function calls. Examples include
-[filter_image()] and [filter_gaussian_blur()].}
+\item{filters}{A list of \code{filter_*()} function calls. Examples include
+\code{\link[=filter_image]{filter_image()}} and \code{\link[=filter_gaussian_blur]{filter_gaussian_blur()}}.}
 }
 \description{
-The `svg_filter()` let's us create a named `<filter>` element that we can
+The \code{svg_filter()} let's us create a named \code{<filter>} element that we can
 apply to any SVG elements (such as shapes). We can bundle one or more filter
-elements by supplying a list of `filter_*()` calls to the `filters` argument.
+elements by supplying a list of \code{filter_*()} calls to the \code{filters} argument.
 }
