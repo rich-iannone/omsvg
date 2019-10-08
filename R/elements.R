@@ -54,9 +54,6 @@ svg_rect <- function(svg,
                      anims = list(),
                      id = NULL) {
 
-
-
-
   element_list <-
     list(
       type = "rect",
