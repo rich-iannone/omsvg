@@ -7,8 +7,8 @@
 #' @inheritParams svg_rect
 #' @param id The ID value to assign to the filter. This must be provided and it
 #'   should be unique among all `<filter>` elements.
-#' @param width,height The lengths of `width` and `height` define the extent
-#'   of the filter.
+#' @param width,height The lengths of `width` and `height` define the extent of
+#'   the filter.
 #' @param filters A list of `filter_*()` function calls. Examples include
 #'   [filter_image()] and [filter_gaussian_blur()].
 #'
@@ -232,6 +232,9 @@ filter_dilate <- function(radius = 1) {
 #' @param dx,dy The offset of the drop shadow compared to the position of the
 #'   input image or shape.
 #' @param stdev The number of standard deviations for the blur effect.
+#' @param color The color of the drop shadow.
+#' @param opacity The opacity of the drop shadow. We can use a real number from
+#'   `0` to `1` or a value in percentage units.
 #'
 #' @examples
 #' # Apply a drop shadow filter on a
