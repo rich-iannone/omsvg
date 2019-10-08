@@ -24,7 +24,7 @@
 #'   [attrs_pres()] can help us easily generate this named list object. For the
 #'   most part, the list's names are the presentation attribute names and the
 #'   corresponding values are the matching attribute values.
-#' @param animate An animation directive list.
+#' @param anims An animation directive list. Currently not implemented.
 #' @param id An optional ID value to give to the built tag. This is useful for
 #'   modifying this element in a later function call or for interacting with
 #'   CSS.
