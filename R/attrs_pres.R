@@ -125,7 +125,7 @@
 #'   elect for `"crispEdges"`, `"geometricPrecision"`, or just `"inherit"`. When
 #'   rendering color, additional choices are `"optimizeQuality"` and
 #'   `"inherit"`. Text rendering allows us the additional
-#'   `"optimizeLegibility"`, `"geometricPrecision"`, and `"inherit'` options.
+#'   `"optimizeLegibility"`, `"geometricPrecision"`, and `"inherit"` options.
 #'   With image rendering, we can furthermore choose to `"optimizeSpeed"`.
 #' @param display Allows for control of the rendering of graphical or container
 #'   elements. A value of `"none"` indicates that the given element and its
