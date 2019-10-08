@@ -1,0 +1,17 @@
+Package: omsvg
+Type: Package
+Title: Build and Transform SVGs
+Version: 0.0.0.9000
+Authors@R: 
+    person("Richard", "Iannone", , "riannone@me.com", c("aut", "cre"),
+           comment = c(ORCID = "0000-0003-3925-190X"))
+Description: Build scalable vector graphics ('SVG') components using
+    element-based functions. With an 'svg' object, we can modify its graphical
+    elements with a suite of transform functions.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Depends: R (>= 3.2.1)
+LazyData: true
+RoxygenNote: 6.1.1
+Imports: 
+    magrittr
