@@ -12,6 +12,11 @@ filter_drop_shadow(dx = 0.2, dy = 0.2, stdev = 1, color = "black",
 input image or shape.}
 
 \item{stdev}{The number of standard deviations for the blur effect.}
+
+\item{color}{The color of the drop shadow.}
+
+\item{opacity}{The opacity of the drop shadow. We can use a real number from
+`0` to `1` or a value in percentage units.}
 }
 \description{
 A drop shadow appears beneath the input image or shape and its offset is

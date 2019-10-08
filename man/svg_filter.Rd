@@ -12,8 +12,8 @@ svg_filter(svg, id, width = NULL, height = NULL, filters = list())
 \item{id}{The ID value to assign to the filter. This must be provided and it
 should be unique among all `<filter>` elements.}
 
-\item{width, height}{The lengths of `width` and `height` define the extent
-of the filter.}
+\item{width, height}{The lengths of `width` and `height` define the extent of
+the filter.}
 
 \item{filters}{A list of `filter_*()` function calls. Examples include
 [filter_image()] and [filter_gaussian_blur()].}
