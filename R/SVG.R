@@ -9,6 +9,10 @@
 #' @param width,height The dimensions of the SVG in `px` units.
 #' @param title The `<title>` tag for the finalized SVG.
 #' @param desc The `<desc>` tag for the finalized SVG.
+#' @param anim_iterations How many should an SVG animation (if defined by use of
+#'   the [anims()] function) be played? By default this is `"infinite"` (i.e.,
+#'   looped indefinitely) but we can specify the animation iteration count as
+#'   a positive number.
 #'
 #' @examples
 #' # Create an SVG with nothing drawn
@@ -31,7 +35,21 @@
 SVG <- function(width,
                 height,
                 title = NULL,
-                desc = NULL) {
+                desc = NULL,
+                anim_iterations = "infinite") {
+
+  if (is.null(anim_iterations)) {
+    anim_iterations <- "infinite"
+  }
+
+  if (all(!is.numeric(anim_iterations) & anim_iterations != "infinite")) {
+    stop("The `anim_iterations` value must either be `\"infinite\"` or a positive number.",
+         call. = FALSE)
+  }
+
+  if (is.numeric(anim_iterations)) {
+    anim_iterations <- anim_iterations %>% round(digits = 0) %>% abs()
+  }
 
   obj <-
     list(
@@ -39,6 +57,7 @@ SVG <- function(width,
       height = height,
       title = title,
       desc = desc,
+      anim_iterations = anim_iterations,
       elements = list(),
       defs = list(),
       anims = list()
