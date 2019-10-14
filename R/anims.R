@@ -1,0 +1,350 @@
+#' Express animations for an element
+#'
+#' @param ... A call to the [anims()] function, which itself allows us to
+#'   express one or more animations (through `anim_*()` functions) at set
+#'   keyframe times.
+#'
+#' @examples
+#' # Basic animation of an element's
+#' # position (moving to a new `x` and
+#' # `y` position)
+#' svg_1 <-
+#'   SVG(width = 300, height = 300) %>%
+#'   svg_rect(
+#'     x = 50, y = 50,
+#'     width = 50, height = 50,
+#'     attrs = attrs_pres(
+#'       stroke = "magenta",
+#'       fill = "lightblue"
+#'     ),
+#'     anims = anims(
+#'       2.0 ~ anim_position(x = 100, y = 50)
+#'     )
+#'   )
+#'
+#' # We can define multiple animations
+#' # for a single element: put them in a
+#' # `list()`; the `timing` function for
+#' # both `anim_*()` function is no longer
+#' # linear but now eases in and out
+#' svg_2 <-
+#'   SVG(width = 300, height = 300) %>%
+#'   svg_rect(
+#'     x = 50, y = 50,
+#'     width = 50, height = 50,
+#'     attrs = attrs_pres(
+#'       stroke = "black",
+#'       fill = "yellow"
+#'     ),
+#'     anims = anims(
+#'       0.5 ~ list(
+#'         anim_position(x = 50, y = 50, timing = ease_in_out()),
+#'         anim_rotation(0, timing = ease_in_out())
+#'       ),
+#'       2.0 ~ list(
+#'         anim_position(x = 200, y = 50, timing = ease_in_out()),
+#'         anim_rotation(90, timing = ease_in_out())
+#'       )
+#'     )
+#'   )
+#'
+#' # The initial state of the element
+#' # can be used in any `anim_*()`
+#' # function with `initial = TRUE`
+#' svg_3 <-
+#'   SVG(width = 300, height = 300) %>%
+#'   svg_rect(
+#'     x = 50, y = 50,
+#'     width = 50, height = 50,
+#'     attrs = attrs_pres(
+#'       stroke = "black",
+#'       fill = "yellow"
+#'     ),
+#'     anims = anims(
+#'       1.0 ~ list(
+#'         anim_position(initial = TRUE),
+#'         anim_rotation(initial = TRUE)
+#'       ),
+#'       3.0 ~ list(
+#'         anim_position(x = 200, y = 50),
+#'         anim_rotation(90)
+#'       ),
+#'       5.0 ~ list(
+#'         anim_position(initial = TRUE),
+#'         anim_rotation(initial = TRUE)
+#'       )
+#'     )
+#'   )
+#'
+#' @export
+anims <- function(...) {
+
+  x <- list(...)
+
+  # If nothing is provided, return `data` unchanged
+  if (length(x) == 0) {
+    stop("Nothing was provided to `...`:\n",
+         " * Use formula expressions to define animation timings",
+         call. = FALSE)
+  }
+
+  all_formulas <-
+    x %>%
+    vapply(
+      FUN.VALUE = logical(1),
+      USE.NAMES = FALSE,
+      FUN = function(x) {
+        inherits(x, "formula")
+      }
+    ) %>%
+    all()
+
+  if (!all_formulas) {
+    stop("Only two-sided formulas should be provided to `...`",
+         call. = FALSE)
+  }
+
+  x %>%
+    lapply(function(x) {
+
+      rhs <- x %>% rlang::f_rhs() %>% rlang::eval_tidy()
+
+      anims_dfs <- data.frame()
+
+      # If `rhs` is not a list of `anim_*` objects (but a single one)
+      # follow the first case, otherwise, parse each list item
+      if (class(rhs) %>% tidy_grepl("^anim_")) {
+
+        lhs <- x %>% rlang::f_lhs()
+
+        timing <- rhs$timing
+
+        if (is.null(timing)) {
+          timing <- "linear"
+        }
+
+        anim_type <- class(rhs)
+
+        rhs$timing <- timing
+        rhs$time_s <- lhs
+        rhs$anim_type <- anim_type
+
+        rhs <-
+          rhs %>%
+          unclass() %>%
+          as.data.frame(stringsAsFactors = FALSE)
+
+        anims_dfs <- dplyr::bind_rows(anims_dfs, rhs)
+
+      } else {
+
+        for (i in seq(length(rhs))) {
+
+          lhs <- x %>% rlang::f_lhs()
+          rhs_i <- rhs[[i]]
+
+          timing <- rhs_i$timing
+
+          if (is.null(timing)) {
+            timing <- "linear"
+          }
+
+          anim_type <- class(rhs_i)
+
+          rhs_i$timing <- timing
+          rhs_i$time_s <- lhs
+          rhs_i$anim_type <- anim_type
+
+          rhs_i <-
+            rhs_i %>%
+            unclass() %>%
+            as.data.frame(stringsAsFactors = FALSE)
+
+          anims_dfs <- dplyr::bind_rows(anims_dfs, rhs_i)
+        }
+      }
+
+      anims_dfs <-
+        anims_dfs %>%
+        dplyr::select(
+          dplyr::one_of(c("timing", "initial", "time_s", "anim_type")),
+          dplyr::everything()
+        )
+
+      if ("anim_rotation" %in% anims_dfs$anim_type &
+          !("anim_position" %in% anims_dfs$anim_type)) {
+
+        anim_df_position <-
+          anims_dfs %>%
+          subset(anim_type == "anim_rotation") %>%
+          dplyr::mutate(
+            initial = TRUE,
+            anim_type = "anim_position",
+            x = NA_character_,
+            y = NA_character_
+          ) %>%
+          dplyr::select(-anchor, -rotation)
+
+        anims_dfs <- anims_dfs %>% dplyr::bind_rows(anim_df_position)
+      }
+
+      anims_dfs
+    }) %>%
+    do.call(dplyr::bind_rows, .) %>%
+    dplyr::arrange(anim_type, time_s)
+}
+
+#' Create a custom timing function for animation
+#'
+#' @param x1,y1,x2,y2 The `x` and `y` values for the first and second bezier control
+#' points.
+#'
+#' @export
+cubic_bezier <- function(x1 = 0.5,
+                         y1 = 0.5,
+                         x2 = 0.5,
+                         y2 = 0.5) {
+
+  if (x1 < 0 || x1 > 1) {
+    stop("The `x1` value must be a number in the range of 0 and 1.",
+         call. = FALSE)
+  }
+
+  if (x2 < 0 || x2 > 1) {
+    stop("The `x2` value must be a number in the range of 0 and 1.",
+         call. = FALSE)
+  }
+
+  bezier_vctr <- c(x1, y1, x2, y2)
+
+  include_as_bezier_values(bezier_vctr = bezier_vctr)
+}
+
+#' Use a timing function for an 'easing in' animation
+#'
+#' @param power The preset to use for the easing in cubic bezier function.
+#'
+#' @export
+ease_in <- function(power = "basic") {
+
+  validate_easing_power(power = power)
+
+  easing_fn(type = "ease_in", power = {{ power }})
+}
+
+#' Use a timing function for an 'easing out' animation
+#'
+#' @inheritParams ease_in
+#'
+#' @export
+ease_out <- function(power = "basic") {
+
+  validate_easing_power(power = power)
+
+  easing_fn(type = "ease_out", power = {{ power }})
+}
+
+#' Use a timing function for an 'easing in and out' animation
+#'
+#' @inheritParams ease_in
+#'
+#' @export
+ease_in_out <- function(power = "basic") {
+
+  validate_easing_power(power = power)
+
+  easing_fn(type = "ease_in_out", power = {{ power }})
+}
+
+#' Use a linear timing function for animation
+#'
+#' @export
+linear <- function() {
+
+  "linear()"
+}
+
+#' Use a step-start timing function for animation
+#'
+#' @export
+step_start <- function() {
+
+  "step-start()"
+}
+
+#' Use a step-end timing function for animation
+#'
+#' @export
+step_end <- function() {
+
+  "step-end()"
+}
+
+easing_fn <- function(type, power) {
+
+  # Create a formatted `cubic-bezier()` function from
+  # a query of the `bezier_vals()` table
+  bezier_vals() %>%
+    dplyr::filter(type == {{ type }}) %>%
+    dplyr::filter(power == {{ power}}) %>%
+    .["vals"] %>%
+    dplyr::pull(vals) %>%
+    .[[1]] %>%
+    include_as_bezier_values()
+}
+
+bezier_vals <- function() {
+
+  dplyr::tribble(
+    ~type,          ~power,      ~vals,
+    "ease_in",      "basic",     c(0.420, 0.000, 1.000, 1.000),
+    "ease_in",      "quad",      c(0.550, 0.085, 0.680, 0.530),
+    "ease_in",      "cubic",     c(0.550, 0.055, 0.675, 0.190),
+    "ease_in",      "quart",     c(0.895, 0.030, 0.685, 0.220),
+    "ease_in",      "quint",     c(0.755, 0.050, 0.855, 0.060),
+    "ease_in",      "sine",      c(0.470, 0.000, 0.745, 0.715),
+    "ease_in",      "expo",      c(0.950, 0.050, 0.795, 0.035),
+    "ease_in",      "circ",      c(0.600, 0.040, 0.980, 0.335),
+    "ease_in",      "back",      c(0.600, -0.280, 0.735, 0.045),
+
+    "ease_out",     "basic",     c(0.000, 0.000, 0.580, 1.000),
+    "ease_out",     "quad",      c(0.250, 0.460, 0.450, 1.000),
+    "ease_out",     "cubic",     c(0.215, 0.610, 0.355, 1.000),
+    "ease_out",     "quart",     c(0.165, 0.840, 0.440, 1.000),
+    "ease_out",     "quint",     c(0.230, 1.000, 0.320, 1.000),
+    "ease_out",     "sine",      c(0.390, 0.575, 0.565, 1.000),
+    "ease_out",     "expo",      c(0.190, 1.000, 0.220, 1.000),
+    "ease_out",     "circ",      c(0.075, 0.820, 0.165, 1.000),
+    "ease_out",     "back",      c(0.175, 0.885, 0.320, 1.275),
+
+    "ease_in_out",  "basic",     c(0.420, 0.000, 0.580, 1.000),
+    "ease_in_out",  "quad",      c(0.455, 0.030, 0.515, 0.955),
+    "ease_in_out",  "cubic",     c(0.645, 0.045, 0.355, 1.000),
+    "ease_in_out",  "quart",     c(0.770, 0.000, 0.175, 1.000),
+    "ease_in_out",  "quint",     c(0.860, 0.000, 0.070, 1.000),
+    "ease_in_out",  "sine",      c(0.445, 0.050, 0.550, 0.950),
+    "ease_in_out",  "expo",      c(1.000, 0.000, 0.000, 1.000),
+    "ease_in_out",  "circ",      c(0.785, 0.135, 0.150, 0.860),
+    "ease_in_out",  "back",      c(0.680, -0.550, 0.265, 1.550)
+  )
+}
+
+validate_easing_power <- function(power) {
+
+  power_values <-
+    bezier_vals() %>%
+    dplyr::pull(power) %>%
+    unique()
+
+  if (!(power %in% power_values)) {
+    stop("The value for `power` is not valid.", call. = FALSE)
+  }
+}
+
+include_as_bezier_values <- function(bezier_vctr) {
+
+  bezier_vctr %>%
+    as.character() %>%
+    collapse_strings(",") %>%
+    encase_in_css_fn("cubic-bezier")
+}
