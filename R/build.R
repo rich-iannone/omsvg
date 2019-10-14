@@ -3,6 +3,8 @@ build_svg <- function(svg) {
   width  <- svg$width
   height <- svg$height
   title  <- svg$title
+  anim_iterations <- svg$anim_iterations
+
   desc   <- svg$desc
 
   elements <- svg$elements
@@ -26,6 +28,36 @@ build_svg <- function(svg) {
       USE.NAMES = FALSE,
       `[[`, 1
     )
+
+  if (any_anims(elements = elements)) {
+
+    anim_elements <- which_have_anims(elements = elements)
+
+    keyframes <- c()
+
+    # get keyframes for each element with animations
+    for (element_i in anim_elements) {
+
+      elements <-
+        process_animations_for_element(
+          elements = elements,
+          index = element_i,
+          anim_iterations = anim_iterations
+        )
+
+      keyframes <- c(keyframes, elements[[element_i]]$anims_built$keyframes)
+    }
+
+    # Build all styles
+    built_styles <-
+      keyframes %>%
+      collapse_strings("\n") %>%
+      paste_left("<style>\n") %>%
+      paste_right("\n</style>")
+
+  } else {
+    built_styles <- c()
+  }
 
   # Build all elements
   built_elements <-
@@ -78,6 +110,11 @@ build_svg <- function(svg) {
   # Addition of built definitions
   svg_lines <- c(svg_lines, built_defs)
 
+  # Addition of built styles
+  if (length(built_styles) > 0) {
+    svg_lines <- c(svg_lines, built_styles)
+  }
+
   # Addition of the built elements
   svg_lines <- c(svg_lines, built_elements)
 
@@ -98,7 +135,7 @@ build_element_tag <- function(element) {
   # Get the main attributes
   attrs_m <-
     e[names(e) %>%
-        base::setdiff(c("type", "text", "attrs", "anims", "tag", "path"))]
+        base::setdiff(c("type", "text", "attrs", "anims", "anims_built", "tag", "path"))]
 
   # Get the extra attributes for the shape
   attrs_e <- e$attrs
@@ -120,7 +157,26 @@ build_element_tag <- function(element) {
     lapply(function(x) build_attr(name = attr_names[x], value = attrs[[x]])) %>%
     unlist()
 
-  build_tag(name = type, attrs = attr_str, inner = inner)
+  built_tag <- build_tag(name = type, attrs = attr_str, inner = inner)
+
+  if (!is.null(e$anims_built$style)) {
+
+    styles <- rev(e$anims_built$style)
+
+    for (style in styles) {
+
+      built_tag <-
+        built_tag %>%
+        paste_left(style %>% paste_left("<g style=\"") %>% paste_right("\">\n")) %>%
+        paste_right("\n</g>")
+    }
+
+    if (built_tag %>% tidy_grepl("anim_position")) {
+      built_tag <- built_tag %>% tidy_gsub("x=.*? y=.*? ", "")
+    }
+  }
+
+  built_tag
 }
 
 build_attr <- function(name, value = NULL) {
