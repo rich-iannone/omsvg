@@ -19,9 +19,9 @@ input image or shape.}
 \code{0} to \code{1} or a value in percentage units.}
 }
 \description{
-A drop shadow appears beneath the input image or shape and its offset is
-controlled by \code{dx} and \code{dy}. The blurring of the drop shadow is set by the
-\code{stdev} value.
+With the \code{filter_drop_shadow()} drop shadow appears beneath the input image
+or shape and its offset is controlled by \code{dx} and \code{dy}. The blurring of the
+drop shadow is set by the \code{stdev} value.
 }
 \examples{
 # Apply a drop shadow filter on a
