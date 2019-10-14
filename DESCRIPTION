@@ -14,6 +14,8 @@ Depends: R (>= 3.2.1)
 LazyData: true
 RoxygenNote: 6.1.1
 Imports: 
+    dplyr (>= 0.8.3),
     htmltools (>= 0.3.6),
+    rlang (>= 0.4.0),
     magrittr
 Roxygen: list(markdown = TRUE)
