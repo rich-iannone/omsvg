@@ -6,6 +6,8 @@
 #'
 #' @param rotation The rotation value of the element at the keyframe time (given
 #'   as the LHS value in the [anims()] call).
+#' @param anchor The location of the element anchor about which rotation will
+#'   occur. By default, this is the keyword `"center"`.
 #' @param timing The timing function to use for the movement to the new
 #'   position.
 #' @param initial Should this rotation value be the initial rotation state of
