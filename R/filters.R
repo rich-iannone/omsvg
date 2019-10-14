@@ -248,9 +248,9 @@ filter_dilate <- function(radius = 1) {
 
 #' Filter: add a drop shadow to an element
 #'
-#' A drop shadow appears beneath the input image or shape and its offset is
-#' controlled by `dx` and `dy`. The blurring of the drop shadow is set by the
-#' `stdev` value.
+#' With the `filter_drop_shadow()` drop shadow appears beneath the input image
+#' or shape and its offset is controlled by `dx` and `dy`. The blurring of the
+#' drop shadow is set by the `stdev` value.
 #'
 #' @param dx,dy The offset of the drop shadow compared to the position of the
 #'   input image or shape.
