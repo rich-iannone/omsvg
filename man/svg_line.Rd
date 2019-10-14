@@ -19,7 +19,8 @@ svg_line(svg, x1, y1, x2, y2, attrs = list(), anims = list(),
 most part, the list's names are the presentation attribute names and the
 corresponding values are the matching attribute values.}
 
-\item{anims}{An animation directive list. Currently not implemented.}
+\item{anims}{An animation directive list for the element. This should be
+structured using the \code{\link[=anims]{anims()}} function.}
 
 \item{id}{An optional ID value to give to the built tag. This is useful for
 modifying this element in a later function call or for interacting with
@@ -33,11 +34,12 @@ These positions are in units of \code{px}.
 \examples{
 # Create an SVG with a single
 # line element
-SVG(width = 100, height = 50) \%>\%
-  svg_line(
-    x1 = 5, y1 = 5,
-    x2 = 95, y2 = 45,
-    attrs = list(stroke = "blue")
-  )
+svg <-
+  SVG(width = 100, height = 50) \%>\%
+    svg_line(
+      x1 = 5, y1 = 5,
+      x2 = 95, y2 = 45,
+      attrs = attrs_pres(stroke = "blue")
+    )
 
 }

@@ -19,7 +19,8 @@ character vector that holds the formatted points string (space-separated
 most part, the list's names are the presentation attribute names and the
 corresponding values are the matching attribute values.}
 
-\item{anims}{An animation directive list. Currently not implemented.}
+\item{anims}{An animation directive list for the element. This should be
+structured using the \code{\link[=anims]{anims()}} function.}
 
 \item{id}{An optional ID value to give to the built tag. This is useful for
 modifying this element in a later function call or for interacting with
@@ -38,14 +39,15 @@ string that adheres to the specification of the \code{points} attribute of the S
 \examples{
 # Create an SVG with a single
 # polygon element
-SVG(width = 300, height = 300) \%>\%
-  svg_polygon(
-    points = "100,10 40,198 190,78 10,78 160,198",
-    attrs = list(
-      stroke = "orange",
-      `stroke-width` = 2,
-      fill = "yellow"
+svg <-
+  SVG(width = 300, height = 300) \%>\%
+    svg_polygon(
+      points = "100,10 40,198 190,78 10,78 160,198",
+      attrs = attrs_pres(
+        stroke = "orange",
+        stroke_width = 2,
+        fill = "yellow"
+      )
     )
-  )
 
 }

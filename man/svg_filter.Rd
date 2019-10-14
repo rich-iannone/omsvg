@@ -23,3 +23,27 @@ The \code{svg_filter()} let's us create a named \code{<filter>} element that we 
 apply to any SVG elements (such as shapes). We can bundle one or more filter
 elements by supplying a list of \code{filter_*()} calls to the \code{filters} argument.
 }
+\examples{
+# Set up an `svg_filter()` (called
+# `"blur"`) that has the blur effect
+# (using the `filter_gaussian_blur()`
+# function); have the ellipse element
+# use the filter by referencing it
+# by name via the `"filter"` attribute
+SVG(width = 200, height = 100) \%>\%
+  svg_filter(
+    id = "blur",
+    filters = list(
+      filter_gaussian_blur(stdev = 2)
+    )
+  ) \%>\%
+  svg_ellipse(
+    x = 40, y = 40,
+    width = 50, height = 30,
+    attrs = attrs_pres(
+      fill = "green",
+      filter = "blur"
+    )
+  )
+
+}

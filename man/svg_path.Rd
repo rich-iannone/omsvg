@@ -17,7 +17,8 @@ string.}
 most part, the list's names are the presentation attribute names and the
 corresponding values are the matching attribute values.}
 
-\item{anims}{An animation directive list. Currently not implemented.}
+\item{anims}{An animation directive list for the element. This should be
+structured using the \code{\link[=anims]{anims()}} function.}
 
 \item{id}{An optional ID value to give to the built tag. This is useful for
 modifying this element in a later function call or for interacting with
@@ -34,14 +35,15 @@ positions are in units of \code{px}.
 \examples{
 # Create an SVG with a single
 # path element
-SVG(width = 300, height = 300) \%>\%
-  svg_path(
-    path = "M 50 160 q 100 -300 200 0",
-    attrs = list(
-      stroke = "magenta",
-      `stroke-width` = 5,
-      fill = "lightblue"
+svg <-
+  SVG(width = 300, height = 300) \%>\%
+    svg_path(
+      path = "M 50 160 q 100 -300 200 0",
+      attrs = attrs_pres(
+        stroke = "magenta",
+        stroke_width = 5,
+        fill = "lightblue"
+      )
     )
-  )
 
 }

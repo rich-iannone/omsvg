@@ -24,7 +24,8 @@ centered on point \code{y}.}
 most part, the list's names are the presentation attribute names and the
 corresponding values are the matching attribute values.}
 
-\item{anims}{An animation directive list. Currently not implemented.}
+\item{anims}{An animation directive list for the element. This should be
+structured using the \code{\link[=anims]{anims()}} function.}
 
 \item{id}{An optional ID value to give to the built tag. This is useful for
 modifying this element in a later function call or for interacting with
@@ -39,11 +40,12 @@ the point of the ellipse. The \code{width} and the \code{height}, both in units 
 \examples{
 # Create an SVG with a single
 # ellipse element
-SVG(width = 60, height = 60) \%>\%
-  svg_ellipse(
-    x = 30, y = 30,
-    width = 50, height = 30,
-    attrs = list(fill = "purple")
-  )
+svg <-
+  SVG(width = 60, height = 60) \%>\%
+    svg_ellipse(
+      x = 30, y = 30,
+      width = 50, height = 30,
+      attrs = attrs_pres(fill = "purple")
+    )
 
 }

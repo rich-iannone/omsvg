@@ -21,7 +21,8 @@ drawing area.}
 most part, the list's names are the presentation attribute names and the
 corresponding values are the matching attribute values.}
 
-\item{anims}{An animation directive list. Currently not implemented.}
+\item{anims}{An animation directive list for the element. This should be
+structured using the \code{\link[=anims]{anims()}} function.}
 
 \item{id}{An optional ID value to give to the built tag. This is useful for
 modifying this element in a later function call or for interacting with
@@ -36,11 +37,12 @@ the point of the circle. The \code{diameter} of the circle is given in units of
 \examples{
 # Create an SVG with a single
 # circle element
-SVG(width = 80, height = 80) \%>\%
-  svg_circle(
-    x = 30, y = 30,
-    diameter = 40,
-    attrs = list(fill = "red")
-  )
+svg <-
+  SVG(width = 80, height = 80) \%>\%
+    svg_circle(
+      x = 30, y = 30,
+      diameter = 40,
+      attrs = attrs_pres(fill = "red")
+    )
 
 }

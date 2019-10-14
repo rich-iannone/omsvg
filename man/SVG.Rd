@@ -4,7 +4,8 @@
 \alias{SVG}
 \title{Create an \code{svg} object}
 \usage{
-SVG(width, height, title = NULL, desc = NULL)
+SVG(width, height, title = NULL, desc = NULL,
+  anim_iterations = "infinite")
 }
 \arguments{
 \item{width, height}{The dimensions of the SVG in \code{px} units.}
@@ -12,6 +13,11 @@ SVG(width, height, title = NULL, desc = NULL)
 \item{title}{The \code{<title>} tag for the finalized SVG.}
 
 \item{desc}{The \code{<desc>} tag for the finalized SVG.}
+
+\item{anim_iterations}{How many should an SVG animation (if defined by use of
+the \code{\link[=anims]{anims()}} function) be played? By default this is \code{"infinite"} (i.e.,
+looped indefinitely) but we can specify the animation iteration count as
+a positive number.}
 }
 \description{
 The \code{SVG()} function is the entry point for building an SVG from the ground

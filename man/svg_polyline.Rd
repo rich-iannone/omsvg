@@ -19,7 +19,8 @@ character vector that holds the formatted points string (space-separated
 most part, the list's names are the presentation attribute names and the
 corresponding values are the matching attribute values.}
 
-\item{anims}{An animation directive list. Currently not implemented.}
+\item{anims}{An animation directive list for the element. This should be
+structured using the \code{\link[=anims]{anims()}} function.}
 
 \item{id}{An optional ID value to give to the built tag. This is useful for
 modifying this element in a later function call or for interacting with
@@ -35,15 +36,16 @@ of the SVG \code{<polyline>} tag. All point positions are in units of \code{px}.
 \examples{
 # Create an SVG with a single
 # polyline element
-SVG(width = 300, height = 300) \%>\%
-  svg_polyline(
-    points = c(
-      10, 10, 15, 20, 20, 15, 25, 30, 30, 25,
-      35, 40, 40, 35, 45, 50, 50, 45),
-    attrs = list(
-      stroke = "blue",
-      fill = "none"
+svg <-
+  SVG(width = 300, height = 300) \%>\%
+    svg_polyline(
+      points = c(
+        10, 10, 15, 20, 20, 15, 25, 30, 30, 25,
+        35, 40, 40, 35, 45, 50, 50, 45),
+      attrs = attrs_pres(
+        stroke = "blue",
+        fill = "none"
+      )
     )
-  )
 
 }

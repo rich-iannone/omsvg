@@ -24,7 +24,8 @@ string.}
 most part, the list's names are the presentation attribute names and the
 corresponding values are the matching attribute values.}
 
-\item{anims}{An animation directive list. Currently not implemented.}
+\item{anims}{An animation directive list for the element. This should be
+structured using the \code{\link[=anims]{anims()}} function.}
 
 \item{id}{An optional ID value to give to the built tag. This is useful for
 modifying this element in a later function call or for interacting with
@@ -39,10 +40,11 @@ of \code{px}.
 \examples{
 # Create an SVG with a single
 # text element
-SVG(width = 300, height = 300) \%>\%
-  svg_text(
-    x = 10, y = 20,
-    text = "A line of text"
-  )
+svg <-
+  SVG(width = 300, height = 300) \%>\%
+    svg_text(
+      x = 10, y = 20,
+      text = "A line of text"
+    )
 
 }

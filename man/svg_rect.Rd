@@ -12,25 +12,24 @@ svg_rect(svg, x, y, width, height, rx = NULL, ry = NULL,
 
 \item{x, y}{The \code{x} and \code{y} positions of the upper left of the rectangle to be
 drawn. The \code{x} and \code{y} values are relative to upper left of the SVG drawing
-area. Both of these attributes can be animated.}
+area.}
 
 \item{width, height}{The \code{width} and \code{height} of the rectangle that is to be
 drawn. The \code{width} is the distance in the 'x' direction from point \code{x}
 (proceeding right) and the \code{height} is the distance in the 'y' direction
-from point \code{y} (proceeding downward). Both of these attributes can be
-animated.}
+from point \code{y} (proceeding downward).}
 
 \item{rx, ry}{Optional corner radius values in the 'x' and 'y' directions.
 Applies to all corners of the rectangle. If only one value is provided
-(say, just for \code{rx}) then the unset value will take that set value as well.
-These attributes can both be animated.}
+(say, just for \code{rx}) then the unset value will take that set value as well.}
 
 \item{attrs}{A presentation attribute list. The helper function
 \code{\link[=attrs_pres]{attrs_pres()}} can help us easily generate this named list object. For the
 most part, the list's names are the presentation attribute names and the
 corresponding values are the matching attribute values.}
 
-\item{anims}{An animation directive list. Currently not implemented.}
+\item{anims}{An animation directive list for the element. This should be
+structured using the \code{\link[=anims]{anims()}} function.}
 
 \item{id}{An optional ID value to give to the built tag. This is useful for
 modifying this element in a later function call or for interacting with
@@ -47,14 +46,45 @@ define x and y radius of the corners of the rectangle.
 \examples{
 # Create an SVG with a single
 # rectangle element
-SVG(width = 100, height = 40) \%>\%
-  svg_rect(
-    x = 20, y = 10,
-    width = 40, height = 15,
-    attrs = attrs_pres(
-      stroke = "red",
-      fill = "green"
+svg_1 <-
+  SVG(width = 100, height = 40) \%>\%
+    svg_rect(
+      x = 20, y = 10,
+      width = 40, height = 15,
+      attrs = attrs_pres(
+        stroke = "red",
+        fill = "green"
+      )
     )
-  )
+
+# Create an SVG with a single
+# rectangle element that moves
+# to new `x` positions
+svg_2 <-
+  SVG(width = 300, height = 300) \%>\%
+    svg_rect(
+      x = 50, y = 50,
+      width = 50, height = 50,
+      attrs = attrs_pres(
+        stroke = "magenta",
+        fill = "lightblue"
+      ),
+      anims = anims(
+        0.5 ~ list(
+          anim_position(
+            x = 50, y = 50,
+            timing = cubic_bezier(1, 1, 0.5, 0.5)
+          ),
+          anim_rotation(rotation = 0)
+        ),
+        2.0 ~ list(
+          anim_position(
+            x = 200, y = 50,
+            timing = ease_in_out()
+          ),
+          anim_rotation(rotation = 90)
+        )
+      )
+    )
 
 }
