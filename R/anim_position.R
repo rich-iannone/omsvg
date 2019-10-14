@@ -25,7 +25,7 @@
 #'       fill = "lightblue"
 #'     ),
 #'     anims = anims(
-#'       2.0 ~ anim_position(x = 100, y = 50),
+#'       2.0 ~ anim_position(x = 100, y = 50)
 #'     )
 #'   )
 #'
