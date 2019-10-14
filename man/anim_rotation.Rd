@@ -11,6 +11,9 @@ anim_rotation(rotation = NULL, anchor = "center", timing = NULL,
 \item{rotation}{The rotation value of the element at the keyframe time (given
 as the LHS value in the \code{\link[=anims]{anims()}} call).}
 
+\item{anchor}{The location of the element anchor about which rotation will
+occur. By default, this is the keyword \code{"center"}.}
+
 \item{timing}{The timing function to use for the movement to the new
 position.}
 
