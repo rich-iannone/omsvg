@@ -13,14 +13,14 @@ paste_on_side <- function(x,
 
   # Stop function if `direction` is not valid
   if (!(direction %in% c("left", "right"))) {
-    stop("Internal error in `gt:::paste_on_side()`:\n",
+    stop("Internal error in `omsvg:::paste_on_side()`:\n",
          "* The `direction` must be either `left` or `right`.",
          call. = FALSE)
   }
 
   # Stop function if `x` and `x_side` are not both of class character
   if (any(!inherits(x, "character"), !inherits(x_side, "character"))) {
-    stop("Internal error in `gt:::paste_on_side()`:\n",
+    stop("Internal error in `omsvg:::paste_on_side()`:\n",
          "* The `x` and `x_side` objects must be of class character.",
          call. = FALSE)
   }
@@ -63,6 +63,20 @@ paste_right <- function(x, x_right) {
   paste_on_side(x, x_side = x_right, direction = "right")
 }
 
+#' Paste a string between two fixed strings
+#'
+#' @inheritParams paste_on_side
+#' @param x_left Another character vector of length 1 that is to be pasted to
+#'   the left of `x`.
+#' @param x_right Another character vector of length 1 that is to be pasted to
+#'   the right of `x`.
+#' @noRd
+paste_between <- function(x, x_left, x_right) {
+  x %>%
+    paste_left(x_left = x_left) %>%
+    paste_right(x_right = x_right)
+}
+
 #' Wrapper for `gsub()` where `x` is the first argument
 #'
 #' This function is wrapper for `gsub()` that uses default argument values and
@@ -90,4 +104,28 @@ tidy_grepl <- function(x, pattern) {
     FUN.VALUE = logical(1),
     USE.NAMES = FALSE
   )
+}
+
+encase_in_braces <- function(x, pad_left = " ", pad_right = " ") {
+  x %>% paste_between(pad_left, pad_right) %>% paste_between("{", "}")
+}
+
+encase_in_css_fn <- function(body, fn_name) {
+  body %>% paste_between("(", ")") %>% paste_left(fn_name)
+}
+
+couple_values <- function(x, y, sep = ",") {
+  paste0(x, sep, y)
+}
+
+collapse_strings <- function(x, collapse = " ") {
+  paste(x, collapse = collapse)
+}
+
+add_unit <- function(x, unit, x_left = "", x_right = "") {
+  x %>% as.character() %>% paste_right(unit) %>% paste_between(x_left, x_right)
+}
+
+expand_index <- function(index) {
+  formatC(index, width = 6, flag = "0")
 }
