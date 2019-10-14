@@ -12,6 +12,29 @@
 #' @param filters A list of `filter_*()` function calls. Examples include
 #'   [filter_image()] and [filter_gaussian_blur()].
 #'
+#' @examples
+#' # Set up an `svg_filter()` (called
+#' # `"blur"`) that has the blur effect
+#' # (using the `filter_gaussian_blur()`
+#' # function); have the ellipse element
+#' # use the filter by referencing it
+#' # by name via the `"filter"` attribute
+#' SVG(width = 200, height = 100) %>%
+#'   svg_filter(
+#'     id = "blur",
+#'     filters = list(
+#'       filter_gaussian_blur(stdev = 2)
+#'     )
+#'   ) %>%
+#'   svg_ellipse(
+#'     x = 40, y = 40,
+#'     width = 50, height = 30,
+#'     attrs = attrs_pres(
+#'       fill = "green",
+#'       filter = "blur"
+#'     )
+#'   )
+#'
 #' @export
 svg_filter <- function(svg,
                        id,

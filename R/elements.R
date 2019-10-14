@@ -10,21 +10,20 @@
 #' @param svg The `svg` object that is created using the [SVG()] function.
 #' @param x,y The `x` and `y` positions of the upper left of the rectangle to be
 #'   drawn. The `x` and `y` values are relative to upper left of the SVG drawing
-#'   area. Both of these attributes can be animated.
+#'   area.
 #' @param width,height The `width` and `height` of the rectangle that is to be
 #'   drawn. The `width` is the distance in the 'x' direction from point `x`
 #'   (proceeding right) and the `height` is the distance in the 'y' direction
-#'   from point `y` (proceeding downward). Both of these attributes can be
-#'   animated.
+#'   from point `y` (proceeding downward).
 #' @param rx,ry Optional corner radius values in the 'x' and 'y' directions.
 #'   Applies to all corners of the rectangle. If only one value is provided
 #'   (say, just for `rx`) then the unset value will take that set value as well.
-#'   These attributes can both be animated.
 #' @param attrs A presentation attribute list. The helper function
 #'   [attrs_pres()] can help us easily generate this named list object. For the
 #'   most part, the list's names are the presentation attribute names and the
 #'   corresponding values are the matching attribute values.
-#' @param anims An animation directive list. Currently not implemented.
+#' @param anims An animation directive list for the element. This should be
+#'   structured using the [anims()] function.
 #' @param id An optional ID value to give to the built tag. This is useful for
 #'   modifying this element in a later function call or for interacting with
 #'   CSS.
@@ -32,15 +31,46 @@
 #' @examples
 #' # Create an SVG with a single
 #' # rectangle element
-#' SVG(width = 100, height = 40) %>%
-#'   svg_rect(
-#'     x = 20, y = 10,
-#'     width = 40, height = 15,
-#'     attrs = attrs_pres(
-#'       stroke = "red",
-#'       fill = "green"
+#' svg_1 <-
+#'   SVG(width = 100, height = 40) %>%
+#'     svg_rect(
+#'       x = 20, y = 10,
+#'       width = 40, height = 15,
+#'       attrs = attrs_pres(
+#'         stroke = "red",
+#'         fill = "green"
+#'       )
 #'     )
-#'   )
+#'
+#' # Create an SVG with a single
+#' # rectangle element that moves
+#' # to new `x` positions
+#' svg_2 <-
+#'   SVG(width = 300, height = 300) %>%
+#'     svg_rect(
+#'       x = 50, y = 50,
+#'       width = 50, height = 50,
+#'       attrs = attrs_pres(
+#'         stroke = "magenta",
+#'         fill = "lightblue"
+#'       ),
+#'       anims = anims(
+#'         0.5 ~ list(
+#'           anim_position(
+#'             x = 50, y = 50,
+#'             timing = cubic_bezier(1, 1, 0.5, 0.5)
+#'           ),
+#'           anim_rotation(rotation = 0)
+#'         ),
+#'         2.0 ~ list(
+#'           anim_position(
+#'             x = 200, y = 50,
+#'             timing = ease_in_out()
+#'           ),
+#'           anim_rotation(rotation = 90)
+#'         )
+#'       )
+#'     )
 #'
 #' @export
 svg_rect <- function(svg,
@@ -91,12 +121,13 @@ svg_rect <- function(svg,
 #' @examples
 #' # Create an SVG with a single
 #' # circle element
-#' SVG(width = 80, height = 80) %>%
-#'   svg_circle(
-#'     x = 30, y = 30,
-#'     diameter = 40,
-#'     attrs = list(fill = "red")
-#'   )
+#' svg <-
+#'   SVG(width = 80, height = 80) %>%
+#'     svg_circle(
+#'       x = 30, y = 30,
+#'       diameter = 40,
+#'       attrs = attrs_pres(fill = "red")
+#'     )
 #'
 #' @export
 svg_circle <- function(svg,
@@ -146,12 +177,13 @@ svg_circle <- function(svg,
 #' @examples
 #' # Create an SVG with a single
 #' # ellipse element
-#' SVG(width = 60, height = 60) %>%
-#'   svg_ellipse(
-#'     x = 30, y = 30,
-#'     width = 50, height = 30,
-#'     attrs = list(fill = "purple")
-#'   )
+#' svg <-
+#'   SVG(width = 60, height = 60) %>%
+#'     svg_ellipse(
+#'       x = 30, y = 30,
+#'       width = 50, height = 30,
+#'       attrs = attrs_pres(fill = "purple")
+#'     )
 #'
 #' @export
 svg_ellipse <- function(svg,
@@ -198,12 +230,13 @@ svg_ellipse <- function(svg,
 #' @examples
 #' # Create an SVG with a single
 #' # line element
-#' SVG(width = 100, height = 50) %>%
-#'   svg_line(
-#'     x1 = 5, y1 = 5,
-#'     x2 = 95, y2 = 45,
-#'     attrs = list(stroke = "blue")
-#'   )
+#' svg <-
+#'   SVG(width = 100, height = 50) %>%
+#'     svg_line(
+#'       x1 = 5, y1 = 5,
+#'       x2 = 95, y2 = 45,
+#'       attrs = attrs_pres(stroke = "blue")
+#'     )
 #'
 #' @export
 svg_line <- function(svg,
@@ -251,16 +284,17 @@ svg_line <- function(svg,
 #' @examples
 #' # Create an SVG with a single
 #' # polyline element
-#' SVG(width = 300, height = 300) %>%
-#'   svg_polyline(
-#'     points = c(
-#'       10, 10, 15, 20, 20, 15, 25, 30, 30, 25,
-#'       35, 40, 40, 35, 45, 50, 50, 45),
-#'     attrs = list(
-#'       stroke = "blue",
-#'       fill = "none"
+#' svg <-
+#'   SVG(width = 300, height = 300) %>%
+#'     svg_polyline(
+#'       points = c(
+#'         10, 10, 15, 20, 20, 15, 25, 30, 30, 25,
+#'         35, 40, 40, 35, 45, 50, 50, 45),
+#'       attrs = attrs_pres(
+#'         stroke = "blue",
+#'         fill = "none"
+#'       )
 #'     )
-#'   )
 #'
 #' @export
 svg_polyline <- function(svg,
@@ -310,15 +344,16 @@ svg_polyline <- function(svg,
 #' @examples
 #' # Create an SVG with a single
 #' # polygon element
-#' SVG(width = 300, height = 300) %>%
-#'   svg_polygon(
-#'     points = "100,10 40,198 190,78 10,78 160,198",
-#'     attrs = list(
-#'       stroke = "orange",
-#'       `stroke-width` = 2,
-#'       fill = "yellow"
+#' svg <-
+#'   SVG(width = 300, height = 300) %>%
+#'     svg_polygon(
+#'       points = "100,10 40,198 190,78 10,78 160,198",
+#'       attrs = attrs_pres(
+#'         stroke = "orange",
+#'         stroke_width = 2,
+#'         fill = "yellow"
+#'       )
 #'     )
-#'   )
 #'
 #' @export
 svg_polygon <- function(svg,
@@ -364,15 +399,16 @@ svg_polygon <- function(svg,
 #' @examples
 #' # Create an SVG with a single
 #' # path element
-#' SVG(width = 300, height = 300) %>%
-#'   svg_path(
-#'     path = "M 50 160 q 100 -300 200 0",
-#'     attrs = list(
-#'       stroke = "magenta",
-#'       `stroke-width` = 5,
-#'       fill = "lightblue"
+#' svg <-
+#'   SVG(width = 300, height = 300) %>%
+#'     svg_path(
+#'       path = "M 50 160 q 100 -300 200 0",
+#'       attrs = attrs_pres(
+#'         stroke = "magenta",
+#'         stroke_width = 5,
+#'         fill = "lightblue"
+#'       )
 #'     )
-#'   )
 #'
 #' @export
 svg_path <- function(svg,
@@ -414,11 +450,12 @@ svg_path <- function(svg,
 #' @examples
 #' # Create an SVG with a single
 #' # text element
-#' SVG(width = 300, height = 300) %>%
-#'   svg_text(
-#'     x = 10, y = 20,
-#'     text = "A line of text"
-#'   )
+#' svg <-
+#'   SVG(width = 300, height = 300) %>%
+#'     svg_text(
+#'       x = 10, y = 20,
+#'       text = "A line of text"
+#'     )
 #'
 #' @export
 svg_text <- function(svg,
@@ -450,7 +487,6 @@ svg_text <- function(svg,
 }
 
 shape_types <- function() {
-
   c("rect", "circle", "ellipse", "line", "polyline", "polygon", "path")
 }
 
