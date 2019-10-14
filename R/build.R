@@ -123,7 +123,7 @@ build_svg <- function(svg) {
 
   svg_char <- svg_lines %>% paste(collapse = "\n")
 
-  svg_char
+  invisible(svg_char)
 }
 
 build_element_tag <- function(element) {

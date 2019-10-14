@@ -27,7 +27,7 @@ print.svg <- function(x, ..., view = interactive()) {
     htmltools::HTML() %>%
     htmltools::html_print()
 
-  print(x, browse = view, ...)
+  message(x)
 }
 
 #' @export
