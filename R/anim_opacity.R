@@ -39,8 +39,18 @@ anim_opacity <- function(opacity = NULL,
          call. = FALSE)
   }
 
-  if (isTRUE(initial)) {
-    opacity <- 1
+  # if (isTRUE(initial)) {
+  #   opacity <- 1
+  # }
+
+  if (!inherits(opacity, "numeric")) {
+    stop("The `opacity` value must be numeric.",
+         call. = FALSE)
+  }
+
+  if (opacity < 0 || opacity > 1) {
+    stop("The `opacity` value must be in the range of `0` to `1`.",
+         call. = FALSE)
   }
 
   if (is.null(timing)) {
@@ -62,14 +72,17 @@ anim_opacity <- function(opacity = NULL,
   anim_property
 }
 
-process_animation_opacity <- function(elements,
-                                      anim_types,
-                                      df_anims,
-                                      index,
-                                      max_time_s,
-                                      anim_iterations) {
+process_anims_opacity <- function(elements,
+                                  df_anims,
+                                  index,
+                                  max_time_s,
+                                  anim_iterations) {
 
   anim_type_str <- "anim_opacity"
+
+  if (!(anim_type_str %in% df_anims$anim_type)) {
+    return(elements)
+  }
 
   if (anim_iterations == "infinite") {
     rep_str <- "infinite" %>% paste_left(" ")
@@ -77,15 +90,15 @@ process_animation_opacity <- function(elements,
     rep_str <- as.character(anim_iterations) %>% paste_left(" ")
   }
 
-  if (!(anim_type_str %in% anim_types)) {
-    return(elements)
-  }
-
   # Obtain a subset of animation directives
   df_anims <- subset(df_anims, anim_type == anim_type_str)
 
   # Get the initial opacity value
-  initial_opacity <- 1.0
+  initial_opacity <- elements[[index]][["opacity"]]
+
+  if (is.null(initial_opacity)) {
+    initial_opacity <- 1.0
+  }
 
   # Obtain an `anim_id` value to link together
   # element `<styles>` and `@keyframes`
@@ -96,22 +109,19 @@ process_animation_opacity <- function(elements,
   df_anims$time_pct <-
     ((df_anims$time_s / df_anims$total_time_s) %>% round(digits = 4)) * 100
 
-  # Fill in `0s` and `ns` animation states
+  # Fill in `0s` and `ns` animation states and set
+  # initial values if necessary
   df_anims <-
     df_anims %>%
     add_0s_state(attr_names = "opacity") %>%
-    add_ns_state(attr_names = "opacity", max_time_s = max_time_s)
-
-  # Set initial `opacity` for any rows where initial is `TRUE`
-  df_anims <-
-    df_anims %>%
+    add_ns_state(attr_names = "opacity", max_time_s = max_time_s) %>%
     dplyr::mutate(opacity = dplyr::case_when(
       initial ~ initial_opacity,
       TRUE ~ opacity
     ))
 
-  # Get `@keyframes` string
-  keyframes <-
+  # Get `@keyframes` string for the opacity transform
+  elements <-
     df_anims$opacity %>%
     as.character() %>%
     paste_left("opacity: ") %>%
@@ -122,32 +132,24 @@ process_animation_opacity <- function(elements,
     collapse_strings() %>%
     encase_in_braces() %>%
     paste_left(paste0(anim_id, " ")) %>%
-    paste_left("@keyframes ")
+    paste_left("@keyframes ") %>%
+    add_keyframes_to_element_i(
+      elements = elements,
+      index = index
+    )
 
-  # Get the associated `style` value
-  style <-
+  # Get the associated `style` value for the opacity transform
+  elements <-
     max_time_s %>%
     add_unit("s", x_right = " ") %>%
     paste_right("linear") %>%
     paste_right(rep_str) %>%
     paste_right(" both ") %>%
     paste_right(anim_id) %>%
-    paste_between("animation: ", ";")
-
-  # Append the `keyframes` string to `elements[[index]]$anims_built$keyframes`
-  elements <-
-    add_keyframes_to_element_i(
-      elements = elements,
-      index = index,
-      keyframes = keyframes
-    )
-
-  # Append the `style` string to `elements[[index]]$anims_built$styles`
-  elements <-
+    paste_between("animation: ", ";") %>%
     add_style_to_element_i(
       elements = elements,
-      index = index,
-      style = style
+      index = index
     )
 
   elements
