@@ -20,6 +20,36 @@ SVG(width = 300, height = 300) %>%
     )
   )
 
+# Same, but with a circle
+SVG(width = 300, height = 300) %>%
+  svg_circle(
+    x = 50, y = 50,
+    diameter = 30,
+    attrs = attrs_pres(
+      stroke = "magenta",
+      fill = "lightblue"
+    ),
+    anims = anims(
+      2.0 ~ anim_rotation(rotation = 180)
+    )
+  )
+
+# With an ellipse
+SVG(width = 300, height = 300) %>%
+  svg_ellipse(
+    x = 50, y = 50,
+    width = 50, height = 80,
+    attrs = attrs_pres(
+      stroke = "magenta",
+      fill = "lightblue"
+    ),
+    anims = anims(
+      2.0 ~ anim_rotation(rotation = 180)
+    )
+  )
+
+
+
 # Basic animation of an element's
 # opacity value (moving to a new
 # `opacity` value of `0`)
