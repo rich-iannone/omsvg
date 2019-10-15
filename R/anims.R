@@ -104,7 +104,8 @@ anims <- function(...) {
          call. = FALSE)
   }
 
-  x %>%
+  anims_df <-
+    x %>%
     lapply(function(x) {
 
       rhs <- x %>% rlang::f_rhs() %>% rlang::eval_tidy()
@@ -171,27 +172,48 @@ anims <- function(...) {
           dplyr::everything()
         )
 
-      if ("anim_rotation" %in% anims_dfs$anim_type &
-          !("anim_position" %in% anims_dfs$anim_type)) {
-
-        anim_df_position <-
-          anims_dfs %>%
-          subset(anim_type == "anim_rotation") %>%
-          dplyr::mutate(
-            initial = TRUE,
-            anim_type = "anim_position",
-            x = NA_character_,
-            y = NA_character_
-          ) %>%
-          dplyr::select(-anchor, -rotation)
-
-        anims_dfs <- anims_dfs %>% dplyr::bind_rows(anim_df_position)
-      }
-
       anims_dfs
     }) %>%
     do.call(dplyr::bind_rows, .) %>%
     dplyr::arrange(anim_type, time_s)
+
+  # Get all of the different anim types available
+  anim_types <- anims_df %>% dplyr::pull(anim_type) %>% unique()
+
+  # Determine if the anchor is always `"center"` or all NA
+  # anchor_center <-
+  #   (
+  #     anims_df %>%
+  #       dplyr::pull(anchor) %>%
+  #       unique() %in%
+  #       c("center", NA_character_)
+  #   ) %>%
+  #   all()
+
+  if (has_transform_anims(anim_types = anim_types) &&
+    has_position_transform_defined(anim_types = anim_types)) {
+
+    # Add anchor df lines (to be further processed with correct
+    # `time_s` and `x`/`y` values)
+    anims_df <-
+      anims_df %>%
+      dplyr::bind_rows(anims_df_anchor_row()) %>%
+      dplyr::bind_rows(anims_df_anchor_row(initial = FALSE))
+
+  } else if (has_transform_anims(anim_types = anim_types)) {
+
+    # Add anchor df lines (to be further processed with correct
+    # `time_s` and `x`/`y` values)
+    anims_df <-
+      anims_df %>%
+      dplyr::bind_rows(anims_df_anchor_row()) %>%
+      dplyr::bind_rows(anims_df_anchor_row(initial = FALSE)) %>%
+      dplyr::bind_rows(anims_df_position_row()) %>%
+      dplyr::bind_rows(anims_df_position_row(initial = FALSE))
+  }
+
+  anims_df %>%
+    dplyr::arrange(time_s)
 }
 
 #' Create a custom timing function for animation
