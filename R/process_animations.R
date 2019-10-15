@@ -9,29 +9,50 @@ process_animations_for_element <- function(elements,
 
   # Get the maximum and minimum times in seconds
   max_time_s <- max(timings, na.rm = TRUE)
-  min_time_s <- min(timings, na.rm = TRUE)
+
+  # Get the initial x and y positions of the element
+  x_initial <- elements[[index]][["x"]] %>% as.character() %>% paste_right("px")
+  y_initial <- elements[[index]][["y"]] %>% as.character() %>% paste_right("px")
+
+  # Get the anchor values for the element
+  # TODO: currently assumes a `"center"` anchor
+  x_anchor <-
+    ((elements[[index]]$width / 2) * -1) %>%
+    as.character() %>% paste_right("px")
+
+  y_anchor <-
+    ((elements[[index]]$height / 2) * -1) %>%
+    as.character() %>% paste_right("px")
+
+  if ("replace_xy" %in% names(df_anims) &&
+      (c("anchor", "initial") %in% df_anims$replace_xy) %>% any()) {
+
+    df_anims <-
+      df_anims %>%
+      dplyr::mutate(x = dplyr::case_when(
+        replace_xy == "anchor" ~ x_anchor,
+        replace_xy == "initial" ~ x_initial,
+        TRUE ~ x
+      )) %>%
+      dplyr::mutate(y = dplyr::case_when(
+        replace_xy == "anchor" ~ y_anchor,
+        replace_xy == "initial" ~ y_initial,
+        TRUE ~ y
+      ))
+  }
 
   # Get all of the different types of animations
   anim_types <- df_anims$anim_type %>% unique()
 
   elements <-
     elements %>%
-    process_animation_position(
-      anim_types = anim_types,
+    process_anims_transform(
       df_anims = df_anims,
       index = index,
       max_time_s = max_time_s,
       anim_iterations = anim_iterations
     ) %>%
-    process_animation_rotation(
-      anim_types = anim_types,
-      df_anims = df_anims,
-      index = index,
-      max_time_s = max_time_s,
-      anim_iterations = anim_iterations
-    ) %>%
-    process_animation_opacity(
-      anim_types = anim_types,
+    process_anims_opacity(
       df_anims = df_anims,
       index = index,
       max_time_s = max_time_s,
@@ -77,7 +98,7 @@ extract_timings <- function(elements) {
     which()
 }
 
-add_keyframes_to_element_i <- function(elements, index, keyframes) {
+add_keyframes_to_element_i <- function(keyframes, elements, index) {
 
   if (is.null(elements[[index]]$anims_built$keyframes)) {
     elements[[index]]$anims_built$keyframes <- keyframes
@@ -89,7 +110,7 @@ add_keyframes_to_element_i <- function(elements, index, keyframes) {
   elements
 }
 
-add_style_to_element_i <- function(elements, index, style) {
+add_style_to_element_i <- function(style, elements, index) {
 
   if (is.null(elements[[index]]$anims_built$style)) {
     elements[[index]]$anims_built$style <- style
@@ -110,7 +131,8 @@ include_as_timing_values <- function(x) {
 }
 
 add_0s_state <- function(df_anims,
-                         attr_names) {
+                         attr_names,
+                         set_initial = TRUE) {
 
   if (min(df_anims$time_s, na.rm = TRUE) == 0) {
     return(df_anims)
@@ -119,7 +141,10 @@ add_0s_state <- function(df_anims,
   df_0_row <- df_anims[1, ]
   df_0_row$time_s <- 0.0
   df_0_row$time_pct <- 0.0
-  df_0_row$initial <- TRUE
+
+  if (isTRUE(set_initial)) {
+    df_0_row$initial <- TRUE
+  }
 
   for (attr_name in attr_names) {
 
