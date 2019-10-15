@@ -370,3 +370,55 @@ include_as_bezier_values <- function(bezier_vctr) {
     collapse_strings(",") %>%
     encase_in_css_fn("cubic-bezier")
 }
+
+transform_anims_vec <- function() {
+
+  c(
+    "anim_position",
+    "anim_rotation",
+    "anim_scale",
+    "anim_skew"
+  )
+}
+
+anims_df_anchor_row <- function(time_s = 0.0,
+                                initial = TRUE,
+                                anchor = "center") {
+  dplyr::tibble(
+    timing = "linear()",
+    initial = initial,
+    time_s = time_s,
+    anim_type = "anim_anchor",
+    x = "0px",
+    y = "0px",
+    anchor = anchor,
+    replace_xy = "anchor"
+  )
+}
+
+anims_df_position_row <- function(time_s = 0.0,
+                                  initial = TRUE,
+                                  anchor = "center") {
+  dplyr::tibble(
+    timing = "linear()",
+    initial = initial,
+    time_s = time_s,
+    anim_type = "anim_position",
+    x = "0px",
+    y = "0px",
+    anchor = anchor,
+    replace_xy = "initial"
+  )
+}
+
+# Determine whether there are transform-type animations defined
+has_transform_anims <- function(anim_types) {
+  (anim_types %in% transform_anims_vec()) %>%
+    any()
+}
+
+# Determine whether the `"anim_position"` transform has been
+# specifically used
+has_position_transform_defined <- function(anim_types) {
+  "anim_position" %in% anim_types
+}
