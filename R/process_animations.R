@@ -4,25 +4,52 @@ process_animations_for_element <- function(elements,
 
   df_anims <- elements[[index]][["anims"]]
 
+  element_type <- elements[[index]][["type"]]
+
   # Get all animation timings
   timings <- df_anims$time_s %>% sort()
 
   # Get the maximum and minimum times in seconds
   max_time_s <- max(timings, na.rm = TRUE)
 
-  # Get the initial x and y positions of the element
-  x_initial <- elements[[index]][["x"]] %>% as.character() %>% paste_right("px")
-  y_initial <- elements[[index]][["y"]] %>% as.character() %>% paste_right("px")
+  if (element_type == "rect") {
 
-  # Get the anchor values for the element
-  # TODO: currently assumes a `"center"` anchor
-  x_anchor <-
-    ((elements[[index]]$width / 2) * -1) %>%
-    as.character() %>% paste_right("px")
+    # Get the initial x and y positions of the element
+    x_initial <- elements[[index]][["x"]] %>% as.character() %>% paste_right("px")
+    y_initial <- elements[[index]][["y"]] %>% as.character() %>% paste_right("px")
 
-  y_anchor <-
-    ((elements[[index]]$height / 2) * -1) %>%
-    as.character() %>% paste_right("px")
+    # Get the anchor values for the element
+    x_anchor <-
+      ((elements[[index]]$width / 2) * -1) %>%
+      as.character() %>% paste_right("px")
+
+    y_anchor <-
+      ((elements[[index]]$height / 2) * -1) %>%
+      as.character() %>% paste_right("px")
+
+  } else if (element_type %in% c("circle", "ellipse")) {
+
+    # Get the initial x and y positions of the element
+    x_initial <- elements[[index]][["cx"]] %>% as.character() %>% paste_right("px")
+    y_initial <- elements[[index]][["cy"]] %>% as.character() %>% paste_right("px")
+
+    # Get the anchor values for the element
+    if (element_type == "circle") {
+
+      x_anchor <- y_anchor <-
+        ((elements[[index]]$r / 2) * -1) %>%
+        as.character() %>% paste_right("px")
+
+    } else {
+
+      x_anchor <-
+        ((elements[[index]]$rx / 2) * -1) %>%
+        as.character() %>% paste_right("px")
+      y_anchor <-
+        ((elements[[index]]$ry / 2) * -1) %>%
+        as.character() %>% paste_right("px")
+    }
+  }
 
   if ("replace_xy" %in% names(df_anims) &&
       (c("anchor", "initial") %in% df_anims$replace_xy) %>% any()) {

@@ -4,9 +4,14 @@ process_anims_transform <- function(elements,
                                     max_time_s,
                                     anim_iterations) {
 
+  # Get the element type
+  element_type <- elements[[index]][["type"]]
+
+  # Get the element's animation types
   anim_types <-
     transform_anims_vec()[transform_anims_vec() %in% df_anims$anim_type]
 
+  # If there are no animations, return `elements` unchanged
   if (length(anim_types) == 0) {
     return(elements)
   }
@@ -36,9 +41,18 @@ process_anims_transform <- function(elements,
     subset(df_anims, anim_type == anim_type_str) %>%
     dplyr::arrange(time_s)
 
-  # Get initial position values (`x` and `y`) in `px` units
-  initial_x <- elements[[index]]$x %>% as.character() %>% paste_right("px")
-  initial_y <- elements[[index]]$y %>% as.character() %>% paste_right("px")
+  if (element_type == "rect") {
+
+    # Get initial position values (`x` and `y`) in `px` units
+    initial_x <- elements[[index]]$x %>% as.character() %>% paste_right("px")
+    initial_y <- elements[[index]]$y %>% as.character() %>% paste_right("px")
+
+  } else if (element_type %in% c("circle", "ellipse")) {
+
+    # Get the initial x and y positions of the element
+    initial_x <- elements[[index]][["cx"]] %>% as.character() %>% paste_right("px")
+    initial_y <- elements[[index]][["cy"]] %>% as.character() %>% paste_right("px")
+  }
 
   # Correct the `time_s` for those entries that were
   # automatically entered
@@ -257,71 +271,74 @@ process_anims_transform <- function(elements,
   # Process `anim_anchor`
   #
 
-  anim_type_str <- "anim_anchor"
+  if (!(element_type %in% c("circle", "ellipse"))) {
 
-  # Obtain a subset of animation directives for rotation
-  df_anims_subset <-
-    subset(df_anims, anim_type == anim_type_str) %>%
-    dplyr::arrange(time_s)
+    anim_type_str <- "anim_anchor"
 
-  # Correct the `time_s` for those entries that were
-  # automatically entered
-  if ((df_anims_subset$time_s == 0) %>% all()) {
+    # Obtain a subset of animation directives for rotation
+    df_anims_subset <-
+      subset(df_anims, anim_type == anim_type_str) %>%
+      dplyr::arrange(time_s)
+
+    # Correct the `time_s` for those entries that were
+    # automatically entered
+    if ((df_anims_subset$time_s == 0) %>% all()) {
+      df_anims_subset <-
+        df_anims_subset %>%
+        dplyr::mutate(time_s = dplyr::case_when(
+          initial == FALSE ~ max_time_s,
+          TRUE ~ time_s
+        ))
+    }
+
+    # Obtain an `anim_id` value to link together
+    # element `<styles>` and `@keyframes`
+    anim_id <- paste0(anim_type_str, "_", expand_index(index = index))
+
+    df_anims_subset$anim_id <- anim_id
+    df_anims_subset$total_time_s <- max_time_s
+    df_anims_subset$time_pct <-
+      (
+        (df_anims_subset$time_s / df_anims_subset$total_time_s) %>%
+          round(digits = 4)
+      ) * 100
+
+    # Fill in `0s` and `ns` animation states
     df_anims_subset <-
       df_anims_subset %>%
-      dplyr::mutate(time_s = dplyr::case_when(
-        initial == FALSE ~ max_time_s,
-        TRUE ~ time_s
-      ))
+      add_0s_state(attr_names = "rotation") %>%
+      add_ns_state(attr_names = "rotation", max_time_s = max_time_s)
+
+    # Get `@keyframes` string for the position transform
+    elements <-
+      couple_values(df_anims_subset$x, df_anims_subset$y) %>%
+      encase_in_css_fn(fn_name = "translate") %>%
+      include_as_transform_values() %>%
+      encase_in_braces() %>%
+      paste_left(df_anims_subset$time_pct %>% add_unit("%", x_right = " ")) %>%
+      collapse_strings() %>%
+      encase_in_braces() %>%
+      paste_left(paste0(anim_id, " ")) %>%
+      paste_left("@keyframes ") %>%
+      add_keyframes_to_element_i(
+        elements = elements,
+        index = index
+      )
+
+    # Get the associated `style` value for the position transform
+    elements <-
+      max_time_s %>%
+      add_unit("s", x_right = " ") %>%
+      paste_right("linear") %>%
+      paste_right(rep_str) %>%
+      paste_right(" both ") %>%
+      paste_right(anim_id) %>%
+      paste_between("animation: ", ";") %>%
+      add_style_to_element_i(
+        elements = elements,
+        index = index
+      )
   }
-
-  # Obtain an `anim_id` value to link together
-  # element `<styles>` and `@keyframes`
-  anim_id <- paste0(anim_type_str, "_", expand_index(index = index))
-
-  df_anims_subset$anim_id <- anim_id
-  df_anims_subset$total_time_s <- max_time_s
-  df_anims_subset$time_pct <-
-    (
-      (df_anims_subset$time_s / df_anims_subset$total_time_s) %>%
-        round(digits = 4)
-    ) * 100
-
-  # Fill in `0s` and `ns` animation states
-  df_anims_subset <-
-    df_anims_subset %>%
-    add_0s_state(attr_names = "rotation") %>%
-    add_ns_state(attr_names = "rotation", max_time_s = max_time_s)
-
-  # Get `@keyframes` string for the position transform
-  elements <-
-    couple_values(df_anims_subset$x, df_anims_subset$y) %>%
-    encase_in_css_fn(fn_name = "translate") %>%
-    include_as_transform_values() %>%
-    encase_in_braces() %>%
-    paste_left(df_anims_subset$time_pct %>% add_unit("%", x_right = " ")) %>%
-    collapse_strings() %>%
-    encase_in_braces() %>%
-    paste_left(paste0(anim_id, " ")) %>%
-    paste_left("@keyframes ") %>%
-    add_keyframes_to_element_i(
-      elements = elements,
-      index = index
-    )
-
-  # Get the associated `style` value for the position transform
-  elements <-
-    max_time_s %>%
-    add_unit("s", x_right = " ") %>%
-    paste_right("linear") %>%
-    paste_right(rep_str) %>%
-    paste_right(" both ") %>%
-    paste_right(anim_id) %>%
-    paste_between("animation: ", ";") %>%
-    add_style_to_element_i(
-      elements = elements,
-      index = index
-    )
 
   elements
 }

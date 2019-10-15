@@ -178,6 +178,10 @@ build_element_tag <- function(element) {
     if (built_tag %>% tidy_grepl("anim_scale")) {
       built_tag <- built_tag %>% tidy_gsub("x=.*? y=.*? ", "")
     }
+
+    if (built_tag %>% tidy_grepl("anim_rotation")) {
+      built_tag <- built_tag %>% tidy_gsub("cx=.*? cy=.*? ", "")
+    }
   }
 
   built_tag
