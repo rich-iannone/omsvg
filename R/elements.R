@@ -8,16 +8,18 @@
 #' define x and y radius of the corners of the rectangle.
 #'
 #' @param svg The `svg` object that is created using the [SVG()] function.
-#' @param x,y The `x` and `y` positions of the upper left of the rectangle to be
-#'   drawn. The `x` and `y` values are relative to upper left of the SVG drawing
-#'   area.
-#' @param width,height The `width` and `height` of the rectangle that is to be
+#' @param x,y The `x` and `y` positions of the upper left point of the rectangle
+#'   to be drawn. The `x` and `y` values are relative to upper left of the SVG
+#'   drawing area.
+#' @param width,height The `width` and `height` of the element that is to be
 #'   drawn. The `width` is the distance in the 'x' direction from point `x`
 #'   (proceeding right) and the `height` is the distance in the 'y' direction
 #'   from point `y` (proceeding downward).
 #' @param rx,ry Optional corner radius values in the 'x' and 'y' directions.
 #'   Applies to all corners of the rectangle. If only one value is provided
 #'   (say, just for `rx`) then the unset value will take that set value as well.
+#' @param opacity The initial opacity of the element. Must be a value in the
+#'   range of `0` to `1`. If not specified it is assumed to be `1.0`.
 #' @param attrs A presentation attribute list. The helper function
 #'   [attrs_pres()] can help us easily generate this named list object. For the
 #'   most part, the list's names are the presentation attribute names and the
@@ -80,6 +82,7 @@ svg_rect <- function(svg,
                      height,
                      rx = NULL,
                      ry = NULL,
+                     opacity = NULL,
                      attrs = list(),
                      anims = list(),
                      id = NULL) {
@@ -93,6 +96,7 @@ svg_rect <- function(svg,
       height = height,
       rx = rx,
       ry = ry,
+      opacity = opacity,
       attrs = attrs,
       anims = anims,
       tag = NA_character_
@@ -112,9 +116,8 @@ svg_rect <- function(svg,
 #' the point of the circle. The `diameter` of the circle is given in units of
 #' `px`.
 #'
-#' @param x,y The `x` and `y` positions of the center of the circle to be
-#'   drawn. The `x` and `y` values are relative to upper left of the SVG
-#'   drawing area.
+#' @param x,y The `x` and `y` positions of the center of the circle to be drawn.
+#'   The `x` and `y` values are relative to upper left of the SVG drawing area.
 #' @param diameter The diameter of the circle shape in units of `px`.
 #' @inheritParams svg_rect
 #'
@@ -134,6 +137,7 @@ svg_circle <- function(svg,
                        x,
                        y,
                        diameter,
+                       opacity = NULL,
                        attrs = list(),
                        anims = list(),
                        id = NULL) {
@@ -146,6 +150,7 @@ svg_circle <- function(svg,
       cx = x,
       cy = y,
       r = radius,
+      opacity = opacity,
       attrs = attrs,
       anims = anims,
       tag = NA_character_
@@ -169,9 +174,9 @@ svg_circle <- function(svg,
 #'   drawn. The `x` and `y` values are relative to upper left of the SVG drawing
 #'   area.
 #' @param width,height The `width` and `height` of the ellipse that is to be
-#'   drawn. The `width` is the overall width of the ellipse in the 'x' direction,
-#'   centered on point `x`. The `height` is the distance in the 'y' direction,
-#'   centered on point `y`.
+#'   drawn. The `width` is the overall width of the ellipse in the 'x'
+#'   direction, centered on point `x`. The `height` is the distance in the 'y'
+#'   direction, centered on point `y`.
 #' @inheritParams svg_rect
 #'
 #' @examples
@@ -191,6 +196,7 @@ svg_ellipse <- function(svg,
                         y,
                         width,
                         height,
+                        opacity = NULL,
                         attrs = list(),
                         anims = list(),
                         id = NULL) {
@@ -205,6 +211,7 @@ svg_ellipse <- function(svg,
       cy = y,
       rx = rx,
       ry = ry,
+      opacity = opacity,
       attrs = attrs,
       anims = anims,
       tag = NA_character_
@@ -244,6 +251,7 @@ svg_line <- function(svg,
                      y1,
                      x2,
                      y2,
+                     opacity = NULL,
                      attrs = list(),
                      anims = list(),
                      id = NULL) {
@@ -255,6 +263,7 @@ svg_line <- function(svg,
       x2 = x2,
       y1 = y1,
       y2 = y2,
+      opacity = opacity,
       attrs = attrs,
       anims = anims,
       tag = NA_character_
@@ -299,6 +308,7 @@ svg_line <- function(svg,
 #' @export
 svg_polyline <- function(svg,
                          points,
+                         opacity = NULL,
                          attrs = list(),
                          anims = list(),
                          id = NULL) {
@@ -312,6 +322,7 @@ svg_polyline <- function(svg,
     list(
       type = "polyline",
       points = points,
+      opacity = opacity,
       attrs = attrs,
       anims = anims,
       tag = NA_character_
@@ -358,6 +369,7 @@ svg_polyline <- function(svg,
 #' @export
 svg_polygon <- function(svg,
                         points,
+                        opacity = NULL,
                         attrs = list(),
                         anims = list(),
                         id = NULL) {
@@ -371,6 +383,7 @@ svg_polygon <- function(svg,
     list(
       type = "polygon",
       points = points,
+      opacity = opacity,
       attrs = attrs,
       anims = anims,
       tag = NA_character_
@@ -413,6 +426,7 @@ svg_polygon <- function(svg,
 #' @export
 svg_path <- function(svg,
                      path,
+                     opacity = NULL,
                      attrs = list(),
                      anims = list(),
                      id = NULL) {
@@ -421,6 +435,7 @@ svg_path <- function(svg,
     list(
       type = "path",
       d = path,
+      opacity = opacity,
       attrs = attrs,
       anims = anims,
       tag = NA_character_
@@ -463,6 +478,7 @@ svg_text <- function(svg,
                      y,
                      text,
                      path = NULL,
+                     opacity = NULL,
                      attrs = list(),
                      anims = list(),
                      id = NULL) {
@@ -474,6 +490,7 @@ svg_text <- function(svg,
       y = y,
       text = text,
       path = path,
+      opacity = opacity,
       attrs = attrs,
       anims = anims,
       tag = NA_character_
