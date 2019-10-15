@@ -4,8 +4,8 @@
 \alias{svg_ellipse}
 \title{Addition of an \code{ellipse} element}
 \usage{
-svg_ellipse(svg, x, y, width, height, attrs = list(), anims = list(),
-  id = NULL)
+svg_ellipse(svg, x, y, width, height, opacity = NULL, attrs = list(),
+  anims = list(), id = NULL)
 }
 \arguments{
 \item{svg}{The \code{svg} object that is created using the \code{\link[=SVG]{SVG()}} function.}
@@ -15,9 +15,12 @@ drawn. The \code{x} and \code{y} values are relative to upper left of the SVG dr
 area.}
 
 \item{width, height}{The \code{width} and \code{height} of the ellipse that is to be
-drawn. The \code{width} is the overall width of the ellipse in the 'x' direction,
-centered on point \code{x}. The \code{height} is the distance in the 'y' direction,
-centered on point \code{y}.}
+drawn. The \code{width} is the overall width of the ellipse in the 'x'
+direction, centered on point \code{x}. The \code{height} is the distance in the 'y'
+direction, centered on point \code{y}.}
+
+\item{opacity}{The initial opacity of the element. Must be a value in the
+range of \code{0} to \code{1}. If not specified it is assumed to be \code{1.0}.}
 
 \item{attrs}{A presentation attribute list. The helper function
 \code{\link[=attrs_pres]{attrs_pres()}} can help us easily generate this named list object. For the

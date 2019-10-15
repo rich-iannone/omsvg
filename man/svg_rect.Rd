@@ -5,16 +5,16 @@
 \title{Addition of a \code{rect} element}
 \usage{
 svg_rect(svg, x, y, width, height, rx = NULL, ry = NULL,
-  attrs = list(), anims = list(), id = NULL)
+  opacity = NULL, attrs = list(), anims = list(), id = NULL)
 }
 \arguments{
 \item{svg}{The \code{svg} object that is created using the \code{\link[=SVG]{SVG()}} function.}
 
-\item{x, y}{The \code{x} and \code{y} positions of the upper left of the rectangle to be
-drawn. The \code{x} and \code{y} values are relative to upper left of the SVG drawing
-area.}
+\item{x, y}{The \code{x} and \code{y} positions of the upper left point of the rectangle
+to be drawn. The \code{x} and \code{y} values are relative to upper left of the SVG
+drawing area.}
 
-\item{width, height}{The \code{width} and \code{height} of the rectangle that is to be
+\item{width, height}{The \code{width} and \code{height} of the element that is to be
 drawn. The \code{width} is the distance in the 'x' direction from point \code{x}
 (proceeding right) and the \code{height} is the distance in the 'y' direction
 from point \code{y} (proceeding downward).}
@@ -22,6 +22,9 @@ from point \code{y} (proceeding downward).}
 \item{rx, ry}{Optional corner radius values in the 'x' and 'y' directions.
 Applies to all corners of the rectangle. If only one value is provided
 (say, just for \code{rx}) then the unset value will take that set value as well.}
+
+\item{opacity}{The initial opacity of the element. Must be a value in the
+range of \code{0} to \code{1}. If not specified it is assumed to be \code{1.0}.}
 
 \item{attrs}{A presentation attribute list. The helper function
 \code{\link[=attrs_pres]{attrs_pres()}} can help us easily generate this named list object. For the

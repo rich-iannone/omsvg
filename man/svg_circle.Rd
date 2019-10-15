@@ -4,17 +4,19 @@
 \alias{svg_circle}
 \title{Addition of a \code{circle} element}
 \usage{
-svg_circle(svg, x, y, diameter, attrs = list(), anims = list(),
-  id = NULL)
+svg_circle(svg, x, y, diameter, opacity = NULL, attrs = list(),
+  anims = list(), id = NULL)
 }
 \arguments{
 \item{svg}{The \code{svg} object that is created using the \code{\link[=SVG]{SVG()}} function.}
 
-\item{x, y}{The \code{x} and \code{y} positions of the center of the circle to be
-drawn. The \code{x} and \code{y} values are relative to upper left of the SVG
-drawing area.}
+\item{x, y}{The \code{x} and \code{y} positions of the center of the circle to be drawn.
+The \code{x} and \code{y} values are relative to upper left of the SVG drawing area.}
 
 \item{diameter}{The diameter of the circle shape in units of \code{px}.}
+
+\item{opacity}{The initial opacity of the element. Must be a value in the
+range of \code{0} to \code{1}. If not specified it is assumed to be \code{1.0}.}
 
 \item{attrs}{A presentation attribute list. The helper function
 \code{\link[=attrs_pres]{attrs_pres()}} can help us easily generate this named list object. For the

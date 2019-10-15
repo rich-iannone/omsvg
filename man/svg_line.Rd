@@ -4,8 +4,8 @@
 \alias{svg_line}
 \title{Addition of an \code{line} element}
 \usage{
-svg_line(svg, x1, y1, x2, y2, attrs = list(), anims = list(),
-  id = NULL)
+svg_line(svg, x1, y1, x2, y2, opacity = NULL, attrs = list(),
+  anims = list(), id = NULL)
 }
 \arguments{
 \item{svg}{The \code{svg} object that is created using the \code{\link[=SVG]{SVG()}} function.}
@@ -13,6 +13,9 @@ svg_line(svg, x1, y1, x2, y2, attrs = list(), anims = list(),
 \item{x1, y1}{The \code{x} and \code{y} positions of the line's start point.}
 
 \item{x2, y2}{The \code{x} and \code{y} positions of the line's end point.}
+
+\item{opacity}{The initial opacity of the element. Must be a value in the
+range of \code{0} to \code{1}. If not specified it is assumed to be \code{1.0}.}
 
 \item{attrs}{A presentation attribute list. The helper function
 \code{\link[=attrs_pres]{attrs_pres()}} can help us easily generate this named list object. For the

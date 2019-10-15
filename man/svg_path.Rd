@@ -4,13 +4,17 @@
 \alias{svg_path}
 \title{Addition of an \code{path} element}
 \usage{
-svg_path(svg, path, attrs = list(), anims = list(), id = NULL)
+svg_path(svg, path, opacity = NULL, attrs = list(), anims = list(),
+  id = NULL)
 }
 \arguments{
 \item{svg}{The \code{svg} object that is created using the \code{\link[=SVG]{SVG()}} function.}
 
 \item{path}{A single-length character vector that holds the formatted path
 string.}
+
+\item{opacity}{The initial opacity of the element. Must be a value in the
+range of \code{0} to \code{1}. If not specified it is assumed to be \code{1.0}.}
 
 \item{attrs}{A presentation attribute list. The helper function
 \code{\link[=attrs_pres]{attrs_pres()}} can help us easily generate this named list object. For the

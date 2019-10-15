@@ -4,7 +4,8 @@
 \alias{svg_polygon}
 \title{Addition of an \code{polygon} element}
 \usage{
-svg_polygon(svg, points, attrs = list(), anims = list(), id = NULL)
+svg_polygon(svg, points, opacity = NULL, attrs = list(),
+  anims = list(), id = NULL)
 }
 \arguments{
 \item{svg}{The \code{svg} object that is created using the \code{\link[=SVG]{SVG()}} function.}
@@ -13,6 +14,9 @@ svg_polygon(svg, points, attrs = list(), anims = list(), id = NULL)
 \code{y} positions) that define the polygon. This can also be a single-length
 character vector that holds the formatted points string (space-separated
 \code{x} and \code{y} values, and comma-separated points).}
+
+\item{opacity}{The initial opacity of the element. Must be a value in the
+range of \code{0} to \code{1}. If not specified it is assumed to be \code{1.0}.}
 
 \item{attrs}{A presentation attribute list. The helper function
 \code{\link[=attrs_pres]{attrs_pres()}} can help us easily generate this named list object. For the
