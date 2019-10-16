@@ -745,8 +745,11 @@ normalize_start_list <- function(start, attrs) {
   names_start <- names(start) %>% tidy_gsub("_i$", "")
 
   for (name in attrs_names) {
-    start[[which(names_start %in% name)]] <-
-      attrs[[name %>% tidy_gsub("_", "-", fixed = TRUE)]]
+    if (name %in% names_start) {
+
+      start[[which(names_start %in% name)]] <-
+        attrs[[name %>% tidy_gsub("_", "-", fixed = TRUE)]]
+    }
   }
 
   start
@@ -768,9 +771,12 @@ normalize_element_list <- function(element, attrs) {
   names_element <- names(element)
 
   for (name in attrs_names) {
-    element[[which(names_element %in% name)]] <-
-      attrs[[name %>% tidy_gsub("_", "-", fixed = TRUE)]]
-    attrs[name] <- NULL
+    if (name %in% names_element) {
+
+      element[[which(names_element %in% name)]] <-
+        attrs[[name %>% tidy_gsub("_", "-", fixed = TRUE)]]
+      attrs[name] <- NULL
+    }
   }
 
   element$attrs <- attrs
