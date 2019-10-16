@@ -147,9 +147,7 @@ build_element_tag <- function(element) {
   type <- e$type
 
   # Get the main attributes
-  attrs_m <-
-    e[names(e) %>%
-        base::setdiff(c("type", "text", "attrs", "anims", "anims_built", "tag", "path"))]
+  attrs_m <- e[names(e) %>% base::setdiff(non_attr_e_names())]
 
   # Get the extra attributes for the shape
   attrs_e <- e$attrs
