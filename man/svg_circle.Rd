@@ -4,8 +4,9 @@
 \alias{svg_circle}
 \title{Addition of a \code{circle} element}
 \usage{
-svg_circle(svg, x, y, diameter, opacity = NULL, attrs = list(),
-  anims = list(), id = NULL)
+svg_circle(svg, x, y, diameter, stroke = "#000000", stroke_width = 1,
+  fill = "#DDDDDD", opacity = 1, attrs = list(), anims = list(),
+  id = NULL)
 }
 \arguments{
 \item{svg}{The \code{svg} object that is created using the \code{\link[=SVG]{SVG()}} function.}
@@ -15,8 +16,16 @@ The \code{x} and \code{y} values are relative to upper left of the SVG drawing a
 
 \item{diameter}{The diameter of the circle shape in units of \code{px}.}
 
+\item{stroke}{The color of the stroke applied to the element (i.e., the
+outline). By default, this is \code{"#000000"} (black).}
+
+\item{stroke_width}{The width of the stroke in units of pixels. By default,
+this is \code{1.0}.}
+
+\item{fill}{The fill color of the element. This is \code{"#DDDDDD"} by default.}
+
 \item{opacity}{The initial opacity of the element. Must be a value in the
-range of \code{0} to \code{1}. If not specified it is assumed to be \code{1.0}.}
+range of \code{0} to \code{1}. By default, the value is set to \code{1.0} (fully opaque).}
 
 \item{attrs}{A presentation attribute list. The helper function
 \code{\link[=attrs_pres]{attrs_pres()}} can help us easily generate this named list object. For the
@@ -44,7 +53,8 @@ svg <-
     svg_circle(
       x = 30, y = 30,
       diameter = 40,
-      attrs = attrs_pres(fill = "red")
+      stroke = "magenta",
+      fill = "olive"
     )
 
 }

@@ -4,7 +4,7 @@
 \alias{svg_text}
 \title{Addition of an \code{text} element}
 \usage{
-svg_text(svg, x, y, text, path = NULL, opacity = NULL,
+svg_text(svg, x, y, text, fill = "#000000", opacity = 1, path = NULL,
   attrs = list(), anims = list(), id = NULL)
 }
 \arguments{
@@ -16,11 +16,14 @@ area itself.}
 
 \item{text}{A character vector that contains the text to be rendered.}
 
-\item{path}{A single-length character vector that holds the formatted path
-string.}
+\item{fill}{The color of the text. By default this is set to \code{"#000000"}
+(black).}
 
 \item{opacity}{The initial opacity of the element. Must be a value in the
-range of \code{0} to \code{1}. If not specified it is assumed to be \code{1.0}.}
+range of \code{0} to \code{1}. By default, the value is set to \code{1.0} (fully opaque).}
+
+\item{path}{A single-length character vector that holds the formatted path
+string.}
 
 \item{attrs}{A presentation attribute list. The helper function
 \code{\link[=attrs_pres]{attrs_pres()}} can help us easily generate this named list object. For the

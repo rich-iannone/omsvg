@@ -4,8 +4,9 @@
 \alias{svg_polygon}
 \title{Addition of an \code{polygon} element}
 \usage{
-svg_polygon(svg, points, opacity = NULL, attrs = list(),
-  anims = list(), id = NULL)
+svg_polygon(svg, points, stroke = "#000000", stroke_width = 1,
+  fill = "#DDDDDD", opacity = 1, attrs = list(), anims = list(),
+  id = NULL)
 }
 \arguments{
 \item{svg}{The \code{svg} object that is created using the \code{\link[=SVG]{SVG()}} function.}
@@ -15,8 +16,16 @@ svg_polygon(svg, points, opacity = NULL, attrs = list(),
 character vector that holds the formatted points string (space-separated
 \code{x} and \code{y} values, and comma-separated points).}
 
+\item{stroke}{The color of the stroke applied to the element (i.e., the
+outline). By default, this is \code{"#000000"} (black).}
+
+\item{stroke_width}{The width of the stroke in units of pixels. By default,
+this is \code{1.0}.}
+
+\item{fill}{The fill color of the element. This is \code{"#DDDDDD"} by default.}
+
 \item{opacity}{The initial opacity of the element. Must be a value in the
-range of \code{0} to \code{1}. If not specified it is assumed to be \code{1.0}.}
+range of \code{0} to \code{1}. By default, the value is set to \code{1.0} (fully opaque).}
 
 \item{attrs}{A presentation attribute list. The helper function
 \code{\link[=attrs_pres]{attrs_pres()}} can help us easily generate this named list object. For the
@@ -47,11 +56,9 @@ svg <-
   SVG(width = 300, height = 300) \%>\%
     svg_polygon(
       points = "100,10 40,198 190,78 10,78 160,198",
-      attrs = attrs_pres(
-        stroke = "orange",
-        stroke_width = 2,
-        fill = "yellow"
-      )
+      stroke = "orange",
+      stroke_width = 4,
+      fill = "yellow"
     )
 
 }

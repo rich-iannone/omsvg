@@ -4,8 +4,8 @@
 \alias{svg_polyline}
 \title{Addition of an \code{polyline} element}
 \usage{
-svg_polyline(svg, points, opacity = NULL, attrs = list(),
-  anims = list(), id = NULL)
+svg_polyline(svg, points, stroke = "#000000", stroke_width = 1,
+  opacity = 1, attrs = list(), anims = list(), id = NULL)
 }
 \arguments{
 \item{svg}{The \code{svg} object that is created using the \code{\link[=SVG]{SVG()}} function.}
@@ -15,8 +15,14 @@ svg_polyline(svg, points, opacity = NULL, attrs = list(),
 character vector that holds the formatted points string (space-separated
 \code{x} and \code{y} values, and comma-separated points).}
 
+\item{stroke}{The color of the stroke applied to the element (i.e., the
+outline). By default, this is \code{"#000000"} (black).}
+
+\item{stroke_width}{The width of the stroke in units of pixels. By default,
+this is \code{1.0}.}
+
 \item{opacity}{The initial opacity of the element. Must be a value in the
-range of \code{0} to \code{1}. If not specified it is assumed to be \code{1.0}.}
+range of \code{0} to \code{1}. By default, the value is set to \code{1.0} (fully opaque).}
 
 \item{attrs}{A presentation attribute list. The helper function
 \code{\link[=attrs_pres]{attrs_pres()}} can help us easily generate this named list object. For the
@@ -45,11 +51,9 @@ svg <-
     svg_polyline(
       points = c(
         10, 10, 15, 20, 20, 15, 25, 30, 30, 25,
-        35, 40, 40, 35, 45, 50, 50, 45),
-      attrs = attrs_pres(
-        stroke = "blue",
-        fill = "none"
-      )
+        35, 40, 40, 35, 45, 50, 50, 45
+      ),
+      stroke = "blue"
     )
 
 }

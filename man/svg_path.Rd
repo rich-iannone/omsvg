@@ -4,7 +4,8 @@
 \alias{svg_path}
 \title{Addition of an \code{path} element}
 \usage{
-svg_path(svg, path, opacity = NULL, attrs = list(), anims = list(),
+svg_path(svg, path, stroke = "#000000", stroke_width = 1,
+  fill = "#DDDDDD", opacity = 1, attrs = list(), anims = list(),
   id = NULL)
 }
 \arguments{
@@ -13,8 +14,16 @@ svg_path(svg, path, opacity = NULL, attrs = list(), anims = list(),
 \item{path}{A single-length character vector that holds the formatted path
 string.}
 
+\item{stroke}{The color of the stroke applied to the element (i.e., the
+outline). By default, this is \code{"#000000"} (black).}
+
+\item{stroke_width}{The width of the stroke in units of pixels. By default,
+this is \code{1.0}.}
+
+\item{fill}{The fill color of the element. This is \code{"#DDDDDD"} by default.}
+
 \item{opacity}{The initial opacity of the element. Must be a value in the
-range of \code{0} to \code{1}. If not specified it is assumed to be \code{1.0}.}
+range of \code{0} to \code{1}. By default, the value is set to \code{1.0} (fully opaque).}
 
 \item{attrs}{A presentation attribute list. The helper function
 \code{\link[=attrs_pres]{attrs_pres()}} can help us easily generate this named list object. For the
@@ -43,11 +52,9 @@ svg <-
   SVG(width = 300, height = 300) \%>\%
     svg_path(
       path = "M 50 160 q 100 -300 200 0",
-      attrs = attrs_pres(
-        stroke = "magenta",
-        stroke_width = 5,
-        fill = "lightblue"
-      )
+      stroke = "magenta",
+      stroke_width = 5,
+      fill = "lightblue"
     )
 
 }

@@ -5,7 +5,8 @@
 \title{Addition of a \code{rect} element}
 \usage{
 svg_rect(svg, x, y, width, height, rx = NULL, ry = NULL,
-  opacity = NULL, attrs = list(), anims = list(), id = NULL)
+  stroke = "#000000", stroke_width = 1, fill = "#DDDDDD",
+  opacity = 1, attrs = list(), anims = list(), id = NULL)
 }
 \arguments{
 \item{svg}{The \code{svg} object that is created using the \code{\link[=SVG]{SVG()}} function.}
@@ -23,8 +24,16 @@ from point \code{y} (proceeding downward).}
 Applies to all corners of the rectangle. If only one value is provided
 (say, just for \code{rx}) then the unset value will take that set value as well.}
 
+\item{stroke}{The color of the stroke applied to the element (i.e., the
+outline). By default, this is \code{"#000000"} (black).}
+
+\item{stroke_width}{The width of the stroke in units of pixels. By default,
+this is \code{1.0}.}
+
+\item{fill}{The fill color of the element. This is \code{"#DDDDDD"} by default.}
+
 \item{opacity}{The initial opacity of the element. Must be a value in the
-range of \code{0} to \code{1}. If not specified it is assumed to be \code{1.0}.}
+range of \code{0} to \code{1}. By default, the value is set to \code{1.0} (fully opaque).}
 
 \item{attrs}{A presentation attribute list. The helper function
 \code{\link[=attrs_pres]{attrs_pres()}} can help us easily generate this named list object. For the
@@ -50,14 +59,11 @@ define x and y radius of the corners of the rectangle.
 # Create an SVG with a single
 # rectangle element
 svg_1 <-
-  SVG(width = 100, height = 40) \%>\%
+  SVG(width = 100, height = 100) \%>\%
     svg_rect(
       x = 20, y = 10,
       width = 40, height = 15,
-      attrs = attrs_pres(
-        stroke = "red",
-        fill = "green"
-      )
+      stroke = "blue", fill = "yellow"
     )
 
 # Create an SVG with a single
@@ -68,15 +74,12 @@ svg_2 <-
     svg_rect(
       x = 50, y = 50,
       width = 50, height = 50,
-      attrs = attrs_pres(
-        stroke = "magenta",
-        fill = "lightblue"
-      ),
+      stroke = "magenta", fill = "lightblue",
       anims = anims(
         0.5 ~ list(
           anim_position(
             x = 50, y = 50,
-            timing = cubic_bezier(1, 1, 0.5, 0.5)
+            timing = ease_out()
           ),
           anim_rotation(rotation = 0)
         ),
