@@ -48,8 +48,6 @@ SVG(width = 300, height = 300) %>%
     )
   )
 
-
-
 # Basic animation of an element's
 # opacity value (moving to a new
 # `opacity` value of `0`)
