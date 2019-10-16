@@ -18,8 +18,13 @@
 #' @param rx,ry Optional corner radius values in the 'x' and 'y' directions.
 #'   Applies to all corners of the rectangle. If only one value is provided
 #'   (say, just for `rx`) then the unset value will take that set value as well.
+#' @param stroke The color of the stroke applied to the element (i.e., the
+#'   outline). By default, this is `"#000000"` (black).
+#' @param stroke_width The width of the stroke in units of pixels. By default,
+#'   this is `1.0`.
+#' @param fill The fill color of the element. This is `"#DDDDDD"` by default.
 #' @param opacity The initial opacity of the element. Must be a value in the
-#'   range of `0` to `1`. If not specified it is assumed to be `1.0`.
+#'   range of `0` to `1`. By default, the value is set to `1.0` (fully opaque).
 #' @param attrs A presentation attribute list. The helper function
 #'   [attrs_pres()] can help us easily generate this named list object. For the
 #'   most part, the list's names are the presentation attribute names and the
@@ -34,14 +39,11 @@
 #' # Create an SVG with a single
 #' # rectangle element
 #' svg_1 <-
-#'   SVG(width = 100, height = 40) %>%
+#'   SVG(width = 100, height = 100) %>%
 #'     svg_rect(
 #'       x = 20, y = 10,
 #'       width = 40, height = 15,
-#'       attrs = attrs_pres(
-#'         stroke = "red",
-#'         fill = "green"
-#'       )
+#'       stroke = "blue", fill = "yellow"
 #'     )
 #'
 #' # Create an SVG with a single
@@ -52,15 +54,12 @@
 #'     svg_rect(
 #'       x = 50, y = 50,
 #'       width = 50, height = 50,
-#'       attrs = attrs_pres(
-#'         stroke = "magenta",
-#'         fill = "lightblue"
-#'       ),
+#'       stroke = "magenta", fill = "lightblue",
 #'       anims = anims(
 #'         0.5 ~ list(
 #'           anim_position(
 #'             x = 50, y = 50,
-#'             timing = cubic_bezier(1, 1, 0.5, 0.5)
+#'             timing = ease_out()
 #'           ),
 #'           anim_rotation(rotation = 0)
 #'         ),
@@ -82,12 +81,34 @@ svg_rect <- function(svg,
                      height,
                      rx = NULL,
                      ry = NULL,
-                     opacity = NULL,
+                     stroke = "#000000",
+                     stroke_width = 1.0,
+                     fill = "#DDDDDD",
+                     opacity = 1.0,
                      attrs = list(),
                      anims = list(),
                      id = NULL) {
 
-  element_list <-
+  # Develop the `start` list and normalize it
+  # against any `attrs` defined
+  start <-
+    list(
+      x_i = x,
+      y_i = y,
+      width_i = width,
+      height_i = height,
+      rx_i = rx,
+      ry_i = ry,
+      stroke_i = stroke,
+      stroke_width_i = stroke_width,
+      fill_i = fill,
+      opacity_i = opacity
+    ) %>%
+    normalize_start_list(attrs = attrs)
+
+  # Develop the `element` list and normalize it
+  # against any `attrs` defined
+  element <-
     list(
       type = "rect",
       x = x,
@@ -96,15 +117,21 @@ svg_rect <- function(svg,
       height = height,
       rx = rx,
       ry = ry,
+      stroke = stroke,
+      stroke_width = stroke_width,
+      fill = fill,
       opacity = opacity,
       attrs = attrs,
       anims = anims,
+      start = start,
       tag = NA_character_
-    )
+    ) %>%
+    normalize_element_list(attrs = attrs)
 
+  # Add the `element` list to the `svg` object
   add_element_list(
     svg = svg,
-    element_list = element_list,
+    element_list = element,
     id = id
   )
 }
@@ -129,7 +156,8 @@ svg_rect <- function(svg,
 #'     svg_circle(
 #'       x = 30, y = 30,
 #'       diameter = 40,
-#'       attrs = attrs_pres(fill = "red")
+#'       stroke = "magenta",
+#'       fill = "olive"
 #'     )
 #'
 #' @export
@@ -137,28 +165,54 @@ svg_circle <- function(svg,
                        x,
                        y,
                        diameter,
-                       opacity = NULL,
+                       stroke = "#000000",
+                       stroke_width = 1.0,
+                       fill = "#DDDDDD",
+                       opacity = 1.0,
                        attrs = list(),
                        anims = list(),
                        id = NULL) {
 
   radius <- diameter / 2
 
-  element_list <-
+  # Develop the `start` list and normalize it
+  # against any `attrs` defined
+  start <-
+    list(
+      x_i = x,
+      y_i = y,
+      width_i = diameter,
+      height_i = diameter,
+      stroke_i = stroke,
+      stroke_width_i = stroke_width,
+      fill_i = fill,
+      opacity_i = opacity
+    ) %>%
+    normalize_start_list(attrs = attrs)
+
+  # Develop the `element` list and normalize it
+  # against any `attrs` defined
+  element <-
     list(
       type = "circle",
       cx = x,
       cy = y,
       r = radius,
+      stroke = stroke,
+      stroke_width = stroke_width,
+      fill = fill,
       opacity = opacity,
       attrs = attrs,
       anims = anims,
+      start = start,
       tag = NA_character_
-    )
+    ) %>%
+    normalize_element_list(attrs = attrs)
 
+  # Add the `element` list to the `svg` object
   add_element_list(
     svg = svg,
-    element_list = element_list,
+    element_list = element,
     id = id
   )
 }
@@ -187,7 +241,7 @@ svg_circle <- function(svg,
 #'     svg_ellipse(
 #'       x = 30, y = 30,
 #'       width = 50, height = 30,
-#'       attrs = attrs_pres(fill = "purple")
+#'       fill = "purple"
 #'     )
 #'
 #' @export
@@ -196,7 +250,10 @@ svg_ellipse <- function(svg,
                         y,
                         width,
                         height,
-                        opacity = NULL,
+                        stroke = "#000000",
+                        stroke_width = 1.0,
+                        fill = "#DDDDDD",
+                        opacity = 1.0,
                         attrs = list(),
                         anims = list(),
                         id = NULL) {
@@ -204,22 +261,45 @@ svg_ellipse <- function(svg,
   rx <- width / 2
   ry <- height / 2
 
-  element_list <-
+  # Develop the `start` list and normalize it
+  # against any `attrs` defined
+  start <-
+    list(
+      x_i = x,
+      y_i = y,
+      width_i = width,
+      height_i = height,
+      stroke_i = stroke,
+      stroke_width_i = stroke_width,
+      fill_i = fill,
+      opacity_i = opacity
+    ) %>%
+    normalize_start_list(attrs = attrs)
+
+  # Develop the `element` list and normalize it
+  # against any `attrs` defined
+  element <-
     list(
       type = "ellipse",
       cx = x,
       cy = y,
       rx = rx,
       ry = ry,
+      stroke = stroke,
+      stroke_width = stroke_width,
+      fill = fill,
       opacity = opacity,
       attrs = attrs,
       anims = anims,
+      start = start,
       tag = NA_character_
-    )
+    ) %>%
+    normalize_element_list(attrs = attrs)
 
+  # Add the `element` list to the `svg` object
   add_element_list(
     svg = svg,
-    element_list = element_list,
+    element_list = element,
     id = id
   )
 }
@@ -242,7 +322,7 @@ svg_ellipse <- function(svg,
 #'     svg_line(
 #'       x1 = 5, y1 = 5,
 #'       x2 = 95, y2 = 45,
-#'       attrs = attrs_pres(stroke = "blue")
+#'       stroke = "blue"
 #'     )
 #'
 #' @export
@@ -251,27 +331,53 @@ svg_line <- function(svg,
                      y1,
                      x2,
                      y2,
-                     opacity = NULL,
+                     stroke = "#000000",
+                     stroke_width = 1.0,
+                     opacity = 1.0,
                      attrs = list(),
                      anims = list(),
                      id = NULL) {
 
-  element_list <-
+  width <- abs(x1 - x2)
+  height <- abs(y1 - y2)
+
+  # Develop the `start` list and normalize it
+  # against any `attrs` defined
+  start <-
+    list(
+      x_i = x1,
+      y_i = y1,
+      width_i = width,
+      height_i = height,
+      stroke_i = stroke,
+      stroke_width_i = stroke_width,
+      opacity_i = opacity
+    ) %>%
+    normalize_start_list(attrs = attrs)
+
+  # Develop the `element` list and normalize it
+  # against any `attrs` defined
+  element <-
     list(
       type = "line",
       x1 = x1,
       x2 = x2,
       y1 = y1,
       y2 = y2,
+      stroke = stroke,
+      stroke_width = stroke_width,
       opacity = opacity,
       attrs = attrs,
       anims = anims,
+      start = start,
       tag = NA_character_
-    )
+    ) %>%
+    normalize_element_list(attrs = attrs)
 
+  # Add the `element` list to the `svg` object
   add_element_list(
     svg = svg,
-    element_list = element_list,
+    element_list = element,
     id = id
   )
 }
@@ -298,17 +404,17 @@ svg_line <- function(svg,
 #'     svg_polyline(
 #'       points = c(
 #'         10, 10, 15, 20, 20, 15, 25, 30, 30, 25,
-#'         35, 40, 40, 35, 45, 50, 50, 45),
-#'       attrs = attrs_pres(
-#'         stroke = "blue",
-#'         fill = "none"
-#'       )
+#'         35, 40, 40, 35, 45, 50, 50, 45
+#'       ),
+#'       stroke = "blue"
 #'     )
 #'
 #' @export
 svg_polyline <- function(svg,
                          points,
-                         opacity = NULL,
+                         stroke = "#000000",
+                         stroke_width = 1.0,
+                         opacity = 1.0,
                          attrs = list(),
                          anims = list(),
                          id = NULL) {
@@ -318,19 +424,40 @@ svg_polyline <- function(svg,
     points <- paste(mat[, 1], mat[, 2], collapse = ", ")
   }
 
-  element_list <-
+  # Develop the `start` list and normalize it
+  # against any `attrs` defined
+  start <-
+    list(
+      x_i = 0,
+      y_i = 0,
+      width_i = 0,
+      height_i = 0,
+      stroke_i = stroke,
+      stroke_width_i = stroke_width,
+      opacity_i = opacity
+    ) %>%
+    normalize_start_list(attrs = attrs)
+
+  # Develop the `element` list and normalize it
+  # against any `attrs` defined
+  element <-
     list(
       type = "polyline",
       points = points,
+      stroke = stroke,
+      stroke_width = stroke_width,
       opacity = opacity,
       attrs = attrs,
       anims = anims,
+      start = start,
       tag = NA_character_
-    )
+    ) %>%
+    normalize_element_list(attrs = attrs)
 
+  # Add the `element` list to the `svg` object
   add_element_list(
     svg = svg,
-    element_list = element_list,
+    element_list = element,
     id = id
   )
 }
@@ -359,17 +486,18 @@ svg_polyline <- function(svg,
 #'   SVG(width = 300, height = 300) %>%
 #'     svg_polygon(
 #'       points = "100,10 40,198 190,78 10,78 160,198",
-#'       attrs = attrs_pres(
-#'         stroke = "orange",
-#'         stroke_width = 2,
-#'         fill = "yellow"
-#'       )
+#'       stroke = "orange",
+#'       stroke_width = 4,
+#'       fill = "yellow"
 #'     )
 #'
 #' @export
 svg_polygon <- function(svg,
                         points,
-                        opacity = NULL,
+                        stroke = "#000000",
+                        stroke_width = 1.0,
+                        fill = "#DDDDDD",
+                        opacity = 1.0,
                         attrs = list(),
                         anims = list(),
                         id = NULL) {
@@ -379,19 +507,42 @@ svg_polygon <- function(svg,
     points <- paste(mat[, 1], mat[, 2], collapse = ", ")
   }
 
-  element_list <-
+  # Develop the `start` list and normalize it
+  # against any `attrs` defined
+  start <-
+    list(
+      x_i = 0,
+      y_i = 0,
+      width_i = 0,
+      height_i = 0,
+      stroke_i = stroke,
+      stroke_width_i = stroke_width,
+      fill_i = fill,
+      opacity_i = opacity
+    ) %>%
+    normalize_start_list(attrs = attrs)
+
+  # Develop the `element` list and normalize it
+  # against any `attrs` defined
+  element <-
     list(
       type = "polygon",
       points = points,
+      stroke = stroke,
+      stroke_width = stroke_width,
+      fill = fill,
       opacity = opacity,
       attrs = attrs,
       anims = anims,
+      start = start,
       tag = NA_character_
-    )
+    ) %>%
+    normalize_element_list(attrs = attrs)
 
+  # Add the `element` list to the `svg` object
   add_element_list(
     svg = svg,
-    element_list = element_list,
+    element_list = element,
     id = id
   )
 }
@@ -416,34 +567,58 @@ svg_polygon <- function(svg,
 #'   SVG(width = 300, height = 300) %>%
 #'     svg_path(
 #'       path = "M 50 160 q 100 -300 200 0",
-#'       attrs = attrs_pres(
-#'         stroke = "magenta",
-#'         stroke_width = 5,
-#'         fill = "lightblue"
-#'       )
+#'       stroke = "magenta",
+#'       stroke_width = 5,
+#'       fill = "lightblue"
 #'     )
 #'
 #' @export
 svg_path <- function(svg,
                      path,
-                     opacity = NULL,
+                     stroke = "#000000",
+                     stroke_width = 1.0,
+                     fill = "#DDDDDD",
+                     opacity = 1.0,
                      attrs = list(),
                      anims = list(),
                      id = NULL) {
 
-  element_list <-
+  # Develop the `start` list and normalize it
+  # against any `attrs` defined
+  start <-
+    list(
+      x_i = 0,
+      y_i = 0,
+      width_i = 0,
+      height_i = 0,
+      stroke_i = stroke,
+      stroke_width_i = stroke_width,
+      fill_i = fill,
+      opacity_i = opacity
+    ) %>%
+    normalize_start_list(attrs = attrs)
+
+  # Develop the `element` list and normalize it
+  # against any `attrs` defined
+  element <-
     list(
       type = "path",
       d = path,
+      stroke = stroke,
+      stroke_width = stroke_width,
+      fill = fill,
       opacity = opacity,
       attrs = attrs,
       anims = anims,
+      start = start,
       tag = NA_character_
-    )
+    ) %>%
+    normalize_element_list(attrs = attrs)
 
+  # Add the `element` list to the `svg` object
   add_element_list(
     svg = svg,
-    element_list = element_list,
+    element_list = element,
     id = id
   )
 }
@@ -459,6 +634,8 @@ svg_path <- function(svg,
 #'   drawn. The `x` and `y` values are relative to upper left of the SVG drawing
 #'   area itself.
 #' @param text A character vector that contains the text to be rendered.
+#' @param fill The color of the text. By default this is set to `"#000000"`
+#'   (black).
 #' @inheritParams svg_rect
 #' @inheritParams svg_path
 #'
@@ -477,28 +654,48 @@ svg_text <- function(svg,
                      x,
                      y,
                      text,
+                     fill = "#000000",
+                     opacity = 1.0,
                      path = NULL,
-                     opacity = NULL,
                      attrs = list(),
                      anims = list(),
                      id = NULL) {
 
-  element_list <-
+  # Develop the `start` list and normalize it
+  # against any `attrs` defined
+  start <-
+    list(
+      x_i = x,
+      y_i = y,
+      width_i = 0,
+      height_i = 0,
+      fill_i = fill,
+      opacity_i = opacity
+    ) %>%
+    normalize_start_list(attrs = attrs)
+
+  # Develop the `element` list and normalize it
+  # against any `attrs` defined
+  element <-
     list(
       type = "text",
       x = x,
       y = y,
       text = text,
       path = path,
+      fill = fill,
       opacity = opacity,
       attrs = attrs,
       anims = anims,
+      start = start,
       tag = NA_character_
-    )
+    ) %>%
+    normalize_element_list(attrs = attrs)
 
+  # Add the `element` list to the `svg` object
   add_element_list(
     svg = svg,
-    element_list = element_list,
+    element_list = element,
     id = id
   )
 }
@@ -529,4 +726,54 @@ add_defs_list <- function(svg, defs_list) {
   svg$defs <- c(svg$defs, list(defs_list))
 
   svg
+}
+
+normalize_start_list <- function(start, attrs) {
+
+  # Are there assigned values in `attrs` also in `start`
+  if (
+    !(
+      names(start) %>%
+      tidy_gsub("_i$", "") %in% (names(attrs) %>% tidy_gsub("-", "_", fixed = TRUE))
+    ) %>%
+    any()
+  ) {
+    return(start)
+  }
+
+  attrs_names <- names(attrs) %>% tidy_gsub("-", "_", fixed = TRUE)
+  names_start <- names(start) %>% tidy_gsub("_i$", "")
+
+  for (name in attrs_names) {
+    start[[which(names_start %in% name)]] <-
+      attrs[[name %>% tidy_gsub("_", "-", fixed = TRUE)]]
+  }
+
+  start
+}
+
+normalize_element_list <- function(element, attrs) {
+
+  # Are there assigned values in `attrs` also in `element`
+  if (
+    !(
+      names(element) %in% (names(attrs) %>% tidy_gsub("-", "_", fixed = TRUE))
+    ) %>%
+    any()
+  ) {
+    return(element)
+  }
+
+  attrs_names <- names(attrs) %>% tidy_gsub("-", "_", fixed = TRUE)
+  names_element <- names(element)
+
+  for (name in attrs_names) {
+    element[[which(names_element %in% name)]] <-
+      attrs[[name %>% tidy_gsub("_", "-", fixed = TRUE)]]
+    attrs[name] <- NULL
+  }
+
+  element$attrs <- attrs
+
+  element
 }
