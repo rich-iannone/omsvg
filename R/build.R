@@ -164,7 +164,7 @@ build_element_tag <- function(element) {
     inner <- ""
   }
 
-  attr_names <- names(attrs)
+  attr_names <- names(attrs) %>% tidy_gsub("_", "-")
 
   attr_str <-
     seq(attrs) %>%
