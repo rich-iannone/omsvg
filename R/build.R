@@ -126,6 +126,20 @@ build_svg <- function(svg) {
   invisible(svg_char)
 }
 
+non_attr_e_names <- function() {
+
+  c(
+    "type",
+    "text",
+    "attrs",
+    "anims",
+    "anims_built",
+    "start",
+    "tag",
+    "path"
+  )
+}
+
 build_element_tag <- function(element) {
 
   e <- element
