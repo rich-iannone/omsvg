@@ -52,21 +52,9 @@ svg %>% as.character() %>% cat()
 #> </svg>
 ```
 
-Below is that `svg` in this document. Since I’m using **R Markdown**, I
-decided to include it inline (between
-backticks).
+Below is that `svg` in this document.
 
-<svg width="250px" height="100px" viewBox="0 0 250 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-
-<defs>
-
-</defs>
-<rect x="25" y="25" width="50" height="50" stroke="#000000" stroke-width="1" fill="yellow" opacity="1"></rect>
-<ellipse cx="125" cy="50" rx="25" ry="25" stroke="magenta" stroke-width="1" fill="#DDDDDD" opacity="1"></ellipse>
-<text x="175" y="50" fill="#000000" opacity="1" font-family="Helvetica">this
-is text</text>
-
-</svg>
+<img src="man/figures/example_1.svg" align="center" />
 
 Aside from rectangles, ellipses, and text, we can also elect to use
 circles (`svg_circle()`), lines (`svg_line()`), *polylines*
@@ -101,25 +89,7 @@ svg_rectangle_anim <-
   )
 ```
 
-<svg width="700px" height="150px" viewBox="0 0 700 150" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-
-<defs>
-
-</defs>
-
-<style>
-@keyframes anim_position_000001 { 0% { transform: translate(100px,75px); animation-timing-function: linear(); } 25% { transform: translate(100px,75px); animation-timing-function: linear(); } 100% { transform: translate(500px,75px); animation-timing-function: cubic-bezier(0.42,0,0.58,1); } }
-@keyframes anim_rotation_000001 { 0% { transform: rotate(0deg); animation-timing-function: linear(); } 25% { transform: rotate(0deg); animation-timing-function: linear(); } 100% { transform: rotate(90deg); animation-timing-function: cubic-bezier(0.42,0,0.58,1); } }
-@keyframes anim_anchor_000001 { 0% { transform: translate(-50px,-50px); } 100% { transform: translate(-50px,-50px); } }
-</style>
-
-<g style="animation: 2s linear infinite both anim_position_000001;">
-<g style="animation: 2s linear infinite both anim_rotation_000001;">
-<g style="animation: 2s linear infinite both anim_anchor_000001;">
-<rect width="100" height="100" stroke="cyan" stroke-width="1" fill="lightblue" opacity="1"></rect>
-</g> </g> </g>
-
-</svg>
+<img src="man/figures/example_2.svg" align="center" />
 
 Animations are done by reference to keyframe times. Each of these times
 (in seconds) is like a transition point. Above, the rectangle is held at

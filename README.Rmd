@@ -45,9 +45,9 @@ This `svg` object can be transformed to an `<svg>` tag with `as.character()`. Wa
 svg %>% as.character() %>% cat()
 ```
 
-Below is that `svg` in this document. Since I'm using **R Markdown**, I decided to include it inline  (between backticks).
+Below is that `svg` in this document. 
 
-`r svg %>% as.character()`
+<img src="man/figures/example_1.svg" align="center" />
 
 Aside from rectangles, ellipses, and text, we can also elect to use circles (`svg_circle()`), lines (`svg_line()`), *polylines* (`svg_polyline()`), polygons (`svg_polygon()`), and as-complex-as-you-can-make-'em paths (`svg_path()`).
 
@@ -76,7 +76,7 @@ svg_rectangle_anim <-
   )
 ```
 
-`r svg_rectangle_anim %>% as.character()`
+<img src="man/figures/example_2.svg" align="center" />
 
 Animations are done by reference to keyframe times. Each of these times (in seconds) is like a transition point. Above, the rectangle is held at its initial position and rotation state until `0.5` seconds has elapsed. At `2.0` seconds, the second keyframe, the rectangle's position is to be moved from `{x = 100, y = 100}` to `{x = 500, y = 100}`, and, its rotation state should change to `90` degrees. We can assign a `timing` function that governs the tweening of the animation. For the position and rotation changes, these are both using the `ease_in_out()` timing function (where movement eases into a maximum speed and then decelerates to a stop).
 
