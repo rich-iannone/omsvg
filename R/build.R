@@ -3,9 +3,10 @@ build_svg <- function(svg) {
   width  <- svg$width
   height <- svg$height
   title  <- svg$title
+
   anim_iterations <- svg$anim_iterations
 
-  desc   <- svg$desc
+  desc <- svg$desc
 
   elements <- svg$elements
   defs <- svg$defs
