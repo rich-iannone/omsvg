@@ -4,14 +4,14 @@
 \alias{filter_offset}
 \title{Filter: offset an element a specified amount}
 \usage{
-filter_offset(what = "source", dx = 0.2, dy = 0.2)
+filter_offset(dx = NULL, dy = NULL, what = "source")
 }
 \arguments{
-\item{what}{What exactly should be offset? By default, it is the \code{"source"}
-image.}
-
 \item{dx, dy}{The offset of the element position compared to its initial
 position.}
+
+\item{what}{What exactly should be offset? By default, it is the \code{"source"}
+image.}
 }
 \description{
 The offset filter applies an offset in the x and y directions to an existing
@@ -21,7 +21,7 @@ element. The offset is handled by setting values for \code{dx} and \code{dy}.
 # Add a circle element to an
 # SVG drawing and offset it
 # by 10px to the right
-SVG(width = 100, height = 50) \%>\%
+SVG(width = 150, height = 150) \%>\%
   svg_filter(
     id = "offset_right",
     filters = list(

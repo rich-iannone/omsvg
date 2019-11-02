@@ -4,13 +4,13 @@
 \alias{filter_gaussian_blur}
 \title{Filter: add a gaussian blur to an element}
 \usage{
-filter_gaussian_blur(what = "source", stdev = 1)
+filter_gaussian_blur(stdev = 1, what = "source")
 }
 \arguments{
+\item{stdev}{The number of standard deviations for the blur effect.}
+
 \item{what}{What exactly should be blurred? By default, it is the \code{"source"}
 image.}
-
-\item{stdev}{The number of standard deviations for the blur effect.}
 }
 \description{
 A gaussian blur effectively blurs an input image or shape by the amount
