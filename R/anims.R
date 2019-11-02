@@ -81,7 +81,7 @@ anims <- function(...) {
 
   x <- list(...)
 
-  # If nothing is provided, return `data` unchanged
+  # If nothing is provided, stop the function
   if (length(x) == 0) {
     stop("Nothing was provided to `...`:\n",
          " * Use formula expressions to define animation timings",
