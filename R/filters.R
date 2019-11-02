@@ -123,13 +123,7 @@ svg_filter <- function(svg,
 #' @export
 filter_image <- function(image) {
 
-  attr_str <- paste0("xlink:href=\"", image, "\"")
-
-  build_tag(
-    name = "feImage",
-    attrs = attr_str,
-    inner = NULL
-  )
+  c(feImage = paste0("xlink:href=\"", image, "\""))
 }
 
 #' Filter: add a gaussian blur to an element
@@ -170,12 +164,12 @@ filter_gaussian_blur <- function(stdev = 1,
     what <- "SourceGraphic"
   }
 
-  attr_str <- paste0("in=\"", what, "\" stdDeviation=\"", stdev, "\"")
-
-  build_tag(
-    name = "feGaussianBlur",
-    attrs = attr_str,
-    inner = NULL
+  c(
+    feGaussianBlur = paste(
+      build_attr("in", what),
+      build_attr("stdDeviation", stdev),
+      collapse = " "
+    )
   )
 }
 
@@ -214,12 +208,12 @@ filter_erode <- function(radius = 1) {
 
   radius <- radius %>% paste(collapse = " ")
 
-  attr_str <- paste0("operator=\"erode\" radius=\"", radius, "\"")
-
-  build_tag(
-    name = "feMorphology",
-    attrs = attr_str,
-    inner = NULL
+  c(
+    feMorphology = paste(
+      build_attr("operator", "erode"),
+      build_attr("radius", radius),
+      collapse = " "
+    )
   )
 }
 
@@ -258,12 +252,12 @@ filter_dilate <- function(radius = 1) {
 
   radius <- radius %>% paste(collapse = " ")
 
-  attr_str <- paste0("operator=\"dilate\" radius=\"", radius, "\"")
-
-  build_tag(
-    name = "feMorphology",
-    attrs = attr_str,
-    inner = NULL
+  c(
+    feMorphology = paste(
+      build_attr("operator", "dilate"),
+      build_attr("radius", radius),
+      collapse = " "
+    )
   )
 }
 
@@ -312,18 +306,15 @@ filter_drop_shadow <- function(dx = 0.2,
                                color = "black",
                                opacity = 1) {
 
-  attr_str <-
-    paste0(
-      "dx=\"", dx, "\" dy=\"", dy, "\" ",
-      "stdDeviation=\"", stdev, "\" ",
-      "flood-color=\"", color, "\" ",
-      "flood-opacity=\"", opacity, "\""
+  c(
+    feDropShadow = paste(
+      build_attr("dx", dx),
+      build_attr("dy", dy),
+      build_attr("stdDeviation", stdev),
+      build_attr("flood-color", color),
+      build_attr("flood-opacity", opacity),
+      collapse = " "
     )
-
-  build_tag(
-    name = "feDropShadow",
-    attrs = attr_str,
-    inner = NULL
   )
 }
 
@@ -366,15 +357,15 @@ filter_offset <- function(dx = NULL,
     what <- "SourceGraphic"
   }
 
-  attr_str <-
-    paste0(
-      "in=\"", what, "\" ",
-      "dx=\"", dx, "\" dy=\"", dy, "\""
-    )
+  dx <- dx %||% 0
+  dy <- dy %||% 0
 
-  build_tag(
-    name = "feOffset",
-    attrs = attr_str,
-    inner = NULL
+  c(
+    feOffset = paste(
+      build_attr("in", what),
+      build_attr("dx", dx),
+      build_attr("dy", dy),
+      collapse = " "
+    )
   )
 }
