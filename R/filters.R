@@ -320,7 +320,7 @@ filter_drop_shadow <- function(dx = 0.2,
 #' # Add a circle element to an
 #' # SVG drawing and offset it
 #' # by 10px to the right
-#' SVG(width = 100, height = 50) %>%
+#' SVG(width = 150, height = 150) %>%
 #'   svg_filter(
 #'     id = "offset_right",
 #'     filters = list(
