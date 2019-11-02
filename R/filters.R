@@ -64,8 +64,23 @@ svg_filter <- function(svg,
 
   inner_tags <-
     filters %>%
+    lapply(FUN = function(x) {
+
+      if (names(x) %>% tidy_grepl("^fe")) {
+        built_tag <- build_tag(name = names(x), attrs = unname(x))
+      } else {
+        built_tag <- NULL
+      }
+
+      built_tag
+    }
+    ) %>%
     unlist() %>%
     paste(collapse = "\n")
+
+  if (inner_tags == "") {
+    return(svg)
+  }
 
   filter_tag <-
     build_tag(
