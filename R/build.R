@@ -225,4 +225,28 @@ build_tag <- function(name, attrs, inner = NULL) {
   paste0(tag_o, " ", attrs_str, ">", inner, tag_c)
 }
 
+# Determine if there are any filters
+any_filters <- function(elements) {
+
+  elements %>%
+    vapply(
+      FUN.VALUE = logical(1),
+      USE.NAMES = FALSE,
+      function(x) {length(x$filters) > 0}
+    ) %>%
+    any()
+}
+
+# Determine which elements have animations
+which_have_filters <- function(elements) {
+
+  elements %>%
+    vapply(
+      FUN.VALUE = logical(1),
+      USE.NAMES = FALSE,
+      function(x) {length(x$filters) > 0}
+    ) %>%
+    which()
+}
+
 
