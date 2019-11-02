@@ -123,9 +123,9 @@ filter_image <- function(image) {
 #' specified in `stdev`. The standard deviation of `stdev` is in direct
 #' reference to the gaussian distribution that governs the extent of blurring.
 #'
-#' @param what What exactly should be blurred? By default, it is the `"source"`
-#' image.
 #' @param stdev The number of standard deviations for the blur effect.
+#' @param what What exactly should be blurred? By default, it is the `"source"`
+#'   image.
 #'
 #' @examples
 #' # Add a green ellipse to an SVG and
@@ -148,8 +148,8 @@ filter_image <- function(image) {
 #'   )
 #'
 #' @export
-filter_gaussian_blur <- function(what = "source",
-                                 stdev = 1) {
+filter_gaussian_blur <- function(stdev = 1,
+                                 what = "source") {
 
   if (what == "source") {
     what <- "SourceGraphic"
@@ -317,10 +317,10 @@ filter_drop_shadow <- function(dx = 0.2,
 #' The offset filter applies an offset in the x and y directions to an existing
 #' element. The offset is handled by setting values for `dx` and `dy`.
 #'
-#' @param what What exactly should be offset? By default, it is the `"source"`
-#'   image.
 #' @param dx,dy The offset of the element position compared to its initial
 #'   position.
+#' @param what What exactly should be offset? By default, it is the `"source"`
+#'   image.
 #'
 #' @examples
 #' # Add a circle element to an
@@ -343,9 +343,9 @@ filter_drop_shadow <- function(dx = 0.2,
 #'   )
 #'
 #' @export
-filter_offset <- function(what = "source",
-                          dx = 0.2,
-                          dy = 0.2) {
+filter_offset <- function(dx = NULL,
+                          dy = NULL,
+                          what = "source") {
 
   if (what == "source") {
     what <- "SourceGraphic"
