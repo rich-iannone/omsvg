@@ -54,7 +54,13 @@ svg_filter <- function(svg,
     attrs <- c(attrs, build_attr(name = "height", value = height))
   }
 
-  attr_str <- paste(attrs, collapse = " ")
+  attr_str <-
+    paste(
+      attrs,
+      build_attr("width", svg$width),
+      build_attr("height", svg$height),
+      collapse = " "
+    )
 
   inner_tags <-
     filters %>%
