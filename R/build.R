@@ -159,6 +159,7 @@ non_attr_e_names <- function() {
     "attrs",
     "anims",
     "anims_built",
+    "filters",
     "start",
     "tag",
     "path"
