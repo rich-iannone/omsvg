@@ -60,7 +60,8 @@ SVG <- function(width,
       anim_iterations = anim_iterations,
       elements = list(),
       defs = list(),
-      anims = list()
+      anims = list(),
+      filters = list()
     )
 
   class(obj) <- "svg"
