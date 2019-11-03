@@ -66,13 +66,11 @@ svg_filter <- function(svg,
     filters %>%
     lapply(FUN = function(x) {
 
-      if (names(x) %>% tidy_grepl("^fe")) {
-        built_tag <- build_tag(name = names(x), attrs = unname(x))
-      } else {
-        built_tag <- NULL
-      }
 
-      built_tag
+
+      if (inherits(x, "filter_effects")) {
+        build_tag(name = names(x), attrs = unname(x))
+      }
     }
     ) %>%
     unlist() %>%
@@ -123,7 +121,11 @@ svg_filter <- function(svg,
 #' @export
 filter_image <- function(image) {
 
-  c(feImage = paste0("xlink:href=\"", image, "\""))
+  filter_spec <- c(feImage = paste0("xlink:href=\"", image, "\""))
+
+  class(filter_spec) <- "filter_effects"
+
+  filter_spec
 }
 
 #' Filter: add a gaussian blur to an element
@@ -164,13 +166,19 @@ filter_gaussian_blur <- function(stdev = 1,
     what <- "SourceGraphic"
   }
 
-  c(
-    feGaussianBlur = paste(
-      build_attr("in", what),
-      build_attr("stdDeviation", stdev),
-      collapse = " "
+
+  filter_spec <-
+    c(
+      feGaussianBlur = paste(
+        build_attr("in", what),
+        build_attr("stdDeviation", stdev),
+        collapse = " "
+      )
     )
-  )
+
+  class(filter_spec) <- "filter_effects"
+
+  filter_spec
 }
 
 #' Filter: add an erosion effect to an element
@@ -208,13 +216,18 @@ filter_erode <- function(radius = 1) {
 
   radius <- radius %>% paste(collapse = " ")
 
-  c(
-    feMorphology = paste(
-      build_attr("operator", "erode"),
-      build_attr("radius", radius),
-      collapse = " "
+  filter_spec <-
+    c(
+      feMorphology = paste(
+        build_attr("operator", "erode"),
+        build_attr("radius", radius),
+        collapse = " "
+      )
     )
-  )
+
+  class(filter_spec) <- "filter_effects"
+
+  filter_spec
 }
 
 #' Filter: add an dilation effect to an element
@@ -252,13 +265,18 @@ filter_dilate <- function(radius = 1) {
 
   radius <- radius %>% paste(collapse = " ")
 
-  c(
-    feMorphology = paste(
-      build_attr("operator", "dilate"),
-      build_attr("radius", radius),
-      collapse = " "
+  filter_spec <-
+    c(
+      feMorphology = paste(
+        build_attr("operator", "dilate"),
+        build_attr("radius", radius),
+        collapse = " "
+      )
     )
-  )
+
+  class(filter_spec) <- "filter_effects"
+
+  filter_spec
 }
 
 #' Filter: add a drop shadow to an element
@@ -306,16 +324,21 @@ filter_drop_shadow <- function(dx = 0.2,
                                color = "black",
                                opacity = 1) {
 
-  c(
-    feDropShadow = paste(
-      build_attr("dx", dx),
-      build_attr("dy", dy),
-      build_attr("stdDeviation", stdev),
-      build_attr("flood-color", color),
-      build_attr("flood-opacity", opacity),
-      collapse = " "
+  filter_spec <-
+    c(
+      feDropShadow = paste(
+        build_attr("dx", dx),
+        build_attr("dy", dy),
+        build_attr("stdDeviation", stdev),
+        build_attr("flood-color", color),
+        build_attr("flood-opacity", opacity),
+        collapse = " "
+      )
     )
-  )
+
+  class(filter_spec) <- "filter_effects"
+
+  filter_spec
 }
 
 #' Filter: offset an element a specified amount
@@ -360,12 +383,17 @@ filter_offset <- function(dx = NULL,
   dx <- dx %||% 0
   dy <- dy %||% 0
 
-  c(
-    feOffset = paste(
-      build_attr("in", what),
-      build_attr("dx", dx),
-      build_attr("dy", dy),
-      collapse = " "
+  filter_spec <-
+    c(
+      feOffset = paste(
+        build_attr("in", what),
+        build_attr("dx", dx),
+        build_attr("dy", dy),
+        collapse = " "
+      )
     )
-  )
+
+  class(filter_spec) <- "filter_effects"
+
+  filter_spec
 }
