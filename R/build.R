@@ -59,6 +59,31 @@ build_svg <- function(svg) {
     built_styles <- c()
   }
 
+  # If there are filters declared at the element level, promote
+  # them to the SVG <defs> and create a unique ID to link to that
+  if (any_filters(elements = elements)) {
+
+    filter_elements <- which_have_filters(elements = elements)
+
+    for (fe_index in filter_elements) {
+
+      filters_at_index <- elements[[fe_index]]$filters
+
+      id_val <- paste0("filter_", paste(sample(letters, 12), collapse = ""))
+
+      svg <-
+        svg %>%
+        svg_filter(
+          id = id_val,
+          filters = filters_at_index
+        )
+
+      elements[[fe_index]][["filter"]] <-
+        c(elements[[fe_index]][["filter"]],
+          id_val %>% paste_left("url(#") %>% paste_right(")"))
+    }
+  }
+
   # Build all elements
   built_elements <-
     elements %>%
