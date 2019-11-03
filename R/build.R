@@ -9,7 +9,6 @@ build_svg <- function(svg) {
   desc <- svg$desc
 
   elements <- svg$elements
-  defs <- svg$defs
 
   # Get vector of `id`s
   ids <-
