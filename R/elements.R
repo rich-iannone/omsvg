@@ -31,6 +31,9 @@
 #'   corresponding values are the matching attribute values.
 #' @param anims An animation directive list for the element. This should be
 #'   structured using the [anims()] function.
+#' @param filters A filter directive list for the element. This is easily
+#'   created by using a list of `filter_*()` functions (e.g.,
+#'   `list(filter_gaussian_blur(2), filter_drop_shadow(2, 2))`).
 #' @param id An optional ID value to give to the built tag. This is useful for
 #'   modifying this element in a later function call or for interacting with
 #'   CSS.
@@ -87,6 +90,7 @@ svg_rect <- function(svg,
                      opacity = 1.0,
                      attrs = list(),
                      anims = list(),
+                     filters = list(),
                      id = NULL) {
 
   # Develop the `start` list and normalize it
@@ -123,17 +127,18 @@ svg_rect <- function(svg,
       opacity = opacity,
       attrs = attrs,
       anims = anims,
+      filters = filters,
       start = start,
       tag = NA_character_
     ) %>%
     normalize_element_list(attrs = attrs)
 
   # Add the `element` list to the `svg` object
-  add_element_list(
-    svg = svg,
-    element_list = element,
-    id = id
-  )
+  svg %>%
+    add_element_list(
+      element_list = element,
+      id = id
+    )
 }
 
 #' Addition of a `circle` element
@@ -171,6 +176,7 @@ svg_circle <- function(svg,
                        opacity = 1.0,
                        attrs = list(),
                        anims = list(),
+                       filters = list(),
                        id = NULL) {
 
   radius <- diameter / 2
@@ -204,17 +210,18 @@ svg_circle <- function(svg,
       opacity = opacity,
       attrs = attrs,
       anims = anims,
+      filters = filters,
       start = start,
       tag = NA_character_
     ) %>%
     normalize_element_list(attrs = attrs)
 
   # Add the `element` list to the `svg` object
-  add_element_list(
-    svg = svg,
-    element_list = element,
-    id = id
-  )
+  svg %>%
+    add_element_list(
+      element_list = element,
+      id = id
+    )
 }
 
 #' Addition of an `ellipse` element
@@ -256,6 +263,7 @@ svg_ellipse <- function(svg,
                         opacity = 1.0,
                         attrs = list(),
                         anims = list(),
+                        filters = list(),
                         id = NULL) {
 
   rx <- width / 2
@@ -291,17 +299,18 @@ svg_ellipse <- function(svg,
       opacity = opacity,
       attrs = attrs,
       anims = anims,
+      filters = filters,
       start = start,
       tag = NA_character_
     ) %>%
     normalize_element_list(attrs = attrs)
 
   # Add the `element` list to the `svg` object
-  add_element_list(
-    svg = svg,
-    element_list = element,
-    id = id
-  )
+  svg %>%
+    add_element_list(
+      element_list = element,
+      id = id
+    )
 }
 
 #' Addition of an `line` element
@@ -336,6 +345,7 @@ svg_line <- function(svg,
                      opacity = 1.0,
                      attrs = list(),
                      anims = list(),
+                     filters = list(),
                      id = NULL) {
 
   width <- abs(x1 - x2)
@@ -369,17 +379,18 @@ svg_line <- function(svg,
       opacity = opacity,
       attrs = attrs,
       anims = anims,
+      filters = filters,
       start = start,
       tag = NA_character_
     ) %>%
     normalize_element_list(attrs = attrs)
 
   # Add the `element` list to the `svg` object
-  add_element_list(
-    svg = svg,
-    element_list = element,
-    id = id
-  )
+  svg %>%
+    add_element_list(
+      element_list = element,
+      id = id
+    )
 }
 
 #' Addition of an `polyline` element
@@ -417,6 +428,7 @@ svg_polyline <- function(svg,
                          opacity = 1.0,
                          attrs = list(),
                          anims = list(),
+                         filters = list(),
                          id = NULL) {
 
   if (inherits(points, "numeric")) {
@@ -449,17 +461,18 @@ svg_polyline <- function(svg,
       opacity = opacity,
       attrs = attrs,
       anims = anims,
+      filters = filters,
       start = start,
       tag = NA_character_
     ) %>%
     normalize_element_list(attrs = attrs)
 
   # Add the `element` list to the `svg` object
-  add_element_list(
-    svg = svg,
-    element_list = element,
-    id = id
-  )
+  svg %>%
+    add_element_list(
+      element_list = element,
+      id = id
+    )
 }
 
 #' Addition of an `polygon` element
@@ -500,6 +513,7 @@ svg_polygon <- function(svg,
                         opacity = 1.0,
                         attrs = list(),
                         anims = list(),
+                        filters = list(),
                         id = NULL) {
 
   if (inherits(points, "numeric")) {
@@ -534,17 +548,18 @@ svg_polygon <- function(svg,
       opacity = opacity,
       attrs = attrs,
       anims = anims,
+      filters = filters,
       start = start,
       tag = NA_character_
     ) %>%
     normalize_element_list(attrs = attrs)
 
   # Add the `element` list to the `svg` object
-  add_element_list(
-    svg = svg,
-    element_list = element,
-    id = id
-  )
+  svg %>%
+    add_element_list(
+      element_list = element,
+      id = id
+    )
 }
 
 #' Addition of an `path` element
@@ -581,6 +596,7 @@ svg_path <- function(svg,
                      opacity = 1.0,
                      attrs = list(),
                      anims = list(),
+                     filters = list(),
                      id = NULL) {
 
   # Develop the `start` list and normalize it
@@ -610,17 +626,18 @@ svg_path <- function(svg,
       opacity = opacity,
       attrs = attrs,
       anims = anims,
+      filters = filters,
       start = start,
       tag = NA_character_
     ) %>%
     normalize_element_list(attrs = attrs)
 
   # Add the `element` list to the `svg` object
-  add_element_list(
-    svg = svg,
-    element_list = element,
-    id = id
-  )
+  svg %>%
+    add_element_list(
+      element_list = element,
+      id = id
+    )
 }
 
 #' Addition of an `text` element
@@ -659,6 +676,7 @@ svg_text <- function(svg,
                      path = NULL,
                      attrs = list(),
                      anims = list(),
+                     filters = list(),
                      id = NULL) {
 
   # Develop the `start` list and normalize it
@@ -687,17 +705,18 @@ svg_text <- function(svg,
       opacity = opacity,
       attrs = attrs,
       anims = anims,
+      filters = filters,
       start = start,
       tag = NA_character_
     ) %>%
     normalize_element_list(attrs = attrs)
 
   # Add the `element` list to the `svg` object
-  add_element_list(
-    svg = svg,
-    element_list = element,
-    id = id
-  )
+  svg %>%
+    add_element_list(
+      element_list = element,
+      id = id
+    )
 }
 
 shape_types <- function() {
