@@ -95,7 +95,7 @@ build_svg <- function(svg) {
 
   # Build all defs
   built_defs <-
-    defs %>%
+    svg$defs %>%
     unlist() %>%
     paste(collapse = "\n") %>%
     paste_left("<defs>\n") %>%
