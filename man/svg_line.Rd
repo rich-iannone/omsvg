@@ -5,7 +5,8 @@
 \title{Addition of an \code{line} element}
 \usage{
 svg_line(svg, x1, y1, x2, y2, stroke = "#000000", stroke_width = 1,
-  opacity = 1, attrs = list(), anims = list(), id = NULL)
+  opacity = 1, attrs = list(), anims = list(), filters = list(),
+  id = NULL)
 }
 \arguments{
 \item{svg}{The \code{svg} object that is created using the \code{\link[=SVG]{SVG()}} function.}
@@ -30,6 +31,10 @@ corresponding values are the matching attribute values.}
 
 \item{anims}{An animation directive list for the element. This should be
 structured using the \code{\link[=anims]{anims()}} function.}
+
+\item{filters}{A filter directive list for the element. This is easily
+created by using a list of \code{filter_*()} functions (e.g.,
+\code{list(filter_gaussian_blur(2), filter_drop_shadow(2, 2))}).}
 
 \item{id}{An optional ID value to give to the built tag. This is useful for
 modifying this element in a later function call or for interacting with
