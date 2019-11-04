@@ -2,7 +2,7 @@
 % Please edit documentation in R/filters.R
 \name{filter_dilate}
 \alias{filter_dilate}
-\title{Filter: add an dilation effect to an element}
+\title{Filter: add a dilation effect to an element}
 \usage{
 filter_dilate(radius = 1)
 }
