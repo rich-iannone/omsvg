@@ -106,7 +106,7 @@ SVG(width = 300, height = 300) %>%
     )
   )
 
-# Apply timing functions to animations
+# Apply `easing_fn` functions to animations
 SVG(width = 300, height = 300) %>%
   svg_rect(
     x = 50, y = 50,
@@ -117,12 +117,12 @@ SVG(width = 300, height = 300) %>%
     ),
     anims = anims(
       0.5 ~ list(
-        anim_position(x = 50, y = 50, timing = ease_in_out()),
-        anim_rotation(0, timing = ease_in_out())
+        anim_position(x = 50, y = 50, easing_fn = ease_in_out()),
+        anim_rotation(0, easing_fn = ease_in_out())
       ),
       2.0 ~ list(
-        anim_position(x = 200, y = 50, timing = ease_in_out()),
-        anim_rotation(90, timing = ease_in_out())
+        anim_position(x = 200, y = 50, easing_fn = ease_in_out()),
+        anim_rotation(90, easing_fn = ease_in_out())
       )
     )
   )
@@ -138,8 +138,8 @@ SVG(width = 300, height = 300) %>%
       fill = "green"
     ),
     anims = anims(
-      2.0 ~ anim_opacity(opacity = 1.0, timing = ease_in_out()),
-      3.0 ~ anim_opacity(opacity = 0.2, timing = ease_in_out())
+      2.0 ~ anim_opacity(opacity = 1.0, easing_fn = ease_in_out()),
+      3.0 ~ anim_opacity(opacity = 0.2, easing_fn = ease_in_out())
     )
   )
 

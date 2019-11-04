@@ -62,14 +62,14 @@
 #'         0.5 ~ list(
 #'           anim_position(
 #'             x = 50, y = 50,
-#'             timing = ease_out()
+#'             easing_fn = ease_out()
 #'           ),
 #'           anim_rotation(rotation = 0)
 #'         ),
 #'         2.0 ~ list(
 #'           anim_position(
 #'             x = 200, y = 50,
-#'             timing = ease_in_out()
+#'             easing_fn = ease_in_out()
 #'           ),
 #'           anim_rotation(rotation = 90)
 #'         )

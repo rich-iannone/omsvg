@@ -4,12 +4,11 @@
 #' `anim_rotation()` function can be used to express an animation where the
 #' target element undergoes a rotation change with time.
 #'
+#' @inheritParams anim_position
 #' @param rotation The rotation value of the element at the keyframe time (given
 #'   as the LHS value in the [anims()] call).
 #' @param anchor The location of the element anchor about which rotation will
 #'   occur. By default, this is the keyword `"center"`.
-#' @param timing The timing function to use for the movement to the new
-#'   position.
 #' @param initial Should this rotation value be the initial rotation state of
 #'   the element? If so, use `TRUE` and any value provided to `rotation` will be
 #'   disregarded.
@@ -34,7 +33,7 @@
 #' @export
 anim_rotation <- function(rotation = NULL,
                           anchor = "center",
-                          timing = NULL,
+                          easing_fn = NULL,
                           initial = FALSE) {
 
   if (initial == FALSE & is.null(rotation)) {
@@ -46,11 +45,11 @@ anim_rotation <- function(rotation = NULL,
     rotation <- 0
   }
 
-  if (is.null(timing)) {
-    timing <- "linear()"
+  if (is.null(easing_fn)) {
+    easing_fn <- "linear()"
   } else {
-    if (timing == "linear") {
-      timing <- "linear()"
+    if (easing_fn == "linear") {
+      easing_fn <- "linear()"
     }
   }
 
@@ -58,7 +57,7 @@ anim_rotation <- function(rotation = NULL,
     list(
       rotation = rotation,
       anchor = "center",
-      timing = timing,
+      easing_fn = easing_fn,
       initial = initial
     )
 

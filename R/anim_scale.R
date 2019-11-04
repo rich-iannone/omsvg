@@ -4,13 +4,12 @@
 #' `anim_scale()` function can be used to express an animation where the target
 #' element undergoes a rotation change with time.
 #'
+#' @inheritParams anim_position
 #' @param scale The scale value of the element at the keyframe time (given as
 #'   the LHS value in the [anims()] call). If providing a single scaling value,
 #'   the scaling will operate in the x and y directions (relative to the center
 #'   of the element). If two values are provided, these will be taken as scaling
 #'   values in the x and y directions.
-#' @param timing The timing function to use for the movement to the new
-#'   position.
 #'
 #' @examples
 #' # Basic animation of an element's
@@ -31,7 +30,7 @@
 #'
 #' @export
 anim_scale <- function(scale = NULL,
-                       timing = NULL) {
+                       easing_fn = NULL) {
 
   if (is.null(scale)) {
     stop("A scale value must be provided to `scale`.",
@@ -63,11 +62,11 @@ anim_scale <- function(scale = NULL,
   }
   scale <- paste(scale, collapse = ",")
 
-  if (is.null(timing)) {
-    timing <- "linear()"
+  if (is.null(easing_fn)) {
+    easing_fn <- "linear()"
   } else {
-    if (timing == "linear") {
-      timing <- "linear()"
+    if (easing_fn == "linear") {
+      easing_fn <- "linear()"
     }
   }
 
@@ -75,7 +74,7 @@ anim_scale <- function(scale = NULL,
     list(
       scale = scale,
       anchor = "center",
-      timing = timing,
+      easing_fn = easing_fn,
       initial = FALSE
     )
 

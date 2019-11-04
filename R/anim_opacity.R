@@ -4,10 +4,9 @@
 #' `anim_opacity()` function can be used to express an animation where the
 #' target element undergoes a change in opacity with time.
 #'
+#' @inheritParams anim_position
 #' @param opacity The opacity value of the element at the keyframe time (given
 #'   as the LHS value in the [anims()] call).
-#' @param timing The timing function to use for the movement to the new
-#'   position.
 #' @param initial Should this opacity value be the initial opacity value of
 #'   the element? If so, use `TRUE` and any value provided to `opacity` will be
 #'   disregarded.
@@ -31,7 +30,7 @@
 #'
 #' @export
 anim_opacity <- function(opacity = NULL,
-                         timing = NULL,
+                         easing_fn = NULL,
                          initial = FALSE) {
 
   if (initial == FALSE & is.null(opacity)) {
@@ -53,18 +52,18 @@ anim_opacity <- function(opacity = NULL,
          call. = FALSE)
   }
 
-  if (is.null(timing)) {
-    timing <- "linear()"
+  if (is.null(easing_fn)) {
+    easing_fn <- "linear()"
   } else {
-    if (timing == "linear") {
-      timing <- "linear()"
+    if (easing_fn == "linear") {
+      easing_fn <- "linear()"
     }
   }
 
   anim_property <-
     list(
       opacity = opacity,
-      timing = timing,
+      easing_fn = easing_fn,
       initial = initial
     )
 
@@ -126,7 +125,7 @@ process_anims_opacity <- function(elements,
     as.character() %>%
     paste_left("opacity: ") %>%
     paste_right("; ") %>%
-    paste_right(df_anims$timing %>% include_as_timing_values()) %>%
+    paste_right(df_anims$easing_fn %>% include_as_timing_values()) %>%
     encase_in_braces() %>%
     paste_left(df_anims$time_pct %>% add_unit("%", x_right = " ")) %>%
     collapse_strings() %>%

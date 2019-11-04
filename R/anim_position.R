@@ -6,8 +6,12 @@
 #'
 #' @param x,y The position of the element, expressed as `x` and `y`, at the
 #'   keyframe time (given as the LHS value in the [anims()] call).
-#' @param timing The timing function to use for the movement to the new
-#'   position.
+#' @param easing_fn The easing function to use for the animation. If not
+#'   provided, the [linear()] easing function will be used (which is doesn't use
+#'   any easing in the animation, just a linear movement). The easing functions
+#'   are: [ease_in()], [ease_out()], [ease_in_out()], [step_start()], and
+#'   [step_end()]. To create a custom easing function, [cubic_bezier()] can be
+#'   used.
 #' @param initial Should this position be the initial position of the element?
 #'   If so, use `TRUE` and any values provided to `x` and `y` will be
 #'   disregarded.
@@ -32,7 +36,7 @@
 #' @export
 anim_position <- function(x = NULL,
                           y = NULL,
-                          timing = NULL,
+                          easing_fn = NULL,
                           initial = FALSE) {
 
   if (initial == FALSE & (is.null(x) & is.null(y))) {
@@ -57,11 +61,11 @@ anim_position <- function(x = NULL,
     }
   }
 
-  if (is.null(timing)) {
-    timing <- "linear()"
+  if (is.null(easing_fn)) {
+    easing_fn <- "linear()"
   } else {
-    if (timing == "linear") {
-      timing <- "linear()"
+    if (easing_fn == "linear") {
+      easing_fn <- "linear()"
     }
   }
 
@@ -69,7 +73,7 @@ anim_position <- function(x = NULL,
     list(
       x = x,
       y = y,
-      timing = timing,
+      easing_fn = easing_fn,
       initial = initial
     )
 

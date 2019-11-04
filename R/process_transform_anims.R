@@ -98,7 +98,7 @@ process_anims_transform <- function(elements,
     encase_in_css_fn(fn_name = "translate") %>%
     include_as_transform_values() %>%
     paste_right(" ") %>%
-    paste_right(df_anims_subset$timing %>% include_as_timing_values()) %>%
+    paste_right(df_anims_subset$easing_fn %>% include_as_timing_values()) %>%
     encase_in_braces() %>%
     paste_left(df_anims_subset$time_pct %>% add_unit("%", x_right = " ")) %>%
     collapse_strings() %>%
@@ -171,7 +171,7 @@ process_anims_transform <- function(elements,
       encase_in_css_fn(fn_name = "rotate") %>%
       include_as_transform_values() %>%
       paste_right(" ") %>%
-      paste_right(df_anims_subset$timing %>% include_as_timing_values()) %>%
+      paste_right(df_anims_subset$easing_fn %>% include_as_timing_values()) %>%
       encase_in_braces() %>%
       paste_left(df_anims_subset$time_pct %>% add_unit("%", x_right = " ")) %>%
       collapse_strings() %>%
@@ -240,7 +240,7 @@ process_anims_transform <- function(elements,
       encase_in_css_fn(fn_name = "scale") %>%
       include_as_transform_values() %>%
       paste_right(" ") %>%
-      paste_right(df_anims_subset$timing %>% include_as_timing_values()) %>%
+      paste_right(df_anims_subset$easing_fn %>% include_as_timing_values()) %>%
       encase_in_braces() %>%
       paste_left(df_anims_subset$time_pct %>% add_unit("%", x_right = " ")) %>%
       collapse_strings() %>%

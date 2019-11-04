@@ -24,7 +24,7 @@
 #'
 #' # We can define multiple animations
 #' # for a single element: put them in a
-#' # `list()`; the `timing` function for
+#' # `list()`; the `easing_fn` function for
 #' # both `anim_*()` function is no longer
 #' # linear but now eases in and out
 #' svg_2 <-
@@ -38,12 +38,12 @@
 #'     ),
 #'     anims = anims(
 #'       0.5 ~ list(
-#'         anim_position(x = 50, y = 50, timing = ease_in_out()),
-#'         anim_rotation(0, timing = ease_in_out())
+#'         anim_position(x = 50, y = 50, easing_fn = ease_in_out()),
+#'         anim_rotation(0, easing_fn = ease_in_out())
 #'       ),
 #'       2.0 ~ list(
-#'         anim_position(x = 200, y = 50, timing = ease_in_out()),
-#'         anim_rotation(90, timing = ease_in_out())
+#'         anim_position(x = 200, y = 50, easing_fn = ease_in_out()),
+#'         anim_rotation(90, easing_fn = ease_in_out())
 #'       )
 #'     )
 #'   )
@@ -118,15 +118,15 @@ anims <- function(...) {
 
         lhs <- x %>% rlang::f_lhs()
 
-        timing <- rhs$timing
+        easing_fn <- rhs$easing_fn
 
-        if (is.null(timing)) {
-          timing <- "linear"
+        if (is.null(easing_fn)) {
+          easing_fn <- "linear"
         }
 
         anim_type <- class(rhs)
 
-        rhs$timing <- timing
+        rhs$easing_fn <- easing_fn
         rhs$time_s <- lhs
         rhs$anim_type <- anim_type
 
@@ -144,15 +144,15 @@ anims <- function(...) {
           lhs <- x %>% rlang::f_lhs()
           rhs_i <- rhs[[i]]
 
-          timing <- rhs_i$timing
+          easing_fn <- rhs_i$easing_fn
 
-          if (is.null(timing)) {
-            timing <- "linear"
+          if (is.null(easing_fn)) {
+            easing_fn <- "linear"
           }
 
           anim_type <- class(rhs_i)
 
-          rhs_i$timing <- timing
+          rhs_i$easing_fn <- easing_fn
           rhs_i$time_s <- lhs
           rhs_i$anim_type <- anim_type
 
@@ -168,7 +168,7 @@ anims <- function(...) {
       anims_dfs <-
         anims_dfs %>%
         dplyr::select(
-          dplyr::one_of(c("timing", "initial", "time_s", "anim_type")),
+          dplyr::one_of(c("easing_fn", "initial", "time_s", "anim_type")),
           dplyr::everything()
         )
 
@@ -216,10 +216,10 @@ anims <- function(...) {
     dplyr::arrange(time_s)
 }
 
-#' Create a custom timing function for animation
+#' Create a custom easing function for animation
 #'
-#' @param x1,y1,x2,y2 The `x` and `y` values for the first and second bezier control
-#' points.
+#' @param x1,y1,x2,y2 The `x` and `y` values for the first and second bezier
+#'   control points.
 #'
 #' @export
 cubic_bezier <- function(x1 = 0.5,
@@ -242,7 +242,7 @@ cubic_bezier <- function(x1 = 0.5,
   include_as_bezier_values(bezier_vctr = bezier_vctr)
 }
 
-#' Use a timing function for an 'easing in' animation
+#' Use an 'easing in' animation
 #'
 #' @param power The preset to use for the easing in cubic bezier function.
 #'
@@ -254,7 +254,7 @@ ease_in <- function(power = "basic") {
   easing_fn(type = "ease_in", power = {{ power }})
 }
 
-#' Use a timing function for an 'easing out' animation
+#' Use an 'easing out' animation
 #'
 #' @inheritParams ease_in
 #'
@@ -266,7 +266,7 @@ ease_out <- function(power = "basic") {
   easing_fn(type = "ease_out", power = {{ power }})
 }
 
-#' Use a timing function for an 'easing in and out' animation
+#' Use an 'easing in and out' animation
 #'
 #' @inheritParams ease_in
 #'
@@ -278,7 +278,7 @@ ease_in_out <- function(power = "basic") {
   easing_fn(type = "ease_in_out", power = {{ power }})
 }
 
-#' Use a linear timing function for animation
+#' Use a linear movement for animation
 #'
 #' @export
 linear <- function() {
@@ -286,7 +286,7 @@ linear <- function() {
   "linear()"
 }
 
-#' Use a step-start timing function for animation
+#' Use a 'step-start' animation
 #'
 #' @export
 step_start <- function() {
@@ -294,7 +294,7 @@ step_start <- function() {
   "step-start()"
 }
 
-#' Use a step-end timing function for animation
+#' Use a 'step-end' animation
 #'
 #' @export
 step_end <- function() {
@@ -385,7 +385,7 @@ anims_df_anchor_row <- function(time_s = 0.0,
                                 initial = TRUE,
                                 anchor = "center") {
   dplyr::tibble(
-    timing = "linear()",
+    easing_fn = "linear()",
     initial = initial,
     time_s = time_s,
     anim_type = "anim_anchor",
@@ -400,7 +400,7 @@ anims_df_position_row <- function(time_s = 0.0,
                                   initial = TRUE,
                                   anchor = "center") {
   dplyr::tibble(
-    timing = "linear()",
+    easing_fn = "linear()",
     initial = initial,
     time_s = time_s,
     anim_type = "anim_position",
