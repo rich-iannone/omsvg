@@ -436,6 +436,9 @@ svg_polyline <- function(svg,
     points <- paste(mat[, 1], mat[, 2], collapse = ", ")
   }
 
+  # TODO: determine the upper-left position of a polyline
+  # TODO: determine the width and height of a polyline
+
   # Develop the `start` list and normalize it
   # against any `attrs` defined
   start <-
@@ -521,6 +524,9 @@ svg_polygon <- function(svg,
     points <- paste(mat[, 1], mat[, 2], collapse = ", ")
   }
 
+  # TODO: determine the upper-left position of a polygon
+  # TODO: determine the width and height of a polygon
+
   # Develop the `start` list and normalize it
   # against any `attrs` defined
   start <-
@@ -598,6 +604,9 @@ svg_path <- function(svg,
                      anims = list(),
                      filters = list(),
                      id = NULL) {
+
+  # TODO: determine the upper-left position of a path
+  # TODO: determine the width and height of a path
 
   # Develop the `start` list and normalize it
   # against any `attrs` defined
