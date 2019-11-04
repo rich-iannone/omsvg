@@ -4,7 +4,7 @@
 \alias{anim_scale}
 \title{Animate an element through scaling}
 \usage{
-anim_scale(scale = NULL, timing = NULL)
+anim_scale(scale = NULL, easing_fn = NULL)
 }
 \arguments{
 \item{scale}{The scale value of the element at the keyframe time (given as
@@ -13,8 +13,12 @@ the scaling will operate in the x and y directions (relative to the center
 of the element). If two values are provided, these will be taken as scaling
 values in the x and y directions.}
 
-\item{timing}{The timing function to use for the movement to the new
-position.}
+\item{easing_fn}{The easing function to use for the animation. If not
+provided, the \code{\link[=linear]{linear()}} easing function will be used (which is doesn't use
+any easing in the animation, just a linear movement). The easing functions
+are: \code{\link[=ease_in]{ease_in()}}, \code{\link[=ease_out]{ease_out()}}, \code{\link[=ease_in_out]{ease_in_out()}}, \code{\link[=step_start]{step_start()}}, and
+\code{\link[=step_end]{step_end()}}. To create a custom easing function, \code{\link[=cubic_bezier]{cubic_bezier()}} can be
+used.}
 }
 \description{
 With an \code{\link[=anims]{anims()}} call, itself passed as to any \code{anims} argument, the

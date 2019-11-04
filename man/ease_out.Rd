@@ -2,7 +2,7 @@
 % Please edit documentation in R/anims.R
 \name{ease_out}
 \alias{ease_out}
-\title{Use a timing function for an 'easing out' animation}
+\title{Use an 'easing out' animation}
 \usage{
 ease_out(power = "basic")
 }
@@ -10,5 +10,5 @@ ease_out(power = "basic")
 \item{power}{The preset to use for the easing in cubic bezier function.}
 }
 \description{
-Use a timing function for an 'easing out' animation
+Use an 'easing out' animation
 }

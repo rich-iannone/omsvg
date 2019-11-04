@@ -2,10 +2,10 @@
 % Please edit documentation in R/anims.R
 \name{step_end}
 \alias{step_end}
-\title{Use a step-end timing function for animation}
+\title{Use a 'step-end' animation}
 \usage{
 step_end()
 }
 \description{
-Use a step-end timing function for animation
+Use a 'step-end' animation
 }

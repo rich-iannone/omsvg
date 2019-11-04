@@ -2,14 +2,14 @@
 % Please edit documentation in R/anims.R
 \name{cubic_bezier}
 \alias{cubic_bezier}
-\title{Create a custom timing function for animation}
+\title{Create a custom easing function for animation}
 \usage{
 cubic_bezier(x1 = 0.5, y1 = 0.5, x2 = 0.5, y2 = 0.5)
 }
 \arguments{
-\item{x1, y1, x2, y2}{The \code{x} and \code{y} values for the first and second bezier control
-points.}
+\item{x1, y1, x2, y2}{The \code{x} and \code{y} values for the first and second bezier
+control points.}
 }
 \description{
-Create a custom timing function for animation
+Create a custom easing function for animation
 }

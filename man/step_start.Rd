@@ -2,10 +2,10 @@
 % Please edit documentation in R/anims.R
 \name{step_start}
 \alias{step_start}
-\title{Use a step-start timing function for animation}
+\title{Use a 'step-start' animation}
 \usage{
 step_start()
 }
 \description{
-Use a step-start timing function for animation
+Use a 'step-start' animation
 }

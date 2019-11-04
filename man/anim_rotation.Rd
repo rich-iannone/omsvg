@@ -4,7 +4,7 @@
 \alias{anim_rotation}
 \title{Animate an element through rotation}
 \usage{
-anim_rotation(rotation = NULL, anchor = "center", timing = NULL,
+anim_rotation(rotation = NULL, anchor = "center", easing_fn = NULL,
   initial = FALSE)
 }
 \arguments{
@@ -14,8 +14,12 @@ as the LHS value in the \code{\link[=anims]{anims()}} call).}
 \item{anchor}{The location of the element anchor about which rotation will
 occur. By default, this is the keyword \code{"center"}.}
 
-\item{timing}{The timing function to use for the movement to the new
-position.}
+\item{easing_fn}{The easing function to use for the animation. If not
+provided, the \code{\link[=linear]{linear()}} easing function will be used (which is doesn't use
+any easing in the animation, just a linear movement). The easing functions
+are: \code{\link[=ease_in]{ease_in()}}, \code{\link[=ease_out]{ease_out()}}, \code{\link[=ease_in_out]{ease_in_out()}}, \code{\link[=step_start]{step_start()}}, and
+\code{\link[=step_end]{step_end()}}. To create a custom easing function, \code{\link[=cubic_bezier]{cubic_bezier()}} can be
+used.}
 
 \item{initial}{Should this rotation value be the initial rotation state of
 the element? If so, use \code{TRUE} and any value provided to \code{rotation} will be

@@ -34,7 +34,7 @@ svg_1 <-
 
 # We can define multiple animations
 # for a single element: put them in a
-# `list()`; the `timing` function for
+# `list()`; the `easing_fn` function for
 # both `anim_*()` function is no longer
 # linear but now eases in and out
 svg_2 <-
@@ -48,12 +48,12 @@ svg_2 <-
     ),
     anims = anims(
       0.5 ~ list(
-        anim_position(x = 50, y = 50, timing = ease_in_out()),
-        anim_rotation(0, timing = ease_in_out())
+        anim_position(x = 50, y = 50, easing_fn = ease_in_out()),
+        anim_rotation(0, easing_fn = ease_in_out())
       ),
       2.0 ~ list(
-        anim_position(x = 200, y = 50, timing = ease_in_out()),
-        anim_rotation(90, timing = ease_in_out())
+        anim_position(x = 200, y = 50, easing_fn = ease_in_out()),
+        anim_rotation(90, easing_fn = ease_in_out())
       )
     )
   )

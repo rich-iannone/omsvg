@@ -4,14 +4,19 @@
 \alias{anim_position}
 \title{Animate the position of an element}
 \usage{
-anim_position(x = NULL, y = NULL, timing = NULL, initial = FALSE)
+anim_position(x = NULL, y = NULL, easing_fn = NULL,
+  initial = FALSE)
 }
 \arguments{
 \item{x, y}{The position of the element, expressed as \code{x} and \code{y}, at the
 keyframe time (given as the LHS value in the \code{\link[=anims]{anims()}} call).}
 
-\item{timing}{The timing function to use for the movement to the new
-position.}
+\item{easing_fn}{The easing function to use for the animation. If not
+provided, the \code{\link[=linear]{linear()}} easing function will be used (which is doesn't use
+any easing in the animation, just a linear movement). The easing functions
+are: \code{\link[=ease_in]{ease_in()}}, \code{\link[=ease_out]{ease_out()}}, \code{\link[=ease_in_out]{ease_in_out()}}, \code{\link[=step_start]{step_start()}}, and
+\code{\link[=step_end]{step_end()}}. To create a custom easing function, \code{\link[=cubic_bezier]{cubic_bezier()}} can be
+used.}
 
 \item{initial}{Should this position be the initial position of the element?
 If so, use \code{TRUE} and any values provided to \code{x} and \code{y} will be

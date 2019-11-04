@@ -2,10 +2,10 @@
 % Please edit documentation in R/anims.R
 \name{linear}
 \alias{linear}
-\title{Use a linear timing function for animation}
+\title{Use a linear movement for animation}
 \usage{
 linear()
 }
 \description{
-Use a linear timing function for animation
+Use a linear movement for animation
 }
