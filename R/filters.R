@@ -230,7 +230,7 @@ filter_erode <- function(radius = 1) {
   filter_spec
 }
 
-#' Filter: add an dilation effect to an element
+#' Filter: add a dilation effect to an element
 #'
 #' The `filter_dilate()` filter applies a dilation effect to a source graphic by
 #' a given `radius` value. The higher the `radius`, the greater the dilation
