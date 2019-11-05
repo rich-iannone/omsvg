@@ -451,17 +451,16 @@ svg_polyline <- function(svg,
     points <- paste0(mat[, 1], ",", mat[, 2], collapse = " ")
   }
 
-  # TODO: determine the upper-left position of a polyline
-  # TODO: determine the width and height of a polyline
+  points_str_attrs <- get_points_str_attrs(points)
 
   # Develop the `start` list and normalize it
   # against any `attrs` defined
   start <-
     list(
-      x_i = 0,
-      y_i = 0,
-      width_i = 0,
-      height_i = 0,
+      x_i = points_str_attrs$ul[1],
+      y_i = points_str_attrs$ul[2],
+      width_i = points_str_attrs$width,
+      height_i =points_str_attrs$height,
       stroke_i = stroke,
       stroke_width_i = stroke_width,
       fill_i = fill,
@@ -541,17 +540,16 @@ svg_polygon <- function(svg,
     points <- paste(mat[, 1], mat[, 2], collapse = ", ")
   }
 
-  # TODO: determine the upper-left position of a polygon
-  # TODO: determine the width and height of a polygon
+  points_str_attrs <- get_points_str_attrs(points)
 
   # Develop the `start` list and normalize it
   # against any `attrs` defined
   start <-
     list(
-      x_i = 0,
-      y_i = 0,
-      width_i = 0,
-      height_i = 0,
+      x_i = points_str_attrs$ul[1],
+      y_i = points_str_attrs$ul[2],
+      width_i = points_str_attrs$width,
+      height_i =points_str_attrs$height,
       stroke_i = stroke,
       stroke_width_i = stroke_width,
       fill_i = fill,
