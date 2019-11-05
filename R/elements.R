@@ -432,8 +432,8 @@ svg_polyline <- function(svg,
                          id = NULL) {
 
   if (inherits(points, "numeric")) {
-    mat <- matrix(points, ncol = 2)
-    points <- paste(mat[, 1], mat[, 2], collapse = ", ")
+    mat <- matrix(points, nrow = 2) %>% t()
+    points <- paste0(mat[, 1], ",", mat[, 2], collapse = " ")
   }
 
   # TODO: determine the upper-left position of a polyline
