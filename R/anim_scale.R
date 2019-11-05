@@ -2,7 +2,7 @@
 #'
 #' With an [anims()] call, itself passed as to any `anims` argument, the
 #' `anim_scale()` function can be used to express an animation where the target
-#' element undergoes a rotation change with time.
+#' element undergoes a scaling change with time.
 #'
 #' @inheritParams anim_position
 #' @param scale The scale value of the element at the keyframe time (given as
@@ -13,8 +13,8 @@
 #'
 #' @examples
 #' # Basic animation of an element's
-#' # rotation state (moving to a new
-#' # `rotation` value)
+#' # scaling state (moving to a new
+#' # `scale` value)
 #' SVG(width = 300, height = 300) %>%
 #'   svg_rect(
 #'     x = 50, y = 50,
