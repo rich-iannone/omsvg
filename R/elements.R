@@ -811,3 +811,30 @@ normalize_element_list <- function(element, attrs) {
 
   element
 }
+
+get_points_str_attrs <- function(points) {
+
+  points_pairs <- strsplit(points, " ") %>% unlist() %>% strsplit(",")
+
+  x <-
+    dplyr::tibble(
+      x = points_pairs %>% lapply(`[[`, 1) %>% unlist() %>% as.numeric()
+    )
+
+  y <-
+    dplyr::tibble(
+      y = points_pairs %>% lapply(`[[`, 2) %>% unlist() %>% as.numeric()
+    )
+
+  points_tbl <- dplyr::bind_cols(x, y)
+
+  list(
+    ul = c(min(points_tbl$x), min(points_tbl$y)),
+    ur = c(max(points_tbl$x), min(points_tbl$y)),
+    lr = c(max(points_tbl$x), max(points_tbl$y)),
+    ll = c(min(points_tbl$x), max(points_tbl$y)),
+    center = c(mean(points_tbl$x), mean(points_tbl$y)),
+    width = max(points_tbl$x) - min(points_tbl$x),
+    height = max(points_tbl$y) - min(points_tbl$y)
+  )
+}
