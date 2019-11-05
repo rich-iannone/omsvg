@@ -12,7 +12,22 @@ process_animations_for_element <- function(elements,
   # Get the maximum and minimum times in seconds
   max_time_s <- max(timings, na.rm = TRUE)
 
-  if (element_type == "rect") {
+  if (element_type == "polyline") {
+
+    # Get the initial x and y positions of the element
+    x_initial <- elements[[index]][["start"]][["x_i"]] %>% as.character() %>% paste_right("px")
+    y_initial <- elements[[index]][["start"]][["y_i"]] %>% as.character() %>% paste_right("px")
+
+    # Get the anchor values for the element
+    x_anchor <-
+      elements[[index]][["start"]][["width_i"]] %>%
+      as.character() %>% paste_right("px")
+
+    y_anchor <-
+      elements[[index]][["start"]][["height_i"]] %>%
+      as.character() %>% paste_right("px")
+
+  } else if (element_type == "rect") {
 
     # Get the initial x and y positions of the element
     x_initial <- elements[[index]][["x"]] %>% as.character() %>% paste_right("px")

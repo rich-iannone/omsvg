@@ -41,7 +41,13 @@ process_anims_transform <- function(elements,
     subset(df_anims, anim_type == anim_type_str) %>%
     dplyr::arrange(time_s)
 
-  if (element_type == "rect") {
+  if (element_type == "polyline") {
+
+    # Get initial position values (`x` and `y`) in `px` units
+    initial_x <- elements[[index]][["start"]][["x_i"]] %>% as.character() %>% paste_right("px")
+    initial_y <- elements[[index]][["start"]][["y_i"]] %>% as.character() %>% paste_right("px")
+
+  } else if (element_type == "rect") {
 
     # Get initial position values (`x` and `y`) in `px` units
     initial_x <- elements[[index]]$x %>% as.character() %>% paste_right("px")
