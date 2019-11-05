@@ -409,14 +409,28 @@ svg_line <- function(svg,
 #'
 #' @examples
 #' # Create an SVG with a single
-#' # polyline element
-#' svg <-
+#' # polyline element; here `points`
+#' # is a numeric vector where pairs
+#' # of values are the `x` and `y`
+#' # point position
+#' svg_1 <-
 #'   SVG(width = 300, height = 300) %>%
 #'     svg_polyline(
 #'       points = c(
 #'         10, 10, 15, 20, 20, 15, 25, 30, 30, 25,
 #'         35, 40, 40, 35, 45, 50, 50, 45
 #'       ),
+#'       stroke = "blue"
+#'     )
+#'
+#' # Create the same SVG with a single
+#' # polyline element; this time `points`
+#' # is a formatted points string
+#' svg_2 <-
+#'   SVG(width = 300, height = 300) %>%
+#'     svg_polyline(
+#'       points =
+#'         "10,10 15,20 20,15 25,30 30,25 35,40 40,35 45,50 50,45",
 #'       stroke = "blue"
 #'     )
 #'
