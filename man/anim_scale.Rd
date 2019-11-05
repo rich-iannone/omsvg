@@ -23,12 +23,12 @@ used.}
 \description{
 With an \code{\link[=anims]{anims()}} call, itself passed as to any \code{anims} argument, the
 \code{anim_scale()} function can be used to express an animation where the target
-element undergoes a rotation change with time.
+element undergoes a scaling change with time.
 }
 \examples{
 # Basic animation of an element's
-# rotation state (moving to a new
-# `rotation` value)
+# scaling state (moving to a new
+# `scale` value)
 SVG(width = 300, height = 300) \%>\%
   svg_rect(
     x = 50, y = 50,

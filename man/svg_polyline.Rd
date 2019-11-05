@@ -5,8 +5,8 @@
 \title{Addition of an \code{polyline} element}
 \usage{
 svg_polyline(svg, points, stroke = "#000000", stroke_width = 1,
-  opacity = 1, attrs = list(), anims = list(), filters = list(),
-  id = NULL)
+  fill = "none", opacity = 1, attrs = list(), anims = list(),
+  filters = list(), id = NULL)
 }
 \arguments{
 \item{svg}{The \code{svg} object that is created using the \code{\link[=SVG]{SVG()}} function.}
@@ -21,6 +21,8 @@ outline). By default, this is \code{"#000000"} (black).}
 
 \item{stroke_width}{The width of the stroke in units of pixels. By default,
 this is \code{1.0}.}
+
+\item{fill}{The fill color of the element. This is \code{"#DDDDDD"} by default.}
 
 \item{opacity}{The initial opacity of the element. Must be a value in the
 range of \code{0} to \code{1}. By default, the value is set to \code{1.0} (fully opaque).}
@@ -50,14 +52,28 @@ of the SVG \code{<polyline>} tag. All point positions are in units of \code{px}.
 }
 \examples{
 # Create an SVG with a single
-# polyline element
-svg <-
+# polyline element; here `points`
+# is a numeric vector where pairs
+# of values are the `x` and `y`
+# point position
+svg_1 <-
   SVG(width = 300, height = 300) \%>\%
     svg_polyline(
       points = c(
         10, 10, 15, 20, 20, 15, 25, 30, 30, 25,
         35, 40, 40, 35, 45, 50, 50, 45
       ),
+      stroke = "blue"
+    )
+
+# Create the same SVG with a single
+# polyline element; this time `points`
+# is a formatted points string
+svg_2 <-
+  SVG(width = 300, height = 300) \%>\%
+    svg_polyline(
+      points =
+        "10,10 15,20 20,15 25,30 30,25 35,40 40,35 45,50 50,45",
       stroke = "blue"
     )
 
