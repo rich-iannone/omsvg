@@ -26,14 +26,14 @@ the element? If so, use \code{TRUE} and any value provided to \code{rotation} wi
 disregarded.}
 }
 \description{
-With an \code{\link[=anims]{anims()}} call, itself passed as to any \code{anims} argument, the
+Within an \code{\link[=anims]{anims()}} call, itself passed to any \code{anims} argument, the
 \code{anim_rotation()} function can be used to express an animation where the
 target element undergoes a rotation change with time.
 }
 \examples{
-# Basic animation of an element's
-# rotation state (moving to a new
-# `rotation` value)
+# This is a basic animation of an
+# element's rotation state (moving to
+# a new `rotation` value)
 SVG(width = 300, height = 300) \%>\%
   svg_rect(
     x = 50, y = 50,

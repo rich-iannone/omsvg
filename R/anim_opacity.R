@@ -1,6 +1,6 @@
 #' Animate an element through an opacity change
 #'
-#' With an [anims()] call, itself passed as to any `anims` argument, the
+#' Within an [anims()] call, itself passed to any `anims` argument, the
 #' `anim_opacity()` function can be used to express an animation where the
 #' target element undergoes a change in opacity with time.
 #'

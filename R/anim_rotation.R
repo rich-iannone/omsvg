@@ -1,6 +1,6 @@
 #' Animate an element through rotation
 #'
-#' With an [anims()] call, itself passed as to any `anims` argument, the
+#' Within an [anims()] call, itself passed to any `anims` argument, the
 #' `anim_rotation()` function can be used to express an animation where the
 #' target element undergoes a rotation change with time.
 #'
@@ -14,9 +14,9 @@
 #'   disregarded.
 #'
 #' @examples
-#' # Basic animation of an element's
-#' # rotation state (moving to a new
-#' # `rotation` value)
+#' # This is a basic animation of an
+#' # element's rotation state (moving to
+#' # a new `rotation` value)
 #' SVG(width = 300, height = 300) %>%
 #'   svg_rect(
 #'     x = 50, y = 50,

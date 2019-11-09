@@ -23,7 +23,7 @@ If so, use \code{TRUE} and any values provided to \code{x} and \code{y} will be
 disregarded.}
 }
 \description{
-With an \code{\link[=anims]{anims()}} call, itself passed as to any \code{anims} argument, the
+Within an \code{\link[=anims]{anims()}} call, itself passed to any \code{anims} argument, the
 \code{anim_position()} function can be used to express an animation where the
 position of the target element changes with time.
 }

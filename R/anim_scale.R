@@ -1,6 +1,6 @@
 #' Animate an element through scaling
 #'
-#' With an [anims()] call, itself passed as to any `anims` argument, the
+#' Within an [anims()] call, itself passed to any `anims` argument, the
 #' `anim_scale()` function can be used to express an animation where the target
 #' element undergoes a scaling change with time.
 #'

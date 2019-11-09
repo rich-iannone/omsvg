@@ -21,7 +21,7 @@ are: \code{\link[=ease_in]{ease_in()}}, \code{\link[=ease_out]{ease_out()}}, \co
 used.}
 }
 \description{
-With an \code{\link[=anims]{anims()}} call, itself passed as to any \code{anims} argument, the
+Within an \code{\link[=anims]{anims()}} call, itself passed to any \code{anims} argument, the
 \code{anim_scale()} function can be used to express an animation where the target
 element undergoes a scaling change with time.
 }

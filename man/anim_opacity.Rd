@@ -22,7 +22,7 @@ the element? If so, use \code{TRUE} and any value provided to \code{opacity} wil
 disregarded.}
 }
 \description{
-With an \code{\link[=anims]{anims()}} call, itself passed as to any \code{anims} argument, the
+Within an \code{\link[=anims]{anims()}} call, itself passed to any \code{anims} argument, the
 \code{anim_opacity()} function can be used to express an animation where the
 target element undergoes a change in opacity with time.
 }

@@ -1,6 +1,6 @@
 #' Animate the position of an element
 #'
-#' With an [anims()] call, itself passed as to any `anims` argument, the
+#' Within an [anims()] call, itself passed to any `anims` argument, the
 #' `anim_position()` function can be used to express an animation where the
 #' position of the target element changes with time.
 #'
