@@ -62,13 +62,8 @@ anim_scale <- function(scale = NULL,
   }
   scale <- paste(scale, collapse = ",")
 
-  if (is.null(easing_fn)) {
-    easing_fn <- "linear()"
-  } else {
-    if (easing_fn == "linear") {
-      easing_fn <- "linear()"
-    }
-  }
+  # Handle cases where `easing_fn` is NULL or `"linear"`
+  easing_fn <- normalize_to_linear_easing(easing_fn = easing_fn)
 
   anim_property <-
     list(
