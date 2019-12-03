@@ -4,8 +4,19 @@
 \alias{svg_text}
 \title{Addition of an \code{text} element}
 \usage{
-svg_text(svg, x, y, text, fill = "#000000", opacity = 1, path = NULL,
-  attrs = list(), anims = list(), filters = list(), id = NULL)
+svg_text(
+  svg,
+  x,
+  y,
+  text,
+  fill = NULL,
+  opacity = NULL,
+  path = NULL,
+  attrs = list(),
+  anims = list(),
+  filters = list(),
+  id = NULL
+)
 }
 \arguments{
 \item{svg}{The \code{svg} object that is created using the \code{\link[=SVG]{SVG()}} function.}
@@ -19,8 +30,8 @@ area itself.}
 \item{fill}{The color of the text. By default this is set to \code{"#000000"}
 (black).}
 
-\item{opacity}{The initial opacity of the element. Must be a value in the
-range of \code{0} to \code{1}. By default, the value is set to \code{1.0} (fully opaque).}
+\item{opacity}{The opacity of the element. Must be a value in the
+range of \code{0} to \code{1}.}
 
 \item{path}{A single-length character vector that holds the formatted path
 string.}
@@ -34,7 +45,7 @@ corresponding values are the matching attribute values.}
 structured using the \code{\link[=anims]{anims()}} function.}
 
 \item{filters}{A filter directive list for the element. This is easily
-created by using a list of \code{filter_*()} functions (e.g.,
+created by using a list of \verb{filter_*()} functions (e.g.,
 \code{list(filter_gaussian_blur(2), filter_drop_shadow(2, 2))}).}
 
 \item{id}{An optional ID value to give to the built tag. This is useful for

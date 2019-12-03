@@ -4,8 +4,7 @@
 \alias{anim_position}
 \title{Animate the position of an element}
 \usage{
-anim_position(x = NULL, y = NULL, easing_fn = NULL,
-  initial = FALSE)
+anim_position(x = NULL, y = NULL, easing_fn = NULL, initial = FALSE)
 }
 \arguments{
 \item{x, y}{The position of the element, expressed as \code{x} and \code{y}, at the

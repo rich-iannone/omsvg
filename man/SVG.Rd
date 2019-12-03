@@ -4,15 +4,14 @@
 \alias{SVG}
 \title{Create an \code{svg} object}
 \usage{
-SVG(width, height, title = NULL, desc = NULL,
-  anim_iterations = "infinite")
+SVG(width, height, title = NULL, desc = NULL, anim_iterations = "infinite")
 }
 \arguments{
 \item{width, height}{The dimensions of the SVG in \code{px} units.}
 
-\item{title}{The \code{<title>} tag for the finalized SVG.}
+\item{title}{The \verb{<title>} tag for the finalized SVG.}
 
-\item{desc}{The \code{<desc>} tag for the finalized SVG.}
+\item{desc}{The \verb{<desc>} tag for the finalized SVG.}
 
 \item{anim_iterations}{How many should an SVG animation (if defined by use of
 the \code{\link[=anims]{anims()}} function) be played? By default this is \code{"infinite"} (i.e.,

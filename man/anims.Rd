@@ -8,7 +8,7 @@ anims(...)
 }
 \arguments{
 \item{...}{A call to the \code{\link[=anims]{anims()}} function, which itself allows us to
-express one or more animations (through \code{anim_*()} functions) at set
+express one or more animations (through \verb{anim_*()} functions) at set
 keyframe times.}
 }
 \description{

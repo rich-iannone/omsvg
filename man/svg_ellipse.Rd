@@ -4,9 +4,21 @@
 \alias{svg_ellipse}
 \title{Addition of an \code{ellipse} element}
 \usage{
-svg_ellipse(svg, x, y, width, height, stroke = "#000000",
-  stroke_width = 1, fill = "#DDDDDD", opacity = 1, attrs = list(),
-  anims = list(), filters = list(), id = NULL)
+svg_ellipse(
+  svg,
+  x,
+  y,
+  width,
+  height,
+  stroke = NULL,
+  stroke_width = NULL,
+  fill = NULL,
+  opacity = NULL,
+  attrs = list(),
+  anims = list(),
+  filters = list(),
+  id = NULL
+)
 }
 \arguments{
 \item{svg}{The \code{svg} object that is created using the \code{\link[=SVG]{SVG()}} function.}
@@ -21,15 +33,14 @@ direction, centered on point \code{x}. The \code{height} is the distance in the 
 direction, centered on point \code{y}.}
 
 \item{stroke}{The color of the stroke applied to the element (i.e., the
-outline). By default, this is \code{"#000000"} (black).}
+outline).}
 
-\item{stroke_width}{The width of the stroke in units of pixels. By default,
-this is \code{1.0}.}
+\item{stroke_width}{The width of the stroke in units of pixels.}
 
-\item{fill}{The fill color of the element. This is \code{"#DDDDDD"} by default.}
+\item{fill}{The fill color of the element.}
 
-\item{opacity}{The initial opacity of the element. Must be a value in the
-range of \code{0} to \code{1}. By default, the value is set to \code{1.0} (fully opaque).}
+\item{opacity}{The opacity of the element. Must be a value in the
+range of \code{0} to \code{1}.}
 
 \item{attrs}{A presentation attribute list. The helper function
 \code{\link[=attrs_pres]{attrs_pres()}} can help us easily generate this named list object. For the
@@ -40,7 +51,7 @@ corresponding values are the matching attribute values.}
 structured using the \code{\link[=anims]{anims()}} function.}
 
 \item{filters}{A filter directive list for the element. This is easily
-created by using a list of \code{filter_*()} functions (e.g.,
+created by using a list of \verb{filter_*()} functions (e.g.,
 \code{list(filter_gaussian_blur(2), filter_drop_shadow(2, 2))}).}
 
 \item{id}{An optional ID value to give to the built tag. This is useful for
