@@ -674,7 +674,7 @@ svg_path <- function(svg,
 #'   drawn. The `x` and `y` values are relative to upper left of the SVG drawing
 #'   area itself.
 #' @param text A character vector that contains the text to be rendered.
-#' @param fill The color of the text..
+#' @param fill The color of the text.
 #' @inheritParams svg_rect
 #' @inheritParams svg_path
 #'
@@ -741,6 +741,41 @@ svg_text <- function(svg,
     )
 }
 
+#' Addition of a group element
+#'
+#' The `svg_group()` function allows for grouping of several SVG elements. This
+#' is useful if we'd like to pass presentation attributes to several elements
+#' at once.
+#'
+#' @param ... a collection of named arguments that consist of presentation
+#' attributes (e.g., `stroke = "blue"`) and formulas that represent elements
+#' (e.g, `~ svg_rect(., x = 60, y = 60, width = 50, height = 50)`).
+#' @param .list Allows for the use of a list as an input alternative to `...`.
+#' @inheritParams svg_rect
+#'
+#' @examples
+#' # Create an SVG with two rectangles
+#' # contained within a group
+#' SVG(width = 300, height = 300) %>%
+#'   svg_group(
+#'     fill = "steelblue", stroke = "red", opacity = 0.5,
+#'     ~ svg_rect(., x = 20, y = 20, width = 50, height = 50),
+#'     ~ svg_rect(., x = 40, y = 40, width = 50, height = 50, fill = "red")
+#'   )
+#'
+#' # Create an SVG with two rectangles
+#' # that are nested within two
+#' # different groups
+#' SVG(width = 300, height = 300) %>%
+#'   svg_group(
+#'     fill = "green", stroke = "red",
+#'     ~ svg_rect(., x = 30, y = 30, width = 40, height = 50),
+#'     ~ svg_group(.,
+#'       fill = "steelblue", opacity = 0.5,
+#'       ~ svg_rect(., x = 60, y = 60, width = 50, height = 50)
+#'       )
+#'     )
+#'
 #' @import rlang
 #' @export
 svg_group <- function(svg,

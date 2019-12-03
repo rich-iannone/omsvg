@@ -27,8 +27,7 @@ area itself.}
 
 \item{text}{A character vector that contains the text to be rendered.}
 
-\item{fill}{The color of the text. By default this is set to \code{"#000000"}
-(black).}
+\item{fill}{The color of the text.}
 
 \item{opacity}{The opacity of the element. Must be a value in the
 range of \code{0} to \code{1}.}
