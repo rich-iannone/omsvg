@@ -745,7 +745,9 @@ shape_types <- function() {
   c("rect", "circle", "ellipse", "line", "polyline", "polygon", "path")
 }
 
-add_element_list <- function(svg, element_list, id) {
+add_element_list <- function(svg,
+                             element_list,
+                             id) {
 
   svg_element_count <- svg$elements %>% length()
 
