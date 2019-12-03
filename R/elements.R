@@ -741,6 +741,93 @@ svg_text <- function(svg,
     )
 }
 
+#' @import rlang
+#' @export
+svg_group <- function(svg,
+                      ...,
+                      .list = list2(...),
+                      attrs = list(),
+                      anims = list(),
+                      filters = list(),
+                      id = NULL) {
+
+  # Obtain all of the group's elements
+  list_elements <- .list
+
+  dots_attrs <- list_elements[rlang::names2(list_elements) != ""]
+
+  group_elements <-
+    list_elements[
+      vapply(
+        list_elements,
+        function(x) rlang::is_formula(x),
+        FUN.VALUE = logical(1),
+        USE.NAMES = FALSE
+      )
+    ]
+
+  # Develop the `element` list and normalize it
+  # against any `attrs` defined
+  element <-
+    c(
+      list(type = "g"),
+      dots_attrs,
+      list(
+        attrs = attrs,
+        anims = anims,
+        filters = filters,
+        start = NA_character_,
+        tag = NA_character_
+      )
+    ) %>%
+    normalize_element_list(attrs = attrs)
+
+  # Add the `element` list to the `svg` object
+  svg <-
+    svg %>%
+    add_element_list(
+      element_list = element,
+      id = id
+    )
+
+  for (g_element in group_elements) {
+
+    svg <-
+      eval(
+        expr = parse(
+          text =
+            g_element %>%
+            rlang::f_rhs() %>%
+            rlang::expr_deparse() %>% tidy_gsub("(.", "(svg", fixed = TRUE)
+        ),
+        envir = NULL
+      )
+  }
+
+  # Develop another `element` list and normalize it
+  # against any `attrs` defined
+  element <-
+    list(
+      type = "g",
+      attrs = attrs,
+      anims = anims,
+      filters = filters,
+      start = NA_character_,
+      tag = "</g>"
+    ) %>%
+    normalize_element_list(attrs = attrs)
+
+  # Add the `element` list to the `svg` object
+  svg <-
+    svg %>%
+    add_element_list(
+      element_list = element,
+      id = "::closing_tag::"
+    )
+
+  svg
+}
+
 shape_types <- function() {
   c("rect", "circle", "ellipse", "line", "polyline", "polygon", "path")
 }
