@@ -46,13 +46,13 @@ svg %>% as.character() %>% cat()
 #> <defs>
 #> 
 #> </defs>
-#> <rect x="25" y="25" width="50" height="50" stroke="#000000" stroke-width="1" fill="yellow" opacity="1"></rect>
-#> <ellipse cx="125" cy="50" rx="25" ry="25" stroke="magenta" stroke-width="1" fill="#DDDDDD" opacity="1"></ellipse>
-#> <text x="175" y="50" fill="#000000" opacity="1" font-family="Helvetica">this is text</text>
+#> <rect x="25" y="25" width="50" height="50" fill="yellow"/>
+#> <ellipse cx="125" cy="50" rx="25" ry="25" stroke="magenta"/>
+#> <text x="175" y="50" font-family="Helvetica">this is text</text>
 #> </svg>
 ```
 
-Below is that `svg` in this document.
+And here’s the SVG:
 
 <img src="man/figures/example_1.svg" align="center" />
 
@@ -82,8 +82,8 @@ svg_rectangle_anim <-
         anim_rotation(initial = TRUE)
       ),
       2.0 ~ list(
-        anim_position(x = 500, y = 75, timing = ease_in_out()),
-        anim_rotation(90, timing = ease_in_out())
+        anim_position(x = 500, y = 75, easing_fn = ease_in_out()),
+        anim_rotation(90, easing_fn = ease_in_out())
       )
     )
   )
