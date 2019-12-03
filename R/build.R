@@ -1,14 +1,18 @@
 build_svg <- function(svg) {
 
+  # Extract the SVG width, height, and title
   width  <- svg$width
   height <- svg$height
   title  <- svg$title
 
-  anim_iterations <- svg$anim_iterations
-
+  # Extract the stored information for the SVG description
   desc <- svg$desc
 
+  # Extract the stored information for the SVG elements
   elements <- svg$elements
+
+  # Extract information on SVG animation iterations
+  anim_iterations <- svg$anim_iterations
 
   # Get vector of `id`s
   ids <-
@@ -170,7 +174,17 @@ build_element_tag <- function(element) {
 
   e <- element
 
+  # Get the tag type
   type <- e$type
+
+  # If the tag is already available, return it unchanged
+  if (!is.na(e$tag)) {
+    return(e$tag)
+  }
+
+  # Set default flags for tag
+  open <- close <- TRUE
+  self_close <- FALSE
 
   # Get the main attributes
   attrs_m <- e[names(e) %>% base::setdiff(non_attr_e_names())]
@@ -181,8 +195,8 @@ build_element_tag <- function(element) {
   # Combine all attributes together
   attrs <- c(attrs_m, attrs_e)
 
-  # Get the `text` attribute, if available
-  if (type == "text") {
+  # Get the `inner` value for the `<text>` element, if available
+  if (e$type == "text") {
     inner <- e$text
   } else {
     inner <- ""
@@ -195,7 +209,25 @@ build_element_tag <- function(element) {
     lapply(function(x) build_attr(name = attr_names[x], value = attrs[[x]])) %>%
     unlist()
 
-  built_tag <- build_tag(name = type, attrs = attr_str, inner = inner)
+  # Set flags for `<g>` tags
+  if (e$type == "g" & is.na(e$tag)) {
+    close <- FALSE
+  }
+
+  # Set flags for elements with self-closing tags
+  if (e$type %in% shape_types()) {
+    self_close <- TRUE
+  }
+
+  built_tag <-
+    build_tag(
+      name = type,
+      attrs = attr_str,
+      inner = inner,
+      open = open,
+      close = close,
+      self_close = self_close
+    )
 
   if (!is.null(e$anims_built$style)) {
 
@@ -234,20 +266,35 @@ build_attr <- function(name, value = NULL) {
   paste0(name, "=", "\"", value, "\"")
 }
 
-build_tag <- function(name, attrs, inner = NULL) {
+build_tag <- function(name,
+                      attrs,
+                      inner = NULL,
+                      open = TRUE,
+                      close = TRUE,
+                      self_close = FALSE) {
 
   tag_o <- paste0("<", name)
+  tag_c <- paste0("</", name, ">")
 
   attrs_str <- paste(attrs, collapse = " ")
 
   if (is.null(inner)) {
-    tag_str <- paste0(tag_o, " ", attrs_str, "/>")
-    return(tag_str)
+    return(paste0(tag_o, " ", attrs_str, "/>"))
   }
 
-  tag_c <- paste0("</", name, ">")
+  if (self_close) {
+    built_tag <- paste0(tag_o, " ", attrs_str, "/>")
+  } else if (open & close) {
+    built_tag <- paste0(tag_o, " ", attrs_str, ">", inner, tag_c)
+  } else if (open & !close) {
+    built_tag <- paste0(tag_o, " ", attrs_str, ">")
+  } else if (!open & close) {
+    built_tag <- tag_c
+  } else if (!open & !close) {
+    built_tag <- inner
+  }
 
-  paste0(tag_o, " ", attrs_str, ">", inner, tag_c)
+  built_tag %>% tidy_gsub("\\s*>", ">")
 }
 
 # Determine if there are any filters

@@ -19,12 +19,11 @@
 #'   Applies to all corners of the rectangle. If only one value is provided
 #'   (say, just for `rx`) then the unset value will take that set value as well.
 #' @param stroke The color of the stroke applied to the element (i.e., the
-#'   outline). By default, this is `"#000000"` (black).
-#' @param stroke_width The width of the stroke in units of pixels. By default,
-#'   this is `1.0`.
-#' @param fill The fill color of the element. This is `"#DDDDDD"` by default.
-#' @param opacity The initial opacity of the element. Must be a value in the
-#'   range of `0` to `1`. By default, the value is set to `1.0` (fully opaque).
+#'   outline).
+#' @param stroke_width The width of the stroke in units of pixels.
+#' @param fill The fill color of the element.
+#' @param opacity The opacity of the element. Must be a value in the
+#'   range of `0` to `1`.
 #' @param attrs A presentation attribute list. The helper function
 #'   [attrs_pres()] can help us easily generate this named list object. For the
 #'   most part, the list's names are the presentation attribute names and the
@@ -84,10 +83,10 @@ svg_rect <- function(svg,
                      height,
                      rx = NULL,
                      ry = NULL,
-                     stroke = "#000000",
-                     stroke_width = 1.0,
-                     fill = "#DDDDDD",
-                     opacity = 1.0,
+                     stroke = NULL,
+                     stroke_width = NULL,
+                     fill = NULL,
+                     opacity = NULL,
                      attrs = list(),
                      anims = list(),
                      filters = list(),
@@ -170,10 +169,10 @@ svg_circle <- function(svg,
                        x,
                        y,
                        diameter,
-                       stroke = "#000000",
-                       stroke_width = 1.0,
-                       fill = "#DDDDDD",
-                       opacity = 1.0,
+                       stroke = NULL,
+                       stroke_width = NULL,
+                       fill = NULL,
+                       opacity = NULL,
                        attrs = list(),
                        anims = list(),
                        filters = list(),
@@ -257,10 +256,10 @@ svg_ellipse <- function(svg,
                         y,
                         width,
                         height,
-                        stroke = "#000000",
-                        stroke_width = 1.0,
-                        fill = "#DDDDDD",
-                        opacity = 1.0,
+                        stroke = NULL,
+                        stroke_width = NULL,
+                        fill = NULL,
+                        opacity = NULL,
                         attrs = list(),
                         anims = list(),
                         filters = list(),
@@ -340,9 +339,9 @@ svg_line <- function(svg,
                      y1,
                      x2,
                      y2,
-                     stroke = "#000000",
-                     stroke_width = 1.0,
-                     opacity = 1.0,
+                     stroke = NULL,
+                     stroke_width = NULL,
+                     opacity = NULL,
                      attrs = list(),
                      anims = list(),
                      filters = list(),
@@ -437,10 +436,10 @@ svg_line <- function(svg,
 #' @export
 svg_polyline <- function(svg,
                          points,
-                         stroke = "#000000",
-                         stroke_width = 1.0,
-                         fill = "none",
-                         opacity = 1.0,
+                         stroke = NULL,
+                         stroke_width = NULL,
+                         fill = NULL,
+                         opacity = NULL,
                          attrs = list(),
                          anims = list(),
                          filters = list(),
@@ -526,10 +525,10 @@ svg_polyline <- function(svg,
 #' @export
 svg_polygon <- function(svg,
                         points,
-                        stroke = "#000000",
-                        stroke_width = 1.0,
-                        fill = "#DDDDDD",
-                        opacity = 1.0,
+                        stroke = NULL,
+                        stroke_width = NULL,
+                        fill = NULL,
+                        opacity = NULL,
                         attrs = list(),
                         anims = list(),
                         filters = list(),
@@ -611,10 +610,10 @@ svg_polygon <- function(svg,
 #' @export
 svg_path <- function(svg,
                      path,
-                     stroke = "#000000",
-                     stroke_width = 1.0,
-                     fill = "#DDDDDD",
-                     opacity = 1.0,
+                     stroke = NULL,
+                     stroke_width = NULL,
+                     fill = NULL,
+                     opacity = NULL,
                      attrs = list(),
                      anims = list(),
                      filters = list(),
@@ -675,8 +674,7 @@ svg_path <- function(svg,
 #'   drawn. The `x` and `y` values are relative to upper left of the SVG drawing
 #'   area itself.
 #' @param text A character vector that contains the text to be rendered.
-#' @param fill The color of the text. By default this is set to `"#000000"`
-#'   (black).
+#' @param fill The color of the text.
 #' @inheritParams svg_rect
 #' @inheritParams svg_path
 #'
@@ -695,8 +693,8 @@ svg_text <- function(svg,
                      x,
                      y,
                      text,
-                     fill = "#000000",
-                     opacity = 1.0,
+                     fill = NULL,
+                     opacity = NULL,
                      path = NULL,
                      attrs = list(),
                      anims = list(),
@@ -743,11 +741,135 @@ svg_text <- function(svg,
     )
 }
 
+#' Addition of a group element
+#'
+#' The `svg_group()` function allows for grouping of several SVG elements. This
+#' is useful if we'd like to pass presentation attributes to several elements
+#' at once.
+#'
+#' @param ... a collection of named arguments that consist of presentation
+#' attributes (e.g., `stroke = "blue"`) and formulas that represent elements
+#' (e.g, `~ svg_rect(., x = 60, y = 60, width = 50, height = 50)`).
+#' @param .list Allows for the use of a list as an input alternative to `...`.
+#' @inheritParams svg_rect
+#'
+#' @examples
+#' # Create an SVG with two rectangles
+#' # contained within a group
+#' SVG(width = 300, height = 300) %>%
+#'   svg_group(
+#'     fill = "steelblue", stroke = "red", opacity = 0.5,
+#'     ~ svg_rect(., x = 20, y = 20, width = 50, height = 50),
+#'     ~ svg_rect(., x = 40, y = 40, width = 50, height = 50, fill = "red")
+#'   )
+#'
+#' # Create an SVG with two rectangles
+#' # that are nested within two
+#' # different groups
+#' SVG(width = 300, height = 300) %>%
+#'   svg_group(
+#'     fill = "green", stroke = "red",
+#'     ~ svg_rect(., x = 30, y = 30, width = 40, height = 50),
+#'     ~ svg_group(.,
+#'       fill = "steelblue", opacity = 0.5,
+#'       ~ svg_rect(., x = 60, y = 60, width = 50, height = 50)
+#'       )
+#'     )
+#'
+#' @import rlang
+#' @export
+svg_group <- function(svg,
+                      ...,
+                      .list = list2(...),
+                      attrs = list(),
+                      anims = list(),
+                      filters = list(),
+                      id = NULL) {
+
+  # Obtain all of the group's elements
+  list_elements <- .list
+
+  dots_attrs <- list_elements[rlang::names2(list_elements) != ""]
+
+  group_elements <-
+    list_elements[
+      vapply(
+        list_elements,
+        function(x) rlang::is_formula(x),
+        FUN.VALUE = logical(1),
+        USE.NAMES = FALSE
+      )
+    ]
+
+  # Develop the `element` list and normalize it
+  # against any `attrs` defined
+  element <-
+    c(
+      list(type = "g"),
+      dots_attrs,
+      list(
+        attrs = attrs,
+        anims = anims,
+        filters = filters,
+        start = NA_character_,
+        tag = NA_character_
+      )
+    ) %>%
+    normalize_element_list(attrs = attrs)
+
+  # Add the `element` list to the `svg` object
+  svg <-
+    svg %>%
+    add_element_list(
+      element_list = element,
+      id = id
+    )
+
+  for (g_element in group_elements) {
+
+    svg <-
+      eval(
+        expr = parse(
+          text =
+            g_element %>%
+            rlang::f_rhs() %>%
+            rlang::expr_deparse() %>% tidy_gsub("(.", "(svg", fixed = TRUE)
+        ),
+        envir = NULL
+      )
+  }
+
+  # Develop another `element` list and normalize it
+  # against any `attrs` defined
+  element <-
+    list(
+      type = "g",
+      attrs = attrs,
+      anims = anims,
+      filters = filters,
+      start = NA_character_,
+      tag = "</g>"
+    ) %>%
+    normalize_element_list(attrs = attrs)
+
+  # Add the `element` list to the `svg` object
+  svg <-
+    svg %>%
+    add_element_list(
+      element_list = element,
+      id = "::closing_tag::"
+    )
+
+  svg
+}
+
 shape_types <- function() {
   c("rect", "circle", "ellipse", "line", "polyline", "polygon", "path")
 }
 
-add_element_list <- function(svg, element_list, id) {
+add_element_list <- function(svg,
+                             element_list,
+                             id) {
 
   svg_element_count <- svg$elements %>% length()
 

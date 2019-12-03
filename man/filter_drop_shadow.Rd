@@ -4,8 +4,7 @@
 \alias{filter_drop_shadow}
 \title{Filter: add a drop shadow to an element}
 \usage{
-filter_drop_shadow(dx = 0.2, dy = 0.2, stdev = 1, color = "black",
-  opacity = 1)
+filter_drop_shadow(dx = 0.2, dy = 0.2, stdev = 1, color = "black", opacity = 1)
 }
 \arguments{
 \item{dx, dy}{The offset of the drop shadow compared to the position of the

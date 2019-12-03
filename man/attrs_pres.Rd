@@ -4,26 +4,62 @@
 \alias{attrs_pres}
 \title{Define SVG presentation attributes for an element}
 \usage{
-attrs_pres(stroke = NULL, stroke_width = NULL, stroke_opacity = NULL,
-  fill = NULL, fill_opacity = NULL, font_family = NULL,
-  font_size = NULL, font_weight = NULL, font_style = NULL,
-  text_decoration = NULL, transform = NULL, filter = NULL,
-  mask = NULL, clip_path = NULL, clip_rule = NULL,
-  stroke_dasharray = NULL, stroke_dashoffset = NULL,
-  stroke_linecap = NULL, stroke_linejoin = NULL,
-  stroke_miterlimit = NULL, fill_rule = NULL, color = NULL,
-  opacity = NULL, color_interpolation = NULL,
-  color_interpolation_filters = NULL, lighting_color = NULL,
-  flood_color = NULL, flood_opacity = NULL, stop_color = NULL,
-  stop_opacity = NULL, font_variant = NULL, font_stretch = NULL,
-  font_size_adjust = NULL, text_anchor = NULL, letter_spacing = NULL,
-  word_spacing = NULL, dominant_baseline = NULL,
-  alignment_baseline = NULL, baseline_shift = NULL, direction = NULL,
-  writing_mode = NULL, overflow = NULL, marker_start = NULL,
-  marker_mid = NULL, marker_end = NULL, pointer_events = NULL,
-  cursor = NULL, vector_effect = NULL, shape_rendering = NULL,
-  color_rendering = NULL, text_rendering = NULL,
-  image_rendering = NULL, display = NULL, visibility = NULL)
+attrs_pres(
+  stroke = NULL,
+  stroke_width = NULL,
+  stroke_opacity = NULL,
+  fill = NULL,
+  fill_opacity = NULL,
+  font_family = NULL,
+  font_size = NULL,
+  font_weight = NULL,
+  font_style = NULL,
+  text_decoration = NULL,
+  transform = NULL,
+  filter = NULL,
+  mask = NULL,
+  clip_path = NULL,
+  clip_rule = NULL,
+  stroke_dasharray = NULL,
+  stroke_dashoffset = NULL,
+  stroke_linecap = NULL,
+  stroke_linejoin = NULL,
+  stroke_miterlimit = NULL,
+  fill_rule = NULL,
+  color = NULL,
+  opacity = NULL,
+  color_interpolation = NULL,
+  color_interpolation_filters = NULL,
+  lighting_color = NULL,
+  flood_color = NULL,
+  flood_opacity = NULL,
+  stop_color = NULL,
+  stop_opacity = NULL,
+  font_variant = NULL,
+  font_stretch = NULL,
+  font_size_adjust = NULL,
+  text_anchor = NULL,
+  letter_spacing = NULL,
+  word_spacing = NULL,
+  dominant_baseline = NULL,
+  alignment_baseline = NULL,
+  baseline_shift = NULL,
+  direction = NULL,
+  writing_mode = NULL,
+  overflow = NULL,
+  marker_start = NULL,
+  marker_mid = NULL,
+  marker_end = NULL,
+  pointer_events = NULL,
+  cursor = NULL,
+  vector_effect = NULL,
+  shape_rendering = NULL,
+  color_rendering = NULL,
+  text_rendering = NULL,
+  image_rendering = NULL,
+  display = NULL,
+  visibility = NULL
+)
 }
 \arguments{
 \item{stroke}{The color used to paint the outline of the shape.}
@@ -58,15 +94,15 @@ and so on, up to \code{900}.}
 \item{transform}{A list of transform definitions that are applied to an
 element and the element's children.}
 
-\item{filter}{The filter effects defined by a \code{<filter>} element that shall
-be applied to its element. Requires a reference to a \code{<filter>} \code{id}
+\item{filter}{The filter effects defined by a \verb{<filter>} element that shall
+be applied to its element. Requires a reference to a \verb{<filter>} \code{id}
 attribute.}
 
-\item{mask}{The mask defined by a \code{<mask>} element that shall be applied to
-its element. Requires a reference to a \code{<mask>} \code{id} attribute.}
+\item{mask}{The mask defined by a \verb{<mask>} element that shall be applied to
+its element. Requires a reference to a \verb{<mask>} \code{id} attribute.}
 
-\item{clip_path}{The clipping path defined by a \code{<clipPath>} element that
-shall be applied to its element. Requires a reference to a \code{<clipPath>}
+\item{clip_path}{The clipping path defined by a \verb{<clipPath>} element that
+shall be applied to its element. Requires a reference to a \verb{<clipPath>}
 \code{id} attribute.}
 
 \item{clip_rule}{A rule for determining what side of a path is inside of a
@@ -110,11 +146,11 @@ performed via filter effects. Allowed values are: \code{"auto"}, \code{"sRGB"},
 \code{"linearRGB"}, and \code{"inherit"}.}
 
 \item{lighting_color}{The color of the light source for filter primitives
-elements \code{<feSpecularLighting>} and \code{<feDiffuseLighting>}.}
+elements \verb{<feSpecularLighting>} and \verb{<feDiffuseLighting>}.}
 
 \item{flood_color, flood_opacity}{The color and opacity level to use to flood
-the current filter primitive subregion defined through the \code{<feFlood>} or
-\code{<feDropShadow>} element.}
+the current filter primitive subregion defined through the \verb{<feFlood>} or
+\verb{<feDropShadow>} element.}
 
 \item{stop_color, stop_opacity}{Sets the color and opacity at a gradient stop.}
 
@@ -153,7 +189,7 @@ length value, or a percentage value.}
 \item{direction}{The base writing direction of text. Can be either \code{"ltr"},
 \code{"rtl"}, or \code{"inherit"}.}
 
-\item{writing_mode}{The initial inline-progression-direction for a \code{<text>}
+\item{writing_mode}{The initial inline-progression-direction for a \verb{<text>}
 element (can be left-to-right, right-to-left, or top-to-bottom). Valid
 values are \code{"lr-tb"}, \code{"rl-tb"}, \code{"tb-rl"}, \code{"lr"}, \code{"rl"}, \code{"tb"}, or
 \code{"inherit"}.}
@@ -164,11 +200,11 @@ element when it overflows the element's box. Options are: \code{"visible"},
 
 \item{marker_start, marker_mid, marker_end}{The arrowhead or polymarker that
 will be drawn at the first node, the final node, or, the in-between nodes.
-This applies to a \code{<path>} element or a basic shape. These attributes can
+This applies to a \verb{<path>} element or a basic shape. These attributes can
 be applied to any element but only have an effect on the following seven
-elements: \code{<rect>}, \code{<circle>}, \code{<ellipse>}, \code{<line>}, \code{<path>},
-\code{<polygon>}, and \code{<polyline>}. Requires a reference to a \code{<marker>} \code{id}
-attribute (defined within the SVG's \code{<defs>} area).}
+elements: \verb{<rect>}, \verb{<circle>}, \verb{<ellipse>}, \verb{<line>}, \verb{<path>},
+\verb{<polygon>}, and \verb{<polyline>}. Requires a reference to a \verb{<marker>} \code{id}
+attribute (defined within the SVG's \verb{<defs>} area).}
 
 \item{pointer_events}{Defines whether or when an element may be the target of
 a mouse event. Options are: \code{"bounding-box"}, \code{"visiblePainted"},

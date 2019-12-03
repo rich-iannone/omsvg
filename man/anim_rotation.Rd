@@ -4,8 +4,12 @@
 \alias{anim_rotation}
 \title{Animate an element through rotation}
 \usage{
-anim_rotation(rotation = NULL, anchor = "center", easing_fn = NULL,
-  initial = FALSE)
+anim_rotation(
+  rotation = NULL,
+  anchor = "center",
+  easing_fn = NULL,
+  initial = FALSE
+)
 }
 \arguments{
 \item{rotation}{The rotation value of the element at the keyframe time (given
