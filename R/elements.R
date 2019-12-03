@@ -19,12 +19,11 @@
 #'   Applies to all corners of the rectangle. If only one value is provided
 #'   (say, just for `rx`) then the unset value will take that set value as well.
 #' @param stroke The color of the stroke applied to the element (i.e., the
-#'   outline). By default, this is `"#000000"` (black).
-#' @param stroke_width The width of the stroke in units of pixels. By default,
-#'   this is `1.0`.
-#' @param fill The fill color of the element. This is `"#DDDDDD"` by default.
-#' @param opacity The initial opacity of the element. Must be a value in the
-#'   range of `0` to `1`. By default, the value is set to `1.0` (fully opaque).
+#'   outline).
+#' @param stroke_width The width of the stroke in units of pixels.
+#' @param fill The fill color of the element.
+#' @param opacity The opacity of the element. Must be a value in the
+#'   range of `0` to `1`.
 #' @param attrs A presentation attribute list. The helper function
 #'   [attrs_pres()] can help us easily generate this named list object. For the
 #'   most part, the list's names are the presentation attribute names and the
@@ -84,10 +83,10 @@ svg_rect <- function(svg,
                      height,
                      rx = NULL,
                      ry = NULL,
-                     stroke = "#000000",
-                     stroke_width = 1.0,
-                     fill = "#DDDDDD",
-                     opacity = 1.0,
+                     stroke = NULL,
+                     stroke_width = NULL,
+                     fill = NULL,
+                     opacity = NULL,
                      attrs = list(),
                      anims = list(),
                      filters = list(),
@@ -170,10 +169,10 @@ svg_circle <- function(svg,
                        x,
                        y,
                        diameter,
-                       stroke = "#000000",
-                       stroke_width = 1.0,
-                       fill = "#DDDDDD",
-                       opacity = 1.0,
+                       stroke = NULL,
+                       stroke_width = NULL,
+                       fill = NULL,
+                       opacity = NULL,
                        attrs = list(),
                        anims = list(),
                        filters = list(),
@@ -257,10 +256,10 @@ svg_ellipse <- function(svg,
                         y,
                         width,
                         height,
-                        stroke = "#000000",
-                        stroke_width = 1.0,
-                        fill = "#DDDDDD",
-                        opacity = 1.0,
+                        stroke = NULL,
+                        stroke_width = NULL,
+                        fill = NULL,
+                        opacity = NULL,
                         attrs = list(),
                         anims = list(),
                         filters = list(),
@@ -340,9 +339,9 @@ svg_line <- function(svg,
                      y1,
                      x2,
                      y2,
-                     stroke = "#000000",
-                     stroke_width = 1.0,
-                     opacity = 1.0,
+                     stroke = NULL,
+                     stroke_width = NULL,
+                     opacity = NULL,
                      attrs = list(),
                      anims = list(),
                      filters = list(),
@@ -437,10 +436,10 @@ svg_line <- function(svg,
 #' @export
 svg_polyline <- function(svg,
                          points,
-                         stroke = "#000000",
-                         stroke_width = 1.0,
-                         fill = "none",
-                         opacity = 1.0,
+                         stroke = NULL,
+                         stroke_width = NULL,
+                         fill = NULL,
+                         opacity = NULL,
                          attrs = list(),
                          anims = list(),
                          filters = list(),
@@ -526,10 +525,10 @@ svg_polyline <- function(svg,
 #' @export
 svg_polygon <- function(svg,
                         points,
-                        stroke = "#000000",
-                        stroke_width = 1.0,
-                        fill = "#DDDDDD",
-                        opacity = 1.0,
+                        stroke = NULL,
+                        stroke_width = NULL,
+                        fill = NULL,
+                        opacity = NULL,
                         attrs = list(),
                         anims = list(),
                         filters = list(),
@@ -611,10 +610,10 @@ svg_polygon <- function(svg,
 #' @export
 svg_path <- function(svg,
                      path,
-                     stroke = "#000000",
-                     stroke_width = 1.0,
-                     fill = "#DDDDDD",
-                     opacity = 1.0,
+                     stroke = NULL,
+                     stroke_width = NULL,
+                     fill = NULL,
+                     opacity = NULL,
                      attrs = list(),
                      anims = list(),
                      filters = list(),
@@ -675,8 +674,7 @@ svg_path <- function(svg,
 #'   drawn. The `x` and `y` values are relative to upper left of the SVG drawing
 #'   area itself.
 #' @param text A character vector that contains the text to be rendered.
-#' @param fill The color of the text. By default this is set to `"#000000"`
-#'   (black).
+#' @param fill The color of the text..
 #' @inheritParams svg_rect
 #' @inheritParams svg_path
 #'
@@ -695,8 +693,8 @@ svg_text <- function(svg,
                      x,
                      y,
                      text,
-                     fill = "#000000",
-                     opacity = 1.0,
+                     fill = NULL,
+                     opacity = NULL,
                      path = NULL,
                      attrs = list(),
                      anims = list(),
