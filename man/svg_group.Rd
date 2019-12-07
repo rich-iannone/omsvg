@@ -24,7 +24,7 @@ attributes (e.g., \code{stroke = "blue"}) and formulas that represent elements
 \item{.list}{Allows for the use of a list as an input alternative to \code{...}.}
 
 \item{attrs}{A presentation attribute list. The helper function
-\code{\link[=attrs_pres]{attrs_pres()}} can help us easily generate this named list object. For the
+\code{\link[=svg_attrs_pres]{svg_attrs_pres()}} can help us easily generate this named list object. For the
 most part, the list's names are the presentation attribute names and the
 corresponding values are the matching attribute values.}
 

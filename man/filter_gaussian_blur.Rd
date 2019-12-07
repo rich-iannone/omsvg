@@ -31,7 +31,7 @@ SVG(width = 200, height = 100) \%>\%
   svg_ellipse(
     x = 40, y = 40,
     width = 50, height = 30,
-    attrs = attrs_pres(
+    attrs = svg_attrs_pres(
       fill = "green",
       filter = "blur"
     )

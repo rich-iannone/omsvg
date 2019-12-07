@@ -29,7 +29,7 @@
 #'   svg_ellipse(
 #'     x = 40, y = 40,
 #'     width = 50, height = 30,
-#'     attrs = attrs_pres(
+#'     attrs = svg_attrs_pres(
 #'       fill = "green",
 #'       filter = "blur"
 #'     )
@@ -115,7 +115,7 @@ svg_filter <- function(svg,
 #'   svg_rect(
 #'     x = 25, y = 25,
 #'     width = "50%", height = "50%",
-#'     attrs = attrs_pres(filter = "image")
+#'     attrs = svg_attrs_pres(filter = "image")
 #'   )
 #'
 #' @export
@@ -152,7 +152,7 @@ filter_image <- function(image) {
 #'   svg_ellipse(
 #'     x = 40, y = 40,
 #'     width = 50, height = 30,
-#'     attrs = attrs_pres(
+#'     attrs = svg_attrs_pres(
 #'       fill = "green",
 #'       filter = "blur"
 #'     )
@@ -205,7 +205,7 @@ filter_gaussian_blur <- function(stdev = 1,
 #'   svg_text(
 #'     x = 10, y = 40,
 #'     text = "Erosion",
-#'     attrs = attrs_pres(
+#'     attrs = svg_attrs_pres(
 #'       font_size = "3em",
 #'       font_weight = "bolder",
 #'       filter = "erode"
@@ -255,7 +255,7 @@ filter_erode <- function(radius = 1) {
 #'   svg_text(
 #'     x = 10, y = 40,
 #'     text = "Dilation",
-#'     attrs = attrs_pres(
+#'     attrs = svg_attrs_pres(
 #'       font_size = "3em",
 #'       filter = "dilate"
 #'     )
@@ -310,7 +310,7 @@ filter_dilate <- function(radius = 1) {
 #'   svg_text(
 #'     x = 10, y = 40,
 #'     text = "Shadowed",
-#'     attrs = attrs_pres(
+#'     attrs = svg_attrs_pres(
 #'       font_size = "2em",
 #'       fill = "#555555",
 #'       font_weight = "bolder",
@@ -365,7 +365,7 @@ filter_drop_shadow <- function(dx = 0.2,
 #'   svg_circle(
 #'     x = 30, y = 30,
 #'     diameter = 40,
-#'     attrs = attrs_pres(
+#'     attrs = svg_attrs_pres(
 #'       fill = "red",
 #'       filter = "offset_right"
 #'     )

@@ -11,7 +11,7 @@ SVG(width = 300, height = 300) %>%
   svg_rect(
     x = 50, y = 50,
     width = 50, height = 50,
-    attrs = attrs_pres(
+    attrs = svg_attrs_pres(
       stroke = "magenta",
       fill = "lightblue"
     ),
@@ -25,7 +25,7 @@ SVG(width = 300, height = 300) %>%
   svg_circle(
     x = 50, y = 50,
     diameter = 30,
-    attrs = attrs_pres(
+    attrs = svg_attrs_pres(
       stroke = "magenta",
       fill = "lightblue"
     ),
@@ -39,7 +39,7 @@ SVG(width = 300, height = 300) %>%
   svg_ellipse(
     x = 50, y = 50,
     width = 50, height = 80,
-    attrs = attrs_pres(
+    attrs = svg_attrs_pres(
       stroke = "magenta",
       fill = "lightblue"
     ),
@@ -55,7 +55,7 @@ SVG(width = 300, height = 300) %>%
   svg_rect(
     x = 50, y = 50,
     width = 50, height = 50,
-    attrs = attrs_pres(
+    attrs = svg_attrs_pres(
       stroke = "magenta",
       fill = "lightblue"
     ),
@@ -72,7 +72,7 @@ SVG(width = 300, height = 300) %>%
   svg_rect(
     x = 50, y = 50,
     width = 50, height = 50,
-    attrs = attrs_pres(
+    attrs = svg_attrs_pres(
       stroke = "magenta",
       fill = "lightblue"
     ),
@@ -90,7 +90,7 @@ SVG(width = 300, height = 300) %>%
   svg_rect(
     x = 100, y = 50,
     width = 50, height = 50,
-    attrs = attrs_pres(
+    attrs = svg_attrs_pres(
       stroke = "black",
       fill = "green"
     ),
@@ -111,7 +111,7 @@ SVG(width = 300, height = 300) %>%
   svg_rect(
     x = 50, y = 50,
     width = 50, height = 50,
-    attrs = attrs_pres(
+    attrs = svg_attrs_pres(
       stroke = "black",
       fill = "yellow"
     ),
@@ -133,7 +133,7 @@ SVG(width = 300, height = 300) %>%
     x = 50, y = 50,
     width = 50, height = 50,
     opacity = 0.5,
-    attrs = attrs_pres(
+    attrs = svg_attrs_pres(
       stroke = "red",
       fill = "green"
     ),
@@ -149,7 +149,7 @@ SVG(width = 300, height = 300) %>%
   svg_rect(
     x = 50, y = 50,
     width = 50, height = 50,
-    attrs = attrs_pres(
+    attrs = svg_attrs_pres(
       stroke = "black",
       fill = "yellow"
     ),
@@ -175,7 +175,7 @@ SVG(width = 300, height = 300) %>%
   svg_rect(
     x = 50, y = 50,
     width = 40, height = 40,
-    attrs = attrs_pres(
+    attrs = svg_attrs_pres(
       stroke = "red",
       fill = "green"
     ),

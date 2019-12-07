@@ -40,7 +40,7 @@ SVG(width = 250, height = 100) \%>\%
   svg_text(
     x = 10, y = 40,
     text = "Shadowed",
-    attrs = attrs_pres(
+    attrs = svg_attrs_pres(
       font_size = "2em",
       fill = "#555555",
       font_weight = "bolder",

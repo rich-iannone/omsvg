@@ -36,7 +36,7 @@ svg <-
   SVG(width = 250, height = 100) %>%
   svg_rect(x = 25, y = 25, width = 50, height = 50, fill = "yellow") %>%
   svg_ellipse(x = 125, y = 50, width = 50, height = 50, stroke = "magenta") %>%
-  svg_text(x = 175, y = 50, text = "this is text", attrs = attrs_pres(font_family = "Helvetica"))
+  svg_text(x = 175, y = 50, text = "this is text", attrs = svg_attrs_pres(font_family = "Helvetica"))
 ```
 
 This `svg` object can be transformed to an `<svg>` tag with `as.character()`. Wanna see the SVG code? Here it is:
@@ -78,7 +78,7 @@ svg_rectangle_anim <-
 
 <img src="man/figures/example_2.svg" align="center" />
 
-Animations are done by reference to keyframe times. Each of these times (in seconds) is like a transition point. Above, the rectangle is held at its initial position and rotation state until `0.5` seconds has elapsed. At `2.0` seconds, the second keyframe, the rectangle's position is to be moved from `{x = 100, y = 100}` to `{x = 500, y = 100}`, and, its rotation state should change to `90` degrees. We can assign a `timing` function that governs the tweening of the animation. For the position and rotation changes, these are both using the `ease_in_out()` timing function (where movement eases into a maximum speed and then decelerates to a stop).
+Animations are made through reference to keyframe times. Each of these times (in seconds) is like a transition point. Above, the rectangle is held at its initial position and rotation state until `0.5` seconds has elapsed. At `2.0` seconds, the second keyframe, the rectangle's position is to be moved from `{x = 100, y = 100}` to `{x = 500, y = 100}`, and, its rotation state should change to `90` degrees. We can assign a `timing` function that governs the tweening of the animation. For the position and rotation changes, these are both using the `ease_in_out()` timing function (where movement eases into a maximum speed and then decelerates to a stop).
 
 ## Installation
 

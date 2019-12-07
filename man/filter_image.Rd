@@ -28,7 +28,7 @@ SVG(width = 500, height = 500) \%>\%
   svg_rect(
     x = 25, y = 25,
     width = "50\%", height = "50\%",
-    attrs = attrs_pres(filter = "image")
+    attrs = svg_attrs_pres(filter = "image")
   )
 
 }

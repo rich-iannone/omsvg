@@ -23,7 +23,7 @@ svg_1 <-
   svg_rect(
     x = 50, y = 50,
     width = 50, height = 50,
-    attrs = attrs_pres(
+    attrs = svg_attrs_pres(
       stroke = "magenta",
       fill = "lightblue"
     ),
@@ -42,7 +42,7 @@ svg_2 <-
   svg_rect(
     x = 50, y = 50,
     width = 50, height = 50,
-    attrs = attrs_pres(
+    attrs = svg_attrs_pres(
       stroke = "black",
       fill = "yellow"
     ),
@@ -66,7 +66,7 @@ svg_3 <-
   svg_rect(
     x = 50, y = 50,
     width = 50, height = 50,
-    attrs = attrs_pres(
+    attrs = svg_attrs_pres(
       stroke = "black",
       fill = "yellow"
     ),

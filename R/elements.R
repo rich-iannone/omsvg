@@ -25,7 +25,7 @@
 #' @param opacity The opacity of the element. Must be a value in the
 #'   range of `0` to `1`.
 #' @param attrs A presentation attribute list. The helper function
-#'   [attrs_pres()] can help us easily generate this named list object. For the
+#'   [svg_attrs_pres()] can help us easily generate this named list object. For the
 #'   most part, the list's names are the presentation attribute names and the
 #'   corresponding values are the matching attribute values.
 #' @param anims An animation directive list for the element. This should be

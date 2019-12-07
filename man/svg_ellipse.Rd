@@ -43,7 +43,7 @@ outline).}
 range of \code{0} to \code{1}.}
 
 \item{attrs}{A presentation attribute list. The helper function
-\code{\link[=attrs_pres]{attrs_pres()}} can help us easily generate this named list object. For the
+\code{\link[=svg_attrs_pres]{svg_attrs_pres()}} can help us easily generate this named list object. For the
 most part, the list's names are the presentation attribute names and the
 corresponding values are the matching attribute values.}
 

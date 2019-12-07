@@ -31,7 +31,7 @@ SVG(width = 200, height = 100) \%>\%
   svg_text(
     x = 10, y = 40,
     text = "Dilation",
-    attrs = attrs_pres(
+    attrs = svg_attrs_pres(
       font_size = "3em",
       filter = "dilate"
     )

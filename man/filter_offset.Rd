@@ -31,7 +31,7 @@ SVG(width = 150, height = 150) \%>\%
   svg_circle(
     x = 30, y = 30,
     diameter = 40,
-    attrs = attrs_pres(
+    attrs = svg_attrs_pres(
       fill = "red",
       filter = "offset_right"
     )
