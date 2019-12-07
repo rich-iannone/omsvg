@@ -741,6 +741,94 @@ svg_text <- function(svg,
     )
 }
 
+
+#' Addition of an `image` element
+#'
+#' The `svg_image()` function adds an image to an `svg` object. The starting
+#' position is defined by `x` and `y` values. The image `width` and `height` are
+#' also required. All of these attributes are expressed in units of `px`.
+#'
+#' @param x,y The `x` and `y` positions of the upper left of the image to be
+#'   included. The `x` and `y` values are relative to upper left of the SVG
+#'   drawing area itself.
+#' @param image The URL for the image file.
+#' @param width,height The width and height of the rectangle in which the image
+#'   will be placed. If both are not provided, the image's original dimensions
+#'   will be used. If one of these is provided, then the image will be scaled to
+#'   the provided value with the aspect ratio intact. Providing both will result
+#'   in the image placed in center of the rectangle with the aspect ratio
+#'   preserved.
+#' @param preserve_aspect_ratio Controls how the aspect ratio of the image is
+#'   preserved. Use `"none"` if the image's original aspect ratio should not be
+#'   respected; this will fill the rectangle defined by `width` and `height`
+#'   with the image (and this is only if both values are provided).
+#' @inheritParams svg_rect
+#'
+#' @examples
+#' # Create an SVG with an SVG image
+#' # (the R logo) contained within it
+#' svg <-
+#'   SVG(width = 300, height = 300) %>%
+#'     svg_image(
+#'       x = 20, y = 20,
+#'       width = 100,
+#'       height = 100,
+#'       image = "https://www.r-project.org/logo/Rlogo.svg"
+#'     )
+#'
+#' @export
+svg_image <- function(svg,
+                      x,
+                      y,
+                      image,
+                      width = NULL,
+                      height = NULL,
+                      preserve_aspect_ratio = NULL,
+                      opacity = NULL,
+                      attrs = list(),
+                      anims = list(),
+                      filters = list(),
+                      id = NULL) {
+
+  # Develop the `start` list and normalize it
+  # against any `attrs` defined
+  start <-
+    list(
+      x_i = x,
+      y_i = y,
+      width_i = width,
+      height_i = height
+    ) %>%
+    normalize_start_list(attrs = attrs)
+
+  # Develop the `element` list and normalize it
+  # against any `attrs` defined
+  element <-
+    list(
+      type = "image",
+      x = x,
+      y = y,
+      width = width,
+      height = height,
+      href = image,
+      preserveAspectRatio = preserve_aspect_ratio,
+      opacity = opacity,
+      attrs = attrs,
+      anims = anims,
+      filters = filters,
+      start = start,
+      tag = NA_character_
+    ) %>%
+    normalize_element_list(attrs = attrs)
+
+  # Add the `element` list to the `svg` object
+  svg %>%
+    add_element_list(
+      element_list = element,
+      id = id
+    )
+}
+
 #' Addition of a group element
 #'
 #' The `svg_group()` function allows for grouping of several SVG elements. This
@@ -864,7 +952,7 @@ svg_group <- function(svg,
 }
 
 shape_types <- function() {
-  c("rect", "circle", "ellipse", "line", "polyline", "polygon", "path")
+  c("rect", "circle", "ellipse", "line", "polyline", "polygon", "path", "image")
 }
 
 add_element_list <- function(svg,
