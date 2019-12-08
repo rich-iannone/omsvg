@@ -211,6 +211,7 @@ filter_gaussian_blur <- function(stdev = 1,
 #'       filter = "erode"
 #'     )
 #'   )
+#'
 #' @export
 filter_erode <- function(radius = 1) {
 
@@ -260,6 +261,7 @@ filter_erode <- function(radius = 1) {
 #'       filter = "dilate"
 #'     )
 #'   )
+#'
 #' @export
 filter_dilate <- function(radius = 1) {
 
@@ -317,6 +319,7 @@ filter_dilate <- function(radius = 1) {
 #'       filter = "shadow"
 #'     )
 #'   )
+#'
 #' @export
 filter_drop_shadow <- function(dx = 0.2,
                                dy = 0.2,
@@ -359,7 +362,7 @@ filter_drop_shadow <- function(dx = 0.2,
 #'   svg_filter(
 #'     id = "offset_right",
 #'     filters = list(
-#'       filter_offset(dx = 10, dy = 0)
+#'       filter_offset(dx = 50, dy = 0)
 #'     )
 #'   ) %>%
 #'   svg_circle(

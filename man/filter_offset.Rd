@@ -25,7 +25,7 @@ SVG(width = 150, height = 150) \%>\%
   svg_filter(
     id = "offset_right",
     filters = list(
-      filter_offset(dx = 10, dy = 0)
+      filter_offset(dx = 50, dy = 0)
     )
   ) \%>\%
   svg_circle(

@@ -741,7 +741,6 @@ svg_text <- function(svg,
     )
 }
 
-
 #' Addition of an `image` element
 #'
 #' The `svg_image()` function adds an image to an `svg` object. The starting

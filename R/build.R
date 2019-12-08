@@ -96,13 +96,7 @@ build_svg <- function(svg) {
       function(x) build_element_tag(x)
     )
 
-  # Build all defs
-  built_defs <-
-    svg$defs %>%
-    unlist() %>%
-    paste(collapse = "\n") %>%
-    paste_left("<defs>\n") %>%
-    paste_right("\n</defs>")
+
 
   width_attr <- create_dimension_attr("width", width, "px")
   height_attr <- create_dimension_attr("height", height, "px")
@@ -134,8 +128,19 @@ build_svg <- function(svg) {
     svg_lines <- c(svg_lines, svg_desc_tag)
   }
 
-  # Addition of built definitions
-  svg_lines <- c(svg_lines, built_defs)
+  # Build all defs and add to `svg_lines`
+  if (length(svg$defs) > 0) {
+
+    built_defs <-
+      svg$defs %>%
+      unlist() %>%
+      paste(collapse = "\n") %>%
+      paste_left("<defs>\n") %>%
+      paste_right("\n</defs>")
+
+    # Addition of built definitions
+    svg_lines <- c(svg_lines, built_defs)
+  }
 
   # Addition of built styles
   if (length(built_styles) > 0) {

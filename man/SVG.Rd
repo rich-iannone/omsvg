@@ -19,9 +19,10 @@ SVG(
 
 \item{viewbox}{An optional set of dimensions that defines the SVG \code{viewBox}
 attribute. The \code{viewBox} for an SVG element is the position and dimension,
-in user space, of an SVG viewport. This should be a four-element, numeric
-vector corresponding to the \code{"min-x"}, \code{"min-y"}, \code{"width"}, and \code{"height"}
-of the rectangle.}
+in user space, of an SVG viewport. If supplied, this could either be in the
+form of a four-element, numeric vector corresponding to the \code{"min-x"},
+\code{"min-y"}, \code{"width"}, and \code{"height"} of the rectangle, or, as \code{TRUE} which
+uses the vector \code{c(0, 0, width, height)}.}
 
 \item{title}{The \verb{<title>} tag for the finalized SVG.}
 
