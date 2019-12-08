@@ -155,7 +155,13 @@ build_svg <- function(svg) {
 
   svg_char <- svg_lines %>% paste(collapse = "\n")
 
-  invisible(svg_char)
+  svg_char_formatted <-
+    xml2::read_xml(svg_char) %>%
+    as.character() %>%
+    gsub("^<\\?xml.*?\\?>\\\n", "", .) %>%
+    gsub("\\\n$", "", .)
+
+  invisible(svg_char_formatted)
 }
 
 # Create an SVG dimension attribute (`height`, `width`)

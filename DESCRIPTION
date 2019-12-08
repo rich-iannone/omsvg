@@ -21,5 +21,6 @@ Imports:
     dplyr (>= 0.8.3),
     htmltools (>= 0.3.6),
     rlang (>= 0.4.2),
-    magrittr
+    magrittr,
+    xml2 (>= 1.2.2)
 Roxygen: list(markdown = TRUE)
