@@ -1,18 +1,15 @@
 build_svg <- function(svg) {
 
-  # Extract the SVG properties
+  # Create empty vector for SVG lines
+  svg_lines <- c()
+
+  # Extract the SVG properties and other stored information
   width  <- svg$width
   height <- svg$height
   title  <- svg$title
   viewbox <- svg$viewbox
-
-  # Extract the stored information for the SVG description
   desc <- svg$desc
-
-  # Extract the stored information for the SVG elements
   elements <- svg$elements
-
-  # Extract information on SVG animation iterations
   anim_iterations <- svg$anim_iterations
 
   # Get vector of `id`s
@@ -106,13 +103,12 @@ build_svg <- function(svg) {
     paste_left("<defs>\n") %>%
     paste_right("\n</defs>")
 
-  svg_lines <- c()
 
-
+  # Construct the SVG viewBox value
   if (is.null(viewbox)) {
-    viewbox_dimensions <- c(0, 0, width, height) %>% paste(collapse = " ")
+    viewbox_dims <- c(0, 0, width, height) %>% paste(collapse = " ")
   } else {
-    viewbox_dimensions <- viewbox %>% paste(collapse = " ")
+    viewbox_dims <- viewbox %>% paste(collapse = " ")
   }
 
   svg_o_tag <-
@@ -120,10 +116,8 @@ build_svg <- function(svg) {
       "<svg ",
       "width=\"", width, "px\" ",
       "height=\"", height, "px\" ",
-      "viewBox=\"", viewbox_dimensions, "\" ",
-      "version=\"1.1\" ",
-      "xmlns=\"http://www.w3.org/2000/svg\" ",
-      "xmlns:xlink=\"http://www.w3.org/1999/xlink\">"
+      "viewBox=\"", viewbox_dims, "\" ",
+      "xmlns=\"http://www.w3.org/2000/svg\""
     )
 
   svg_lines <- c(svg_lines, svg_o_tag)
