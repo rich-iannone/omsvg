@@ -104,27 +104,21 @@ build_svg <- function(svg) {
     paste_left("<defs>\n") %>%
     paste_right("\n</defs>")
 
-
-  # Construct the SVG viewBox value
-  if (is.null(viewbox)) {
-    viewbox_dims <- c(0, 0, width, height) %>% paste(collapse = " ")
-  } else {
-    viewbox_dims <- viewbox %>% paste(collapse = " ")
-  }
+  width_attr <- create_dimension_attr("width", width, "px")
+  height_attr <- create_dimension_attr("height", height, "px")
+  viewbox_attr <- create_viewbox_attr(viewbox, width, height)
+  xmlns_attr <- create_xmlns_attr(incl_xmlns)
 
   svg_o_tag <-
-    paste0(
-      "<svg ",
-      "width=\"", width, "px\" ",
-      "height=\"", height, "px\" ",
-      "viewBox=\"", viewbox_dims, "\""
-    )
-
-  if (incl_xmlns) {
-    svg_o_tag <- paste(svg_o_tag, "xmlns=\"http://www.w3.org/2000/svg\"")
-  }
-
-  svg_o_tag <- paste_right(svg_o_tag, x_right = ">")
+    paste(
+      width_attr,
+      height_attr,
+      viewbox_attr,
+      xmlns_attr
+    ) %>%
+    tidy_gsub("\\s*$", "") %>%
+    paste_left("<svg ") %>%
+    paste_right(">")
 
   svg_lines <- c(svg_lines, svg_o_tag)
 
@@ -157,6 +151,41 @@ build_svg <- function(svg) {
   svg_char <- svg_lines %>% paste(collapse = "\n")
 
   invisible(svg_char)
+}
+
+# Create an SVG dimension attribute (`height`, `width`)
+create_dimension_attr <- function(attr_name, value, unit = NULL) {
+
+  value %>%
+    as.character() %>%
+    paste_right(unit) %>%
+    paste_left("=\"") %>%
+    paste_left(paste0(attr_name)) %>%
+    paste_right("\"")
+}
+
+# Create the SVG `viewBox` attribute
+create_viewbox_attr <- function(viewbox, width, height) {
+
+  if (is.null(viewbox)) {
+    return(NULL)
+  } else if (isTRUE(viewbox)) {
+    viewbox_dims <- c(0, 0, width, height) %>% paste(collapse = " ")
+  } else {
+    viewbox_dims <- viewbox %>% paste(collapse = " ")
+  }
+
+  viewbox_dims %>% paste_left("viewBox=\"") %>% paste_right("\"")
+}
+
+# Create the SVG `xmlns` attribute
+create_xmlns_attr <- function(incl_xmlns) {
+
+  if (!incl_xmlns) {
+    return(NULL)
+  }
+
+  "xmlns=\"http://www.w3.org/2000/svg\""
 }
 
 non_attr_e_names <- function() {
