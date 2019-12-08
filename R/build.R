@@ -1,9 +1,10 @@
 build_svg <- function(svg) {
 
-  # Extract the SVG width, height, and title
+  # Extract the SVG properties
   width  <- svg$width
   height <- svg$height
   title  <- svg$title
+  viewbox <- svg$viewbox
 
   # Extract the stored information for the SVG description
   desc <- svg$desc
@@ -107,9 +108,12 @@ build_svg <- function(svg) {
 
   svg_lines <- c()
 
-  viewbox_dimensions <-
-    c(0, 0, width, height) %>%
-    paste(collapse = " ")
+
+  if (is.null(viewbox)) {
+    viewbox_dimensions <- c(0, 0, width, height) %>% paste(collapse = " ")
+  } else {
+    viewbox_dimensions <- viewbox %>% paste(collapse = " ")
+  }
 
   svg_o_tag <-
     paste0(

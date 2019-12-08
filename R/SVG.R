@@ -7,6 +7,11 @@
 #' thus progressively build the graphic.
 #'
 #' @param width,height The dimensions of the SVG in `px` units.
+#' @param viewbox An optional set of dimensions that defines the SVG `viewBox`
+#'   attribute. The `viewBox` for an SVG element is the position and dimension,
+#'   in user space, of an SVG viewport. This should be a four-element, numeric
+#'   vector corresponding to the `"min-x"`, `"min-y"`, `"width"`, and `"height"`
+#'   of the rectangle.
 #' @param title The `<title>` tag for the finalized SVG.
 #' @param desc The `<desc>` tag for the finalized SVG.
 #' @param anim_iterations How many should an SVG animation (if defined by use of
@@ -34,6 +39,7 @@
 #' @export
 SVG <- function(width,
                 height,
+                viewbox = NULL,
                 title = NULL,
                 desc = NULL,
                 anim_iterations = "infinite") {
@@ -55,6 +61,7 @@ SVG <- function(width,
     list(
       width = width,
       height = height,
+      viewbox = viewbox,
       title = title,
       desc = desc,
       anim_iterations = anim_iterations,

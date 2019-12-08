@@ -4,10 +4,23 @@
 \alias{SVG}
 \title{Create an \code{svg} object}
 \usage{
-SVG(width, height, title = NULL, desc = NULL, anim_iterations = "infinite")
+SVG(
+  width,
+  height,
+  viewbox = NULL,
+  title = NULL,
+  desc = NULL,
+  anim_iterations = "infinite"
+)
 }
 \arguments{
 \item{width, height}{The dimensions of the SVG in \code{px} units.}
+
+\item{viewbox}{An optional set of dimensions that defines the SVG \code{viewBox}
+attribute. The \code{viewBox} for an SVG element is the position and dimension,
+in user space, of an SVG viewport. This should be a four-element, numeric
+vector corresponding to the \code{"min-x"}, \code{"min-y"}, \code{"width"}, and \code{"height"}
+of the rectangle.}
 
 \item{title}{The \verb{<title>} tag for the finalized SVG.}
 
