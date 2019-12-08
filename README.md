@@ -19,7 +19,7 @@ Scalable vector graphics, SVGs, are *fantastic*. The **omsvg** package
 lets you make SVGs using the **R** programming language, and, it tries
 to make the whole process a little less difficult. We can create SVG
 elements, transform them programmatically, apply filters, and even
-animate them\!
+animate them.
 
 ### Creating a Simple SVG
 
@@ -80,10 +80,45 @@ svg_rectangle_anim <-
 
     #> <svg width="700px" height="150px">
     #>   <style>
-    #> @keyframes anim_position_000001 { 0% { transform: translate(100px,75px); animation-timing-function: linear(); } 25% { transform: translate(100px,75px); animation-timing-function: linear(); } 100% { transform: translate(500px,75px); animation-timing-function: cubic-bezier(0.42,0,0.58,1); } }
-    #> @keyframes anim_rotation_000001 { 0% { transform: rotate(0deg); animation-timing-function: linear(); } 25% { transform: rotate(0deg); animation-timing-function: linear(); } 100% { transform: rotate(90deg); animation-timing-function: cubic-bezier(0.42,0,0.58,1); } }
-    #> @keyframes anim_anchor_000001 { 0% { transform: translate(-50px,-50px); } 100% { transform: translate(-50px,-50px); } }
-    #> </style>
+    #>     @keyframes anim_position_000001 {
+    #>       0% {
+    #>         transform: translate(100px, 75px);
+    #>         animation-timing-function: linear();
+    #>       }
+    #>       25% {
+    #>         transform: translate(100px, 75px);
+    #>         animation-timing-function: linear();
+    #>       }
+    #>       100% {
+    #>         transform: translate(500px, 75px);
+    #>         animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+    #>       }
+    #>     }
+    #>     
+    #>     @keyframes anim_rotation_000001 {
+    #>       0% {
+    #>         transform: rotate(0deg);
+    #>         animation-timing-function: linear();
+    #>       }
+    #>       25% {
+    #>         transform: rotate(0deg);
+    #>         animation-timing-function: linear();
+    #>       }
+    #>       100% {
+    #>         transform: rotate(90deg);
+    #>         animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+    #>       }
+    #>     }
+    #>     
+    #>     @keyframes anim_anchor_000001 {
+    #>       0% {
+    #>         transform: translate(-50px, -50px);
+    #>       }
+    #>       100% {
+    #>         transform: translate(-50px, -50px);
+    #>       }
+    #>     }
+    #>   </style>
     #>   <g style="animation: 2s linear infinite both anim_position_000001;">
     #>     <g style="animation: 2s linear infinite both anim_rotation_000001;">
     #>       <g style="animation: 2s linear infinite both anim_anchor_000001;">

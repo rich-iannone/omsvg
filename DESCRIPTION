@@ -22,5 +22,6 @@ Imports:
     htmltools (>= 0.3.6),
     rlang (>= 0.4.2),
     magrittr,
+    sass (>= 0.1.2.1),
     xml2 (>= 1.2.2)
 Roxygen: list(markdown = TRUE)

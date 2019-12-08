@@ -25,7 +25,7 @@ library(omsvg)
 
 ## Overview
 
-Scalable vector graphics, SVGs, are *fantastic*. The **omsvg** package lets you make SVGs using the **R** programming language, and, it tries to make the whole process a little less difficult. We can create SVG elements, transform them programmatically, apply filters, and even animate them!
+Scalable vector graphics, SVGs, are *fantastic*. The **omsvg** package lets you make SVGs using the **R** programming language, and, it tries to make the whole process a little less difficult. We can create SVG elements, transform them programmatically, apply filters, and even animate them.
 
 ### Creating a Simple SVG
 

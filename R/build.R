@@ -55,8 +55,15 @@ build_svg <- function(svg) {
     built_styles <-
       keyframes %>%
       collapse_strings("\n") %>%
-      paste_left("<style>\n") %>%
-      paste_right("\n</style>")
+      sass::sass(options = sass::sass_options(
+        output_style = "expanded",
+        indent_width = 2)
+      ) %>%
+      as.character() %>%
+      gsub("\n", "\n    ", .) %>%
+      gsub("^", "    ", .) %>%
+      paste_left("  <style>\n") %>%
+      gsub("\n    $", "\n  </style>\n", .)
 
   } else {
     built_styles <- c()
