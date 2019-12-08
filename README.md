@@ -37,22 +37,11 @@ svg <-
   svg_text(x = 175, y = 50, text = "this is text", attrs = svg_attrs_pres(font_family = "Helvetica"))
 ```
 
-This `svg` object can be transformed to an `<svg>` tag with
-`as.character()`. Wanna see the SVG code? Here it is:
-
-``` r
-svg %>% as.character() %>% cat()
-#> <svg width="250px" height="100px" viewBox="0 0 250 100">
-#> <defs>
-#> 
-#> </defs>
-#> <rect x="25" y="25" width="50" height="50" fill="yellow"/>
-#> <ellipse cx="125" cy="50" rx="25" ry="25" stroke="magenta"/>
-#> <text x="175" y="50" font-family="Helvetica">this is text</text>
-#> </svg>
-```
-
-And here’s the SVG:
+    #> <svg width="250px" height="100px">
+    #> <rect x="25" y="25" width="50" height="50" fill="yellow"/>
+    #> <ellipse cx="125" cy="50" rx="25" ry="25" stroke="magenta"/>
+    #> <text x="175" y="50" font-family="Helvetica">this is text</text>
+    #> </svg>
 
 <img src="man/figures/example_1.svg" align="center" />
 
@@ -88,6 +77,21 @@ svg_rectangle_anim <-
     )
   )
 ```
+
+    #> <svg width="700px" height="150px">
+    #> <style>
+    #> @keyframes anim_position_000001 { 0% { transform: translate(100px,75px); animation-timing-function: linear(); } 25% { transform: translate(100px,75px); animation-timing-function: linear(); } 100% { transform: translate(500px,75px); animation-timing-function: cubic-bezier(0.42,0,0.58,1); } }
+    #> @keyframes anim_rotation_000001 { 0% { transform: rotate(0deg); animation-timing-function: linear(); } 25% { transform: rotate(0deg); animation-timing-function: linear(); } 100% { transform: rotate(90deg); animation-timing-function: cubic-bezier(0.42,0,0.58,1); } }
+    #> @keyframes anim_anchor_000001 { 0% { transform: translate(-50px,-50px); } 100% { transform: translate(-50px,-50px); } }
+    #> </style>
+    #> <g style="animation: 2s linear infinite both anim_position_000001;">
+    #> <g style="animation: 2s linear infinite both anim_rotation_000001;">
+    #> <g style="animation: 2s linear infinite both anim_anchor_000001;">
+    #> <rect width="100" height="100" stroke="cyan" fill="lightblue"/>
+    #> </g>
+    #> </g>
+    #> </g>
+    #> </svg>
 
 <img src="man/figures/example_2.svg" align="center" />
 

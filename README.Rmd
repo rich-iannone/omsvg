@@ -39,13 +39,9 @@ svg <-
   svg_text(x = 175, y = 50, text = "this is text", attrs = svg_attrs_pres(font_family = "Helvetica"))
 ```
 
-This `svg` object can be transformed to an `<svg>` tag with `as.character()`. Wanna see the SVG code? Here it is:
-
-```{r simple_svg_code}
+```{r simple_svg_display, echo=FALSE}
 svg %>% as.character() %>% cat()
 ```
-
-And here's the SVG: 
 
 <img src="man/figures/example_1.svg" align="center" />
 
@@ -74,6 +70,10 @@ svg_rectangle_anim <-
       )
     )
   )
+```
+
+```{r animated_svg_display, echo=FALSE}
+svg_rectangle_anim %>% as.character() %>% cat()
 ```
 
 <img src="man/figures/example_2.svg" align="center" />
