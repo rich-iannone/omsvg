@@ -42,7 +42,7 @@ This `svg` object can be transformed to an `<svg>` tag with
 
 ``` r
 svg %>% as.character() %>% cat()
-#> <svg width="250px" height="100px" viewBox="0 0 250 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+#> <svg width="250px" height="100px" viewBox="0 0 250 100">
 #> <defs>
 #> 
 #> </defs>
@@ -63,10 +63,10 @@ as-complex-as-you-can-make-’em paths (`svg_path()`).
 
 ### Animating an SVG
 
-One thing that’s really great about SVGs is that they can be animated.
-Almost everything in an SVG is animatable. The **omsvg** package lets us
-animate each element with minimal frustration. Here is an example of a
-rectangle being quite animated.
+One thing that’s really great about SVGs is that they can be animated,
+and, almost everything in an SVG is animatable. The **omsvg** package
+lets us animate each element with minimal frustration. Here is an
+example of a rectangle being quite animated.
 
 ``` r
 svg_rectangle_anim <- 

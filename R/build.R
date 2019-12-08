@@ -9,6 +9,7 @@ build_svg <- function(svg) {
   title  <- svg$title
   viewbox <- svg$viewbox
   desc <- svg$desc
+  incl_xmlns <- svg$incl_xmlns
   elements <- svg$elements
   anim_iterations <- svg$anim_iterations
 
@@ -116,9 +117,14 @@ build_svg <- function(svg) {
       "<svg ",
       "width=\"", width, "px\" ",
       "height=\"", height, "px\" ",
-      "viewBox=\"", viewbox_dims, "\" ",
-      "xmlns=\"http://www.w3.org/2000/svg\""
+      "viewBox=\"", viewbox_dims, "\""
     )
+
+  if (incl_xmlns) {
+    svg_o_tag <- paste(svg_o_tag, "xmlns=\"http://www.w3.org/2000/svg\"")
+  }
+
+  svg_o_tag <- paste_right(svg_o_tag, x_right = ">")
 
   svg_lines <- c(svg_lines, svg_o_tag)
 

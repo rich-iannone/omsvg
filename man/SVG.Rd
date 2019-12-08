@@ -10,6 +10,7 @@ SVG(
   viewbox = NULL,
   title = NULL,
   desc = NULL,
+  incl_xmlns = FALSE,
   anim_iterations = "infinite"
 )
 }
@@ -25,6 +26,11 @@ of the rectangle.}
 \item{title}{The \verb{<title>} tag for the finalized SVG.}
 
 \item{desc}{The \verb{<desc>} tag for the finalized SVG.}
+
+\item{incl_xmlns}{Should the \code{xmlns} attribute be included in the \verb{<svg>}
+tag? This attribute is only required on the outermost \code{svg} element of SVG
+documents, and, it's unnecessary for inner \code{svg} elements or inside of HTML
+documents. By default, this is set to \code{FALSE}.}
 
 \item{anim_iterations}{How many should an SVG animation (if defined by use of
 the \code{\link[=anims]{anims()}} function) be played? By default this is \code{"infinite"} (i.e.,

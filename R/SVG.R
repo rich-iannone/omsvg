@@ -14,6 +14,10 @@
 #'   of the rectangle.
 #' @param title The `<title>` tag for the finalized SVG.
 #' @param desc The `<desc>` tag for the finalized SVG.
+#' @param incl_xmlns Should the `xmlns` attribute be included in the `<svg>`
+#'   tag? This attribute is only required on the outermost `svg` element of SVG
+#'   documents, and, it's unnecessary for inner `svg` elements or inside of HTML
+#'   documents. By default, this is set to `FALSE`.
 #' @param anim_iterations How many should an SVG animation (if defined by use of
 #'   the [anims()] function) be played? By default this is `"infinite"` (i.e.,
 #'   looped indefinitely) but we can specify the animation iteration count as
@@ -42,6 +46,7 @@ SVG <- function(width,
                 viewbox = NULL,
                 title = NULL,
                 desc = NULL,
+                incl_xmlns = FALSE,
                 anim_iterations = "infinite") {
 
   if (is.null(anim_iterations)) {
@@ -64,6 +69,7 @@ SVG <- function(width,
       viewbox = viewbox,
       title = title,
       desc = desc,
+      incl_xmlns = incl_xmlns,
       anim_iterations = anim_iterations,
       elements = list(),
       defs = list(),

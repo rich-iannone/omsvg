@@ -53,7 +53,7 @@ Aside from rectangles, ellipses, and text, we can also elect to use circles (`sv
 
 ### Animating an SVG
 
-One thing that's really great about SVGs is that they can be animated. Almost everything in an SVG is animatable. The **omsvg** package lets us animate each element with minimal frustration. Here is an example of a rectangle being quite animated.
+One thing that's really great about SVGs is that they can be animated, and, almost everything in an SVG is animatable. The **omsvg** package lets us animate each element with minimal frustration. Here is an example of a rectangle being quite animated.
 
 ```{r animating_rectangle}
 svg_rectangle_anim <- 
@@ -84,7 +84,7 @@ Animations are made through reference to keyframe times. Each of these times (in
 
 You can install the development version from [GitHub](https://github.com/) with:
 
-``` r
+```{r eval=FALSE}
 # install.packages("devtools")
 devtools::install_github("rich-iannone/omsvg")
 ```
