@@ -14,14 +14,18 @@ BugReports: https://github.com/rich-iannone/omsvg/issues
 Encoding: UTF-8
 LazyData: true
 ByteCompile: true
-RoxygenNote: 7.0.1
+RoxygenNote: 7.0.2
 Depends: 
     R (>= 3.2.1)
 Imports: 
     dplyr (>= 0.8.3),
-    htmltools (>= 0.3.6),
-    rlang (>= 0.4.2),
+    htmltools (>= 0.4.0),
     magrittr,
+    rlang (>= 0.4.2),
     sass (>= 0.1.2.1),
     xml2 (>= 1.2.2)
+Suggests:
+    covr,
+    knitr,
+    testthat
 Roxygen: list(markdown = TRUE)
