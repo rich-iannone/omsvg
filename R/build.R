@@ -10,6 +10,7 @@ build_svg <- function(svg) {
   viewbox <- svg$viewbox
   desc <- svg$desc
   incl_xmlns <- svg$incl_xmlns
+  oneline <- svg$oneline
   elements <- svg$elements
   anim_iterations <- svg$anim_iterations
 
@@ -38,7 +39,7 @@ build_svg <- function(svg) {
 
     keyframes <- c()
 
-    # get keyframes for each element with animations
+    # Get keyframes for each element with animations
     for (element_i in anim_elements) {
 
       elements <-
@@ -52,20 +53,38 @@ build_svg <- function(svg) {
     }
 
     # Build all styles
-    built_styles <-
-      keyframes %>%
-      collapse_strings("\n") %>%
-      sass::sass(options = sass::sass_options(
-        output_style = "expanded",
-        indent_width = 2)
-      ) %>%
-      as.character() %>%
-      gsub("\n", "\n    ", .) %>%
-      gsub("^", "    ", .) %>%
-      paste_left("  <style>\n") %>%
-      gsub("\n    $", "\n  </style>\n", .)
+    styles_str <- collapse_strings(keyframes, collapse = "\n")
+
+    if (oneline) {
+
+      built_styles <-
+        styles_str %>%
+        sass::sass(options = sass::sass_options(
+          output_style = "compressed",
+          indent_width = 2)
+        ) %>%
+        gsub("\n$", "", .) %>%
+        as.character() %>%
+        paste_left("<style>") %>%
+        paste_right("</style>")
+
+    } else {
+
+      built_styles <-
+        styles_str %>%
+        sass::sass(options = sass::sass_options(
+          output_style = "expanded",
+          indent_width = 2)
+        ) %>%
+        as.character() %>%
+        gsub("\n", "\n    ", .) %>%
+        gsub("^", "    ", .) %>%
+        paste_left("  <style>\n") %>%
+        gsub("\n    $", "\n  </style>\n", .)
+    }
 
   } else {
+
     built_styles <- c()
   }
 
@@ -103,10 +122,8 @@ build_svg <- function(svg) {
       function(x) build_element_tag(x)
     )
 
-
-
-  width_attr <- create_dimension_attr("width", width, "px")
-  height_attr <- create_dimension_attr("height", height, "px")
+  width_attr <- create_dimension_attr("width", width)
+  height_attr <- create_dimension_attr("height", height)
   viewbox_attr <- create_viewbox_attr(viewbox, width, height)
   xmlns_attr <- create_xmlns_attr(incl_xmlns)
 
@@ -119,7 +136,9 @@ build_svg <- function(svg) {
     ) %>%
     tidy_gsub("\\s*$", "") %>%
     paste_left("<svg ") %>%
-    paste_right(">")
+    paste_right(">") %>%
+    tidy_gsub("\\s+", " ")
+
 
   svg_lines <- c(svg_lines, svg_o_tag)
 
@@ -160,23 +179,33 @@ build_svg <- function(svg) {
   # Addition of closing <svg> tag
   svg_lines <- c(svg_lines, "</svg>")
 
-  svg_char <- svg_lines %>% paste(collapse = "\n")
+  if (oneline) {
 
-  svg_char_formatted <-
-    xml2::read_xml(svg_char) %>%
-    as.character() %>%
-    gsub("^<\\?xml.*?\\?>\\\n", "", .) %>%
-    gsub("\\\n$", "", .)
+    svg_char_formatted <- svg_lines %>% paste(collapse = "")
 
-  invisible(svg_char_formatted)
+  } else {
+
+    svg_char_formatted <-
+      svg_lines %>%
+      paste(collapse = "\n") %>%
+      xml2::read_xml() %>%
+      as.character() %>%
+      gsub("^<\\?xml.*?\\?>\\\n", "", .) %>%
+      gsub("\\\n$", "", .)
+  }
+
+  svg_char_formatted
 }
 
 # Create an SVG dimension attribute (`height`, `width`)
-create_dimension_attr <- function(attr_name, value, unit = NULL) {
+create_dimension_attr <- function(attr_name, value) {
+
+  if (is.null(value)) {
+    return(NULL)
+  }
 
   value %>%
     as.character() %>%
-    paste_right(unit) %>%
     paste_left("=\"") %>%
     paste_left(paste0(attr_name)) %>%
     paste_right("\"")

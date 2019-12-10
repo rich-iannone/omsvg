@@ -1,0 +1,32 @@
+---
+title: "A Test within R Markdown"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(omsvg)
+```
+
+## `omsvg`
+
+This is just a test of the **omsvg** package. Let's make a small svg:
+
+```{r}
+svg_object <- 
+  SVG_t(viewbox = c(0, 0, 60, 20)) %>%
+  svg_rect(x = 0, y = 0, width = 30, height = 20) %>%
+  svg_circle(x = 50, y = 10, diameter = 20)
+```
+
+This svg object `r svg_object` is adjacent to text. It's a minimal test of what the `SVG_t()` function can produce. 
+
+Works fine in title elements too:
+
+# Heading 1: `r svg_object`
+## Heading 2: `r svg_object`
+### Heading 3: `r svg_object`
+#### Heading 4: `r svg_object`
+
+R-project is in the house! Right here: `r SVG_la("skull-crossbones-solid")`.
