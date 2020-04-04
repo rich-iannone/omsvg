@@ -3,8 +3,28 @@
 language: R
 cache: packages
 
-before_cache: Rscript -e 'remotes::install_cran("pkgdown")'
-  deploy:
-    provider: script
-    script: Rscript -e 'pkgdown::deploy_site_github()'
-    skip_cleanup: true
+jobs:
+  include:
+    - stage: "R CMD check"
+      r: oldrel
+    - r: release
+    - r: devel
+
+    - stage: deploy
+      name: covr
+      r: release
+      r_binary_packages:
+        - covr
+      script:
+        - Rscript -e "covr::codecov()"
+
+    - stage: deploy
+      name: pkgdown
+      r: release
+      if: branch IN (master, travis) AND repo = rich-iannone/omsvg AND type = push
+      deploy:
+        provider: script
+        script:
+        - Rscript -e "remotes::install_cran(c('pkgdown', 'devtools'))"
+        - Rscript -e 'pkgdown::deploy_site_github()'
+        skip_cleanup: true
