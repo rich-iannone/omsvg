@@ -663,7 +663,7 @@ svg_path <- function(svg,
     )
 }
 
-#' Addition of an `text` element
+#' Addition of a `text` element
 #'
 #' The `svg_text()` function adds text to an `svg` object. As with many of the
 #' functions that create shape elements (such as [svg_rect()]), the starting

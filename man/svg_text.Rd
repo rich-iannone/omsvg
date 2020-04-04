@@ -2,7 +2,7 @@
 % Please edit documentation in R/elements.R
 \name{svg_text}
 \alias{svg_text}
-\title{Addition of an \code{text} element}
+\title{Addition of a \code{text} element}
 \usage{
 svg_text(
   svg,
