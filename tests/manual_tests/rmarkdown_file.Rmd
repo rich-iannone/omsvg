@@ -1,5 +1,5 @@
 ---
-title: "A Test within R Markdown"
+title: "An OMSVG Test within R Markdown"
 output: html_document
 ---
 
@@ -29,4 +29,28 @@ Works fine in title elements too:
 ### Heading 3: `r svg_object`
 #### Heading 4: `r svg_object`
 
-R-project is in the house! Right here: `r SVG_la("skull-crossbones-solid")`.
+<br>
+
+<p style="font-size: 24px;"> 
+R-project is in the house! Right here: `r SVG_la("skull-crossbones-solid")`. Just joking, it's `r SVG_la("r-project")`
+</p>
+
+Here is a spinny square:
+
+```{r spinny_square}
+# Basic animation of an element's
+# rotation state (moving to a new
+# `rotation` value)
+SVG(width = 300, height = 300) %>%
+  svg_rect(
+    x = 50, y = 50,
+    width = 50, height = 50,
+    attrs = svg_attrs_pres(
+      stroke = "magenta",
+      fill = "lightblue"
+    ),
+    anims = anims(
+      2.0 ~ anim_rotation(rotation = 180)
+    )
+  ) 
+```
