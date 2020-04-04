@@ -11,7 +11,7 @@ knit_print.svg <- function(x, ...) {
 
   if (requireNamespace("knitr", quietly = TRUE)) {
 
-    knitr::knit_print(as.character(x), ...)
+    knitr::knit_print(htmltools::HTML(as.character(x)), ...)
   }
 
   # nocov end
