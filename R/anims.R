@@ -1,8 +1,46 @@
 #' Express animations for an element
 #'
-#' @param ... A call to the [anims()] function, which itself allows us to
-#'   express one or more animations (through `anim_*()` functions) at set
-#'   keyframe times.
+#' All SVG element functions in **omsvg** (the `svg_*()` functions) are
+#' animatable through their `anims` argument. The `anims()` function should be
+#' used with that argument should we want to express animations for the element.
+#' Within the `anims()` function call, we can insert a list of formulas that
+#' incorporate calls to any of the `anim_*()` functions (e.g.,
+#' [anim_position()], [anim_rotation()], etc.), and, have keyframe times as part
+#' of the formula.
+#'
+#' A useful template to use for an `anims()` call within an `svg_*()` function
+#' is:
+#'
+#' \preformatted{
+#' anims = anims(
+#'   <time_i> ~ <anim_fn>(...),
+#'   ...,
+#'   <time_n> ~ <anim_fn>(...)
+#'   )
+#' }
+#'
+#' We can also use multiple calls to `anim_*()` functions for each distinct keyframe
+#' time by placing those calls in a list:
+#'
+#' \preformatted{
+#' anims = anims(
+#'   <time_i> ~ list(
+#'     <anim_fn_x>(...),
+#'     <anim_fn_y>(...)
+#'     ),
+#'   ...,
+#'   <time_n> ~ list(
+#'     <anim_fn_x>(...),
+#'     <anim_fn_y>(...)
+#'     )
+#'   )
+#' }
+#'
+#' @param ... One or more animations that included the use of `anim_*()`
+#'   functions, expressed as two-sided formulas. The LHS provides the keyframe
+#'   time (in units of seconds) and the RHS is the associated `anim_*()` call.
+#'
+#' @return A tibble of animation directives.
 #'
 #' @examples
 #' # Basic animation of an element's
