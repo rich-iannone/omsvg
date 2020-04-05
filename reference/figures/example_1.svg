@@ -1,0 +1,8 @@
+<svg width="250px" height="100px" viewBox="0 0 250 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs>
+
+</defs>
+<rect x="25" y="25" width="50" height="50" stroke="#000000" stroke-width="1" fill="yellow" opacity="1"></rect>
+<ellipse cx="125" cy="50" rx="25" ry="25" stroke="magenta" stroke-width="1" fill="#DDDDDD" opacity="1"></ellipse>
+<text x="175" y="50" fill="#000000" opacity="1" font-family="Helvetica">this is text</text>
+</svg>
