@@ -13,12 +13,11 @@ the scaling will operate in the x and y directions (relative to the center
 of the element). If two values are provided, these will be taken as scaling
 values in the x and y directions.}
 
-\item{easing_fn}{The easing function to use for the animation. If not
-provided, the \code{\link[=linear]{linear()}} easing function will be used (which is doesn't use
-any easing in the animation, just a linear movement). The easing functions
-are: \code{\link[=ease_in]{ease_in()}}, \code{\link[=ease_out]{ease_out()}}, \code{\link[=ease_in_out]{ease_in_out()}}, \code{\link[=step_start]{step_start()}}, and
-\code{\link[=step_end]{step_end()}}. To create a custom easing function, \code{\link[=cubic_bezier]{cubic_bezier()}} can be
-used.}
+\item{easing_fn}{The timing or easing function to use for the animation. If
+not provided, the \code{\link[=linear]{linear()}} timing function will be used (which is doesn't
+use any easing in the animation, just a linear movement). The other timing
+and easing functions are: \code{\link[=step_start]{step_start()}}, \code{\link[=step_end]{step_end()}}, \code{\link[=ease_in]{ease_in()}},
+\code{\link[=ease_out]{ease_out()}}, and \code{\link[=ease_in_out]{ease_in_out()}}.}
 }
 \description{
 Within an \code{\link[=anims]{anims()}} call, itself passed to any \code{anims} argument, the
