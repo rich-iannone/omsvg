@@ -35,3 +35,5 @@ jobs:
         keep-history: false
         on:
           all_branches: true
+        github-token:
+          secure: "ZN+8vNyKc/i4aN0AHZN+/jOsyNuKt68A05NRN5kovD4zboVoOPhaY+WZiLPJjE50FbPXkUmI/2It4nSsCJDH8gbRljeXlh+rTjEYvZ2sRHGKTJ0Fyjdyt8aZLFBRqVsAWFVfMv53hXtfKmGc4Hy8rcVLvVoqz/roTSd492PLFpv/tuc1Ym+BpQHMW4SYymRgoZjOusBNfhQxBiHN3LUKmCXOpcEjNj92aIrnc6OrF03CLRJvaq1IaKGQAg9xpRbf/XI/nHKTLkDV3t+6rJzt91ZeonAMWoAumkjaU1UhcuiR64dD62j1snztM1gMcF9B//VtExKRu/FR94ptM2AkIh4JfbjfhEEWBSVvCUFSOWeqFIHXeev0Kfo+0IQgNuRTs07SXYLvlnnl3lfV5R3tlfZpxytIH1ykC/3oZP2WHldHYjX5QUS2PWu62r/QI7GluMVduRK2PcJjvsDhz5WoalUlwL9UhKoLaRqN/TnabKmqGD8yJOIcG9pp2te+liFGy+lKkV1/S1M7zK27JlaCCJH+vJbhih+Gz2FuC2dGmbmFnL5e3P6GpmzsXD8qLdm8aCbkjOy5PXD/987zLuzRPoLTvUK+sbAzxfObMybjD9BudB3GCqTYspP2HufNAYQF4NIJP+/DZkbyyJdj3neZWYWjNPOe4Fgi4mg1fOfpMl4="
