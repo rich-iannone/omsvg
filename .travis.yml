@@ -3,37 +3,8 @@
 language: R
 cache: packages
 
-jobs:
-  include:
-    - stage: "R CMD check"
-      r: oldrel
-    - r: release
-    - r: devel
-
-    - stage: deploy
-      name: covr
-      r: release
-      r_binary_packages:
-        - covr
-      script:
-        - Rscript -e "covr::codecov()"
-
-    - stage: deploy
-      name: pkgdown
-      r: release
-      if: branch IN (master, travis) AND repo = rich-iannone/omsvg AND type = push
-      script:
-      - Rscript -e "remotes::install_cran(c('pkgdown', 'devtools'))"
-      - Rscript -e "devtools::install()"
-      - Rscript -e "Sys.setenv(FULLNAME = 'Richard Iannone'); pkgdown::build_site()"
-      - Rscript -e "remove.packages(devtools::as.package('.')$package)"
-      deploy:
-        provider: pages
-        script: Rscript -e 'devtools::install()'
-        local-dir: docs
-        skip_cleanup: true
-        keep-history: false
-        on:
-          all_branches: true
-        github-token:
-          secure: "n7XADVGrznd2Mouq2z71pgnmnfb7dYF4NmAq2PpCCEyy+7uATRWeKX6+LLi+g1E8d9qFpx4pJDM/GyOrwN2aX2r+pZ0D/Zr2HH+xgUexf/ByK3sKhim9XQtAAru0xkspYdHLcMGSBYlACUs6mYdSYBcLm4yZSmWa7+oUMxpRpWGtyoqKeEMiftLbXqJ/OAWH7MDExQngkQgYmymc2OjF4t7hWVMb5NOeWZNceQDSBGelaGGxCe/Eq48+gcR7M8oRviaBfgBc2Rodo0dqffmWITtfMBlLLWhJutKfwhRmNRFRwTpUQMkWOJ3bZnhfvDim0ww8kstqecw63ZyojHuJ3/rdpIxI2K90kejovgL6sDtrTo32Pqto2paIUQspIkjDfXmr25EWmVGEyj9lgprxOBmds33BRjtimkPOC58Hl7k0xm3CXb1ImpUndH+adgIaP4AyE4lG9JrXPYccMd/pr4odGyPYeoUdeIDRVLQyfHUu5WuNSyh2G9MWGlw4zXbrZ3K+GD3K5D/6sBH8y+glZDV0EsTsfA4ElpDn+5RvvMUDOnbFPN7EJJpzP3RcunVBM1uL1T4b/qmZbvcHl0iK6d9PbBrrqbhvFqkkn3Zd7ub1SR40YLKaln38nNQ9DpXKsJPu1BJKTIxCauf8JInEWVmiYZ7gQRQBdHZMwZUzUAg="
+before_cache: Rscript -e 'remotes::install_cran("pkgdown")'
+  deploy:
+    provider: script
+    script: Rscript -e 'pkgdown::deploy_site_github()'
+    skip_cleanup: true
