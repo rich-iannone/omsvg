@@ -6,12 +6,11 @@
 #'
 #' @param x,y The position of the element, expressed as `x` and `y`, at the
 #'   keyframe time (given as the LHS value in the [anims()] call).
-#' @param easing_fn The easing function to use for the animation. If not
-#'   provided, the [linear()] easing function will be used (which is doesn't use
-#'   any easing in the animation, just a linear movement). The easing functions
-#'   are: [ease_in()], [ease_out()], [ease_in_out()], [step_start()], and
-#'   [step_end()]. To create a custom easing function, [cubic_bezier()] can be
-#'   used.
+#' @param easing_fn The timing or easing function to use for the animation. If
+#'   not provided, the [linear()] timing function will be used (which is doesn't
+#'   use any easing in the animation, just a linear movement). The other timing
+#'   and easing functions are: [step_start()], [step_end()], [ease_in()],
+#'   [ease_out()], and [ease_in_out()].
 #' @param initial Should this position be the initial position of the element?
 #'   If so, use `TRUE` and any values provided to `x` and `y` will be
 #'   disregarded.
