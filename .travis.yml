@@ -22,9 +22,16 @@ jobs:
       name: pkgdown
       r: release
       if: branch IN (master, travis) AND repo = rich-iannone/omsvg AND type = push
+      script:
+      - Rscript -e "remotes::install_cran(c('pkgdown', 'devtools'))"
+      - Rscript -e "devtools::install()"
+      - Rscript -e "Sys.setenv(FULLNAME = 'Richard Iannone'); pkgdown::build_site()"
+      - Rscript -e "remove.packages(devtools::as.package('.')$package)"
       deploy:
-        provider: script
-        script:
-        - Rscript -e "remotes::install_cran(c('pkgdown', 'devtools'))"
-        - Rscript -e 'pkgdown::deploy_site_github()'
+        provider: pages
+        script: Rscript -e 'devtools::install()'
+        local-dir: docs
         skip_cleanup: true
+        keep-history: false
+        on:
+          all_branches: true
