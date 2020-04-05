@@ -1,1 +1,74 @@
 destination: docs
+
+home:
+  strip_header: true
+
+reference:
+  - title: Creating an SVG Object
+    desc: >
+      An SVG object is typically created with `SVG()` or any of its variants
+      (`SVG_()` or `SVG_t()`). Once created, SVG elements, filters, and
+      animations can be added.
+    contents:
+    - SVG
+    - SVG_
+    - SVG_t
+    - SVG_import
+    - SVG_la
+
+  - title: Define SVG Elements
+    desc: >
+      SVG elements such as rectangles, circles, paths, images, and text
+      elements can be added to the SVG object using the `svg_*()` functions.
+    contents:
+    - svg_rect
+    - svg_circle
+    - svg_ellipse
+    - svg_line
+    - svg_polyline
+    - svg_polygon
+    - svg_path
+    - svg_text
+    - svg_image
+    - svg_group
+
+  - title: Define SVG Filters
+    desc: >
+      SVG filters can be used on SVG elements to radically alter their
+      appearance.
+    contents:
+    - svg_filter
+    - filter_image
+    - filter_gaussian_blur
+    - filter_erode
+    - filter_dilate
+    - filter_drop_shadow
+    - filter_offset
+
+  - title: Define SVG Animations
+    desc: >
+      SVG animations can allow for object properties to transition during a
+      fixed time interval. All SVG elements are animatable, and multiple
+      animations can be defined per element.
+    contents:
+    - anims
+    - anim_opacity
+    - anim_position
+    - anim_rotation
+    - anim_scale
+
+  - title: Timing and Easing Functions
+    desc: >
+      Timing and easing functions allow us to express the movement of objects
+      over a time duration. The [linear()], [step_start()], and [step_end()]
+      timing functions represent the simplest forms of object movement. The
+      easing functions `ease_in()`, `ease_out()`, and `ease_in_out()` use
+      accelation and deceleration during movement.
+    contents:
+    - linear
+    - ease_in
+    - ease_out
+    - ease_in_out
+    - cubic_bezier
+    - step_start
+    - step_end
