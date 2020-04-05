@@ -129,8 +129,8 @@
     <tbody>
       <tr>
         <th colspan="2">
-          <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
-          <p class="section-desc"></p>
+          <h2 id="section-creating-an-svg-object" class="hasAnchor"><a href="#section-creating-an-svg-object" class="anchor"></a>Creating an SVG Object</h2>
+          <p class="section-desc"><p>An SVG object is typically created with <code><a href="../reference/SVG.html">SVG()</a></code> or any of its variants (<code><a href="../reference/SVG_.html">SVG_()</a></code> or <code><a href="../reference/SVG_t.html">SVG_t()</a></code>). Once created, SVG elements, filters, and animations can be added.</p></p>
         </th>
       </tr>
       
@@ -153,6 +153,12 @@
       </tr><tr>
         
         <td>
+          <p><code><a href="SVG_t.html">SVG_t()</a></code> </p>
+        </td>
+        <td><p>Create a text-height <code>svg</code> object</p></td>
+      </tr><tr>
+        
+        <td>
           <p><code><a href="SVG_import.html">SVG_import()</a></code> </p>
         </td>
         <td><p>Import an SVG file and create an <code>svg</code> object</p></td>
@@ -162,12 +168,153 @@
           <p><code><a href="SVG_la.html">SVG_la()</a></code> </p>
         </td>
         <td><p>Create an svg object with a Line Awesome glyph</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-define-svg-elements" class="hasAnchor"><a href="#section-define-svg-elements" class="anchor"></a>Define SVG Elements</h2>
+          <p class="section-desc"><p>SVG elements such as rectangles, circles, paths, images, and text elements can be added to the SVG object using the <code>svg_*()</code> functions.</p></p>
+        </th>
+      </tr>
+      
+      
+    </tbody><tbody>
+      
+      
+      <tr>
+        
+        <td>
+          <p><code><a href="svg_rect.html">svg_rect()</a></code> </p>
+        </td>
+        <td><p>Addition of a <code>rect</code> element</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="SVG_t.html">SVG_t()</a></code> </p>
+          <p><code><a href="svg_circle.html">svg_circle()</a></code> </p>
         </td>
-        <td><p>Create a text-height <code>svg</code> object</p></td>
+        <td><p>Addition of a <code>circle</code> element</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="svg_ellipse.html">svg_ellipse()</a></code> </p>
+        </td>
+        <td><p>Addition of an <code>ellipse</code> element</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="svg_line.html">svg_line()</a></code> </p>
+        </td>
+        <td><p>Addition of an <code>line</code> element</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="svg_polyline.html">svg_polyline()</a></code> </p>
+        </td>
+        <td><p>Addition of an <code>polyline</code> element</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="svg_polygon.html">svg_polygon()</a></code> </p>
+        </td>
+        <td><p>Addition of an <code>polygon</code> element</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="svg_path.html">svg_path()</a></code> </p>
+        </td>
+        <td><p>Addition of an <code>path</code> element</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="svg_text.html">svg_text()</a></code> </p>
+        </td>
+        <td><p>Addition of a <code>text</code> element</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="svg_image.html">svg_image()</a></code> </p>
+        </td>
+        <td><p>Addition of an <code>image</code> element</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="svg_group.html">svg_group()</a></code> </p>
+        </td>
+        <td><p>Addition of a group element</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-define-svg-filters" class="hasAnchor"><a href="#section-define-svg-filters" class="anchor"></a>Define SVG Filters</h2>
+          <p class="section-desc"><p>SVG filters can be used on SVG elements to radically alter their appearance.</p></p>
+        </th>
+      </tr>
+      
+      
+    </tbody><tbody>
+      
+      
+      <tr>
+        
+        <td>
+          <p><code><a href="svg_filter.html">svg_filter()</a></code> </p>
+        </td>
+        <td><p>Build an SVG <code>&lt;filter&gt;</code></p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="filter_image.html">filter_image()</a></code> </p>
+        </td>
+        <td><p>Filter: display an image</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="filter_gaussian_blur.html">filter_gaussian_blur()</a></code> </p>
+        </td>
+        <td><p>Filter: add a gaussian blur to an element</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="filter_erode.html">filter_erode()</a></code> </p>
+        </td>
+        <td><p>Filter: add an erosion effect to an element</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="filter_dilate.html">filter_dilate()</a></code> </p>
+        </td>
+        <td><p>Filter: add a dilation effect to an element</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="filter_drop_shadow.html">filter_drop_shadow()</a></code> </p>
+        </td>
+        <td><p>Filter: add a drop shadow to an element</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="filter_offset.html">filter_offset()</a></code> </p>
+        </td>
+        <td><p>Filter: offset an element a specified amount</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-define-svg-animations" class="hasAnchor"><a href="#section-define-svg-animations" class="anchor"></a>Define SVG Animations</h2>
+          <p class="section-desc"><p>SVG animations can allow for object properties to transition during a fixed time interval. All SVG elements are animatable, and multiple animations can be defined per element.</p></p>
+        </th>
+      </tr>
+      
+      
+    </tbody><tbody>
+      
+      
+      <tr>
+        
+        <td>
+          <p><code><a href="anims.html">anims()</a></code> </p>
+        </td>
+        <td><p>Express animations for an element</p></td>
       </tr><tr>
         
         <td>
@@ -192,18 +339,25 @@
           <p><code><a href="anim_scale.html">anim_scale()</a></code> </p>
         </td>
         <td><p>Animate an element through scaling</p></td>
-      </tr><tr>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-timing-and-easing-functions" class="hasAnchor"><a href="#section-timing-and-easing-functions" class="anchor"></a>Timing and Easing Functions</h2>
+          <p class="section-desc"><p>Timing and easing functions allow us to express the movement of objects over a time duration. The [linear()], [step_start()], and [step_end()] timing functions represent the simplest forms of object movement. The easing functions <code><a href="../reference/ease_in.html">ease_in()</a></code>, <code><a href="../reference/ease_out.html">ease_out()</a></code>, and <code><a href="../reference/ease_in_out.html">ease_in_out()</a></code> use accelation and deceleration during movement.</p></p>
+        </th>
+      </tr>
+      
+      
+    </tbody><tbody>
+      
+      
+      <tr>
         
         <td>
-          <p><code><a href="anims.html">anims()</a></code> </p>
+          <p><code><a href="linear.html">linear()</a></code> </p>
         </td>
-        <td><p>Express animations for an element</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="cubic_bezier.html">cubic_bezier()</a></code> </p>
-        </td>
-        <td><p>Create a custom easing function for animation</p></td>
+        <td><p>Use a linear movement for animation</p></td>
       </tr><tr>
         
         <td>
@@ -213,63 +367,21 @@
       </tr><tr>
         
         <td>
-          <p><code><a href="ease_in_out.html">ease_in_out()</a></code> </p>
-        </td>
-        <td><p>Use an 'easing in and out' animation</p></td>
-      </tr><tr>
-        
-        <td>
           <p><code><a href="ease_out.html">ease_out()</a></code> </p>
         </td>
         <td><p>Use an 'easing out' animation</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="filter_dilate.html">filter_dilate()</a></code> </p>
+          <p><code><a href="ease_in_out.html">ease_in_out()</a></code> </p>
         </td>
-        <td><p>Filter: add a dilation effect to an element</p></td>
+        <td><p>Use an 'easing in and out' animation</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="filter_drop_shadow.html">filter_drop_shadow()</a></code> </p>
+          <p><code><a href="cubic_bezier.html">cubic_bezier()</a></code> </p>
         </td>
-        <td><p>Filter: add a drop shadow to an element</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="filter_erode.html">filter_erode()</a></code> </p>
-        </td>
-        <td><p>Filter: add an erosion effect to an element</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="filter_gaussian_blur.html">filter_gaussian_blur()</a></code> </p>
-        </td>
-        <td><p>Filter: add a gaussian blur to an element</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="filter_image.html">filter_image()</a></code> </p>
-        </td>
-        <td><p>Filter: display an image</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="filter_offset.html">filter_offset()</a></code> </p>
-        </td>
-        <td><p>Filter: offset an element a specified amount</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="linear.html">linear()</a></code> </p>
-        </td>
-        <td><p>Use a linear movement for animation</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="step_end.html">step_end()</a></code> </p>
-        </td>
-        <td><p>Use a 'step-end' animation</p></td>
+        <td><p>Create a custom easing function for animation</p></td>
       </tr><tr>
         
         <td>
@@ -279,75 +391,9 @@
       </tr><tr>
         
         <td>
-          <p><code><a href="svg_attrs_pres.html">svg_attrs_pres()</a></code> </p>
+          <p><code><a href="step_end.html">step_end()</a></code> </p>
         </td>
-        <td><p>Define SVG presentation attributes for an element</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="svg_circle.html">svg_circle()</a></code> </p>
-        </td>
-        <td><p>Addition of a <code>circle</code> element</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="svg_ellipse.html">svg_ellipse()</a></code> </p>
-        </td>
-        <td><p>Addition of an <code>ellipse</code> element</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="svg_filter.html">svg_filter()</a></code> </p>
-        </td>
-        <td><p>Build an SVG <code>&lt;filter&gt;</code></p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="svg_group.html">svg_group()</a></code> </p>
-        </td>
-        <td><p>Addition of a group element</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="svg_image.html">svg_image()</a></code> </p>
-        </td>
-        <td><p>Addition of an <code>image</code> element</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="svg_line.html">svg_line()</a></code> </p>
-        </td>
-        <td><p>Addition of an <code>line</code> element</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="svg_path.html">svg_path()</a></code> </p>
-        </td>
-        <td><p>Addition of an <code>path</code> element</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="svg_polygon.html">svg_polygon()</a></code> </p>
-        </td>
-        <td><p>Addition of an <code>polygon</code> element</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="svg_polyline.html">svg_polyline()</a></code> </p>
-        </td>
-        <td><p>Addition of an <code>polyline</code> element</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="svg_rect.html">svg_rect()</a></code> </p>
-        </td>
-        <td><p>Addition of a <code>rect</code> element</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="svg_text.html">svg_text()</a></code> </p>
-        </td>
-        <td><p>Addition of a <code>text</code> element</p></td>
+        <td><p>Use a 'step-end' animation</p></td>
       </tr>
     </tbody>
     </table>
