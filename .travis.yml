@@ -1,10 +1,22 @@
-# R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
-
 language: R
 cache: packages
+warnings_are_errors: false
+pandoc_version: 2.3.1
 
-before_cache: Rscript -e 'remotes::install_cran("pkgdown")'
-  deploy:
-    provider: script
-    script: Rscript -e 'pkgdown::deploy_site_github()'
-    skip_cleanup: true
+notifications:
+  email:
+    on_success: change
+    on_failure: change
+
+jobs:
+  include:
+  - stage: R CMD check
+    r: oldrel
+  - r: release
+  - r: devel
+
+  - stage: deploy
+    name: covr
+    r: release
+    r_binary_packages: covr
+    script: Rscript -e "covr::codecov()"
