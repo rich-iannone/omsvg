@@ -9,8 +9,7 @@
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/omsvg)](https://CRAN.R-project.org/package=omsvg)
-[![Travis build
-status](https://travis-ci.org/rich-iannone/omsvg.svg?branch=master)](https://travis-ci.org/rich-iannone/omsvg)
+![R-CMD-check](https://github.com/rich-iannone/omsvg/workflows/R-CMD-check/badge.svg)
 <!-- badges: end -->
 
 ## Overview
@@ -37,7 +36,7 @@ svg <-
   svg_text(x = 175, y = 50, text = "this is text", attrs = svg_attrs_pres(font_family = "Helvetica"))
 ```
 
-    #> <svg width="250px" height="100px">
+    #> <svg width="250" height="100">
     #>   <rect x="25" y="25" width="50" height="50" fill="yellow"/>
     #>   <ellipse cx="125" cy="50" rx="25" ry="25" stroke="magenta"/>
     #>   <text x="175" y="50" font-family="Helvetica">this is text</text>
@@ -78,7 +77,7 @@ svg_rectangle_anim <-
   )
 ```
 
-    #> <svg width="700px" height="150px">
+    #> <svg width="700" height="150">
     #>   <style>
     #>     @keyframes anim_position_000001 {
     #>       0% {

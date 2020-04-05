@@ -20,7 +20,7 @@ library(omsvg)
 <!-- badges: start -->
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 [![CRAN status](https://www.r-pkg.org/badges/version/omsvg)](https://CRAN.R-project.org/package=omsvg)
-[![Travis build status](https://travis-ci.org/rich-iannone/omsvg.svg?branch=master)](https://travis-ci.org/rich-iannone/omsvg)
+![R-CMD-check](https://github.com/rich-iannone/omsvg/workflows/R-CMD-check/badge.svg)
 <!-- badges: end -->
 
 ## Overview
