@@ -179,6 +179,14 @@ SVG_import <- function(data = NULL,
     svg_text <- data
   }
 
+  # Strip the <?xml> tag if present
+  if (grepl("<\\?xml", svg_text[1])) {
+    svg_text <- svg_text[-1]
+  }
+
+  # Collapse text into a single string
+  svg_text <- paste(svg_text, collapse = "\n")
+
   svg_list <- xml2::read_xml(svg_text) %>% xml2::as_list()
 
   svg_attrs_list <- svg_list$svg %>% attributes()
