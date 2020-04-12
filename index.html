@@ -86,7 +86,7 @@
 <div id="creating-a-simple-svg" class="section level3">
 <h3 class="hasAnchor">
 <a href="#creating-a-simple-svg" class="anchor"></a>Creating a Simple SVG</h3>
-<p>The process of using <strong>omsvg</strong> begins with the <code><a href="reference/SVG.html">SVG()</a></code> function. That allows you to define the overall size of the graphic and set some global options. Letâs start simple and make an SVG with three elements: (1) a rectangle, (2) an ellipse, and (3) some text. To do this, weâll use the <code><a href="reference/svg_rect.html">svg_rect()</a></code>, <code><a href="reference/svg_ellipse.html">svg_ellipse()</a></code>, and <code><a href="reference/svg_text.html">svg_text()</a></code> functions.</p>
+<p>The process of using <strong>omsvg</strong> begins with the <code><a href="reference/SVG.html">SVG()</a></code> function. That allows you to define the overall size of the graphic and set some global options. Let’s start simple and make an SVG with three elements: (1) a rectangle, (2) an ellipse, and (3) some text. To do this, we’ll use the <code><a href="reference/svg_rect.html">svg_rect()</a></code>, <code><a href="reference/svg_ellipse.html">svg_ellipse()</a></code>, and <code><a href="reference/svg_text.html">svg_text()</a></code> functions.</p>
 <div class="sourceCode" id="cb1"><pre class="r"><span class="no">svg</span> <span class="kw">&lt;-</span>
   <span class="fu"><a href="reference/SVG.html">SVG</a></span>(<span class="kw">width</span> <span class="kw">=</span> <span class="fl">250</span>, <span class="kw">height</span> <span class="kw">=</span> <span class="fl">100</span>) <span class="kw">%&gt;%</span>
   <span class="fu"><a href="reference/svg_rect.html">svg_rect</a></span>(<span class="kw">x</span> <span class="kw">=</span> <span class="fl">25</span>, <span class="kw">y</span> <span class="kw">=</span> <span class="fl">25</span>, <span class="kw">width</span> <span class="kw">=</span> <span class="fl">50</span>, <span class="kw">height</span> <span class="kw">=</span> <span class="fl">50</span>, <span class="kw">fill</span> <span class="kw">=</span> <span class="st">"yellow"</span>) <span class="kw">%&gt;%</span>
@@ -98,12 +98,12 @@
 <span id="cb2-4"><a href="#cb2-4"></a><span class="co">#&gt;   &lt;text x="175" y="50" font-family="Helvetica"&gt;this is text&lt;/text&gt;</span></span>
 <span id="cb2-5"><a href="#cb2-5"></a><span class="co">#&gt; &lt;/svg&gt;</span></span></code></pre></div>
 <p><img src="reference/figures/example_1.svg" align="center"></p>
-<p>Aside from rectangles, ellipses, and text, we can also elect to use circles (<code><a href="reference/svg_circle.html">svg_circle()</a></code>), lines (<code><a href="reference/svg_line.html">svg_line()</a></code>), <em>polylines</em> (<code><a href="reference/svg_polyline.html">svg_polyline()</a></code>), polygons (<code><a href="reference/svg_polygon.html">svg_polygon()</a></code>), and as-complex-as-you-can-make-âem paths (<code><a href="reference/svg_path.html">svg_path()</a></code>).</p>
+<p>Aside from rectangles, ellipses, and text, we can also elect to use circles (<code><a href="reference/svg_circle.html">svg_circle()</a></code>), lines (<code><a href="reference/svg_line.html">svg_line()</a></code>), <em>polylines</em> (<code><a href="reference/svg_polyline.html">svg_polyline()</a></code>), polygons (<code><a href="reference/svg_polygon.html">svg_polygon()</a></code>), and as-complex-as-you-can-make-’em paths (<code><a href="reference/svg_path.html">svg_path()</a></code>).</p>
 </div>
 <div id="animating-an-svg" class="section level3">
 <h3 class="hasAnchor">
 <a href="#animating-an-svg" class="anchor"></a>Animating an SVG</h3>
-<p>One thing thatâs really great about SVGs is that they can be animated, and, almost everything in an SVG is animatable. The <strong>omsvg</strong> package lets us animate each element with minimal frustration. Here is an example of a rectangle being quite animated.</p>
+<p>One thing that’s really great about SVGs is that they can be animated, and, almost everything in an SVG is animatable. The <strong>omsvg</strong> package lets us animate each element with minimal frustration. Here is an example of a rectangle being quite animated.</p>
 <div class="sourceCode" id="cb3"><pre class="r"><span class="no">svg_rectangle_anim</span> <span class="kw">&lt;-</span>
   <span class="fu"><a href="reference/SVG.html">SVG</a></span>(<span class="kw">width</span> <span class="kw">=</span> <span class="fl">700</span>, <span class="kw">height</span> <span class="kw">=</span> <span class="fl">150</span>) <span class="kw">%&gt;%</span>
   <span class="fu"><a href="reference/svg_rect.html">svg_rect</a></span>(
@@ -172,7 +172,7 @@
 <span id="cb4-48"><a href="#cb4-48"></a><span class="co">#&gt;   &lt;/g&gt;</span></span>
 <span id="cb4-49"><a href="#cb4-49"></a><span class="co">#&gt; &lt;/svg&gt;</span></span></code></pre></div>
 <p><img src="reference/figures/example_2.svg" align="center"></p>
-<p>Animations are made through reference to keyframe times. Each of these times (in seconds) is like a transition point. Above, the rectangle is held at its initial position and rotation state until <code>0.5</code> seconds has elapsed. At <code>2.0</code> seconds, the second keyframe, the rectangleâs position is to be moved from <code>{x = 100, y = 100}</code> to <code>{x = 500, y = 100}</code>, and, its rotation state should change to <code>90</code> degrees. We can assign a <code>timing</code> function that governs the tweening of the animation. For the position and rotation changes, these are both using the <code><a href="reference/ease_in_out.html">ease_in_out()</a></code> timing function (where movement eases into a maximum speed and then decelerates to a stop).</p>
+<p>Animations are made through reference to keyframe times. Each of these times (in seconds) is like a transition point. Above, the rectangle is held at its initial position and rotation state until <code>0.5</code> seconds has elapsed. At <code>2.0</code> seconds, the second keyframe, the rectangle’s position is to be moved from <code>{x = 100, y = 100}</code> to <code>{x = 500, y = 100}</code>, and, its rotation state should change to <code>90</code> degrees. We can assign a <code>timing</code> function that governs the tweening of the animation. For the position and rotation changes, these are both using the <code><a href="reference/ease_in_out.html">ease_in_out()</a></code> timing function (where movement eases into a maximum speed and then decelerates to a stop).</p>
 </div>
 </div>
 <div id="installation" class="section level2">
@@ -225,7 +225,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.0.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.9000.</p>
 </div>
 
       </footer>
