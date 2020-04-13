@@ -234,7 +234,7 @@ SVG_la <- function(name = "500px",
                    oneline = FALSE,
                    anim_iterations = "infinite") {
 
-  tbl_filter <- la_svg_tbl %>% dplyr::filter(icon_names == !!name)
+  tbl_filter <- la_svg_tbl %>% dplyr::filter(icon_name == !!name)
 
   if (nrow(tbl_filter) == 0) {
     stop("The name provided (`", name, "`) isn't available", call. = FALSE)
