@@ -1,0 +1,2942 @@
+category,icon_name
+Accessibility,accessible-icon
+Accessibility,american-sign-language-interpreting
+Accessibility,assistive-listening-systems
+Accessibility,audio-description
+Accessibility,blind
+Accessibility,braille
+Accessibility,closed-captioning
+Accessibility,deaf
+Accessibility,low-vision
+Accessibility,phone-volume
+Accessibility,question-circle
+Accessibility,sign-language
+Accessibility,tty
+Accessibility,universal-access
+Accessibility,wheelchair
+Alert,bell
+Alert,bell-slash
+Alert,exclamation
+Alert,exclamation-circle
+Alert,exclamation-triangle
+Alert,radiation
+Alert,radiation-alt
+Alert,skull-crossbones
+Animals,cat
+Animals,crow
+Animals,dog
+Animals,dove
+Animals,dragon
+Animals,feather
+Animals,feather-alt
+Animals,fish
+Animals,frog
+Animals,hippo
+Animals,horse
+Animals,horse-head
+Animals,kiwi-bird
+Animals,otter
+Animals,paw
+Animals,spider
+Arrows,angle-double-down
+Arrows,angle-double-left
+Arrows,angle-double-right
+Arrows,angle-double-up
+Arrows,angle-down
+Arrows,angle-left
+Arrows,angle-right
+Arrows,angle-up
+Arrows,arrow-alt-circle-down
+Arrows,arrow-alt-circle-left
+Arrows,arrow-alt-circle-right
+Arrows,arrow-alt-circle-up
+Arrows,arrow-circle-down
+Arrows,arrow-circle-left
+Arrows,arrow-circle-right
+Arrows,arrow-circle-up
+Arrows,arrow-down
+Arrows,arrow-left
+Arrows,arrow-right
+Arrows,arrow-up
+Arrows,arrows-alt
+Arrows,arrows-alt-h
+Arrows,arrows-alt-v
+Arrows,caret-down
+Arrows,caret-left
+Arrows,caret-right
+Arrows,caret-square-down
+Arrows,caret-square-left
+Arrows,caret-square-right
+Arrows,caret-square-up
+Arrows,caret-up
+Arrows,cart-arrow-down
+Arrows,chart-line
+Arrows,chevron-circle-down
+Arrows,chevron-circle-left
+Arrows,chevron-circle-right
+Arrows,chevron-circle-up
+Arrows,chevron-down
+Arrows,chevron-left
+Arrows,chevron-right
+Arrows,chevron-up
+Arrows,cloud-download-alt
+Arrows,cloud-upload-alt
+Arrows,compress-arrows-alt
+Arrows,download
+Arrows,exchange-alt
+Arrows,expand-arrows-alt
+Arrows,external-link-alt
+Arrows,external-link-square-alt
+Arrows,hand-point-down
+Arrows,hand-point-left
+Arrows,hand-point-right
+Arrows,hand-point-up
+Arrows,hand-pointer
+Arrows,history
+Arrows,level-down-alt
+Arrows,level-up-alt
+Arrows,location-arrow
+Arrows,long-arrow-alt-down
+Arrows,long-arrow-alt-left
+Arrows,long-arrow-alt-right
+Arrows,long-arrow-alt-up
+Arrows,mouse-pointer
+Arrows,play
+Arrows,random
+Arrows,recycle
+Arrows,redo
+Arrows,redo-alt
+Arrows,reply
+Arrows,reply-all
+Arrows,retweet
+Arrows,share
+Arrows,share-square
+Arrows,sign-in-alt
+Arrows,sign-out-alt
+Arrows,sort
+Arrows,sort-alpha-down
+Arrows,sort-alpha-down-alt
+Arrows,sort-alpha-up
+Arrows,sort-alpha-up-alt
+Arrows,sort-amount-down
+Arrows,sort-amount-down-alt
+Arrows,sort-amount-up
+Arrows,sort-amount-up-alt
+Arrows,sort-down
+Arrows,sort-numeric-down
+Arrows,sort-numeric-down-alt
+Arrows,sort-numeric-up
+Arrows,sort-numeric-up-alt
+Arrows,sort-up
+Arrows,sync
+Arrows,sync-alt
+Arrows,text-height
+Arrows,text-width
+Arrows,undo
+Arrows,undo-alt
+Arrows,upload
+Audio & Video,audio-description
+Audio & Video,backward
+Audio & Video,broadcast-tower
+Audio & Video,circle
+Audio & Video,closed-captioning
+Audio & Video,compress
+Audio & Video,compress-arrows-alt
+Audio & Video,eject
+Audio & Video,expand
+Audio & Video,expand-arrows-alt
+Audio & Video,fast-backward
+Audio & Video,fast-forward
+Audio & Video,file-audio
+Audio & Video,file-video
+Audio & Video,film
+Audio & Video,forward
+Audio & Video,headphones
+Audio & Video,microphone
+Audio & Video,microphone-alt
+Audio & Video,microphone-alt-slash
+Audio & Video,microphone-slash
+Audio & Video,music
+Audio & Video,pause
+Audio & Video,pause-circle
+Audio & Video,phone-volume
+Audio & Video,photo-video
+Audio & Video,play
+Audio & Video,play-circle
+Audio & Video,podcast
+Audio & Video,random
+Audio & Video,redo
+Audio & Video,redo-alt
+Audio & Video,rss
+Audio & Video,rss-square
+Audio & Video,step-backward
+Audio & Video,step-forward
+Audio & Video,stop
+Audio & Video,stop-circle
+Audio & Video,sync
+Audio & Video,sync-alt
+Audio & Video,tv
+Audio & Video,undo
+Audio & Video,undo-alt
+Audio & Video,video
+Audio & Video,volume-down
+Audio & Video,volume-mute
+Audio & Video,volume-off
+Audio & Video,volume-up
+Audio & Video,youtube
+Automotive,air-freshener
+Automotive,ambulance
+Automotive,bus
+Automotive,bus-alt
+Automotive,car
+Automotive,car-alt
+Automotive,car-battery
+Automotive,car-crash
+Automotive,car-side
+Automotive,charging-station
+Automotive,gas-pump
+Automotive,motorcycle
+Automotive,oil-can
+Automotive,shuttle-van
+Automotive,tachometer-alt
+Automotive,taxi
+Automotive,truck
+Automotive,truck-monster
+Automotive,truck-pickup
+Autumn,apple-alt
+Autumn,campground
+Autumn,cloud-sun
+Autumn,drumstick-bite
+Autumn,football-ball
+Autumn,hiking
+Autumn,mountain
+Autumn,tractor
+Autumn,tree
+Autumn,wind
+Autumn,wine-bottle
+Beverage,beer
+Beverage,blender
+Beverage,cocktail
+Beverage,coffee
+Beverage,flask
+Beverage,glass-cheers
+Beverage,glass-martini
+Beverage,glass-martini-alt
+Beverage,glass-whiskey
+Beverage,mug-hot
+Beverage,wine-bottle
+Beverage,wine-glass
+Beverage,wine-glass-alt
+Brand Icons,500px
+Brand Icons,accusoft
+Brand Icons,adn
+Brand Icons,adobe
+Brand Icons,adversal
+Brand Icons,affiliatetheme
+Brand Icons,airbnb
+Brand Icons,algolia
+Brand Icons,amazon
+Brand Icons,amilia
+Brand Icons,android
+Brand Icons,angellist
+Brand Icons,angrycreative
+Brand Icons,angular
+Brand Icons,app-store
+Brand Icons,app-store-ios
+Brand Icons,apper
+Brand Icons,apple
+Brand Icons,artstation
+Brand Icons,asymmetrik
+Brand Icons,atlassian
+Brand Icons,audible
+Brand Icons,autoprefixer
+Brand Icons,avianex
+Brand Icons,aviato
+Brand Icons,aws
+Brand Icons,bandcamp
+Brand Icons,battle-net
+Brand Icons,behance
+Brand Icons,behance-square
+Brand Icons,bimobject
+Brand Icons,bitbucket
+Brand Icons,bity
+Brand Icons,black-tie
+Brand Icons,blackberry
+Brand Icons,blogger
+Brand Icons,blogger-b
+Brand Icons,bootstrap
+Brand Icons,buffer
+Brand Icons,buromobelexperte
+Brand Icons,buy-n-large
+Brand Icons,buysellads
+Brand Icons,canadian-maple-leaf
+Brand Icons,centercode
+Brand Icons,centos
+Brand Icons,chrome
+Brand Icons,chromecast
+Brand Icons,cloudscale
+Brand Icons,cloudsmith
+Brand Icons,cloudversify
+Brand Icons,codepen
+Brand Icons,codiepie
+Brand Icons,confluence
+Brand Icons,connectdevelop
+Brand Icons,contao
+Brand Icons,cotton-bureau
+Brand Icons,cpanel
+Brand Icons,creative-commons
+Brand Icons,creative-commons-by
+Brand Icons,creative-commons-nc
+Brand Icons,creative-commons-nc-eu
+Brand Icons,creative-commons-nc-jp
+Brand Icons,creative-commons-nd
+Brand Icons,creative-commons-pd
+Brand Icons,creative-commons-pd-alt
+Brand Icons,creative-commons-remix
+Brand Icons,creative-commons-sa
+Brand Icons,creative-commons-sampling
+Brand Icons,creative-commons-sampling-plus
+Brand Icons,creative-commons-share
+Brand Icons,creative-commons-zero
+Brand Icons,css3
+Brand Icons,css3-alt
+Brand Icons,cuttlefish
+Brand Icons,dashcube
+Brand Icons,delicious
+Brand Icons,deploydog
+Brand Icons,deskpro
+Brand Icons,dev
+Brand Icons,deviantart
+Brand Icons,dhl
+Brand Icons,diaspora
+Brand Icons,digg
+Brand Icons,digital-ocean
+Brand Icons,discord
+Brand Icons,discourse
+Brand Icons,dochub
+Brand Icons,docker
+Brand Icons,draft2digital
+Brand Icons,dribbble
+Brand Icons,dribbble-square
+Brand Icons,dropbox
+Brand Icons,drupal
+Brand Icons,dyalog
+Brand Icons,earlybirds
+Brand Icons,ebay
+Brand Icons,edge
+Brand Icons,elementor
+Brand Icons,ello
+Brand Icons,ember
+Brand Icons,empire
+Brand Icons,envira
+Brand Icons,erlang
+Brand Icons,etsy
+Brand Icons,evernote
+Brand Icons,expeditedssl
+Brand Icons,facebook
+Brand Icons,facebook-f
+Brand Icons,facebook-messenger
+Brand Icons,facebook-square
+Brand Icons,fedex
+Brand Icons,fedora
+Brand Icons,figma
+Brand Icons,firefox
+Brand Icons,first-order
+Brand Icons,first-order-alt
+Brand Icons,firstdraft
+Brand Icons,flickr
+Brand Icons,flipboard
+Brand Icons,fly
+Brand Icons,font-awesome
+Brand Icons,font-awesome-alt
+Brand Icons,font-awesome-flag
+Brand Icons,fonticons
+Brand Icons,fonticons-fi
+Brand Icons,fort-awesome
+Brand Icons,fort-awesome-alt
+Brand Icons,forumbee
+Brand Icons,foursquare
+Brand Icons,free-code-camp
+Brand Icons,freebsd
+Brand Icons,fulcrum
+Brand Icons,get-pocket
+Brand Icons,git
+Brand Icons,git-alt
+Brand Icons,git-square
+Brand Icons,github
+Brand Icons,github-alt
+Brand Icons,github-square
+Brand Icons,gitkraken
+Brand Icons,gitlab
+Brand Icons,gitter
+Brand Icons,glide
+Brand Icons,glide-g
+Brand Icons,gofore
+Brand Icons,goodreads
+Brand Icons,goodreads-g
+Brand Icons,google
+Brand Icons,google-drive
+Brand Icons,google-play
+Brand Icons,google-plus
+Brand Icons,google-plus-g
+Brand Icons,google-plus-square
+Brand Icons,gratipay
+Brand Icons,grav
+Brand Icons,gripfire
+Brand Icons,grunt
+Brand Icons,gulp
+Brand Icons,hacker-news
+Brand Icons,hacker-news-square
+Brand Icons,hackerrank
+Brand Icons,hips
+Brand Icons,hire-a-helper
+Brand Icons,hooli
+Brand Icons,hornbill
+Brand Icons,hotjar
+Brand Icons,houzz
+Brand Icons,html5
+Brand Icons,hubspot
+Brand Icons,imdb
+Brand Icons,instagram
+Brand Icons,intercom
+Brand Icons,internet-explorer
+Brand Icons,invision
+Brand Icons,ioxhost
+Brand Icons,itch-io
+Brand Icons,itunes
+Brand Icons,itunes-note
+Brand Icons,java
+Brand Icons,jenkins
+Brand Icons,jira
+Brand Icons,joget
+Brand Icons,joomla
+Brand Icons,js
+Brand Icons,js-square
+Brand Icons,jsfiddle
+Brand Icons,kaggle
+Brand Icons,keybase
+Brand Icons,keycdn
+Brand Icons,kickstarter
+Brand Icons,kickstarter-k
+Brand Icons,korvue
+Brand Icons,laravel
+Brand Icons,lastfm
+Brand Icons,lastfm-square
+Brand Icons,leanpub
+Brand Icons,less
+Brand Icons,line
+Brand Icons,linkedin
+Brand Icons,linkedin-in
+Brand Icons,linode
+Brand Icons,linux
+Brand Icons,lyft
+Brand Icons,magento
+Brand Icons,mailchimp
+Brand Icons,mandalorian
+Brand Icons,markdown
+Brand Icons,mastodon
+Brand Icons,maxcdn
+Brand Icons,mdb
+Brand Icons,medapps
+Brand Icons,medium
+Brand Icons,medium-m
+Brand Icons,medrt
+Brand Icons,meetup
+Brand Icons,megaport
+Brand Icons,mendeley
+Brand Icons,microsoft
+Brand Icons,mix
+Brand Icons,mixcloud
+Brand Icons,mizuni
+Brand Icons,modx
+Brand Icons,monero
+Brand Icons,neos
+Brand Icons,nimblr
+Brand Icons,node
+Brand Icons,node-js
+Brand Icons,npm
+Brand Icons,ns8
+Brand Icons,nutritionix
+Brand Icons,odnoklassniki
+Brand Icons,odnoklassniki-square
+Brand Icons,opencart
+Brand Icons,openid
+Brand Icons,opera
+Brand Icons,optin-monster
+Brand Icons,orcid
+Brand Icons,osi
+Brand Icons,page4
+Brand Icons,pagelines
+Brand Icons,palfed
+Brand Icons,patreon
+Brand Icons,periscope
+Brand Icons,phabricator
+Brand Icons,phoenix-framework
+Brand Icons,phoenix-squadron
+Brand Icons,php
+Brand Icons,pied-piper
+Brand Icons,pied-piper-alt
+Brand Icons,pied-piper-hat
+Brand Icons,pied-piper-pp
+Brand Icons,pinterest
+Brand Icons,pinterest-p
+Brand Icons,pinterest-square
+Brand Icons,product-hunt
+Brand Icons,pushed
+Brand Icons,python
+Brand Icons,qq
+Brand Icons,quinscape
+Brand Icons,quora
+Brand Icons,r-project
+Brand Icons,raspberry-pi
+Brand Icons,ravelry
+Brand Icons,react
+Brand Icons,reacteurope
+Brand Icons,readme
+Brand Icons,rebel
+Brand Icons,red-river
+Brand Icons,reddit
+Brand Icons,reddit-alien
+Brand Icons,reddit-square
+Brand Icons,redhat
+Brand Icons,renren
+Brand Icons,replyd
+Brand Icons,researchgate
+Brand Icons,resolving
+Brand Icons,rev
+Brand Icons,rocketchat
+Brand Icons,rockrms
+Brand Icons,safari
+Brand Icons,salesforce
+Brand Icons,sass
+Brand Icons,schlix
+Brand Icons,scribd
+Brand Icons,searchengin
+Brand Icons,sellcast
+Brand Icons,sellsy
+Brand Icons,servicestack
+Brand Icons,shirtsinbulk
+Brand Icons,shopware
+Brand Icons,simplybuilt
+Brand Icons,sistrix
+Brand Icons,sith
+Brand Icons,sketch
+Brand Icons,skyatlas
+Brand Icons,skype
+Brand Icons,slack
+Brand Icons,slack-hash
+Brand Icons,slideshare
+Brand Icons,snapchat
+Brand Icons,snapchat-ghost
+Brand Icons,snapchat-square
+Brand Icons,sourcetree
+Brand Icons,speakap
+Brand Icons,speaker-deck
+Brand Icons,squarespace
+Brand Icons,stack-exchange
+Brand Icons,stack-overflow
+Brand Icons,stackpath
+Brand Icons,staylinked
+Brand Icons,sticker-mule
+Brand Icons,strava
+Brand Icons,studiovinari
+Brand Icons,stumbleupon
+Brand Icons,stumbleupon-circle
+Brand Icons,superpowers
+Brand Icons,supple
+Brand Icons,suse
+Brand Icons,swift
+Brand Icons,symfony
+Brand Icons,teamspeak
+Brand Icons,telegram
+Brand Icons,telegram-plane
+Brand Icons,tencent-weibo
+Brand Icons,the-red-yeti
+Brand Icons,themeco
+Brand Icons,themeisle
+Brand Icons,think-peaks
+Brand Icons,trade-federation
+Brand Icons,trello
+Brand Icons,tripadvisor
+Brand Icons,tumblr
+Brand Icons,tumblr-square
+Brand Icons,twitter
+Brand Icons,twitter-square
+Brand Icons,typo3
+Brand Icons,uber
+Brand Icons,ubuntu
+Brand Icons,uikit
+Brand Icons,umbraco
+Brand Icons,uniregistry
+Brand Icons,untappd
+Brand Icons,ups
+Brand Icons,usb
+Brand Icons,usps
+Brand Icons,ussunnah
+Brand Icons,vaadin
+Brand Icons,viacoin
+Brand Icons,viadeo
+Brand Icons,viadeo-square
+Brand Icons,viber
+Brand Icons,vimeo
+Brand Icons,vimeo-square
+Brand Icons,vimeo-v
+Brand Icons,vine
+Brand Icons,vk
+Brand Icons,vnv
+Brand Icons,vuejs
+Brand Icons,waze
+Brand Icons,weebly
+Brand Icons,weibo
+Brand Icons,weixin
+Brand Icons,whatsapp
+Brand Icons,whatsapp-square
+Brand Icons,whmcs
+Brand Icons,wikipedia-w
+Brand Icons,windows
+Brand Icons,wix
+Brand Icons,wolf-pack-battalion
+Brand Icons,wordpress
+Brand Icons,wordpress-simple
+Brand Icons,wpbeginner
+Brand Icons,wpexplorer
+Brand Icons,wpforms
+Brand Icons,wpressr
+Brand Icons,xing
+Brand Icons,xing-square
+Brand Icons,y-combinator
+Brand Icons,yahoo
+Brand Icons,yammer
+Brand Icons,yandex
+Brand Icons,yandex-international
+Brand Icons,yarn
+Brand Icons,yelp
+Brand Icons,yoast
+Brand Icons,youtube-square
+Brand Icons,zhihu
+Buildings,archway
+Buildings,building
+Buildings,campground
+Buildings,church
+Buildings,city
+Buildings,clinic-medical
+Buildings,dungeon
+Buildings,gopuram
+Buildings,home
+Buildings,hospital
+Buildings,hospital-alt
+Buildings,hotel
+Buildings,house-damage
+Buildings,igloo
+Buildings,industry
+Buildings,kaaba
+Buildings,landmark
+Buildings,monument
+Buildings,mosque
+Buildings,place-of-worship
+Buildings,school
+Buildings,store
+Buildings,store-alt
+Buildings,synagogue
+Buildings,torii-gate
+Buildings,university
+Buildings,vihara
+Buildings,warehouse
+Business,address-book
+Business,address-card
+Business,archive
+Business,balance-scale
+Business,balance-scale-left
+Business,balance-scale-right
+Business,birthday-cake
+Business,book
+Business,briefcase
+Business,building
+Business,bullhorn
+Business,bullseye
+Business,business-time
+Business,calculator
+Business,calendar
+Business,calendar-alt
+Business,certificate
+Business,chart-area
+Business,chart-bar
+Business,chart-line
+Business,chart-pie
+Business,city
+Business,clipboard
+Business,coffee
+Business,columns
+Business,compass
+Business,copy
+Business,copyright
+Business,cut
+Business,edit
+Business,envelope
+Business,envelope-open
+Business,envelope-square
+Business,eraser
+Business,fax
+Business,file
+Business,file-alt
+Business,folder
+Business,folder-minus
+Business,folder-open
+Business,folder-plus
+Business,glasses
+Business,globe
+Business,highlighter
+Business,industry
+Business,landmark
+Business,marker
+Business,paperclip
+Business,paste
+Business,pen
+Business,pen-alt
+Business,pen-fancy
+Business,pen-nib
+Business,pen-square
+Business,pencil-alt
+Business,percent
+Business,phone
+Business,phone-alt
+Business,phone-slash
+Business,phone-square
+Business,phone-square-alt
+Business,phone-volume
+Business,print
+Business,project-diagram
+Business,registered
+Business,save
+Business,sitemap
+Business,socks
+Business,sticky-note
+Business,stream
+Business,table
+Business,tag
+Business,tags
+Business,tasks
+Business,thumbtack
+Business,trademark
+Business,wallet
+Camping,binoculars
+Camping,campground
+Camping,compass
+Camping,fire
+Camping,fire-alt
+Camping,first-aid
+Camping,frog
+Camping,hiking
+Camping,map
+Camping,map-marked
+Camping,map-marked-alt
+Camping,map-signs
+Camping,mountain
+Camping,route
+Camping,toilet-paper
+Camping,tree
+Charity,dollar-sign
+Charity,donate
+Charity,dove
+Charity,gift
+Charity,globe
+Charity,hand-holding-heart
+Charity,hand-holding-usd
+Charity,hands-helping
+Charity,handshake
+Charity,heart
+Charity,leaf
+Charity,parachute-box
+Charity,piggy-bank
+Charity,ribbon
+Charity,seedling
+Chat,comment
+Chat,comment-alt
+Chat,comment-dots
+Chat,comment-medical
+Chat,comment-slash
+Chat,comments
+Chat,frown
+Chat,icons
+Chat,meh
+Chat,phone
+Chat,phone-alt
+Chat,phone-slash
+Chat,poo
+Chat,quote-left
+Chat,quote-right
+Chat,smile
+Chat,sms
+Chat,video
+Chat,video-slash
+Chess,chess
+Chess,chess-bishop
+Chess,chess-board
+Chess,chess-king
+Chess,chess-knight
+Chess,chess-pawn
+Chess,chess-queen
+Chess,chess-rook
+Chess,square-full
+Childhood,apple-alt
+Childhood,baby
+Childhood,baby-carriage
+Childhood,bath
+Childhood,biking
+Childhood,birthday-cake
+Childhood,cookie
+Childhood,cookie-bite
+Childhood,gamepad
+Childhood,ice-cream
+Childhood,mitten
+Childhood,robot
+Childhood,school
+Childhood,shapes
+Childhood,snowman
+Clothing,graduation-cap
+Clothing,hat-cowboy
+Clothing,hat-cowboy-side
+Clothing,hat-wizard
+Clothing,mitten
+Clothing,shoe-prints
+Clothing,socks
+Clothing,tshirt
+Clothing,user-tie
+Code,archive
+Code,barcode
+Code,bath
+Code,bug
+Code,code
+Code,code-branch
+Code,coffee
+Code,file
+Code,file-alt
+Code,file-code
+Code,filter
+Code,fire-extinguisher
+Code,folder
+Code,folder-open
+Code,keyboard
+Code,laptop-code
+Code,microchip
+Code,project-diagram
+Code,qrcode
+Code,shield-alt
+Code,sitemap
+Code,stream
+Code,terminal
+Code,user-secret
+Code,window-close
+Code,window-maximize
+Code,window-minimize
+Code,window-restore
+Communication,address-book
+Communication,address-card
+Communication,american-sign-language-interpreting
+Communication,assistive-listening-systems
+Communication,at
+Communication,bell
+Communication,bell-slash
+Communication,bluetooth
+Communication,bluetooth-b
+Communication,broadcast-tower
+Communication,bullhorn
+Communication,chalkboard
+Communication,comment
+Communication,comment-alt
+Communication,comments
+Communication,envelope
+Communication,envelope-open
+Communication,envelope-square
+Communication,fax
+Communication,inbox
+Communication,language
+Communication,microphone
+Communication,microphone-alt
+Communication,microphone-alt-slash
+Communication,microphone-slash
+Communication,mobile
+Communication,mobile-alt
+Communication,paper-plane
+Communication,phone
+Communication,phone-alt
+Communication,phone-slash
+Communication,phone-square
+Communication,phone-square-alt
+Communication,phone-volume
+Communication,rss
+Communication,rss-square
+Communication,tty
+Communication,voicemail
+Communication,wifi
+Computers,database
+Computers,desktop
+Computers,download
+Computers,ethernet
+Computers,hdd
+Computers,headphones
+Computers,keyboard
+Computers,laptop
+Computers,memory
+Computers,microchip
+Computers,mobile
+Computers,mobile-alt
+Computers,mouse
+Computers,plug
+Computers,power-off
+Computers,print
+Computers,satellite
+Computers,satellite-dish
+Computers,save
+Computers,sd-card
+Computers,server
+Computers,sim-card
+Computers,stream
+Computers,tablet
+Computers,tablet-alt
+Computers,tv
+Computers,upload
+Construction,brush
+Construction,drafting-compass
+Construction,dumpster
+Construction,hammer
+Construction,hard-hat
+Construction,paint-roller
+Construction,pencil-alt
+Construction,pencil-ruler
+Construction,ruler
+Construction,ruler-combined
+Construction,ruler-horizontal
+Construction,ruler-vertical
+Construction,screwdriver
+Construction,toolbox
+Construction,tools
+Construction,truck-pickup
+Construction,wrench
+Currency,bitcoin
+Currency,btc
+Currency,dollar-sign
+Currency,ethereum
+Currency,euro-sign
+Currency,gg
+Currency,gg-circle
+Currency,hryvnia
+Currency,lira-sign
+Currency,money-bill
+Currency,money-bill-alt
+Currency,money-bill-wave
+Currency,money-bill-wave-alt
+Currency,money-check
+Currency,money-check-alt
+Currency,pound-sign
+Currency,ruble-sign
+Currency,rupee-sign
+Currency,shekel-sign
+Currency,tenge
+Currency,won-sign
+Currency,yen-sign
+Date & Time,bell
+Date & Time,bell-slash
+Date & Time,calendar
+Date & Time,calendar-alt
+Date & Time,calendar-check
+Date & Time,calendar-minus
+Date & Time,calendar-plus
+Date & Time,calendar-times
+Date & Time,clock
+Date & Time,hourglass
+Date & Time,hourglass-end
+Date & Time,hourglass-half
+Date & Time,hourglass-start
+Date & Time,stopwatch
+Design,adjust
+Design,bezier-curve
+Design,brush
+Design,clone
+Design,copy
+Design,crop
+Design,crop-alt
+Design,crosshairs
+Design,cut
+Design,drafting-compass
+Design,draw-polygon
+Design,edit
+Design,eraser
+Design,eye
+Design,eye-dropper
+Design,eye-slash
+Design,fill
+Design,fill-drip
+Design,highlighter
+Design,icons
+Design,layer-group
+Design,magic
+Design,marker
+Design,object-group
+Design,object-ungroup
+Design,paint-brush
+Design,paint-roller
+Design,palette
+Design,paste
+Design,pen
+Design,pen-alt
+Design,pen-fancy
+Design,pen-nib
+Design,pencil-alt
+Design,pencil-ruler
+Design,ruler-combined
+Design,ruler-horizontal
+Design,ruler-vertical
+Design,save
+Design,splotch
+Design,spray-can
+Design,stamp
+Design,swatchbook
+Design,tint
+Design,tint-slash
+Design,vector-square
+Editors,align-center
+Editors,align-justify
+Editors,align-left
+Editors,align-right
+Editors,bold
+Editors,border-all
+Editors,border-none
+Editors,border-style
+Editors,clipboard
+Editors,clone
+Editors,columns
+Editors,copy
+Editors,cut
+Editors,edit
+Editors,eraser
+Editors,file
+Editors,file-alt
+Editors,font
+Editors,glasses
+Editors,heading
+Editors,highlighter
+Editors,i-cursor
+Editors,icons
+Editors,indent
+Editors,italic
+Editors,link
+Editors,list
+Editors,list-alt
+Editors,list-ol
+Editors,list-ul
+Editors,marker
+Editors,outdent
+Editors,paper-plane
+Editors,paperclip
+Editors,paragraph
+Editors,paste
+Editors,pen
+Editors,pen-alt
+Editors,pen-fancy
+Editors,pen-nib
+Editors,pencil-alt
+Editors,print
+Editors,quote-left
+Editors,quote-right
+Editors,redo
+Editors,redo-alt
+Editors,remove-format
+Editors,reply
+Editors,reply-all
+Editors,screwdriver
+Editors,share
+Editors,spell-check
+Editors,strikethrough
+Editors,subscript
+Editors,superscript
+Editors,sync
+Editors,sync-alt
+Editors,table
+Editors,tasks
+Editors,text-height
+Editors,text-width
+Editors,th
+Editors,th-large
+Editors,th-list
+Editors,tools
+Editors,trash
+Editors,trash-alt
+Editors,trash-restore
+Editors,trash-restore-alt
+Editors,underline
+Editors,undo
+Editors,undo-alt
+Editors,unlink
+Editors,wrench
+Education,apple-alt
+Education,atom
+Education,award
+Education,bell
+Education,bell-slash
+Education,book-open
+Education,book-reader
+Education,chalkboard
+Education,chalkboard-teacher
+Education,graduation-cap
+Education,laptop-code
+Education,microscope
+Education,music
+Education,school
+Education,shapes
+Education,theater-masks
+Education,user-graduate
+Emoji,angry
+Emoji,dizzy
+Emoji,flushed
+Emoji,frown
+Emoji,frown-open
+Emoji,grimace
+Emoji,grin
+Emoji,grin-alt
+Emoji,grin-beam
+Emoji,grin-beam-sweat
+Emoji,grin-hearts
+Emoji,grin-squint
+Emoji,grin-squint-tears
+Emoji,grin-stars
+Emoji,grin-tears
+Emoji,grin-tongue
+Emoji,grin-tongue-squint
+Emoji,grin-tongue-wink
+Emoji,grin-wink
+Emoji,kiss
+Emoji,kiss-beam
+Emoji,kiss-wink-heart
+Emoji,laugh
+Emoji,laugh-beam
+Emoji,laugh-squint
+Emoji,laugh-wink
+Emoji,meh
+Emoji,meh-blank
+Emoji,meh-rolling-eyes
+Emoji,sad-cry
+Emoji,sad-tear
+Emoji,smile
+Emoji,smile-beam
+Emoji,smile-wink
+Emoji,surprise
+Emoji,tired
+Energy,atom
+Energy,battery-empty
+Energy,battery-full
+Energy,battery-half
+Energy,battery-quarter
+Energy,battery-three-quarters
+Energy,broadcast-tower
+Energy,burn
+Energy,charging-station
+Energy,fire
+Energy,fire-alt
+Energy,gas-pump
+Energy,industry
+Energy,leaf
+Energy,lightbulb
+Energy,plug
+Energy,poop
+Energy,power-off
+Energy,radiation
+Energy,radiation-alt
+Energy,seedling
+Energy,solar-panel
+Energy,sun
+Energy,water
+Energy,wind
+Files,archive
+Files,clone
+Files,copy
+Files,cut
+Files,file
+Files,file-alt
+Files,file-archive
+Files,file-audio
+Files,file-code
+Files,file-excel
+Files,file-image
+Files,file-pdf
+Files,file-powerpoint
+Files,file-video
+Files,file-word
+Files,folder
+Files,folder-open
+Files,paste
+Files,photo-video
+Files,save
+Files,sticky-note
+Finance,balance-scale
+Finance,balance-scale-left
+Finance,balance-scale-right
+Finance,book
+Finance,cash-register
+Finance,chart-line
+Finance,chart-pie
+Finance,coins
+Finance,comment-dollar
+Finance,comments-dollar
+Finance,credit-card
+Finance,donate
+Finance,file-invoice
+Finance,file-invoice-dollar
+Finance,hand-holding-usd
+Finance,landmark
+Finance,money-bill
+Finance,money-bill-alt
+Finance,money-bill-wave
+Finance,money-bill-wave-alt
+Finance,money-check
+Finance,money-check-alt
+Finance,percentage
+Finance,piggy-bank
+Finance,receipt
+Finance,stamp
+Finance,wallet
+Fitness,bicycle
+Fitness,biking
+Fitness,burn
+Fitness,fire-alt
+Fitness,heart
+Fitness,heartbeat
+Fitness,hiking
+Fitness,running
+Fitness,shoe-prints
+Fitness,skating
+Fitness,skiing
+Fitness,skiing-nordic
+Fitness,snowboarding
+Fitness,spa
+Fitness,swimmer
+Fitness,walking
+Food,apple-alt
+Food,bacon
+Food,bone
+Food,bread-slice
+Food,candy-cane
+Food,carrot
+Food,cheese
+Food,cloud-meatball
+Food,cookie
+Food,drumstick-bite
+Food,egg
+Food,fish
+Food,hamburger
+Food,hotdog
+Food,ice-cream
+Food,lemon
+Food,pepper-hot
+Food,pizza-slice
+Food,seedling
+Food,stroopwafel
+Games,chess
+Games,chess-bishop
+Games,chess-board
+Games,chess-king
+Games,chess-knight
+Games,chess-pawn
+Games,chess-queen
+Games,chess-rook
+Games,dice
+Games,dice-d20
+Games,dice-d6
+Games,dice-five
+Games,dice-four
+Games,dice-one
+Games,dice-six
+Games,dice-three
+Games,dice-two
+Games,gamepad
+Games,ghost
+Games,headset
+Games,heart
+Games,playstation
+Games,puzzle-piece
+Games,steam
+Games,steam-square
+Games,steam-symbol
+Games,twitch
+Games,xbox
+Genders,genderless
+Genders,mars
+Genders,mars-double
+Genders,mars-stroke
+Genders,mars-stroke-h
+Genders,mars-stroke-v
+Genders,mercury
+Genders,neuter
+Genders,transgender
+Genders,transgender-alt
+Genders,venus
+Genders,venus-double
+Genders,venus-mars
+Halloween,book-dead
+Halloween,broom
+Halloween,cat
+Halloween,cloud-moon
+Halloween,crow
+Halloween,ghost
+Halloween,hat-wizard
+Halloween,mask
+Halloween,skull-crossbones
+Halloween,spider
+Halloween,toilet-paper
+Hands,allergies
+Hands,fist-raised
+Hands,hand-holding
+Hands,hand-holding-heart
+Hands,hand-holding-usd
+Hands,hand-lizard
+Hands,hand-middle-finger
+Hands,hand-paper
+Hands,hand-peace
+Hands,hand-point-down
+Hands,hand-point-left
+Hands,hand-point-right
+Hands,hand-point-up
+Hands,hand-pointer
+Hands,hand-rock
+Hands,hand-scissors
+Hands,hand-spock
+Hands,hands
+Hands,hands-helping
+Hands,handshake
+Hands,praying-hands
+Hands,thumbs-down
+Hands,thumbs-up
+Health,accessible-icon
+Health,ambulance
+Health,h-square
+Health,heart
+Health,heartbeat
+Health,hospital
+Health,medkit
+Health,plus-square
+Health,prescription
+Health,stethoscope
+Health,user-md
+Health,wheelchair
+Holiday,candy-cane
+Holiday,carrot
+Holiday,cookie-bite
+Holiday,gift
+Holiday,gifts
+Holiday,glass-cheers
+Holiday,holly-berry
+Holiday,mug-hot
+Holiday,sleigh
+Holiday,snowman
+Hotel,baby-carriage
+Hotel,bath
+Hotel,bed
+Hotel,briefcase
+Hotel,car
+Hotel,cocktail
+Hotel,coffee
+Hotel,concierge-bell
+Hotel,dice
+Hotel,dice-five
+Hotel,door-closed
+Hotel,door-open
+Hotel,dumbbell
+Hotel,glass-martini
+Hotel,glass-martini-alt
+Hotel,hot-tub
+Hotel,hotel
+Hotel,infinity
+Hotel,key
+Hotel,luggage-cart
+Hotel,shower
+Hotel,shuttle-van
+Hotel,smoking
+Hotel,smoking-ban
+Hotel,snowflake
+Hotel,spa
+Hotel,suitcase
+Hotel,suitcase-rolling
+Hotel,swimmer
+Hotel,swimming-pool
+Hotel,tv
+Hotel,umbrella-beach
+Hotel,utensils
+Hotel,wheelchair
+Hotel,wifi
+Household,bath
+Household,bed
+Household,blender
+Household,chair
+Household,couch
+Household,door-closed
+Household,door-open
+Household,dungeon
+Household,fan
+Household,shower
+Household,toilet-paper
+Household,tv
+Images,adjust
+Images,bolt
+Images,camera
+Images,camera-retro
+Images,chalkboard
+Images,clone
+Images,compress
+Images,compress-arrows-alt
+Images,expand
+Images,eye
+Images,eye-dropper
+Images,eye-slash
+Images,file-image
+Images,film
+Images,id-badge
+Images,id-card
+Images,image
+Images,images
+Images,photo-video
+Images,portrait
+Images,sliders-h
+Images,tint
+Interfaces,award
+Interfaces,ban
+Interfaces,barcode
+Interfaces,bars
+Interfaces,beer
+Interfaces,bell
+Interfaces,bell-slash
+Interfaces,blog
+Interfaces,bug
+Interfaces,bullhorn
+Interfaces,bullseye
+Interfaces,calculator
+Interfaces,calendar
+Interfaces,calendar-alt
+Interfaces,calendar-check
+Interfaces,calendar-minus
+Interfaces,calendar-plus
+Interfaces,calendar-times
+Interfaces,certificate
+Interfaces,check
+Interfaces,check-circle
+Interfaces,check-double
+Interfaces,check-square
+Interfaces,circle
+Interfaces,clipboard
+Interfaces,clone
+Interfaces,cloud
+Interfaces,cloud-download-alt
+Interfaces,cloud-upload-alt
+Interfaces,coffee
+Interfaces,cog
+Interfaces,cogs
+Interfaces,copy
+Interfaces,cut
+Interfaces,database
+Interfaces,dot-circle
+Interfaces,download
+Interfaces,edit
+Interfaces,ellipsis-h
+Interfaces,ellipsis-v
+Interfaces,envelope
+Interfaces,envelope-open
+Interfaces,eraser
+Interfaces,exclamation
+Interfaces,exclamation-circle
+Interfaces,exclamation-triangle
+Interfaces,external-link-alt
+Interfaces,external-link-square-alt
+Interfaces,eye
+Interfaces,eye-slash
+Interfaces,file
+Interfaces,file-alt
+Interfaces,file-download
+Interfaces,file-export
+Interfaces,file-import
+Interfaces,file-upload
+Interfaces,filter
+Interfaces,fingerprint
+Interfaces,flag
+Interfaces,flag-checkered
+Interfaces,folder
+Interfaces,folder-open
+Interfaces,frown
+Interfaces,glasses
+Interfaces,grip-horizontal
+Interfaces,grip-lines
+Interfaces,grip-lines-vertical
+Interfaces,grip-vertical
+Interfaces,hashtag
+Interfaces,heart
+Interfaces,history
+Interfaces,home
+Interfaces,i-cursor
+Interfaces,info
+Interfaces,info-circle
+Interfaces,language
+Interfaces,magic
+Interfaces,marker
+Interfaces,medal
+Interfaces,meh
+Interfaces,microphone
+Interfaces,microphone-alt
+Interfaces,microphone-slash
+Interfaces,minus
+Interfaces,minus-circle
+Interfaces,minus-square
+Interfaces,paste
+Interfaces,pen
+Interfaces,pen-alt
+Interfaces,pen-fancy
+Interfaces,pencil-alt
+Interfaces,plus
+Interfaces,plus-circle
+Interfaces,plus-square
+Interfaces,poo
+Interfaces,qrcode
+Interfaces,question
+Interfaces,question-circle
+Interfaces,quote-left
+Interfaces,quote-right
+Interfaces,redo
+Interfaces,redo-alt
+Interfaces,reply
+Interfaces,reply-all
+Interfaces,rss
+Interfaces,rss-square
+Interfaces,save
+Interfaces,screwdriver
+Interfaces,search
+Interfaces,search-minus
+Interfaces,search-plus
+Interfaces,share
+Interfaces,share-alt
+Interfaces,share-alt-square
+Interfaces,share-square
+Interfaces,shield-alt
+Interfaces,sign-in-alt
+Interfaces,sign-out-alt
+Interfaces,signal
+Interfaces,sitemap
+Interfaces,sliders-h
+Interfaces,smile
+Interfaces,sort
+Interfaces,sort-alpha-down
+Interfaces,sort-alpha-down-alt
+Interfaces,sort-alpha-up
+Interfaces,sort-alpha-up-alt
+Interfaces,sort-amount-down
+Interfaces,sort-amount-down-alt
+Interfaces,sort-amount-up
+Interfaces,sort-amount-up-alt
+Interfaces,sort-down
+Interfaces,sort-numeric-down
+Interfaces,sort-numeric-down-alt
+Interfaces,sort-numeric-up
+Interfaces,sort-numeric-up-alt
+Interfaces,sort-up
+Interfaces,star
+Interfaces,star-half
+Interfaces,sync
+Interfaces,sync-alt
+Interfaces,thumbs-down
+Interfaces,thumbs-up
+Interfaces,times
+Interfaces,times-circle
+Interfaces,toggle-off
+Interfaces,toggle-on
+Interfaces,tools
+Interfaces,trash
+Interfaces,trash-alt
+Interfaces,trash-restore
+Interfaces,trash-restore-alt
+Interfaces,trophy
+Interfaces,undo
+Interfaces,undo-alt
+Interfaces,upload
+Interfaces,user
+Interfaces,user-alt
+Interfaces,user-circle
+Interfaces,volume-down
+Interfaces,volume-mute
+Interfaces,volume-off
+Interfaces,volume-up
+Interfaces,wifi
+Interfaces,wrench
+Logistics,box
+Logistics,boxes
+Logistics,clipboard-check
+Logistics,clipboard-list
+Logistics,dolly
+Logistics,dolly-flatbed
+Logistics,hard-hat
+Logistics,pallet
+Logistics,shipping-fast
+Logistics,truck
+Logistics,warehouse
+Maps,ambulance
+Maps,anchor
+Maps,balance-scale
+Maps,balance-scale-left
+Maps,balance-scale-right
+Maps,bath
+Maps,bed
+Maps,beer
+Maps,bell
+Maps,bell-slash
+Maps,bicycle
+Maps,binoculars
+Maps,birthday-cake
+Maps,blind
+Maps,bomb
+Maps,book
+Maps,bookmark
+Maps,briefcase
+Maps,building
+Maps,car
+Maps,coffee
+Maps,crosshairs
+Maps,directions
+Maps,dollar-sign
+Maps,draw-polygon
+Maps,eye
+Maps,eye-slash
+Maps,fighter-jet
+Maps,fire
+Maps,fire-alt
+Maps,fire-extinguisher
+Maps,flag
+Maps,flag-checkered
+Maps,flask
+Maps,gamepad
+Maps,gavel
+Maps,gift
+Maps,glass-martini
+Maps,globe
+Maps,graduation-cap
+Maps,h-square
+Maps,heart
+Maps,heartbeat
+Maps,helicopter
+Maps,home
+Maps,hospital
+Maps,image
+Maps,images
+Maps,industry
+Maps,info
+Maps,info-circle
+Maps,key
+Maps,landmark
+Maps,layer-group
+Maps,leaf
+Maps,lemon
+Maps,life-ring
+Maps,lightbulb
+Maps,location-arrow
+Maps,low-vision
+Maps,magnet
+Maps,male
+Maps,map
+Maps,map-marker
+Maps,map-marker-alt
+Maps,map-pin
+Maps,map-signs
+Maps,medkit
+Maps,money-bill
+Maps,money-bill-alt
+Maps,motorcycle
+Maps,music
+Maps,newspaper
+Maps,parking
+Maps,paw
+Maps,phone
+Maps,phone-alt
+Maps,phone-square
+Maps,phone-square-alt
+Maps,phone-volume
+Maps,plane
+Maps,plug
+Maps,plus
+Maps,plus-square
+Maps,print
+Maps,recycle
+Maps,restroom
+Maps,road
+Maps,rocket
+Maps,route
+Maps,search
+Maps,search-minus
+Maps,search-plus
+Maps,ship
+Maps,shoe-prints
+Maps,shopping-bag
+Maps,shopping-basket
+Maps,shopping-cart
+Maps,shower
+Maps,snowplow
+Maps,street-view
+Maps,subway
+Maps,suitcase
+Maps,tag
+Maps,tags
+Maps,taxi
+Maps,thumbtack
+Maps,ticket-alt
+Maps,tint
+Maps,traffic-light
+Maps,train
+Maps,tram
+Maps,tree
+Maps,trophy
+Maps,truck
+Maps,tty
+Maps,umbrella
+Maps,university
+Maps,utensil-spoon
+Maps,utensils
+Maps,wheelchair
+Maps,wifi
+Maps,wine-glass
+Maps,wrench
+Maritime,anchor
+Maritime,binoculars
+Maritime,compass
+Maritime,dharmachakra
+Maritime,frog
+Maritime,ship
+Maritime,skull-crossbones
+Maritime,swimmer
+Maritime,water
+Maritime,wind
+Marketing,ad
+Marketing,bullhorn
+Marketing,bullseye
+Marketing,comment-dollar
+Marketing,comments-dollar
+Marketing,envelope-open-text
+Marketing,funnel-dollar
+Marketing,lightbulb
+Marketing,mail-bulk
+Marketing,poll
+Marketing,poll-h
+Marketing,search-dollar
+Marketing,search-location
+Mathematics,calculator
+Mathematics,divide
+Mathematics,equals
+Mathematics,greater-than
+Mathematics,greater-than-equal
+Mathematics,infinity
+Mathematics,less-than
+Mathematics,less-than-equal
+Mathematics,minus
+Mathematics,not-equal
+Mathematics,percentage
+Mathematics,plus
+Mathematics,square-root-alt
+Mathematics,subscript
+Mathematics,superscript
+Mathematics,times
+Mathematics,wave-square
+Medical,allergies
+Medical,ambulance
+Medical,band-aid
+Medical,biohazard
+Medical,bone
+Medical,bong
+Medical,book-medical
+Medical,brain
+Medical,briefcase-medical
+Medical,burn
+Medical,cannabis
+Medical,capsules
+Medical,clinic-medical
+Medical,comment-medical
+Medical,crutch
+Medical,diagnoses
+Medical,dna
+Medical,file-medical
+Medical,file-medical-alt
+Medical,file-prescription
+Medical,first-aid
+Medical,heart
+Medical,heartbeat
+Medical,hospital
+Medical,hospital-alt
+Medical,hospital-symbol
+Medical,id-card-alt
+Medical,joint
+Medical,laptop-medical
+Medical,microscope
+Medical,mortar-pestle
+Medical,notes-medical
+Medical,pager
+Medical,pills
+Medical,plus
+Medical,poop
+Medical,prescription
+Medical,prescription-bottle
+Medical,prescription-bottle-alt
+Medical,procedures
+Medical,radiation
+Medical,radiation-alt
+Medical,smoking
+Medical,smoking-ban
+Medical,star-of-life
+Medical,stethoscope
+Medical,syringe
+Medical,tablets
+Medical,teeth
+Medical,teeth-open
+Medical,thermometer
+Medical,tooth
+Medical,user-md
+Medical,user-nurse
+Medical,vial
+Medical,vials
+Medical,weight
+Medical,x-ray
+Moving,archive
+Moving,box-open
+Moving,couch
+Moving,dolly
+Moving,people-carry
+Moving,route
+Moving,sign
+Moving,suitcase
+Moving,tape
+Moving,truck-loading
+Moving,truck-moving
+Moving,wine-glass
+Music,drum
+Music,drum-steelpan
+Music,file-audio
+Music,guitar
+Music,headphones
+Music,headphones-alt
+Music,microphone
+Music,microphone-alt
+Music,microphone-alt-slash
+Music,microphone-slash
+Music,music
+Music,napster
+Music,play
+Music,record-vinyl
+Music,sliders-h
+Music,soundcloud
+Music,spotify
+Music,volume-down
+Music,volume-mute
+Music,volume-off
+Music,volume-up
+
+
+Objects,ambulance
+Objects,anchor
+Objects,archive
+Objects,award
+Objects,baby-carriage
+Objects,balance-scale
+Objects,balance-scale-left
+Objects,balance-scale-right
+Objects,bath
+Objects,bed
+Objects,beer
+Objects,bell
+Objects,bicycle
+Objects,binoculars
+Objects,birthday-cake
+Objects,blender
+Objects,bomb
+Objects,book
+Objects,book-dead
+Objects,bookmark
+Objects,briefcase
+Objects,broadcast-tower
+Objects,bug
+Objects,building
+Objects,bullhorn
+Objects,bullseye
+Objects,bus
+Objects,calculator
+Objects,calendar
+Objects,calendar-alt
+Objects,camera
+Objects,camera-retro
+Objects,candy-cane
+Objects,car
+Objects,carrot
+Objects,church
+Objects,clipboard
+Objects,cloud
+Objects,coffee
+Objects,cog
+Objects,cogs
+Objects,compass
+Objects,cookie
+Objects,cookie-bite
+Objects,copy
+Objects,cube
+Objects,cubes
+Objects,cut
+Objects,dice
+Objects,dice-d20
+Objects,dice-d6
+Objects,dice-five
+Objects,dice-four
+Objects,dice-one
+Objects,dice-six
+Objects,dice-three
+Objects,dice-two
+Objects,digital-tachograph
+Objects,door-closed
+Objects,door-open
+Objects,drum
+Objects,drum-steelpan
+Objects,envelope
+Objects,envelope-open
+Objects,eraser
+Objects,eye
+Objects,eye-dropper
+Objects,fax
+Objects,feather
+Objects,feather-alt
+Objects,fighter-jet
+Objects,file
+Objects,file-alt
+Objects,file-prescription
+Objects,film
+Objects,fire
+Objects,fire-alt
+Objects,fire-extinguisher
+Objects,flag
+Objects,flag-checkered
+Objects,flask
+Objects,futbol
+Objects,gamepad
+Objects,gavel
+Objects,gem
+Objects,gift
+Objects,gifts
+Objects,glass-cheers
+Objects,glass-martini
+Objects,glass-whiskey
+Objects,glasses
+Objects,globe
+Objects,graduation-cap
+Objects,guitar
+Objects,hat-wizard
+Objects,hdd
+Objects,headphones
+Objects,headphones-alt
+Objects,headset
+Objects,heart
+Objects,heart-broken
+Objects,helicopter
+Objects,highlighter
+Objects,holly-berry
+Objects,home
+Objects,hospital
+Objects,hourglass
+Objects,igloo
+Objects,image
+Objects,images
+Objects,industry
+Objects,key
+Objects,keyboard
+Objects,laptop
+Objects,leaf
+Objects,lemon
+Objects,life-ring
+Objects,lightbulb
+Objects,lock
+Objects,lock-open
+Objects,magic
+Objects,magnet
+Objects,map
+Objects,map-marker
+Objects,map-marker-alt
+Objects,map-pin
+Objects,map-signs
+Objects,marker
+Objects,medal
+Objects,medkit
+Objects,memory
+Objects,microchip
+Objects,microphone
+Objects,microphone-alt
+Objects,mitten
+Objects,mobile
+Objects,mobile-alt
+Objects,money-bill
+Objects,money-bill-alt
+Objects,money-check
+Objects,money-check-alt
+Objects,moon
+Objects,motorcycle
+Objects,mug-hot
+Objects,newspaper
+Objects,paint-brush
+Objects,paper-plane
+Objects,paperclip
+Objects,paste
+Objects,paw
+Objects,pen
+Objects,pen-alt
+Objects,pen-fancy
+Objects,pen-nib
+Objects,pencil-alt
+Objects,phone
+Objects,phone-alt
+Objects,plane
+Objects,plug
+Objects,print
+Objects,puzzle-piece
+Objects,ring
+Objects,road
+Objects,rocket
+Objects,ruler-combined
+Objects,ruler-horizontal
+Objects,ruler-vertical
+Objects,satellite
+Objects,satellite-dish
+Objects,save
+Objects,school
+Objects,screwdriver
+Objects,scroll
+Objects,sd-card
+Objects,search
+Objects,shield-alt
+Objects,shopping-bag
+Objects,shopping-basket
+Objects,shopping-cart
+Objects,shower
+Objects,sim-card
+Objects,skull-crossbones
+Objects,sleigh
+Objects,snowflake
+Objects,snowplow
+Objects,space-shuttle
+Objects,star
+Objects,sticky-note
+Objects,stopwatch
+Objects,stroopwafel
+Objects,subway
+Objects,suitcase
+Objects,sun
+Objects,tablet
+Objects,tablet-alt
+Objects,tachometer-alt
+Objects,tag
+Objects,tags
+Objects,taxi
+Objects,thumbtack
+Objects,ticket-alt
+Objects,toilet
+Objects,toolbox
+Objects,tools
+Objects,train
+Objects,tram
+Objects,trash
+Objects,trash-alt
+Objects,tree
+Objects,trophy
+Objects,truck
+Objects,tv
+Objects,umbrella
+Objects,university
+Objects,unlock
+Objects,unlock-alt
+Objects,utensil-spoon
+Objects,utensils
+Objects,wallet
+Objects,weight
+Objects,wheelchair
+Objects,wine-glass
+Objects,wrench
+Other,500px
+Other,accusoft
+Other,adn
+Other,adobe
+Other,adversal
+Other,affiliatetheme
+Other,airbnb
+Other,algolia
+Other,amazon
+Other,amilia
+Other,android
+Other,angellist
+Other,angrycreative
+Other,angular
+Other,app-store
+Other,app-store-ios
+Other,apper
+Other,apple
+Other,artstation
+Other,asymmetrik
+Other,atlassian
+Other,audible
+Other,autoprefixer
+Other,avianex
+Other,aviato
+Other,aws
+Other,backspace
+Other,bandcamp
+Other,battle-net
+Other,behance
+Other,behance-square
+Other,bimobject
+Other,bitbucket
+Other,bity
+Other,black-tie
+Other,blackberry
+Other,blender-phone
+Other,blogger
+Other,blogger-b
+Other,bootstrap
+Other,buffer
+Other,buromobelexperte
+Other,buy-n-large
+Other,buysellads
+Other,canadian-maple-leaf
+Other,centercode
+Other,centos
+Other,chrome
+Other,chromecast
+Other,cloudscale
+Other,cloudsmith
+Other,cloudversify
+Other,codepen
+Other,codiepie
+Other,confluence
+Other,connectdevelop
+Other,contao
+Other,cotton-bureau
+Other,cpanel
+Other,creative-commons
+Other,creative-commons-by
+Other,creative-commons-nc
+Other,creative-commons-nc-eu
+Other,creative-commons-nc-jp
+Other,creative-commons-nd
+Other,creative-commons-pd
+Other,creative-commons-pd-alt
+Other,creative-commons-remix
+Other,creative-commons-sa
+Other,creative-commons-sampling
+Other,creative-commons-sampling-plus
+Other,creative-commons-share
+Other,creative-commons-zero
+Other,crown
+Other,css3
+Other,css3-alt
+Other,cuttlefish
+Other,dashcube
+Other,delicious
+Other,deploydog
+Other,deskpro
+Other,dev
+Other,deviantart
+Other,dhl
+Other,diaspora
+Other,digg
+Other,digital-ocean
+Other,discord
+Other,discourse
+Other,dochub
+Other,docker
+Other,draft2digital
+Other,dribbble
+Other,dribbble-square
+Other,dropbox
+Other,drupal
+Other,dumpster-fire
+Other,dyalog
+Other,earlybirds
+Other,ebay
+Other,edge
+Other,elementor
+Other,ello
+Other,ember
+Other,empire
+Other,envira
+Other,erlang
+Other,etsy
+Other,evernote
+Other,expeditedssl
+Other,facebook
+Other,facebook-f
+Other,facebook-messenger
+Other,facebook-square
+Other,fedex
+Other,fedora
+Other,figma
+Other,file-csv
+Other,firefox
+Other,first-order
+Other,first-order-alt
+Other,firstdraft
+Other,flickr
+Other,flipboard
+Other,fly
+Other,font-awesome
+Other,font-awesome-alt
+Other,font-awesome-flag
+Other,fonticons
+Other,fonticons-fi
+Other,fort-awesome
+Other,fort-awesome-alt
+Other,forumbee
+Other,foursquare
+Other,free-code-camp
+Other,freebsd
+Other,fulcrum
+Other,get-pocket
+Other,git
+Other,git-alt
+Other,git-square
+Other,github
+Other,github-alt
+Other,github-square
+Other,gitkraken
+Other,gitlab
+Other,gitter
+Other,glide
+Other,glide-g
+Other,gofore
+Other,goodreads
+Other,goodreads-g
+Other,google
+Other,google-drive
+Other,google-play
+Other,google-plus
+Other,google-plus-g
+Other,google-plus-square
+Other,gratipay
+Other,grav
+Other,gripfire
+Other,grunt
+Other,gulp
+Other,hacker-news
+Other,hacker-news-square
+Other,hackerrank
+Other,hips
+Other,hire-a-helper
+Other,hooli
+Other,hornbill
+Other,hotjar
+Other,houzz
+Other,html5
+Other,hubspot
+Other,imdb
+Other,instagram
+Other,intercom
+Other,internet-explorer
+Other,invision
+Other,ioxhost
+Other,itch-io
+Other,itunes
+Other,itunes-note
+Other,java
+Other,jenkins
+Other,jira
+Other,joget
+Other,joomla
+Other,js
+Other,js-square
+Other,jsfiddle
+Other,kaggle
+Other,keybase
+Other,keycdn
+Other,kickstarter
+Other,kickstarter-k
+Other,korvue
+Other,laravel
+Other,lastfm
+Other,lastfm-square
+Other,leanpub
+Other,less
+Other,line
+Other,linkedin
+Other,linkedin-in
+Other,linode
+Other,linux
+Other,lyft
+Other,magento
+Other,mailchimp
+Other,mandalorian
+Other,markdown
+Other,mastodon
+Other,maxcdn
+Other,mdb
+Other,medapps
+Other,medium
+Other,medium-m
+Other,medrt
+Other,meetup
+Other,megaport
+Other,mendeley
+Other,microsoft
+Other,mix
+Other,mixcloud
+Other,mizuni
+Other,modx
+Other,monero
+Other,neos
+Other,network-wired
+Other,nimblr
+Other,node
+Other,node-js
+Other,npm
+Other,ns8
+Other,nutritionix
+Other,odnoklassniki
+Other,odnoklassniki-square
+Other,opencart
+Other,openid
+Other,opera
+Other,optin-monster
+Other,orcid
+Other,osi
+Other,page4
+Other,pagelines
+Other,palfed
+Other,patreon
+Other,periscope
+Other,phabricator
+Other,phoenix-framework
+Other,phoenix-squadron
+Other,php
+Other,pied-piper
+Other,pied-piper-alt
+Other,pied-piper-hat
+Other,pied-piper-pp
+Other,pinterest
+Other,pinterest-p
+Other,pinterest-square
+Other,product-hunt
+Other,pushed
+Other,python
+Other,qq
+Other,quinscape
+Other,quora
+Other,r-project
+Other,raspberry-pi
+Other,ravelry
+Other,react
+Other,reacteurope
+Other,readme
+Other,rebel
+Other,red-river
+Other,reddit
+Other,reddit-alien
+Other,reddit-square
+Other,redhat
+Other,renren
+Other,replyd
+Other,researchgate
+Other,resolving
+Other,rev
+Other,rocketchat
+Other,rockrms
+Other,safari
+Other,salesforce
+Other,sass
+Other,schlix
+Other,scribd
+Other,searchengin
+Other,sellcast
+Other,sellsy
+Other,servicestack
+Other,shirtsinbulk
+Other,shopware
+Other,signature
+Other,simplybuilt
+Other,sistrix
+Other,sith
+Other,sketch
+Other,skull
+Other,skyatlas
+Other,skype
+Other,slack
+Other,slack-hash
+Other,slideshare
+Other,snapchat
+Other,snapchat-ghost
+Other,snapchat-square
+Other,sourcetree
+Other,speakap
+Other,speaker-deck
+Other,squarespace
+Other,stack-exchange
+Other,stack-overflow
+Other,stackpath
+Other,staylinked
+Other,sticker-mule
+Other,strava
+Other,studiovinari
+Other,stumbleupon
+Other,stumbleupon-circle
+Other,superpowers
+Other,supple
+Other,suse
+Other,swift
+Other,symfony
+Other,teamspeak
+Other,telegram
+Other,telegram-plane
+Other,tencent-weibo
+Other,the-red-yeti
+Other,themeco
+Other,themeisle
+Other,think-peaks
+Other,trade-federation
+Other,trello
+Other,tripadvisor
+Other,tumblr
+Other,tumblr-square
+Other,twitter
+Other,twitter-square
+Other,typo3
+Other,uber
+Other,ubuntu
+Other,uikit
+Other,umbraco
+Other,uniregistry
+Other,untappd
+Other,ups
+Other,usb
+Other,usps
+Other,ussunnah
+Other,vaadin
+Other,viacoin
+Other,viadeo
+Other,viadeo-square
+Other,viber
+Other,vimeo
+Other,vimeo-square
+Other,vimeo-v
+Other,vine
+Other,vk
+Other,vnv
+Other,vr-cardboard
+Other,vuejs
+Other,waze
+Other,weebly
+Other,weibo
+Other,weight-hanging
+Other,weixin
+Other,whatsapp
+Other,whatsapp-square
+Other,whmcs
+Other,wikipedia-w
+Other,windows
+Other,wix
+Other,wolf-pack-battalion
+Other,wordpress
+Other,wordpress-simple
+Other,wpbeginner
+Other,wpexplorer
+Other,wpforms
+Other,wpressr
+Other,xing
+Other,xing-square
+Other,y-combinator
+Other,yahoo
+Other,yammer
+Other,yandex
+Other,yandex-international
+Other,yarn
+Other,yelp
+Other,yoast
+Other,youtube-square
+Other,zhihu
+Payments & Shopping,alipay
+Payments & Shopping,amazon-pay
+Payments & Shopping,apple-pay
+Payments & Shopping,bell
+Payments & Shopping,bitcoin
+Payments & Shopping,bookmark
+Payments & Shopping,btc
+Payments & Shopping,bullhorn
+Payments & Shopping,camera
+Payments & Shopping,camera-retro
+Payments & Shopping,cart-arrow-down
+Payments & Shopping,cart-plus
+Payments & Shopping,cc-amazon-pay
+Payments & Shopping,cc-amex
+Payments & Shopping,cc-apple-pay
+Payments & Shopping,cc-diners-club
+Payments & Shopping,cc-discover
+Payments & Shopping,cc-jcb
+Payments & Shopping,cc-mastercard
+Payments & Shopping,cc-paypal
+Payments & Shopping,cc-stripe
+Payments & Shopping,cc-visa
+Payments & Shopping,certificate
+Payments & Shopping,credit-card
+Payments & Shopping,ethereum
+Payments & Shopping,gem
+Payments & Shopping,gift
+Payments & Shopping,google-wallet
+Payments & Shopping,handshake
+Payments & Shopping,heart
+Payments & Shopping,key
+Payments & Shopping,money-check
+Payments & Shopping,money-check-alt
+Payments & Shopping,paypal
+Payments & Shopping,receipt
+Payments & Shopping,shopping-bag
+Payments & Shopping,shopping-basket
+Payments & Shopping,shopping-cart
+Payments & Shopping,star
+Payments & Shopping,stripe
+Payments & Shopping,stripe-s
+Payments & Shopping,tag
+Payments & Shopping,tags
+Payments & Shopping,thumbs-down
+Payments & Shopping,thumbs-up
+Payments & Shopping,trophy
+Political,award
+Political,balance-scale
+Political,balance-scale-left
+Political,balance-scale-right
+Political,bullhorn
+Political,check-double
+Political,democrat
+Political,donate
+Political,dove
+Political,fist-raised
+Political,flag-usa
+Political,handshake
+Political,person-booth
+Political,piggy-bank
+Political,republican
+Political,vote-yea
+Religion,ankh
+Religion,atom
+Religion,bible
+Religion,church
+Religion,cross
+Religion,dharmachakra
+Religion,dove
+Religion,gopuram
+Religion,hamsa
+Religion,hanukiah
+Religion,haykal
+Religion,jedi
+Religion,journal-whills
+Religion,kaaba
+Religion,khanda
+Religion,menorah
+Religion,mosque
+Religion,om
+Religion,pastafarianism
+Religion,peace
+Religion,place-of-worship
+Religion,pray
+Religion,praying-hands
+Religion,quran
+Religion,star-and-crescent
+Religion,star-of-david
+Religion,synagogue
+Religion,torah
+Religion,torii-gate
+Religion,vihara
+Religion,yin-yang
+Science,atom
+Science,biohazard
+Science,brain
+Science,burn
+Science,capsules
+Science,clipboard-check
+Science,dna
+Science,eye-dropper
+Science,filter
+Science,fire
+Science,fire-alt
+Science,flask
+Science,frog
+Science,magnet
+Science,microscope
+Science,mortar-pestle
+Science,pills
+Science,prescription-bottle
+Science,radiation
+Science,radiation-alt
+Science,seedling
+Science,skull-crossbones
+Science,syringe
+Science,tablets
+Science,temperature-high
+Science,temperature-low
+Science,vial
+Science,vials
+Science Fiction,galactic-republic
+Science Fiction,galactic-senate
+Science Fiction,globe
+Science Fiction,jedi
+Science Fiction,jedi-order
+Science Fiction,journal-whills
+Science Fiction,meteor
+Science Fiction,moon
+Science Fiction,old-republic
+Science Fiction,robot
+Science Fiction,rocket
+Science Fiction,satellite
+Science Fiction,satellite-dish
+Science Fiction,space-shuttle
+Science Fiction,user-astronaut
+Security,ban
+Security,bug
+Security,door-closed
+Security,door-open
+Security,dungeon
+Security,eye
+Security,eye-slash
+Security,file-contract
+Security,file-signature
+Security,fingerprint
+Security,id-badge
+Security,id-card
+Security,id-card-alt
+Security,key
+Security,lock
+Security,lock-open
+Security,mask
+Security,passport
+Security,shield-alt
+Security,unlock
+Security,unlock-alt
+Security,user-lock
+Security,user-secret
+Security,user-shield
+Shapes,bookmark
+Shapes,calendar
+Shapes,certificate
+Shapes,circle
+Shapes,cloud
+Shapes,comment
+Shapes,file
+Shapes,folder
+Shapes,heart
+Shapes,heart-broken
+Shapes,map-marker
+Shapes,play
+Shapes,shapes
+Shapes,square
+Shapes,star
+Social,bell
+Social,birthday-cake
+Social,camera
+Social,comment
+Social,comment-alt
+Social,envelope
+Social,hashtag
+Social,heart
+Social,icons
+Social,image
+Social,images
+Social,map-marker
+Social,map-marker-alt
+Social,photo-video
+Social,poll
+Social,poll-h
+Social,retweet
+Social,share
+Social,share-alt
+Social,share-square
+Social,star
+Social,thumbs-down
+Social,thumbs-up
+Social,thumbtack
+Social,user
+Social,user-circle
+Social,user-friends
+Social,user-plus
+Social,users
+Social,video
+Spinners,asterisk
+Spinners,atom
+Spinners,certificate
+Spinners,circle-notch
+Spinners,cog
+Spinners,compact-disc
+Spinners,compass
+Spinners,crosshairs
+Spinners,dharmachakra
+Spinners,fan
+Spinners,haykal
+Spinners,life-ring
+Spinners,palette
+Spinners,ring
+Spinners,slash
+Spinners,snowflake
+Spinners,spinner
+Spinners,stroopwafel
+Spinners,sun
+Spinners,sync
+Spinners,sync-alt
+Spinners,yin-yang
+Sports,baseball-ball
+Sports,basketball-ball
+Sports,biking
+Sports,bowling-ball
+Sports,dumbbell
+Sports,football-ball
+Sports,futbol
+Sports,golf-ball
+Sports,hockey-puck
+Sports,quidditch
+Sports,running
+Sports,skating
+Sports,skiing
+Sports,skiing-nordic
+Sports,snowboarding
+Sports,swimmer
+Sports,table-tennis
+Sports,volleyball-ball
+Spring,allergies
+Spring,broom
+Spring,cloud-sun
+Spring,cloud-sun-rain
+Spring,frog
+Spring,rainbow
+Spring,seedling
+Spring,umbrella
+Status,ban
+Status,battery-empty
+Status,battery-full
+Status,battery-half
+Status,battery-quarter
+Status,battery-three-quarters
+Status,bell
+Status,bell-slash
+Status,calendar
+Status,calendar-alt
+Status,calendar-check
+Status,calendar-day
+Status,calendar-minus
+Status,calendar-plus
+Status,calendar-times
+Status,calendar-week
+Status,cart-arrow-down
+Status,cart-plus
+Status,comment
+Status,comment-alt
+Status,comment-slash
+Status,compass
+Status,door-closed
+Status,door-open
+Status,exclamation
+Status,exclamation-circle
+Status,exclamation-triangle
+Status,eye
+Status,eye-slash
+Status,file
+Status,file-alt
+Status,folder
+Status,folder-open
+Status,gas-pump
+Status,info
+Status,info-circle
+Status,lightbulb
+Status,lock
+Status,lock-open
+Status,map-marker
+Status,map-marker-alt
+Status,microphone
+Status,microphone-alt
+Status,microphone-alt-slash
+Status,microphone-slash
+Status,minus
+Status,minus-circle
+Status,minus-square
+Status,parking
+Status,phone
+Status,phone-alt
+Status,phone-slash
+Status,plus
+Status,plus-circle
+Status,plus-square
+Status,print
+Status,question
+Status,question-circle
+Status,shield-alt
+Status,shopping-cart
+Status,sign-in-alt
+Status,sign-out-alt
+Status,signal
+Status,smoking-ban
+Status,star
+Status,star-half
+Status,star-half-alt
+Status,stream
+Status,thermometer-empty
+Status,thermometer-full
+Status,thermometer-half
+Status,thermometer-quarter
+Status,thermometer-three-quarters
+Status,thumbs-down
+Status,thumbs-up
+Status,tint
+Status,tint-slash
+Status,toggle-off
+Status,toggle-on
+Status,unlock
+Status,unlock-alt
+Status,user
+Status,user-alt
+Status,user-alt-slash
+Status,user-slash
+Status,video
+Status,video-slash
+Status,volume-down
+Status,volume-mute
+Status,volume-off
+Status,volume-up
+Status,wifi
+Tabletop Gaming,acquisitions-incorporated
+Tabletop Gaming,book-dead
+Tabletop Gaming,critical-role
+Tabletop Gaming,d-and-d
+Tabletop Gaming,d-and-d-beyond
+Tabletop Gaming,dice-d20
+Tabletop Gaming,dice-d6
+Tabletop Gaming,dragon
+Tabletop Gaming,dungeon
+Tabletop Gaming,fantasy-flight-games
+Tabletop Gaming,fist-raised
+Tabletop Gaming,hat-wizard
+Tabletop Gaming,penny-arcade
+Tabletop Gaming,ring
+Tabletop Gaming,scroll
+Tabletop Gaming,skull-crossbones
+Tabletop Gaming,wizards-of-the-coast
+Travel,archway
+Travel,atlas
+Travel,bed
+Travel,bus
+Travel,bus-alt
+Travel,cocktail
+Travel,concierge-bell
+Travel,dumbbell
+Travel,glass-martini
+Travel,glass-martini-alt
+Travel,globe-africa
+Travel,globe-americas
+Travel,globe-asia
+Travel,globe-europe
+Travel,hot-tub
+Travel,hotel
+Travel,luggage-cart
+Travel,map
+Travel,map-marked
+Travel,map-marked-alt
+Travel,monument
+Travel,passport
+Travel,plane
+Travel,plane-arrival
+Travel,plane-departure
+Travel,shuttle-van
+Travel,spa
+Travel,suitcase
+Travel,suitcase-rolling
+Travel,swimmer
+Travel,swimming-pool
+Travel,taxi
+Travel,tram
+Travel,tv
+Travel,umbrella-beach
+Travel,wine-glass
+Travel,wine-glass-alt
+Users & People,accessible-icon
+Users & People,address-book
+Users & People,address-card
+Users & People,baby
+Users & People,bed
+Users & People,biking
+Users & People,blind
+Users & People,chalkboard-teacher
+Users & People,child
+Users & People,female
+Users & People,frown
+Users & People,hiking
+Users & People,id-badge
+Users & People,id-card
+Users & People,id-card-alt
+Users & People,male
+Users & People,meh
+Users & People,people-carry
+Users & People,person-booth
+Users & People,poo
+Users & People,portrait
+Users & People,power-off
+Users & People,pray
+Users & People,restroom
+Users & People,running
+Users & People,skating
+Users & People,skiing
+Users & People,skiing-nordic
+Users & People,smile
+Users & People,snowboarding
+Users & People,street-view
+Users & People,swimmer
+Users & People,user
+Users & People,user-alt
+Users & People,user-alt-slash
+Users & People,user-astronaut
+Users & People,user-check
+Users & People,user-circle
+Users & People,user-clock
+Users & People,user-cog
+Users & People,user-edit
+Users & People,user-friends
+Users & People,user-graduate
+Users & People,user-injured
+Users & People,user-lock
+Users & People,user-md
+Users & People,user-minus
+Users & People,user-ninja
+Users & People,user-nurse
+Users & People,user-plus
+Users & People,user-secret
+Users & People,user-shield
+Users & People,user-slash
+Users & People,user-tag
+Users & People,user-tie
+Users & People,user-times
+Users & People,users
+Users & People,users-cog
+Users & People,walking
+Users & People,wheelchair
+Weather,bolt
+Weather,cloud
+Weather,cloud-meatball
+Weather,cloud-moon
+Weather,cloud-moon-rain
+Weather,cloud-rain
+Weather,cloud-showers-heavy
+Weather,cloud-sun
+Weather,cloud-sun-rain
+Weather,meteor
+Weather,moon
+Weather,poo-storm
+Weather,rainbow
+Weather,smog
+Weather,snowflake
+Weather,sun
+Weather,temperature-high
+Weather,temperature-low
+Weather,umbrella
+Weather,water
+Weather,wind
+Winter,glass-whiskey
+Winter,icicles
+Winter,igloo
+Winter,mitten
+Winter,skating
+Winter,skiing
+Winter,skiing-nordic
+Winter,snowboarding
+Winter,snowplow
+Winter,tram
