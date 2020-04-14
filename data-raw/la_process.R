@@ -17,6 +17,9 @@ for (i in seq(file_list)) {
   svg_text[i] <- readLines(file_list[i], warn = FALSE)
 }
 
+# Normalize the SVG text
+svg_text <- svg_text %>% gsub("<?xml version=\"1.0\"?>", "", ., fixed = TRUE)
+
 # Create a table of LA SVG data
 la_svg_tbl <- dplyr::tibble(icon_name = icon_names, svg_text = svg_text)
 
