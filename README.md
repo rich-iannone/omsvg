@@ -7,8 +7,6 @@
 
 [![Lifecycle:
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
-[![CRAN
-status](https://www.r-pkg.org/badges/version/omsvg)](https://CRAN.R-project.org/package=omsvg)
 ![R-CMD-check](https://github.com/rich-iannone/omsvg/workflows/R-CMD-check/badge.svg)
 <!-- badges: end -->
 
