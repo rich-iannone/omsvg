@@ -7,7 +7,8 @@
 
 [![Lifecycle:
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
-![R-CMD-check](https://github.com/rich-iannone/omsvg/workflows/R-CMD-check/badge.svg)
+[![R build
+status](https://github.com/rich-iannone/omsvg/workflows/R-CMD-check/badge.svg)](https://github.com/rich-iannone/omsvg/actions?workflow=R-CMD-check)
 <!-- badges: end -->
 
 ## Overview
