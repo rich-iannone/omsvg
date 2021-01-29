@@ -34,7 +34,7 @@ SVG(width = 300, height = 300) %>%
     )
   )
 
-# With an ellipse
+# This time with an ellipse
 SVG(width = 300, height = 300) %>%
   svg_ellipse(
     x = 50, y = 50,
@@ -48,8 +48,7 @@ SVG(width = 300, height = 300) %>%
     )
   )
 
-# Basic animation of an element's
-# opacity value (moving to a new
+# Basic animation of an element's opacity value (moving to a new
 # `opacity` value of `0`)
 SVG(width = 300, height = 300) %>%
   svg_rect(
@@ -64,7 +63,7 @@ SVG(width = 300, height = 300) %>%
     )
   )
 
-# Lots of different animation directives applied
+# Testing of different animation directives applied
 # to two different elements (position, rotation,
 # scaling, opacity) with wildly different
 # keyframe times
@@ -106,7 +105,7 @@ SVG(width = 300, height = 300) %>%
     )
   )
 
-# Apply `easing_fn` functions to animations
+# Apply `ease_*()` functions to animations
 SVG(width = 300, height = 300) %>%
   svg_rect(
     x = 50, y = 50,
@@ -127,7 +126,7 @@ SVG(width = 300, height = 300) %>%
     )
   )
 
-# An animation solely with opacity
+# An animation solely with opacity changes
 SVG(width = 300, height = 300) %>%
   svg_rect(
     x = 50, y = 50,
@@ -169,8 +168,7 @@ SVG(width = 300, height = 300) %>%
     )
   )
 
-# An animation with a position and
-# scale change
+# An animation with a position and a scale change
 SVG(width = 300, height = 300) %>%
   svg_rect(
     x = 50, y = 50,
