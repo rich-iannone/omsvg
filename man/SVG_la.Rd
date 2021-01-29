@@ -12,7 +12,6 @@ SVG_la(
   title = NULL,
   desc = NULL,
   incl_xmlns = FALSE,
-  oneline = TRUE,
   anim_iterations = "infinite"
 )
 }
@@ -51,9 +50,6 @@ excludes this attribute.}
 tag? This attribute is only required on the outermost \code{svg} element of SVG
 documents, and, it's unnecessary for inner \code{svg} elements or inside of HTML
 documents. By default, this is set to \code{FALSE}.}
-
-\item{oneline}{An option to compress the resulting SVG tags such that they
-are reduced to one line.}
 
 \item{anim_iterations}{How many should an SVG animation (if defined by use of
 the \code{\link[=anims]{anims()}} function) be played? By default this is \code{"infinite"} (i.e.,
