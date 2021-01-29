@@ -9,8 +9,6 @@ library(tidyverse)
 library(omsvg)
 ```
 
-## `omsvg`
-
 This is just a test of the **omsvg** package. Let's make a small svg:
 
 ```{r}
@@ -32,7 +30,8 @@ Works fine in title elements too:
 <br>
 
 <p style="font-size: 24px;"> 
-R-project is in the house! Right here: `r SVG_la("skull-crossbones-solid")`. Just joking, it's `r SVG_la("r-project")`
+R-project is in the house! Right here: `r SVG_la("chess")`
+Just joking, it's `r SVG_la("r-project")`
 </p>
 
 Here is a spinny square:
