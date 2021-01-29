@@ -6,13 +6,17 @@
 \usage{
 info_lineawesome()
 }
-\value{
-A \strong{gt} table.
-}
 \description{
 This informative table shows which Line Awesome icons are available inside of
 \strong{omsvg}. The icons are composed of lines and they look awesome! There are
 plenty to choose from also, nearly \emph{1400} icons across \emph{69} categories. Just
 take note of the ones you like and get their names, you'll need them when
 using the \code{\link[=SVG_la]{SVG_la()}} function.
+}
+\examples{
+# Check out the available Line
+# Awesome-ness by using the
+# `info_lineawesome()` function
+info_lineawesome()
+
 }
