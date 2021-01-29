@@ -9,6 +9,7 @@ utils::globalVariables(
     ".",
     "anchor",
     "anim_type",
+    "icon_name",
     "icon_names",
     "rotation",
     "time_s",
