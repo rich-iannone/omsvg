@@ -105,9 +105,12 @@ suppressWarnings(
     gt::opt_all_caps()
 )
 
-gt_tbl_raw <- gt_tbl %>% gt:::as_raw_html()
+gt_tbl_raw <-
+  gt_tbl %>%
+  gt:::as_raw_html()
 
 # Save both object to internal data
 usethis::use_data(
   la_svg_tbl, gt_tbl_raw,
-  internal = TRUE, overwrite = TRUE)
+  internal = TRUE, overwrite = TRUE
+)
