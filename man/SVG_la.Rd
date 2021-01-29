@@ -12,7 +12,7 @@ SVG_la(
   title = NULL,
   desc = NULL,
   incl_xmlns = FALSE,
-  oneline = FALSE,
+  oneline = TRUE,
   anim_iterations = "infinite"
 )
 }
