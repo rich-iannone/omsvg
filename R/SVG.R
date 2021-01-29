@@ -231,7 +231,6 @@ SVG_la <- function(name = "500px",
                    title = NULL,
                    desc = NULL,
                    incl_xmlns = FALSE,
-                   oneline = TRUE,
                    anim_iterations = "infinite") {
 
   tbl_filter <- la_svg_tbl %>% dplyr::filter(icon_name == !!name)
@@ -248,7 +247,7 @@ SVG_la <- function(name = "500px",
     title = title,
     desc = desc,
     incl_xmlns = incl_xmlns,
-    oneline = oneline,
+    oneline = TRUE,
     anim_iterations = anim_iterations
   )
 }
