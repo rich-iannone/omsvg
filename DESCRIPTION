@@ -1,6 +1,6 @@
 Type: Package
 Package: omsvg
-Version: 0.0.0.9000
+Version: 0.1.0
 Title: Build and Transform SVGs
 Description: Build scalable vector graphics ('SVG') components using
     element-based functions. With an 'svg' object, we can modify its graphical
