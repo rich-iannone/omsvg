@@ -53,6 +53,9 @@ created by using a list of \verb{filter_*()} functions (e.g.,
 modifying this element in a later function call or for interacting with
 CSS.}
 }
+\value{
+An \code{svg} object.
+}
 \description{
 The \code{svg_circle()} function adds a circle to an \code{svg} object. The position of
 the circle is given by \code{x} and \code{y}, and this refers to the center point of
@@ -60,6 +63,8 @@ the point of the circle. The \code{diameter} of the circle is given in units of
 \code{px}.
 }
 \examples{
+if (interactive()) {
+
 # Create an SVG with a single
 # circle element
 svg <-
@@ -70,5 +75,6 @@ svg <-
       stroke = "magenta",
       fill = "olive"
     )
+}
 
 }

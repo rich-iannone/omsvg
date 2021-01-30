@@ -26,6 +26,8 @@ Within an \code{\link[=anims]{anims()}} call, itself passed to any \code{anims} 
 target element undergoes a change in opacity with time.
 }
 \examples{
+if (interactive()) {
+
 # Basic animation of an element's
 # opacity value (moving to a new
 # `opacity` value of `0`)
@@ -41,5 +43,6 @@ SVG(width = 300, height = 300) \%>\%
       2.0 ~ anim_opacity(opacity = 0)
     )
   )
+}
 
 }

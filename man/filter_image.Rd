@@ -13,6 +13,8 @@ filter_image(image)
 Display an image using a URL or a relative path to an on-disk resource.
 }
 \examples{
+if (interactive()) {
+
 # Place an image (obtained via an image
 # link) within a rectangle element using
 # the `filter_image()` filter
@@ -30,5 +32,6 @@ SVG(width = 500, height = 500) \%>\%
     width = "50\%", height = "50\%",
     attrs = svg_attrs_pres(filter = "image")
   )
+}
 
 }

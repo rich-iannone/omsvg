@@ -18,6 +18,8 @@ specified in \code{stdev}. The standard deviation of \code{stdev} is in direct
 reference to the gaussian distribution that governs the extent of blurring.
 }
 \examples{
+if (interactive()) {
+
 # Add a green ellipse to an SVG and
 # then apply the `filter_gaussian_blur()`
 # filter to blur the edges
@@ -36,5 +38,6 @@ SVG(width = 200, height = 100) \%>\%
       filter = "blur"
     )
   )
+}
 
 }

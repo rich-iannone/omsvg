@@ -25,6 +25,8 @@ Within an \code{\link[=anims]{anims()}} call, itself passed to any \code{anims} 
 element undergoes a scaling change with time.
 }
 \examples{
+if (interactive()) {
+
 # Basic animation of an element's
 # scaling state (moving to a new
 # `scale` value)
@@ -40,5 +42,6 @@ SVG(width = 300, height = 300) \%>\%
       2.0 ~ anim_scale(scale = 2)
     )
   )
+}
 
 }

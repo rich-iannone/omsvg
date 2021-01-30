@@ -49,6 +49,9 @@ created by using a list of \verb{filter_*()} functions (e.g.,
 modifying this element in a later function call or for interacting with
 CSS.}
 }
+\value{
+An \code{svg} object.
+}
 \description{
 The \code{svg_path()} function adds a path to an \code{svg} object. A path can
 potentially be quite complex (with an interplay of line and curve commands),
@@ -58,6 +61,8 @@ input requirements for the \code{d} attribute of the SVG \verb{<path>} tag. All 
 positions are in units of \code{px}.
 }
 \examples{
+if (interactive()) {
+
 # Create an SVG with a single
 # path element
 svg <-
@@ -68,5 +73,6 @@ svg <-
       stroke_width = 5,
       fill = "lightblue"
     )
+}
 
 }

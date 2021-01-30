@@ -23,6 +23,8 @@ or shape and its offset is controlled by \code{dx} and \code{dy}. The blurring o
 drop shadow is set by the \code{stdev} value.
 }
 \examples{
+if (interactive()) {
+
 # Apply a drop shadow filter on a
 # text element (orange in color,
 # and semi-opaque)
@@ -47,5 +49,6 @@ SVG(width = 250, height = 100) \%>\%
       filter = "shadow"
     )
   )
+}
 
 }

@@ -26,6 +26,8 @@ Within an \code{\link[=anims]{anims()}} call, itself passed to any \code{anims} 
 position of the target element changes with time.
 }
 \examples{
+if (interactive()) {
+
 # Basic animation of an element's
 # position (moving to a new `x` and
 # `y` position)
@@ -41,5 +43,6 @@ SVG(width = 300, height = 300) \%>\%
       2.0 ~ anim_position(x = 100, y = 50)
     )
   )
+}
 
 }

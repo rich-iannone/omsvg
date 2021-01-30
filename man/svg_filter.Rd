@@ -24,6 +24,8 @@ apply to any SVG elements (such as shapes). We can bundle one or more filter
 elements by supplying a list of \verb{filter_*()} calls to the \code{filters} argument.
 }
 \examples{
+if (interactive()) {
+
 # Set up an `svg_filter()` (called
 # `"blur"`) that has the blur effect
 # (using the `filter_gaussian_blur()`
@@ -45,5 +47,6 @@ SVG(width = 200, height = 100) \%>\%
       filter = "blur"
     )
   )
+}
 
 }

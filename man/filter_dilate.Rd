@@ -18,6 +18,8 @@ a given \code{radius} value. The higher the \code{radius}, the greater the dilat
 potential.
 }
 \examples{
+if (interactive()) {
+
 # Add a text element to an
 # SVG drawing and erode it with
 # the `filter_dilate()` filter
@@ -36,5 +38,6 @@ SVG(width = 200, height = 100) \%>\%
       filter = "dilate"
     )
   )
+}
 
 }

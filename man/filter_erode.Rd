@@ -17,6 +17,8 @@ The \code{filter_erode()} filter effectively thins out a source graphic by a giv
 \code{radius} value. The higher the \code{radius}, the greater the extent of thinning.
 }
 \examples{
+if (interactive()) {
+
 # Add a text element to an
 # SVG drawing and erode it with
 # the `filter_erode()` filter
@@ -36,5 +38,6 @@ SVG(width = 200, height = 100) \%>\%
       filter = "erode"
     )
   )
+}
 
 }

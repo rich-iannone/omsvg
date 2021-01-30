@@ -61,6 +61,9 @@ the \code{\link[=anims]{anims()}} function) be played? By default this is \code{
 looped indefinitely) but we can specify the animation iteration count as
 a positive number.}
 }
+\value{
+An \code{svg} object.
+}
 \description{
 Import an SVG file and create an \code{svg} object
 }

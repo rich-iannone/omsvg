@@ -34,6 +34,8 @@ Within an \code{\link[=anims]{anims()}} call, itself passed to any \code{anims} 
 target element undergoes a rotation change with time.
 }
 \examples{
+if (interactive()) {
+
 # This is a basic animation of an
 # element's rotation state (moving to
 # a new `rotation` value)
@@ -49,5 +51,6 @@ SVG(width = 300, height = 300) \%>\%
       2.0 ~ anim_rotation(rotation = 180)
     )
   )
+}
 
 }

@@ -51,20 +51,12 @@ created by using a list of \verb{filter_*()} functions (e.g.,
 modifying this element in a later function call or for interacting with
 CSS.}
 }
+\value{
+An \code{svg} object.
+}
 \description{
 The \code{svg_text()} function adds text to an \code{svg} object. As with many of the
 functions that create shape elements (such as \code{\link[=svg_rect]{svg_rect()}}), the starting
 position is defined by \code{x} and \code{y} values. All point positions are in units
 of \code{px}.
-}
-\examples{
-# Create an SVG with a single
-# text element
-svg <-
-  SVG(width = 300, height = 300) \%>\%
-    svg_text(
-      x = 10, y = 20,
-      text = "A line of text"
-    )
-
 }
