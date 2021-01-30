@@ -12,6 +12,8 @@
 #'   values in the x and y directions.
 #'
 #' @examples
+#' if (interactive()) {
+#'
 #' # Basic animation of an element's
 #' # scaling state (moving to a new
 #' # `scale` value)
@@ -27,6 +29,7 @@
 #'       2.0 ~ anim_scale(scale = 2)
 #'     )
 #'   )
+#' }
 #'
 #' @export
 anim_scale <- function(scale = NULL,

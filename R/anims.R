@@ -43,6 +43,8 @@
 #' @return A tibble of animation directives.
 #'
 #' @examples
+#' if (interactive()) {
+#'
 #' # Basic animation of an element's
 #' # position (moving to a new `x` and
 #' # `y` position)
@@ -113,6 +115,7 @@
 #'       )
 #'     )
 #'   )
+#' }
 #'
 #' @export
 anims <- function(...) {

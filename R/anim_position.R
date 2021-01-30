@@ -16,6 +16,8 @@
 #'   disregarded.
 #'
 #' @examples
+#' if (interactive()) {
+#'
 #' # Basic animation of an element's
 #' # position (moving to a new `x` and
 #' # `y` position)
@@ -31,6 +33,7 @@
 #'       2.0 ~ anim_position(x = 100, y = 50)
 #'     )
 #'   )
+#' }
 #'
 #' @export
 anim_position <- function(x = NULL,

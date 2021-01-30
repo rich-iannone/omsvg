@@ -33,7 +33,11 @@
 #'   looped indefinitely) but we can specify the animation iteration count as
 #'   a positive number.
 #'
+#' @return An `svg` object.
+#'
 #' @examples
+#' if (interactive()) {
+#'
 #' # Create an SVG with nothing drawn
 #' # within it
 #' svg <- SVG(width = 200, height = 100)
@@ -43,6 +47,7 @@
 #'   svg %>%
 #'   svg_rect(x = 20, y = 20, width = 40, height = 40) %>%
 #'   svg_circle(x = 100, y = 40, diameter = 40)
+#' }
 #'
 #' @export
 SVG <- function(width = NULL,
@@ -96,11 +101,17 @@ SVG <- function(width = NULL,
 #'
 #' @inheritParams SVG
 #'
+#' @return An `svg` object.
+#'
 #' @examples
+#' if (interactive()) {
+#'
 #' # Create a simple SVG with a rectangle and a circle
-#' SVG_(width = 100, height = 50) %>%
+#' svg <-
+#'   SVG_(width = 100, height = 50) %>%
 #'   svg_rect(x = 0, y = 0, width = 30, height = 20) %>%
 #'   svg_circle(x = 50, y = 10, diameter = 20)
+#' }
 #'
 #' @export
 SVG_ <- function(width = NULL,
@@ -134,11 +145,17 @@ SVG_ <- function(width = NULL,
 #'   any adjacent text.
 #' @inheritParams SVG
 #'
+#' @return An `svg` object.
+#'
 #' @examples
+#' if (interactive()) {
+#'
 #' # Create a simple SVG with a rectangle and a circle
-#' SVG_t(viewbox = c(0, 0, 60, 20)) %>%
+#' svg <-
+#'   SVG_t(viewbox = c(0, 0, 60, 20)) %>%
 #'   svg_rect(x = 0, y = 0, width = 30, height = 20) %>%
 #'   svg_circle(x = 50, y = 10, diameter = 20)
+#' }
 #'
 #' @export
 SVG_t <- function(height = "0.75em",
@@ -161,6 +178,8 @@ SVG_t <- function(height = "0.75em",
 #' @param data Either a file path to an SVG file or the SVG code itself as a
 #'   character vector of length 1.
 #' @inheritParams SVG
+#'
+#' @return An `svg` object.
 #'
 #' @export
 SVG_import <- function(data = NULL,

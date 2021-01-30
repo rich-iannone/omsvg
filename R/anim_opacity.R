@@ -12,6 +12,8 @@
 #'   disregarded.
 #'
 #' @examples
+#' if (interactive()) {
+#'
 #' # Basic animation of an element's
 #' # opacity value (moving to a new
 #' # `opacity` value of `0`)
@@ -27,6 +29,7 @@
 #'       2.0 ~ anim_opacity(opacity = 0)
 #'     )
 #'   )
+#' }
 #'
 #' @export
 anim_opacity <- function(opacity = NULL,

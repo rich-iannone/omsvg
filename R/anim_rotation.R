@@ -14,6 +14,8 @@
 #'   disregarded.
 #'
 #' @examples
+#' if (interactive()) {
+#'
 #' # This is a basic animation of an
 #' # element's rotation state (moving to
 #' # a new `rotation` value)
@@ -29,6 +31,7 @@
 #'       2.0 ~ anim_rotation(rotation = 180)
 #'     )
 #'   )
+#' }
 #'
 #' @export
 anim_rotation <- function(rotation = NULL,
