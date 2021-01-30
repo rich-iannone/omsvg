@@ -6,12 +6,6 @@
 #' take note of the ones you like and get their names, you'll need them when
 #' using the [SVG_la()] function.
 #'
-#' @examples
-#' # Check out the available Line
-#' # Awesome-ness by using the
-#' # `info_lineawesome()` function
-#' info_lineawesome()
-#'
 #' @export
 info_lineawesome <- function() {
 
