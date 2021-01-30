@@ -13,10 +13,3 @@ plenty to choose from also, nearly \emph{1400} icons across \emph{69} categories
 take note of the ones you like and get their names, you'll need them when
 using the \code{\link[=SVG_la]{SVG_la()}} function.
 }
-\examples{
-# Check out the available Line
-# Awesome-ness by using the
-# `info_lineawesome()` function
-info_lineawesome()
-
-}
