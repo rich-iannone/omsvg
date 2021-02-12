@@ -262,6 +262,8 @@ anims <- function(...) {
 #' @param x1,y1,x2,y2 The `x` and `y` values for the first and second bezier
 #'   control points.
 #'
+#' @return A `cubic-bezier` function call as a string for use as a CSS property.
+#'
 #' @export
 cubic_bezier <- function(x1 = 0.5,
                          y1 = 0.5,
@@ -285,7 +287,12 @@ cubic_bezier <- function(x1 = 0.5,
 
 #' Use an 'easing in' animation
 #'
+#' The `ease_in()` function can be used as a value for the `easing_fn` argument,
+#' which is available in every `anim_*()` function (e.g., [anim_position()]).
+#'
 #' @param power The preset to use for the easing in cubic bezier function.
+#'
+#' @return A `cubic-bezier` function call as a string for use as a CSS property.
 #'
 #' @export
 ease_in <- function(power = "basic") {
@@ -297,7 +304,12 @@ ease_in <- function(power = "basic") {
 
 #' Use an 'easing out' animation
 #'
+#' The `ease_out()` function can be used as a value for the `easing_fn` argument,
+#' which is available in every `anim_*()` function (e.g., [anim_position()]).
+#'
 #' @inheritParams ease_in
+#'
+#' @return A `cubic-bezier` function call as a string for use as a CSS property.
 #'
 #' @export
 ease_out <- function(power = "basic") {
@@ -309,7 +321,13 @@ ease_out <- function(power = "basic") {
 
 #' Use an 'easing in and out' animation
 #'
+#' The `ease_in_out()` function can be used as a value for the `easing_fn`
+#' argument, which is available in every `anim_*()` function (e.g.,
+#' [anim_position()]).
+#'
 #' @inheritParams ease_in
+#'
+#' @return A `cubic-bezier` function call as a string for use as a CSS property.
 #'
 #' @export
 ease_in_out <- function(power = "basic") {
@@ -321,6 +339,11 @@ ease_in_out <- function(power = "basic") {
 
 #' Use a linear movement for animation
 #'
+#' The `linear()` function can be used as a value for the `easing_fn` argument,
+#' which is available in every `anim_*()` function (e.g., [anim_position()]).
+#'
+#' @return A `linear` function call as a string for use as a CSS property.
+#'
 #' @export
 linear <- function() {
 
@@ -329,6 +352,12 @@ linear <- function() {
 
 #' Use a 'step-start' animation
 #'
+#' The `step_start()` function can be used as a value for the `easing_fn`
+#' argument, which is available in every `anim_*()` function (e.g.,
+#' [anim_position()]).
+#'
+#' @return A `step-start` function call as a string for use as a CSS property.
+#'
 #' @export
 step_start <- function() {
 
@@ -336,6 +365,12 @@ step_start <- function() {
 }
 
 #' Use a 'step-end' animation
+#'
+#' The `step_end()` function can be used as a value for the `easing_fn`
+#' argument, which is available in every `anim_*()` function (e.g.,
+#' [anim_position()]).
+#'
+#' @return A `step-end` function call as a string for use as a CSS property.
 #'
 #' @export
 step_end <- function() {
