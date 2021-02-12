@@ -11,6 +11,9 @@
 #'   of the element). If two values are provided, these will be taken as scaling
 #'   values in the x and y directions.
 #'
+#' @return An `anim_opacity` object, which is to be used as part of an [anims()]
+#'   call.
+#'
 #' @examples
 #' if (interactive()) {
 #'
