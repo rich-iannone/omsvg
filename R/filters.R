@@ -12,6 +12,8 @@
 #' @param filters A list of `filter_*()` function calls. Examples include
 #'   [filter_image()] and [filter_gaussian_blur()].
 #'
+#' @return An `svg` object.
+#'
 #' @examples
 #' if (interactive()) {
 #'
@@ -102,6 +104,8 @@ svg_filter <- function(svg,
 #'
 #' @param image A link or path to an image resource.
 #'
+#' @return An `svg` object.
+#'
 #' @examples
 #' if (interactive()) {
 #'
@@ -143,6 +147,8 @@ filter_image <- function(image) {
 #' @param stdev The number of standard deviations for the blur effect.
 #' @param what What exactly should be blurred? By default, it is the `"source"`
 #'   image.
+#'
+#' @return An `svg` object.
 #'
 #' @examples
 #' if (interactive()) {
@@ -200,6 +206,8 @@ filter_gaussian_blur <- function(stdev = 1,
 #'   and the second one the y-radius. If one value is provided, then that value
 #'   is used for both x and y.
 #'
+#' @return An `svg` object.
+#'
 #' @examples
 #' if (interactive()) {
 #'
@@ -253,6 +261,8 @@ filter_erode <- function(radius = 1) {
 #'   vector of two values are provided, the first value represents the x-radius
 #'   and the second one the y-radius. If one value is provided, then that value
 #'   is used for both x and y.
+#'
+#' @return An `svg` object.
 #'
 #' @examples
 #' if (interactive()) {
@@ -308,6 +318,8 @@ filter_dilate <- function(radius = 1) {
 #' @param color The color of the drop shadow.
 #' @param opacity The opacity of the drop shadow. We can use a real number from
 #'   `0` to `1` or a value in percentage units.
+#'
+#' @return An `svg` object.
 #'
 #' @examples
 #' if (interactive()) {
@@ -371,6 +383,8 @@ filter_drop_shadow <- function(dx = 0.2,
 #'   position.
 #' @param what What exactly should be offset? By default, it is the `"source"`
 #'   image.
+#'
+#' @return An `svg` object.
 #'
 #' @examples
 #' if (interactive()) {
