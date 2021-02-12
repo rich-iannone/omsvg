@@ -9,6 +9,9 @@ filter_image(image)
 \arguments{
 \item{image}{A link or path to an image resource.}
 }
+\value{
+An \code{svg} object.
+}
 \description{
 Display an image using a URL or a relative path to an on-disk resource.
 }

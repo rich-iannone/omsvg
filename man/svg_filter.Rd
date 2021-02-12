@@ -18,6 +18,9 @@ the filter.}
 \item{filters}{A list of \verb{filter_*()} function calls. Examples include
 \code{\link[=filter_image]{filter_image()}} and \code{\link[=filter_gaussian_blur]{filter_gaussian_blur()}}.}
 }
+\value{
+An \code{svg} object.
+}
 \description{
 The \code{svg_filter()} let's us create a named \verb{<filter>} element that we can
 apply to any SVG elements (such as shapes). We can bundle one or more filter

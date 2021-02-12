@@ -6,6 +6,11 @@
 \usage{
 step_start()
 }
+\value{
+A \code{step-start} function call as a string for use as a CSS property.
+}
 \description{
-Use a 'step-start' animation
+The \code{step_start()} function can be used as a value for the \code{easing_fn}
+argument, which is available in every \verb{anim_*()} function (e.g.,
+\code{\link[=anim_position]{anim_position()}}).
 }

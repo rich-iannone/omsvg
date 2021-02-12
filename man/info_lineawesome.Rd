@@ -6,6 +6,10 @@
 \usage{
 info_lineawesome()
 }
+\value{
+Invisibly returns \code{NULL}. The side effect of displaying a table of
+icons is the purpose of this function.
+}
 \description{
 This informative table shows which Line Awesome icons are available inside of
 \strong{omsvg}. The icons are composed of lines and they look awesome! There are

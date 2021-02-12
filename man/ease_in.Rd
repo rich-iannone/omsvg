@@ -9,6 +9,10 @@ ease_in(power = "basic")
 \arguments{
 \item{power}{The preset to use for the easing in cubic bezier function.}
 }
+\value{
+A \code{cubic-bezier} function call as a string for use as a CSS property.
+}
 \description{
-Use an 'easing in' animation
+The \code{ease_in()} function can be used as a value for the \code{easing_fn} argument,
+which is available in every \verb{anim_*()} function (e.g., \code{\link[=anim_position]{anim_position()}}).
 }

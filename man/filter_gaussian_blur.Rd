@@ -12,6 +12,9 @@ filter_gaussian_blur(stdev = 1, what = "source")
 \item{what}{What exactly should be blurred? By default, it is the \code{"source"}
 image.}
 }
+\value{
+An \code{svg} object.
+}
 \description{
 A gaussian blur effectively blurs an input image or shape by the amount
 specified in \code{stdev}. The standard deviation of \code{stdev} is in direct
