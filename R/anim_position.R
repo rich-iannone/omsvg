@@ -15,6 +15,9 @@
 #'   If so, use `TRUE` and any values provided to `x` and `y` will be
 #'   disregarded.
 #'
+#' @return An `anim_opacity` object, which is to be used as part of an [anims()]
+#'   call.
+#'
 #' @examples
 #' if (interactive()) {
 #'
