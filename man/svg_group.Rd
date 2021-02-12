@@ -39,12 +39,17 @@ created by using a list of \verb{filter_*()} functions (e.g.,
 modifying this element in a later function call or for interacting with
 CSS.}
 }
+\value{
+An \code{svg} object.
+}
 \description{
 The \code{svg_group()} function allows for grouping of several SVG elements. This
 is useful if we'd like to pass presentation attributes to several elements
 at once.
 }
 \examples{
+if (interactive()) {
+
 # Create an SVG with two rectangles
 # contained within a group
 SVG(width = 300, height = 300) \%>\%
@@ -66,5 +71,6 @@ SVG(width = 300, height = 300) \%>\%
       ~ svg_rect(., x = 60, y = 60, width = 50, height = 50)
       )
     )
+}
 
 }

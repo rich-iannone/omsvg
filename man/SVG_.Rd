@@ -31,6 +31,9 @@ form of a four-element, numeric vector corresponding to the \code{"min-x"},
 uses the vector \code{c(0, 0, width, height)}. Using \code{NULL}, the default,
 excludes this attribute.}
 }
+\value{
+An \code{svg} object.
+}
 \description{
 The \code{SVG_()} function is a variation on \code{\link[=SVG]{SVG()}} (the entry point for building
 an SVG) in that the output tags will be as compact as possible (fewer
@@ -38,9 +41,13 @@ linebreaks, less space characters). This is a reasonable option if the
 eventual use for the generated SVG is as inline SVG within HTML documents.
 }
 \examples{
+if (interactive()) {
+
 # Create a simple SVG with a rectangle and a circle
-SVG_(width = 100, height = 50) \%>\%
+svg <-
+  SVG_(width = 100, height = 50) \%>\%
   svg_rect(x = 0, y = 0, width = 30, height = 20) \%>\%
   svg_circle(x = 50, y = 10, diameter = 20)
+}
 
 }

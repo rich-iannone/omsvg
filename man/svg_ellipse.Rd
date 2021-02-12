@@ -58,6 +58,9 @@ created by using a list of \verb{filter_*()} functions (e.g.,
 modifying this element in a later function call or for interacting with
 CSS.}
 }
+\value{
+An \code{svg} object.
+}
 \description{
 The \code{svg_ellipse()} function adds an ellipse to an \code{svg} object. The position
 of the ellipse is given by \code{x} and \code{y}, and they refer to the center point of
@@ -65,6 +68,8 @@ the point of the ellipse. The \code{width} and the \code{height}, both in units 
 \code{px}, provide the horizontal and vertical extents of the ellipse.
 }
 \examples{
+if (interactive()) {
+
 # Create an SVG with a single
 # ellipse element
 svg <-
@@ -74,5 +79,6 @@ svg <-
       width = 50, height = 30,
       fill = "purple"
     )
+}
 
 }

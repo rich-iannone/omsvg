@@ -19,12 +19,18 @@ use any easing in the animation, just a linear movement). The other timing
 and easing functions are: \code{\link[=step_start]{step_start()}}, \code{\link[=step_end]{step_end()}}, \code{\link[=ease_in]{ease_in()}},
 \code{\link[=ease_out]{ease_out()}}, and \code{\link[=ease_in_out]{ease_in_out()}}.}
 }
+\value{
+An \code{anim_opacity} object, which is to be used as part of an \code{\link[=anims]{anims()}}
+call.
+}
 \description{
 Within an \code{\link[=anims]{anims()}} call, itself passed to any \code{anims} argument, the
 \code{anim_scale()} function can be used to express an animation where the target
 element undergoes a scaling change with time.
 }
 \examples{
+if (interactive()) {
+
 # Basic animation of an element's
 # scaling state (moving to a new
 # `scale` value)
@@ -40,5 +46,6 @@ SVG(width = 300, height = 300) \%>\%
       2.0 ~ anim_scale(scale = 2)
     )
   )
+}
 
 }

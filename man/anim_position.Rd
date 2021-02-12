@@ -20,12 +20,18 @@ and easing functions are: \code{\link[=step_start]{step_start()}}, \code{\link[=
 If so, use \code{TRUE} and any values provided to \code{x} and \code{y} will be
 disregarded.}
 }
+\value{
+An \code{anim_opacity} object, which is to be used as part of an \code{\link[=anims]{anims()}}
+call.
+}
 \description{
 Within an \code{\link[=anims]{anims()}} call, itself passed to any \code{anims} argument, the
 \code{anim_position()} function can be used to express an animation where the
 position of the target element changes with time.
 }
 \examples{
+if (interactive()) {
+
 # Basic animation of an element's
 # position (moving to a new `x` and
 # `y` position)
@@ -41,5 +47,6 @@ SVG(width = 300, height = 300) \%>\%
       2.0 ~ anim_position(x = 100, y = 50)
     )
   )
+}
 
 }

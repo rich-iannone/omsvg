@@ -13,11 +13,16 @@ position.}
 \item{what}{What exactly should be offset? By default, it is the \code{"source"}
 image.}
 }
+\value{
+An \code{svg} object.
+}
 \description{
 The offset filter applies an offset in the x and y directions to an existing
 element. The offset is handled by setting values for \code{dx} and \code{dy}.
 }
 \examples{
+if (interactive()) {
+
 # Add a circle element to an
 # SVG drawing and offset it
 # by 10px to the right
@@ -36,5 +41,6 @@ SVG(width = 150, height = 150) \%>\%
       filter = "offset_right"
     )
   )
+}
 
 }

@@ -51,6 +51,9 @@ created by using a list of \verb{filter_*()} functions (e.g.,
 modifying this element in a later function call or for interacting with
 CSS.}
 }
+\value{
+An \code{svg} object.
+}
 \description{
 The \code{svg_polyline()} function adds a polyline to an \code{svg} object. The
 polyline is drawn by connecting a series of points with straight lines. The
@@ -59,6 +62,8 @@ formatted string that adheres to the specification of the \code{points} attribut
 of the SVG \verb{<polyline>} tag. All point positions are in units of \code{px}.
 }
 \examples{
+if (interactive()) {
+
 # Create an SVG with a single
 # polyline element; here `points`
 # is a numeric vector where pairs
@@ -84,5 +89,6 @@ svg_2 <-
         "10,10 15,20 20,15 25,30 30,25 35,40 40,35 45,50 50,45",
       stroke = "blue"
     )
+}
 
 }

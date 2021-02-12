@@ -49,6 +49,9 @@ the \code{\link[=anims]{anims()}} function) be played? By default this is \code{
 looped indefinitely) but we can specify the animation iteration count as
 a positive number.}
 }
+\value{
+An \code{svg} object.
+}
 \description{
 The \code{SVG()} function is the entry point for building an SVG from the ground
 up. We can provide predefined \code{height} and \code{width} attributes that define
@@ -57,6 +60,8 @@ add elements to the SVG object (e.g., \code{\link[=svg_rect]{svg_rect()}}, \code
 thus progressively build the graphic.
 }
 \examples{
+if (interactive()) {
+
 # Create an SVG with nothing drawn
 # within it
 svg <- SVG(width = 200, height = 100)
@@ -66,5 +71,6 @@ svg <-
   svg \%>\%
   svg_rect(x = 20, y = 20, width = 40, height = 40) \%>\%
   svg_circle(x = 100, y = 40, diameter = 40)
+}
 
 }

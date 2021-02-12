@@ -51,6 +51,9 @@ created by using a list of \verb{filter_*()} functions (e.g.,
 modifying this element in a later function call or for interacting with
 CSS.}
 }
+\value{
+An \code{svg} object.
+}
 \description{
 The \code{svg_polygon()} function adds a polygon to an \code{svg} object. In the
 context of an SVG shape a polygon is similar to a polyline (defined by a
@@ -62,6 +65,8 @@ string that adheres to the specification of the \code{points} attribute of the S
 \verb{<polygon>} tag. All point positions are in units of \code{px}.
 }
 \examples{
+if (interactive()) {
+
 # Create an SVG with a single
 # polygon element
 svg <-
@@ -72,5 +77,6 @@ svg <-
       stroke_width = 4,
       fill = "yellow"
     )
+}
 
 }

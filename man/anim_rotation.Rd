@@ -28,12 +28,18 @@ and easing functions are: \code{\link[=step_start]{step_start()}}, \code{\link[=
 the element? If so, use \code{TRUE} and any value provided to \code{rotation} will be
 disregarded.}
 }
+\value{
+An \code{anim_opacity} object, which is to be used as part of an \code{\link[=anims]{anims()}}
+call.
+}
 \description{
 Within an \code{\link[=anims]{anims()}} call, itself passed to any \code{anims} argument, the
 \code{anim_rotation()} function can be used to express an animation where the
 target element undergoes a rotation change with time.
 }
 \examples{
+if (interactive()) {
+
 # This is a basic animation of an
 # element's rotation state (moving to
 # a new `rotation` value)
@@ -49,5 +55,6 @@ SVG(width = 300, height = 300) \%>\%
       2.0 ~ anim_rotation(rotation = 180)
     )
   )
+}
 
 }

@@ -11,7 +11,12 @@
 #'   of the element). If two values are provided, these will be taken as scaling
 #'   values in the x and y directions.
 #'
+#' @return An `anim_opacity` object, which is to be used as part of an [anims()]
+#'   call.
+#'
 #' @examples
+#' if (interactive()) {
+#'
 #' # Basic animation of an element's
 #' # scaling state (moving to a new
 #' # `scale` value)
@@ -27,6 +32,7 @@
 #'       2.0 ~ anim_scale(scale = 2)
 #'     )
 #'   )
+#' }
 #'
 #' @export
 anim_scale <- function(scale = NULL,

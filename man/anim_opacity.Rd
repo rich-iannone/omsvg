@@ -20,12 +20,18 @@ and easing functions are: \code{\link[=step_start]{step_start()}}, \code{\link[=
 the element? If so, use \code{TRUE} and any value provided to \code{opacity} will be
 disregarded.}
 }
+\value{
+An \code{anim_opacity} object, which is to be used as part of an \code{\link[=anims]{anims()}}
+call.
+}
 \description{
 Within an \code{\link[=anims]{anims()}} call, itself passed to any \code{anims} argument, the
 \code{anim_opacity()} function can be used to express an animation where the
 target element undergoes a change in opacity with time.
 }
 \examples{
+if (interactive()) {
+
 # Basic animation of an element's
 # opacity value (moving to a new
 # `opacity` value of `0`)
@@ -41,5 +47,6 @@ SVG(width = 300, height = 300) \%>\%
       2.0 ~ anim_opacity(opacity = 0)
     )
   )
+}
 
 }

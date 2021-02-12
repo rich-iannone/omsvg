@@ -17,12 +17,17 @@ input image or shape.}
 \item{opacity}{The opacity of the drop shadow. We can use a real number from
 \code{0} to \code{1} or a value in percentage units.}
 }
+\value{
+An \code{svg} object.
+}
 \description{
 With the \code{filter_drop_shadow()} drop shadow appears beneath the input image
 or shape and its offset is controlled by \code{dx} and \code{dy}. The blurring of the
 drop shadow is set by the \code{stdev} value.
 }
 \examples{
+if (interactive()) {
+
 # Apply a drop shadow filter on a
 # text element (orange in color,
 # and semi-opaque)
@@ -47,5 +52,6 @@ SVG(width = 250, height = 100) \%>\%
       filter = "shadow"
     )
   )
+}
 
 }

@@ -12,12 +12,17 @@ vector of two values are provided, the first value represents the x-radius
 and the second one the y-radius. If one value is provided, then that value
 is used for both x and y.}
 }
+\value{
+An \code{svg} object.
+}
 \description{
 The \code{filter_dilate()} filter applies a dilation effect to a source graphic by
 a given \code{radius} value. The higher the \code{radius}, the greater the dilation
 potential.
 }
 \examples{
+if (interactive()) {
+
 # Add a text element to an
 # SVG drawing and erode it with
 # the `filter_dilate()` filter
@@ -36,5 +41,6 @@ SVG(width = 200, height = 100) \%>\%
       filter = "dilate"
     )
   )
+}
 
 }

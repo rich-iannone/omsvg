@@ -15,7 +15,12 @@
 #'   If so, use `TRUE` and any values provided to `x` and `y` will be
 #'   disregarded.
 #'
+#' @return An `anim_opacity` object, which is to be used as part of an [anims()]
+#'   call.
+#'
 #' @examples
+#' if (interactive()) {
+#'
 #' # Basic animation of an element's
 #' # position (moving to a new `x` and
 #' # `y` position)
@@ -31,6 +36,7 @@
 #'       2.0 ~ anim_position(x = 100, y = 50)
 #'     )
 #'   )
+#' }
 #'
 #' @export
 anim_position <- function(x = NULL,

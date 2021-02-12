@@ -134,6 +134,11 @@
 #' @param visibility The visibility attribute lets us control the visibility of
 #'   graphical elements. With a value of `"hidden"` or `"collapse"`, the element
 #'   is invisible.
+#'
+#' @return A named list of presentational SVG properties. This object can be
+#'   used as a value for the `attrs` argument, which is present in every SVG
+#'   element function (e.g,. [svg_rect()]).
+#'
 #' @export
 svg_attrs_pres <- function(stroke = NULL,
                            stroke_width = NULL,

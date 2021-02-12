@@ -59,12 +59,17 @@ created by using a list of \verb{filter_*()} functions (e.g.,
 modifying this element in a later function call or for interacting with
 CSS.}
 }
+\value{
+An \code{svg} object.
+}
 \description{
 The \code{svg_image()} function adds an image to an \code{svg} object. The starting
 position is defined by \code{x} and \code{y} values. The image \code{width} and \code{height} are
 also required. All of these attributes are expressed in units of \code{px}.
 }
 \examples{
+if (interactive()) {
+
 # Create an SVG with an SVG image
 # (the R logo) contained within it
 svg <-
@@ -75,5 +80,6 @@ svg <-
       height = 100,
       image = "https://www.r-project.org/logo/Rlogo.svg"
     )
+}
 
 }

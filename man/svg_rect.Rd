@@ -64,6 +64,9 @@ created by using a list of \verb{filter_*()} functions (e.g.,
 modifying this element in a later function call or for interacting with
 CSS.}
 }
+\value{
+An \code{svg} object.
+}
 \description{
 The \code{svg_rect()} function adds a rectangle to an \code{svg} object. The position
 of the rectangle is given by \code{x} and \code{y}, and this refers to the upper left
@@ -73,6 +76,8 @@ the rectangle. All of these dimensions are in units of \code{px}. The optional
 define x and y radius of the corners of the rectangle.
 }
 \examples{
+if (interactive()) {
+
 # Create an SVG with a single
 # rectangle element
 svg_1 <-
@@ -109,5 +114,6 @@ svg_2 <-
         )
       )
     )
+}
 
 }

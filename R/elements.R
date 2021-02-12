@@ -37,7 +37,11 @@
 #'   modifying this element in a later function call or for interacting with
 #'   CSS.
 #'
+#' @return An `svg` object.
+#'
 #' @examples
+#' if (interactive()) {
+#'
 #' # Create an SVG with a single
 #' # rectangle element
 #' svg_1 <-
@@ -74,6 +78,7 @@
 #'         )
 #'       )
 #'     )
+#'}
 #'
 #' @export
 svg_rect <- function(svg,
@@ -152,7 +157,11 @@ svg_rect <- function(svg,
 #' @param diameter The diameter of the circle shape in units of `px`.
 #' @inheritParams svg_rect
 #'
+#' @return An `svg` object.
+#'
 #' @examples
+#' if (interactive()) {
+#'
 #' # Create an SVG with a single
 #' # circle element
 #' svg <-
@@ -163,6 +172,7 @@ svg_rect <- function(svg,
 #'       stroke = "magenta",
 #'       fill = "olive"
 #'     )
+#' }
 #'
 #' @export
 svg_circle <- function(svg,
@@ -239,7 +249,11 @@ svg_circle <- function(svg,
 #'   direction, centered on point `y`.
 #' @inheritParams svg_rect
 #'
+#' @return An `svg` object.
+#'
 #' @examples
+#' if (interactive()) {
+#'
 #' # Create an SVG with a single
 #' # ellipse element
 #' svg <-
@@ -249,6 +263,7 @@ svg_circle <- function(svg,
 #'       width = 50, height = 30,
 #'       fill = "purple"
 #'     )
+#' }
 #'
 #' @export
 svg_ellipse <- function(svg,
@@ -322,7 +337,11 @@ svg_ellipse <- function(svg,
 #' @param x2,y2 The `x` and `y` positions of the line's end point.
 #' @inheritParams svg_rect
 #'
+#' @return An `svg` object.
+#'
 #' @examples
+#' if (interactive()) {
+#'
 #' # Create an SVG with a single
 #' # line element
 #' svg <-
@@ -332,6 +351,7 @@ svg_ellipse <- function(svg,
 #'       x2 = 95, y2 = 45,
 #'       stroke = "blue"
 #'     )
+#' }
 #'
 #' @export
 svg_line <- function(svg,
@@ -406,7 +426,11 @@ svg_line <- function(svg,
 #'   `x` and `y` values, and comma-separated points).
 #' @inheritParams svg_rect
 #'
+#' @return An `svg` object.
+#'
 #' @examples
+#' if (interactive()) {
+#'
 #' # Create an SVG with a single
 #' # polyline element; here `points`
 #' # is a numeric vector where pairs
@@ -432,6 +456,7 @@ svg_line <- function(svg,
 #'         "10,10 15,20 20,15 25,30 30,25 35,40 40,35 45,50 50,45",
 #'       stroke = "blue"
 #'     )
+#' }
 #'
 #' @export
 svg_polyline <- function(svg,
@@ -510,7 +535,11 @@ svg_polyline <- function(svg,
 #'   `x` and `y` values, and comma-separated points).
 #' @inheritParams svg_rect
 #'
+#' @return An `svg` object.
+#'
 #' @examples
+#' if (interactive()) {
+#'
 #' # Create an SVG with a single
 #' # polygon element
 #' svg <-
@@ -521,6 +550,7 @@ svg_polyline <- function(svg,
 #'       stroke_width = 4,
 #'       fill = "yellow"
 #'     )
+#' }
 #'
 #' @export
 svg_polygon <- function(svg,
@@ -595,7 +625,11 @@ svg_polygon <- function(svg,
 #'   string.
 #' @inheritParams svg_rect
 #'
+#' @return An `svg` object.
+#'
 #' @examples
+#' if (interactive()) {
+#'
 #' # Create an SVG with a single
 #' # path element
 #' svg <-
@@ -606,6 +640,7 @@ svg_polygon <- function(svg,
 #'       stroke_width = 5,
 #'       fill = "lightblue"
 #'     )
+#' }
 #'
 #' @export
 svg_path <- function(svg,
@@ -678,15 +713,7 @@ svg_path <- function(svg,
 #' @inheritParams svg_rect
 #' @inheritParams svg_path
 #'
-#' @examples
-#' # Create an SVG with a single
-#' # text element
-#' svg <-
-#'   SVG(width = 300, height = 300) %>%
-#'     svg_text(
-#'       x = 10, y = 20,
-#'       text = "A line of text"
-#'     )
+#' @return An `svg` object.
 #'
 #' @export
 svg_text <- function(svg,
@@ -763,7 +790,11 @@ svg_text <- function(svg,
 #'   with the image (and this is only if both values are provided).
 #' @inheritParams svg_rect
 #'
+#' @return An `svg` object.
+#'
 #' @examples
+#' if (interactive()) {
+#'
 #' # Create an SVG with an SVG image
 #' # (the R logo) contained within it
 #' svg <-
@@ -774,6 +805,7 @@ svg_text <- function(svg,
 #'       height = 100,
 #'       image = "https://www.r-project.org/logo/Rlogo.svg"
 #'     )
+#' }
 #'
 #' @export
 svg_image <- function(svg,
@@ -840,7 +872,11 @@ svg_image <- function(svg,
 #' @param .list Allows for the use of a list as an input alternative to `...`.
 #' @inheritParams svg_rect
 #'
+#' @return An `svg` object.
+#'
 #' @examples
+#' if (interactive()) {
+#'
 #' # Create an SVG with two rectangles
 #' # contained within a group
 #' SVG(width = 300, height = 300) %>%
@@ -862,6 +898,7 @@ svg_image <- function(svg,
 #'       ~ svg_rect(., x = 60, y = 60, width = 50, height = 50)
 #'       )
 #'     )
+#' }
 #'
 #' @import rlang
 #' @export

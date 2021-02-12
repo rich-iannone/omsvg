@@ -12,7 +12,11 @@
 #' @param filters A list of `filter_*()` function calls. Examples include
 #'   [filter_image()] and [filter_gaussian_blur()].
 #'
+#' @return An `svg` object.
+#'
 #' @examples
+#' if (interactive()) {
+#'
 #' # Set up an `svg_filter()` (called
 #' # `"blur"`) that has the blur effect
 #' # (using the `filter_gaussian_blur()`
@@ -34,6 +38,7 @@
 #'       filter = "blur"
 #'     )
 #'   )
+#' }
 #'
 #' @export
 svg_filter <- function(svg,
@@ -99,7 +104,11 @@ svg_filter <- function(svg,
 #'
 #' @param image A link or path to an image resource.
 #'
+#' @return An `svg` object.
+#'
 #' @examples
+#' if (interactive()) {
+#'
 #' # Place an image (obtained via an image
 #' # link) within a rectangle element using
 #' # the `filter_image()` filter
@@ -117,6 +126,7 @@ svg_filter <- function(svg,
 #'     width = "50%", height = "50%",
 #'     attrs = svg_attrs_pres(filter = "image")
 #'   )
+#' }
 #'
 #' @export
 filter_image <- function(image) {
@@ -138,7 +148,11 @@ filter_image <- function(image) {
 #' @param what What exactly should be blurred? By default, it is the `"source"`
 #'   image.
 #'
+#' @return An `svg` object.
+#'
 #' @examples
+#' if (interactive()) {
+#'
 #' # Add a green ellipse to an SVG and
 #' # then apply the `filter_gaussian_blur()`
 #' # filter to blur the edges
@@ -157,6 +171,7 @@ filter_image <- function(image) {
 #'       filter = "blur"
 #'     )
 #'   )
+#' }
 #'
 #' @export
 filter_gaussian_blur <- function(stdev = 1,
@@ -191,7 +206,11 @@ filter_gaussian_blur <- function(stdev = 1,
 #'   and the second one the y-radius. If one value is provided, then that value
 #'   is used for both x and y.
 #'
+#' @return An `svg` object.
+#'
 #' @examples
+#' if (interactive()) {
+#'
 #' # Add a text element to an
 #' # SVG drawing and erode it with
 #' # the `filter_erode()` filter
@@ -211,6 +230,7 @@ filter_gaussian_blur <- function(stdev = 1,
 #'       filter = "erode"
 #'     )
 #'   )
+#' }
 #'
 #' @export
 filter_erode <- function(radius = 1) {
@@ -242,7 +262,11 @@ filter_erode <- function(radius = 1) {
 #'   and the second one the y-radius. If one value is provided, then that value
 #'   is used for both x and y.
 #'
+#' @return An `svg` object.
+#'
 #' @examples
+#' if (interactive()) {
+#'
 #' # Add a text element to an
 #' # SVG drawing and erode it with
 #' # the `filter_dilate()` filter
@@ -261,6 +285,7 @@ filter_erode <- function(radius = 1) {
 #'       filter = "dilate"
 #'     )
 #'   )
+#' }
 #'
 #' @export
 filter_dilate <- function(radius = 1) {
@@ -294,7 +319,11 @@ filter_dilate <- function(radius = 1) {
 #' @param opacity The opacity of the drop shadow. We can use a real number from
 #'   `0` to `1` or a value in percentage units.
 #'
+#' @return An `svg` object.
+#'
 #' @examples
+#' if (interactive()) {
+#'
 #' # Apply a drop shadow filter on a
 #' # text element (orange in color,
 #' # and semi-opaque)
@@ -319,6 +348,7 @@ filter_dilate <- function(radius = 1) {
 #'       filter = "shadow"
 #'     )
 #'   )
+#' }
 #'
 #' @export
 filter_drop_shadow <- function(dx = 0.2,
@@ -354,7 +384,11 @@ filter_drop_shadow <- function(dx = 0.2,
 #' @param what What exactly should be offset? By default, it is the `"source"`
 #'   image.
 #'
+#' @return An `svg` object.
+#'
 #' @examples
+#' if (interactive()) {
+#'
 #' # Add a circle element to an
 #' # SVG drawing and offset it
 #' # by 10px to the right
@@ -373,6 +407,7 @@ filter_drop_shadow <- function(dx = 0.2,
 #'       filter = "offset_right"
 #'     )
 #'   )
+#' }
 #'
 #' @export
 filter_offset <- function(dx = NULL,

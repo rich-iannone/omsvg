@@ -11,7 +11,12 @@
 #'   the element? If so, use `TRUE` and any value provided to `opacity` will be
 #'   disregarded.
 #'
+#' @return An `anim_opacity` object, which is to be used as part of an [anims()]
+#'   call.
+#'
 #' @examples
+#' if (interactive()) {
+#'
 #' # Basic animation of an element's
 #' # opacity value (moving to a new
 #' # `opacity` value of `0`)
@@ -27,6 +32,7 @@
 #'       2.0 ~ anim_opacity(opacity = 0)
 #'     )
 #'   )
+#' }
 #'
 #' @export
 anim_opacity <- function(opacity = NULL,

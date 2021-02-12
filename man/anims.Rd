@@ -53,6 +53,8 @@ anims = anims(
 }
 }
 \examples{
+if (interactive()) {
+
 # Basic animation of an element's
 # position (moving to a new `x` and
 # `y` position)
@@ -123,5 +125,6 @@ svg_3 <-
       )
     )
   )
+}
 
 }

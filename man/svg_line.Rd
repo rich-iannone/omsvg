@@ -50,12 +50,17 @@ created by using a list of \verb{filter_*()} functions (e.g.,
 modifying this element in a later function call or for interacting with
 CSS.}
 }
+\value{
+An \code{svg} object.
+}
 \description{
 The \code{svg_line()} function adds a line to an \code{svg} object. The line is drawn
 using a start point (\code{x1} and \code{y1}) and an end point (\code{x2} and \code{y2}) points.
 These positions are in units of \code{px}.
 }
 \examples{
+if (interactive()) {
+
 # Create an SVG with a single
 # line element
 svg <-
@@ -65,5 +70,6 @@ svg <-
       x2 = 95, y2 = 45,
       stroke = "blue"
     )
+}
 
 }

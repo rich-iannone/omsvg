@@ -236,6 +236,11 @@ indicates that the given element will be rendered by the browser.}
 graphical elements. With a value of \code{"hidden"} or \code{"collapse"}, the element
 is invisible.}
 }
+\value{
+A named list of presentational SVG properties. This object can be
+used as a value for the \code{attrs} argument, which is present in every SVG
+element function (e.g,. \code{\link[=svg_rect]{svg_rect()}}).
+}
 \description{
 The \code{svg_attrs_pres()} helper function can be used to more easily generate a
 valid presentation attribute list for the \code{attrs} argument that is present
