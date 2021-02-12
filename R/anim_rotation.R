@@ -13,6 +13,9 @@
 #'   the element? If so, use `TRUE` and any value provided to `rotation` will be
 #'   disregarded.
 #'
+#' @return An `anim_opacity` object, which is to be used as part of an [anims()]
+#'   call.
+#'
 #' @examples
 #' if (interactive()) {
 #'
