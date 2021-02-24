@@ -141,6 +141,12 @@ decelerates to a stop).
 
 ## Installation
 
+The **omsvg** package is available in CRAN and can be installed with:
+
+``` r
+install.packages("omsvg")
+```
+
 You can install the development version from
 [GitHub](https://github.com/) with:
 

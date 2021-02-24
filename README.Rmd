@@ -83,6 +83,12 @@ Animations are made through reference to keyframe times. Each of these times (in
 
 ## Installation
 
+The **omsvg** package is available in CRAN and can be installed with:
+
+```{r eval=FALSE}
+install.packages("omsvg")
+```
+
 You can install the development version from [GitHub](https://github.com/) with:
 
 ```{r eval=FALSE}
